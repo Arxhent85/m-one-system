@@ -1,0 +1,2 @@
+Look at step index 607! Step 606 or around step 600 was the user input!
+Let's print step index 606 or lines with type `USER_INPUT`!

@@ -1,0 +1,1196 @@
+[
+  {
+    "customer_number": "10103",
+    "company_name": "BESI COM",
+    "city": "PRISHTINE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10104",
+    "company_name": "JETARI",
+    "city": "PRISHTINE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10105",
+    "company_name": "ARSIM",
+    "city": "PRISHTINE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10110",
+    "company_name": "AFRIMI",
+    "city": "PRISHTINE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10111",
+    "company_name": "KADIJOLLET",
+    "city": "PRISHTINE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10113",
+    "company_name": "MUQIQI",
+    "city": "BARDHOSH",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10114",
+    "company_name": "QELA",
+    "city": "BARDHOSH",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10116",
+    "company_name": "OPEL",
+    "city": "BARDHOSH",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10117",
+    "company_name": "BEGU",
+    "city": "PRISHTINE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10126",
+    "company_name": "BOSCH",
+    "city": "F. KOSOVA",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10133",
+    "company_name": "HIDROELDI",
+    "city": "PRISHTINE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10134",
+    "company_name": "EURO COLORS",
+    "city": "PRISHTINE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10135",
+    "company_name": "TONI COLORS",
+    "city": "PRISHTINE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10141",
+    "company_name": "CHE BAR LOUNGE BAR",
+    "city": "PRISHTINE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10145",
+    "company_name": "KRRABAJ",
+    "city": "PRISHTINE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10146",
+    "company_name": "KRRABAJ",
+    "city": "PRISHTINE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10147",
+    "company_name": "KRRABAJ",
+    "city": "PRISHTINE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10201",
+    "company_name": "TE BESNIKU",
+    "city": "THARAND",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10202",
+    "company_name": "METAL FATI",
+    "city": "THARAND",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10203",
+    "company_name": "EMSA",
+    "city": "THARAND",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10204",
+    "company_name": "GIMI",
+    "city": "SHIROK",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10205",
+    "company_name": "XHAFA",
+    "city": "SHIROK",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10210",
+    "company_name": "MONI 2",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10213",
+    "company_name": "DURIMI",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10223",
+    "company_name": "MURIQI 1",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10230",
+    "company_name": "JETA DUHEL",
+    "city": "DUHEL",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10240",
+    "company_name": "ARPO",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10241",
+    "company_name": "AB SHPK",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10244",
+    "company_name": "BARDHI",
+    "city": "SHIROK",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10245",
+    "company_name": "BEK TRADE",
+    "city": "ZYM",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10250",
+    "company_name": "TAULANTI",
+    "city": "SHTIME",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10251",
+    "company_name": "TAULANTI",
+    "city": "SHTIME",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10255",
+    "company_name": "QEMA",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10256",
+    "company_name": "QEMA",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10257",
+    "company_name": "BERISHA",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10258",
+    "company_name": "ARSIMI",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10261",
+    "company_name": "ARSIMI",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10262",
+    "company_name": "BESO KERAMIK",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10301",
+    "company_name": "FUNDAMETI",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10303",
+    "company_name": "BEKA-1",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10304",
+    "company_name": "EUROSAN",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10306",
+    "company_name": "ELIONI-1",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10308",
+    "company_name": "ERALP",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10313",
+    "company_name": "FATMIRI",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10315",
+    "company_name": "BASHKIMI",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10317",
+    "company_name": "BEKA-2",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10320",
+    "company_name": "DANI-COM",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10323",
+    "company_name": "BEKA-3",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10325",
+    "company_name": "PARKETI",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10327",
+    "company_name": "ER POWER",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10330",
+    "company_name": "BURIMI",
+    "city": "POZHARAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10332",
+    "company_name": "DARDANIA",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10333",
+    "company_name": "FUGA MONT",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10340",
+    "company_name": "IBAK",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10343",
+    "company_name": "INTERCOM NTP",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10344",
+    "company_name": "TINA",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10346",
+    "company_name": "AME",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10347",
+    "company_name": "BARDHI",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10350",
+    "company_name": "BALLKANI",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10352",
+    "company_name": "SMIRA",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10353",
+    "company_name": "TREND CERAMIKA",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10357",
+    "company_name": "GLOBAL NT",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10359",
+    "company_name": "GLOBAL NT",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10360",
+    "company_name": "GLOBAL NT",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10364",
+    "company_name": "KOS CERAMIK",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10365",
+    "company_name": "KETI VEE SHPK",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10366",
+    "company_name": "MIRSADI",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10367",
+    "company_name": "SMIRA COLOR",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10401",
+    "company_name": "DRCOR",
+    "city": "VUSHTRRI",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10406",
+    "company_name": "AGRONI",
+    "city": "MITROVICE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10410",
+    "company_name": "GRANITI",
+    "city": "MITROVICE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10412",
+    "company_name": "VISARI HH",
+    "city": "MITROVICE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10413",
+    "company_name": "UNIVERZAL",
+    "city": "MITROVICE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10418",
+    "company_name": "NDRIQIMI",
+    "city": "VUSHTRRI",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10428",
+    "company_name": "ENISI - H",
+    "city": "VUSHTRRI",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10429",
+    "company_name": "SAN KOS",
+    "city": "VUSHTRRI",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10430",
+    "company_name": "EURO COM",
+    "city": "MITROVICE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10502",
+    "company_name": "PROCOM",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10503",
+    "company_name": "REAL COLOR 1",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10504",
+    "company_name": "CARRALEVA 1",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10506",
+    "company_name": "ARBERI",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10507",
+    "company_name": "REAL COLOR 2",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10508",
+    "company_name": "CARRALEVA 2",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10509",
+    "company_name": "LONI",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10511",
+    "company_name": "MULI",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10528",
+    "company_name": "TE RAMIZI",
+    "city": "LIPJAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10529",
+    "company_name": "ARDI LIPJAN",
+    "city": "LIPJAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10539",
+    "company_name": "BEKA",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10541",
+    "company_name": "ALTINI",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10542",
+    "company_name": "LITA",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10547",
+    "company_name": "ZAIMI",
+    "city": "LIPJAN",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10604",
+    "company_name": "KUSHA",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10605",
+    "company_name": "SABITI",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10613",
+    "company_name": "TE KELA",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10614",
+    "company_name": "MERIS",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10616",
+    "company_name": "TE ZENA",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10617",
+    "company_name": "TE LUTA",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10618",
+    "company_name": "TE KASTRIOTI",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10619",
+    "company_name": "BECOLOR",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10622",
+    "company_name": "HOXHA",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10625",
+    "company_name": "KUJTA",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10626",
+    "company_name": "DRITONI",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10627",
+    "company_name": "AP PETRITI",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10635",
+    "company_name": "ALBANI",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10636",
+    "company_name": "ALBANI",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10637",
+    "company_name": "ALBANI",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "10638",
+    "company_name": "ALBANI",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2)"
+  },
+  {
+    "customer_number": "20101",
+    "company_name": "TE GZIMI",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20102",
+    "company_name": "KUQI-LKW",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20104",
+    "company_name": "KTHIMI",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20108",
+    "company_name": "ING PROJEKT",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20109",
+    "company_name": "KENA COMERC",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20111",
+    "company_name": "TECOL 2",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20118",
+    "company_name": "AP WOLF",
+    "city": "KLINE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20121",
+    "company_name": "CAMA BAU",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20122",
+    "company_name": "GLOBI TERM",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20126",
+    "company_name": "LULI-C",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20127",
+    "company_name": "TERMO PROJEKT",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20129",
+    "company_name": "LNI SHPK",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20130",
+    "company_name": "ENESI",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20201",
+    "company_name": "TE BESIMI",
+    "city": "DEQAN",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20203",
+    "company_name": "AFRIMI-AG",
+    "city": "DEQAN",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20205",
+    "company_name": "GACAFERI-RG",
+    "city": "JUNIK",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20206",
+    "company_name": "ERENIKU",
+    "city": "JUNIK",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20208",
+    "company_name": "V. GJONAJ",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20209",
+    "company_name": "LETAJ",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20210",
+    "company_name": "PROSAN",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20211",
+    "company_name": "INOX 1",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20212",
+    "company_name": "INOX 2",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20220",
+    "company_name": "GERMAN FABRE",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20222",
+    "company_name": "ERINA",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20223",
+    "company_name": "GER COLORS",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20224",
+    "company_name": "TANI",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20227",
+    "company_name": "DIKI BAU SHPK",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20228",
+    "company_name": "HB-DECOR",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20229",
+    "company_name": "LIRA",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20301",
+    "company_name": "HAZROLLI",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20302",
+    "company_name": "NIVELIZIMI-D SH.P.K.",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20303",
+    "company_name": "NITA 3",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20304",
+    "company_name": "AGRO-FARM",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20305",
+    "company_name": "ABA QERAMIK",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20306",
+    "company_name": "FITIMI",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20307",
+    "company_name": "CONDOR",
+    "city": "RAHOVEC",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20311",
+    "company_name": "SOPAJ",
+    "city": "RAHOVEC",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20312",
+    "company_name": "A.P. SHPENDI",
+    "city": "RAHOVEC",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20313",
+    "company_name": "DURGUTI 3",
+    "city": "RAHOVEC",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20314",
+    "company_name": "URA",
+    "city": "RAHOVEC",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20317",
+    "company_name": "SHEHU-A",
+    "city": "RAHOVEC",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20321",
+    "company_name": "BEREQETI",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20322",
+    "company_name": "HYSENAJ",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20324",
+    "company_name": "BAU HOME",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20326",
+    "company_name": "BERATI",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20328",
+    "company_name": "ARTURI",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20329",
+    "company_name": "TERMOT",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20330",
+    "company_name": "GASHI",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20331",
+    "company_name": "BARDHI-M",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20332",
+    "company_name": "AGRO TEC",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20403",
+    "company_name": "TERMIKA",
+    "city": "DRENAS",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20404",
+    "company_name": "TE MENTORI",
+    "city": "DRENAS",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20405",
+    "company_name": "BESI",
+    "city": "DRENAS",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20406",
+    "company_name": "MEGI",
+    "city": "SKENDERAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20407",
+    "company_name": "TE BENI",
+    "city": "SKENDERAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20408",
+    "company_name": "A.P. HOTI",
+    "city": "SKENDERAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20409",
+    "company_name": "BENI",
+    "city": "SKENDERAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20427",
+    "company_name": "NSM TRADE",
+    "city": "DRENAS",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20501",
+    "company_name": "RACI",
+    "city": "KLINE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20502",
+    "company_name": "HOXHA",
+    "city": "KLINE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20508",
+    "company_name": "LIRIDONA HOME",
+    "city": "ISTOG",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20510",
+    "company_name": "BYTYQI-V",
+    "city": "ISTOG",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20511",
+    "company_name": "LIRIDONA KLINE",
+    "city": "ISTOG",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20513",
+    "company_name": "BERATI A.P. (1)",
+    "city": "ISTOG",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20515",
+    "company_name": "LIRIDONA-A",
+    "city": "ISTOG",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20516",
+    "company_name": "GASHI-COM",
+    "city": "ISTOG",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20519",
+    "company_name": "JONI",
+    "city": "KLINE",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20520",
+    "company_name": "TE BRAHA",
+    "city": "RUNIK",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20601",
+    "company_name": "ELEKTROMONT",
+    "city": "LIPJAN",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20602",
+    "company_name": "AGROLONDI",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20603",
+    "company_name": "PROMOIN",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20604",
+    "company_name": "ALFA-QERAMIKA",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20605",
+    "company_name": "HIDROTERMI",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20606",
+    "company_name": "TE-SYLA",
+    "city": "GERLIC",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20607",
+    "company_name": "F.V. SH.P.K.",
+    "city": "DOGANAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20608",
+    "company_name": "LONI",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20609",
+    "company_name": "BUJARI Q - BESII",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20610",
+    "company_name": "AGRO-XHETI",
+    "city": "GREME",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20611",
+    "company_name": "TE-LUTA",
+    "city": "KAQANIK",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20614",
+    "company_name": "AS QERAMIKA",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20615",
+    "company_name": "MIX-B",
+    "city": "GADIME",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20622",
+    "company_name": "ILIRI QERAMIKA",
+    "city": "GADIME",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20623",
+    "company_name": "LTI",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20624",
+    "company_name": "BULONI - SH",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20627",
+    "company_name": "UNIKA",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20628",
+    "company_name": "DIVA QERAMIKA",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20629",
+    "company_name": "LUTA QERAMIKA",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20630",
+    "company_name": "HIDRO DANI",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20631",
+    "company_name": "ALMIRI QERAMIKA",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20632",
+    "company_name": "GLOBAL TOOLS",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20633",
+    "company_name": "ORCA",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  },
+  {
+    "customer_number": "20634",
+    "company_name": "SALIHU CORPORATION",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1)"
+  }
+]

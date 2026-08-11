@@ -1,0 +1,6 @@
+<USER_REQUEST>
+machen wir mal einen test, hier sind die verkäufe von 2026 kannst du in unser system als verlauf einbinden, damit ich testen kann wie das system aussieht wenn es daten drin hat. analysiere erstmal die datei um zu verstehen was los ist und dann füge es sein. ich will es wieder löschen können wenn und von neu beginen wenn alles ok ist.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-08-11T15:21:15+02:00.
+</ADDITIONAL_METADATA>

@@ -1,0 +1,192 @@
+==================================================
+ANALYSIS OF 'Aktuelle daten' EXCEL FILES
+==================================================
+
+FILE: Daten 2026.xlsx
+   Sheets (1): ['Sheet1']
+
+   --- Sheet: 'Sheet1' ---
+      Row 1: ['Aufbereitete Datenbasis', '', '', '', '', '', '', '', '', '', '', '']
+      Row 2: ['Stand: 01.06.2026', '', '195614.4499999999', '', '', '', '', '', '', '56972', '', '']
+      Row 3: ['Faktura NR.', 'Datum', 'Wert', 'Status', 'a', 'Kunden Nr.', 'Kundenname', 'Artikel', 'Artikelname', 'Stück', 'Agent', '%']
+      Row 4: ['INTERCOM NTP', '2026-01-07 00:00:00', '231', '', '', '10343', 'INTERCOM NTP', '35110', 'M-ONE Sanitar Silikon', '24', 'Qerimi', '0.17']
+      Row 5: ['INTERCOM NTP', '2026-01-07 00:00:00', '', '', '', '10343', 'INTERCOM NTP', '35121', 'M-ONE Sanitar Silikon', '36', 'Qerimi', '0.17']
+      Row 6: ['ERALP', '2026-01-07 00:00:00', '92.4', '', '', '10308', 'ERALP', '35125', 'M-ONE Sanitar Silikon', '24', 'Qerimi', '0.17']
+      Row 7: ['TINA', '2026-01-07 00:00:00', '46.2', '', '', '10344', 'TINA', '35108', 'M-ONE Sanitar Silikon', '12', 'Qerimi', '0.17']
+      Row 8: ['IBAK', '2026-01-07 00:00:00', '92.4', '', '', '10340', 'IBAK', '35109', 'M-ONE Sanitar Silikon', '24', 'Qerimi', '0.17']
+
+--------------------------------------------------
+
+FILE: DEPO M ONE.xlsx
+   Sheets (1): ['Tabelle1']
+
+   --- Sheet: 'Tabelle1' ---
+      Row 1: ['SHIFRA', 'EMËRTIMI I ARTIKULLIT', 'PRODHUESI', 'BRENDI', 'SASIA', 'NJM']
+      Row 2: ['', 'DEPO M-ONE', '', '', '', '']
+      Row 3: ['`11000', 'Bodenreiniger 4 Ltr', '', '', '15', 'cope']
+      Row 4: ['`12001', 'BAU CLEAN  750 ml', '', '', '3', 'cope']
+      Row 5: ['`16936', 'FELGENSILBER 400 ML', '', '', '112', 'cope']
+      Row 6: ['`17101', 'KÜHLERRAININGER 250 ML', '', '', '300', 'cope']
+      Row 7: ['`20000', 'BioBlic AutoInnenreiniger 750 ml', '', '', '10', 'cope']
+      Row 8: ['`26736', 'HAFTGRUND 400 ml', '', '', '257', 'cope']
+
+--------------------------------------------------
+
+FILE: DEPO MENSURI.xlsx
+   Sheets (1): ['Tabelle1']
+
+   --- Sheet: 'Tabelle1' ---
+      Row 1: ['SHIFRA', 'EMËRTIMI I ARTIKULLIT', 'PRODHUESI', 'BRENDI', 'SASIA', 'NJM']
+      Row 2: ['', 'MENSURI DEPO', '', '', '', '']
+      Row 3: ['`16936', 'FELGENSILBER 400 ML', '', '', '12', 'cope']
+      Row 4: ['`26736', 'HAFTGRUND 400 ml', '', '', '7', 'cope']
+      Row 5: ['`29802', 'M ONE Handwaschpaste 500 ml', '', '', '8', 'cope']
+      Row 6: ['`31812', 'M-ONE LACK GELB', '', '', '8', 'cope']
+      Row 7: ['`31818', 'M ONE LACK ANTHRAZIT 400 ML', '', '', '12', 'cope']
+      Row 8: ['`31819', 'LACK FUERROT 400 ML', '', '', '12', 'cope']
+
+--------------------------------------------------
+
+FILE: DEPO QERIMI.xlsx
+   Sheets (1): ['Tabelle1']
+
+   --- Sheet: 'Tabelle1' ---
+      Row 1: ['SHIFRA', 'EMËRTIMI I ARTIKULLIT', 'PRODHUESI', 'BRENDI', 'SASIA', 'NJM']
+      Row 2: ['', 'QERIMI DEPO', '', '', '', '']
+      Row 3: ['`16936', 'FELGENSILBER 400 ML', '', '', '8', 'cope']
+      Row 4: ['`26736', 'HAFTGRUND 400 ml', '', '', '9', 'cope']
+      Row 5: ['`31812', 'M-ONE LACK GELB', '', '', '5', 'cope']
+      Row 6: ['`31815', 'M-ONE LACK HELLGRAU', '', '', '6', 'cope']
+      Row 7: ['`31818', 'M ONE LACK ANTHRAZIT 400 ML', '', '', '6', 'cope']
+      Row 8: ['`31819', 'LACK FUERROT 400 ML', '', '', '4', 'cope']
+
+--------------------------------------------------
+
+FILE: KUNDENLISTE 2026.xlsm
+   Sheets (12): ['Renditja', 'KUNDEN', 'FIRMA INFO', 'Tabelle2', 'Tabelle3', 'AGENT INFO', 'Tabelle1', 'INFO', 'Produkt Info', 'Produkte', 'Formular', 'Datenbasis aufbereitet']
+
+   --- Sheet: 'Renditja' ---
+      Row 1: ['Spalte1', 'FIRMA', 'Agent', 'Datum', 'Status', 'KundenNr.', 'Wert', 'Art. 1', 'St. 1', 'Art. 2', 'St. 2', 'Art. 3']
+      Row 2: ['VITI', 'INTERCOM NTP', '', '2026-01-07 00:00:00', '', '10343', '231', '35110', '24', '35121', '36', '']
+      Row 3: ['GJILAN', 'ERALP', '', '2026-01-07 00:00:00', '', '10308', '92.4', '35125', '24', '', '', '']
+      Row 4: ['GJILAN', 'TINA', '', '2026-01-07 00:00:00', '', '10344', '46.2', '35108', '12', '', '', '']
+      Row 5: ['GJILAN', 'IBAK', '', '2026-01-07 00:00:00', '', '10340', '92.4', '35109', '24', '', '', '']
+      Row 6: ['VITI', 'PARKETI', '', '2026-01-07 00:00:00', '', '10325', '138.6', '35110', '24', '35111', '12', '']
+      Row 7: ['POZHARAN', 'BURIMI', '', '2026-01-07 00:00:00', '', '10330', '46.2', '35109', '12', '', '', '']
+      Row 8: ['VITI', 'DARDANIA', '', '2026-01-07 00:00:00', '', '10332', '92.4', '35109', '12', '35110', '12', '']
+
+   --- Sheet: 'KUNDEN' ---
+      Row 1: ['Kunde Nr.', 'KundenName', 'Ort', 'Nr.Unik', 'Tel.:', 'INFO', 'Axhenti', 'Spalte1', '', '']
+      Row 2: ['10000', 'QERIMI SHPENZIME', 'TEREN KIM TEC', '', '', '', 'Qerimi', '', '20000', 'Qerimi']
+      Row 3: ['10101', 'COLOR UNIVERS', 'PRISHTINE', '', '', '', 'Qerimi', '', '30000', 'Mensuri']
+      Row 4: ['10102', 'FLORI', 'PRISHTINE', '', '', '', 'Qerimi', '', '40000', 'Miloti']
+      Row 5: ['10103', 'BESI COM', 'PRISHTINE', '', '', '', 'Qerimi', '', '', '']
+      Row 6: ['10104', 'JETARI', 'PRISHTINE', '', '', '', 'Qerimi', '', '', '']
+      Row 7: ['10105', 'ARSIM', 'PRISHTINE', '', '', '', 'Qerimi', '', '', '']
+      Row 8: ['10106', 'COLOR', 'PRISHTINE', '', '', '', 'Qerimi', '', '', '']
+
+   --- Sheet: 'FIRMA INFO' ---
+      Row 1: ['Datum', '(Alle)', '']
+      Row 2: ['Zeilenbeschriftungen', 'Summe von Wert', '']
+      Row 3: ['Gesamtergebnis', '', '']
+      Row 4: ['', '', '263']
+      Row 5: ['', '', '264']
+      Row 6: ['', '', '265']
+      Row 7: ['', '', '266']
+      Row 8: ['', '', '267']
+
+   --- Sheet: 'Tabelle2' ---
+      Row 1: ['Faktura NR.', 'Datum', 'Wert', 'Status', 'a', 'Kunden Nr.', 'Kundenname', 'Artikel', 'Artikelname', 'Stück', 'Agent', '%']
+      Row 2: ['KTHIMI', '2026-05-11 00:00:00', '', '', '', '20104', 'KTHIMI', '36', '#N/A', '35119', 'Mensuri', '#N/A']
+
+   --- Sheet: 'Tabelle3' ---
+      Row 1: ['Faktura NR.', 'Datum', 'Wert', 'Status', 'a', 'Kunden Nr.', 'Kundenname', 'Artikel', 'Artikelname', 'Stück', 'Agent', '%']
+      Row 2: ['KTHIMI', '2026-05-11 00:00:00', '', '', '', '20104', 'KTHIMI', '12', '#N/A', '', 'Mensuri', '#N/A']
+
+   --- Sheet: 'AGENT INFO' ---
+      Row 1: ['Datum', '(Alle)', '', '', '', '', '', '', '', '', '', '']
+      Row 2: ['Agent', 'Qerimi', '', '', '', '', '', '', '', '', '', '']
+      Row 3: [' ', '', '', '', '', '', '', '', '', '', '', '']
+      Row 4: ['Zeilenbeschriftungen', 'Summe von Stück', 'Mittelwert von %', '', '', '', '', '', '', '', '', '']
+      Row 5: ['16936', '4', '0.15', '0.6', '0.6', '', '', '', '', '', '', '']
+      Row 6: ['20001', '20', '0.30000000000000004', '6.000000000000001', '6.000000000000001', '', '', '', '', '', '', '']
+      Row 7: ['26736', '3', '0.15', '0.44999999999999996', '0.44999999999999996', '', '', '', '', '', '', '']
+      Row 8: ['30276', '10', '0.30000000000000004', '3.0000000000000004', '3.0000000000000004', '', '', '', '', '', '', '']
+
+   --- Sheet: 'Tabelle1' ---
+      Row 1: ['', '', '', '1248', '0.35', '436.79999999999995']
+      Row 2: ['', '', '', '3744', '0.35', '1310.3999999999999']
+      Row 3: ['', '', '', '3744', '0.35', '1310.3999999999999']
+      Row 4: ['', '', '', '1872', '0.35', '655.1999999999999']
+      Row 5: ['', '', '', '1248', '0.35', '436.79999999999995']
+      Row 6: ['', '', '', '1872', '0.35', '655.1999999999999']
+      Row 7: ['', '', '', '1248', '0.35', '436.79999999999995']
+      Row 8: ['', '', '', '5616', '0.35', '1965.6']
+
+   --- Sheet: 'INFO' ---
+      Row 1: ['Agent', '(Alle)', '', '', '', '', '', '', '', '', '']
+      Row 2: ['Datum', '(Alle)', '', '', '', '', '', '', '', '', '']
+      Row 3: ['Summe von Wert', '', '', '', '', '', '', '', '', '', '']
+      Row 4: ['199774.7499999999', '', '', '', '', '', '', '', '', '', '']
+      Row 5: ['Agent', '(Alle)', '', '', '', '', '', '', '', '', '']
+      Row 6: ['Zeilenbeschriftungen', 'Summe von Wert', 'Anzahl von KundenNr.', '', '', '', '', '', '', '', '']
+      Row 7: ['ARBENI BIOBLIC', '6104.55', '29', '', '', '', '', '', '', '', '']
+      Row 8: ['CONDOR', '5536.700000000001', '22', '', '', '', '', '', '', '', '']
+
+   --- Sheet: 'Produkt Info' ---
+      Row 1: ['Kunden Nr.', '(Alle)', '', '', '', '', '', '', '', '', '', '']
+      Row 2: ['Datum', '(Alle)', '', '', '', '', '', '', '', '', '', '']
+      Row 3: ['Zeilenbeschriftungen', 'Summe von Stück', '', '', '', '', '', '', '', '', '', '']
+      Row 4: ['12000', '10', '30', '', '', '', '', '', '', '', '', '']
+      Row 5: ['16936', '82', '5', '', '', '', '', '', '', '', '', '']
+      Row 6: ['20000', '10', '2.5', '', '', '', '', '', '', '', '', '']
+      Row 7: ['20001', '650', '16', '', '', '', '', '', '', '', '', '']
+      Row 8: ['26736', '78', '3', '', '', '', '', '', '', '', '', '']
+
+   --- Sheet: 'Produkte' ---
+      Row 1: ['Art. Nr.', 'Emrimi', 'Vol', 'qmim L', 'EAN CODE', 'EAN COD2', 'QMIMI', '%', '', '', '', '']
+      Row 2: ['10000', 'BioBlic Powertabs', '10 kg', '20', '', '', '45', '0.5', '', '', '', '1.1111111111111112']
+      Row 3: ['11000', 'Bodenreiniger', '4 Ltr', '2.5', '4021799', '158273', '10', '0.5', '', '', '', '5']
+      Row 4: ['11111', 'Sani+ Dezinfektant', '500 ml', '3.5', '', '', '3', '0.3', '', '', '', '10']
+      Row 5: ['11112', 'Sani+ Dezinfektant', '4 Ltr', '24', '', '', '20', '2', '', '', '', '10']
+      Row 6: ['11113', 'Sani+ Dezinfektant', '750 ml', '5.25', '', '', '5', '0.45', '', '', '', '9']
+      Row 7: ['12000', 'BAU CLEAN', '4 ltr', '', '', '', '5.5', '0.5', '', '', '', '']
+      Row 8: ['12000', 'bau clean', '', '', '', '', '8', '0.5', '', '', '', '']
+
+   --- Sheet: 'Formular' ---
+      Row 1: ['', '1-01-01', '', '', '', '']
+      Row 2: ['', 'Agjenti -DITA -NR. Klientit', '', '', '', '']
+      Row 3: ['Nr.:', 'KUNDE NR.', 'EMRI', 'NR. Unik/Fiskal', 'TEL.', 'VENDI']
+      Row 4: ['1', '20601', 'ELEKTROMONT', 'LIPJAN', '', '']
+      Row 5: ['2', '20602', 'AGROLONDI', 'FERIZAJ', '', '']
+      Row 6: ['3', '20603', 'PROMOIN', 'FERIZAJ', '', '']
+      Row 7: ['4', '20604', 'ALFA-QERAMIKA', 'FERIZAJ', '', '']
+      Row 8: ['5', '20605', 'HIDROTERMI', 'FERIZAJ', '', '']
+
+   --- Sheet: 'Datenbasis aufbereitet' ---
+      Row 1: ['Aufbereitete Datenbasis', '', '', '', '', '', '', '', '', '', '', '']
+      Row 2: ['Stand: 01.06.2026', '', '195614.4499999999', '', '', '', '', '', '', '56972', '', '']
+      Row 3: ['Faktura NR.', 'Datum', 'Wert', 'Status', 'a', 'Kunden Nr.', 'Kundenname', 'Artikel', 'Artikelname', 'Stück', 'Agent', '%']
+      Row 4: ['INTERCOM NTP', '2026-01-07 00:00:00', '231', '', '', '10343', 'INTERCOM NTP', '35110', 'M-ONE Sanitar Silikon', '24', 'Qerimi', '0.17']
+      Row 5: ['INTERCOM NTP', '2026-01-07 00:00:00', '', '', '', '10343', 'INTERCOM NTP', '35121', 'M-ONE Sanitar Silikon', '36', 'Qerimi', '0.17']
+      Row 6: ['ERALP', '2026-01-07 00:00:00', '92.4', '', '', '10308', 'ERALP', '35125', 'M-ONE Sanitar Silikon', '24', 'Qerimi', '0.17']
+      Row 7: ['TINA', '2026-01-07 00:00:00', '46.2', '', '', '10344', 'TINA', '35108', 'M-ONE Sanitar Silikon', '12', 'Qerimi', '0.17']
+      Row 8: ['IBAK', '2026-01-07 00:00:00', '92.4', '', '', '10340', 'IBAK', '35109', 'M-ONE Sanitar Silikon', '24', 'Qerimi', '0.17']
+
+--------------------------------------------------
+
+FILE: Produkte Lieferanten Anteil 2026.xlsx
+   Sheets (1): ['Sheet1']
+
+   --- Sheet: 'Sheet1' ---
+      Row 1: ['Art. Nr.', 'Emrimi', 'Vol', 'Anteil Lieferant']
+      Row 2: ['10000', 'BioBlic Powertabs', '10 kg', '0.5']
+      Row 3: ['11000', 'Bodenreiniger', '4 Ltr', '0.5']
+      Row 4: ['11111', 'Sani+ Dezinfektant', '500 ml', '0.3']
+      Row 5: ['11112', 'Sani+ Dezinfektant', '4 Ltr', '2']
+      Row 6: ['11113', 'Sani+ Dezinfektant', '750 ml', '0.45']
+      Row 7: ['12000', 'BAU CLEAN', '4 ltr', '0.5']
+      Row 8: ['12000', 'bau clean', '', '0.5']
+
+--------------------------------------------------
+
