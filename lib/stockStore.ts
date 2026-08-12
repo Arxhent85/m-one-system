@@ -53,64 +53,65 @@ export interface SaleRecord {
 // ──────────────────────────────────────────────────────────────────────────────
 export const INITIAL_DEPO_PRODUCTS: ProductStockInfo[] = [
   // ── Reiniger / Autowäsche ──────────────────────────────────────────────────
-  { id: 'p-11000', sku: '11000', name: 'Bodenreiniger 4 Ltr',              stock: 14,   unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
-  { id: 'p-16936', sku: '16936', name: 'FELGENSILBER 400 ML',               stock: 40,   unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
-  { id: 'p-17101', sku: '17101', name: 'KÜHLERREINIGER 250 ML',             stock: 300,  unit: 'cope', purchase_price: 1.20, selling_price: 2.50 },
-  { id: 'p-26736', sku: '26736', name: 'HAFTGRUND 400 ml',                  stock: 209,  unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
-  { id: 'p-30276', sku: '30276', name: 'Bio Blic Antikalk 750 ml',          stock: 13,   unit: 'cope', purchase_price: 2.50, selling_price: 5.00 },
+  // Shumice-Preise aus ÇMIMORE 2026 Preisliste (Spalte: Shumice)
+  { id: 'p-11000', sku: '11000', name: 'Bodenreiniger 4 Ltr',              stock: 14,   unit: 'cope', purchase_price: 1.50, selling_price: 8.00 },
+  { id: 'p-16936', sku: '16936', name: 'FELGENSILBER 400 ML',               stock: 40,   unit: 'cope', purchase_price: 1.50, selling_price: 3.50 },
+  { id: 'p-17101', sku: '17101', name: 'KÜHLERREINIGER 400 ML',             stock: 300,  unit: 'cope', purchase_price: 1.20, selling_price: 3.10 },
+  { id: 'p-26736', sku: '26736', name: 'HAFTGRUND 400 ml',                  stock: 209,  unit: 'cope', purchase_price: 1.50, selling_price: 3.50 },
+  { id: 'p-30276', sku: '30276', name: 'Bio Blic Antikalk 750 ml',          stock: 13,   unit: 'cope', purchase_price: 2.50, selling_price: 1.80 },
 
   // ── Lack-Sprays ────────────────────────────────────────────────────────────
-  { id: 'p-31812', sku: '31812', name: 'M-ONE LACK GELB',                   stock: 272,  unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
-  { id: 'p-31815', sku: '31815', name: 'M-ONE LACK HELLGRAU',               stock: 313,  unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
-  { id: 'p-31818', sku: '31818', name: 'M ONE LACK ANTHRAZIT 400 ML',       stock: 3,    unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
-  { id: 'p-31819', sku: '31819', name: 'LACK FUERROT 400 ML',               stock: 1601, unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
-  { id: 'p-31822', sku: '31822', name: 'M-ONE GOLD SPRAY',                  stock: 367,  unit: 'cope', purchase_price: 2.00, selling_price: 4.00 },
-  { id: 'p-31824', sku: '31824', name: 'M-ONE LACK BRAUN',                  stock: 417,  unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
-  { id: 'p-31827', sku: '31827', name: 'M-ONE LACK GRUN',                   stock: 292,  unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
-  { id: 'p-31880', sku: '31880', name: 'HAT LACK SCHWARZ 400 ML',           stock: 1445, unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
-  { id: 'p-31903', sku: '31903', name: 'M-ONE CHROM SPRAY',                 stock: 319,  unit: 'cope', purchase_price: 2.00, selling_price: 4.00 },
+  { id: 'p-31812', sku: '31812', name: 'M-ONE LACK GELB',                   stock: 272,  unit: 'cope', purchase_price: 1.50, selling_price: 3.50 },
+  { id: 'p-31815', sku: '31815', name: 'M-ONE LACK HELLGRAU',               stock: 313,  unit: 'cope', purchase_price: 1.50, selling_price: 3.50 },
+  { id: 'p-31818', sku: '31818', name: 'M ONE LACK ANTHRAZIT 400 ML',       stock: 3,    unit: 'cope', purchase_price: 1.50, selling_price: 3.50 },
+  { id: 'p-31819', sku: '31819', name: 'LACK FUERROT 400 ML',               stock: 1601, unit: 'cope', purchase_price: 1.50, selling_price: 3.50 },
+  { id: 'p-31822', sku: '31822', name: 'M-ONE GOLD SPRAY',                  stock: 367,  unit: 'cope', purchase_price: 2.00, selling_price: 3.50 },
+  { id: 'p-31824', sku: '31824', name: 'M-ONE LACK BRAUN',                  stock: 417,  unit: 'cope', purchase_price: 1.50, selling_price: 3.50 },
+  { id: 'p-31827', sku: '31827', name: 'M-ONE LACK GRUN',                   stock: 292,  unit: 'cope', purchase_price: 1.50, selling_price: 3.50 },
+  { id: 'p-31880', sku: '31880', name: 'HAT LACK SCHWARZ 690°C 400 ML',    stock: 1445, unit: 'cope', purchase_price: 1.50, selling_price: 5.50 },
+  { id: 'p-31903', sku: '31903', name: 'M-ONE CHROM SPRAY 400 ML',          stock: 319,  unit: 'cope', purchase_price: 2.00, selling_price: 3.80 },
 
   // ── Sanitar Silikone ────────────────────────────────────────────────────────
-  { id: 'p-35108', sku: '35108', name: 'M-ONE Sanitar Silikon Hellgrau',    stock: 3294, unit: 'cope', purchase_price: 1.15, selling_price: 2.30 },
-  { id: 'p-35109', sku: '35109', name: 'M-ONE Sanitar Silikon Silbergrau',  stock: 4990, unit: 'cope', purchase_price: 1.15, selling_price: 2.30 },
-  { id: 'p-35110', sku: '35110', name: 'M-ONE Sanitar Silikon transparent', stock: 5774, unit: 'cope', purchase_price: 1.15, selling_price: 2.30 },
-  { id: 'p-35111', sku: '35111', name: 'M-ONE Sanitar Silikon Weiss',       stock: 3989, unit: 'cope', purchase_price: 1.15, selling_price: 2.30 },
-  { id: 'p-35112', sku: '35112', name: 'M-ONE Sanitar Silikon Schwarz',     stock: 2284, unit: 'cope', purchase_price: 1.15, selling_price: 2.30 },
-  { id: 'p-35113', sku: '35113', name: 'M-ONE Sanitar Silikon Bahamabeige', stock: 1897, unit: 'cope', purchase_price: 1.15, selling_price: 2.30 },
-  { id: 'p-35114', sku: '35114', name: 'M-ONE Sanitar Silikon Braun',       stock: 1789, unit: 'cope', purchase_price: 1.15, selling_price: 2.30 },
-  { id: 'p-35115', sku: '35115', name: 'M-ONE Sanitar Silikon Grau',        stock: 4661, unit: 'cope', purchase_price: 1.15, selling_price: 2.30 },
-  { id: 'p-35119', sku: '35119', name: 'M-ONE Sanitar Silikon Jasemin',     stock: 921,  unit: 'cope', purchase_price: 1.15, selling_price: 2.30 },
-  { id: 'p-35121', sku: '35121', name: 'M-ONE Sanitar Silikon Manhatten',   stock: 4654, unit: 'cope', purchase_price: 1.15, selling_price: 2.30 },
-  { id: 'p-35125', sku: '35125', name: 'M-ONE Sanitar Silikon Caramel',     stock: 0,    unit: 'cope', purchase_price: 1.15, selling_price: 2.30 },
-  { id: 'p-35128', sku: '35128', name: 'M-ONE Sanitar Silikon Anthrazit',   stock: 2150, unit: 'cope', purchase_price: 1.15, selling_price: 2.30 },
+  { id: 'p-35108', sku: '35108', name: 'M-ONE Sanitar Silikon Hellgrau',    stock: 3294, unit: 'cope', purchase_price: 1.15, selling_price: 4.00 },
+  { id: 'p-35109', sku: '35109', name: 'M-ONE Sanitar Silikon Silbergrau',  stock: 4990, unit: 'cope', purchase_price: 1.15, selling_price: 4.00 },
+  { id: 'p-35110', sku: '35110', name: 'M-ONE Sanitar Silikon transparent', stock: 5774, unit: 'cope', purchase_price: 1.15, selling_price: 4.00 },
+  { id: 'p-35111', sku: '35111', name: 'M-ONE Sanitar Silikon Weiss',       stock: 3989, unit: 'cope', purchase_price: 1.15, selling_price: 4.00 },
+  { id: 'p-35112', sku: '35112', name: 'M-ONE Sanitar Silikon Schwarz',     stock: 2284, unit: 'cope', purchase_price: 1.15, selling_price: 4.00 },
+  { id: 'p-35113', sku: '35113', name: 'M-ONE Sanitar Silikon Bahamabeige', stock: 1897, unit: 'cope', purchase_price: 1.15, selling_price: 4.00 },
+  { id: 'p-35114', sku: '35114', name: 'M-ONE Sanitar Silikon Braun',       stock: 1789, unit: 'cope', purchase_price: 1.15, selling_price: 4.00 },
+  { id: 'p-35115', sku: '35115', name: 'M-ONE Sanitar Silikon Grau',        stock: 4661, unit: 'cope', purchase_price: 1.15, selling_price: 4.00 },
+  { id: 'p-35119', sku: '35119', name: 'M-ONE Sanitar Silikon Jasemin',     stock: 921,  unit: 'cope', purchase_price: 1.15, selling_price: 4.00 },
+  { id: 'p-35121', sku: '35121', name: 'M-ONE Sanitar Silikon Manhatten',   stock: 4654, unit: 'cope', purchase_price: 1.15, selling_price: 4.00 },
+  { id: 'p-35125', sku: '35125', name: 'M-ONE Sanitar Silikon Caramel',     stock: 0,    unit: 'cope', purchase_price: 1.15, selling_price: 4.00 },
+  { id: 'p-35128', sku: '35128', name: 'M-ONE Sanitar Silikon Anthrazit',   stock: 2150, unit: 'cope', purchase_price: 1.15, selling_price: 4.00 },
 
   // ── Silicone 280g ───────────────────────────────────────────────────────────
-  { id: 'p-37112', sku: '37112', name: 'M ONE 280GR SILICONE BLACK',        stock: 600,  unit: 'cope', purchase_price: 1.15, selling_price: 2.30 },
+  { id: 'p-37112', sku: '37112', name: 'M ONE 280GR SILICONE BLACK',        stock: 600,  unit: 'cope', purchase_price: 1.15, selling_price: 4.00 },
 
   // ── Diverse Sprays ──────────────────────────────────────────────────────────
-  { id: 'p-38136', sku: '38136', name: 'KLARLACK 400 ML',                   stock: 4,    unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
-  { id: 'p-39505', sku: '39505', name: 'M ONE Silikonspray 400ml',          stock: 3712, unit: 'cope', purchase_price: 1.20, selling_price: 2.50 },
-  { id: 'p-44001', sku: '44001', name: 'Fettspray 400ml',                   stock: 2960, unit: 'cope', purchase_price: 1.20, selling_price: 2.50 },
-  { id: 'p-49644', sku: '49644', name: 'M ONE Rostlöser 400 ml',            stock: 9569, unit: 'cope', purchase_price: 1.00, selling_price: 2.00 },
+  { id: 'p-38136', sku: '38136', name: 'KLARLACK 400 ML',                   stock: 4,    unit: 'cope', purchase_price: 1.50, selling_price: 3.50 },
+  { id: 'p-39505', sku: '39505', name: 'M ONE Silikonspray 400ml',          stock: 3712, unit: 'cope', purchase_price: 1.20, selling_price: 3.00 },
+  { id: 'p-44001', sku: '44001', name: 'Fettspray 400ml',                   stock: 2960, unit: 'cope', purchase_price: 1.20, selling_price: 3.30 },
+  { id: 'p-49644', sku: '49644', name: 'M ONE Rostlöser 400 ml',            stock: 9569, unit: 'cope', purchase_price: 1.00, selling_price: 2.30 },
 
   // ── Dichtung / Acryl ────────────────────────────────────────────────────────
-  { id: 'p-50912', sku: '50912', name: 'Universal Dichtung Schwarz',        stock: 1526, unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
-  { id: 'p-51611', sku: '51611', name: 'Universal Acryl 280 ml',            stock: 608,  unit: 'cope', purchase_price: 1.00, selling_price: 2.00 },
-  { id: 'p-51612', sku: '51612', name: 'Structural Acryl 280 ml',           stock: 1109, unit: 'cope', purchase_price: 1.00, selling_price: 2.00 },
+  { id: 'p-50912', sku: '50912', name: 'Universal Dichtung Schwarz',        stock: 1526, unit: 'cope', purchase_price: 1.50, selling_price: 8.00 },
+  { id: 'p-51611', sku: '51611', name: 'Universal Acryl 280 ml',            stock: 608,  unit: 'cope', purchase_price: 1.00, selling_price: 1.25 },
+  { id: 'p-51612', sku: '51612', name: 'Structural Acryl 280 ml',           stock: 1109, unit: 'cope', purchase_price: 1.00, selling_price: 2.20 },
   { id: 'p-51736', sku: '51736', name: 'SCHWARZ GLANZED 400 ML',            stock: 1337, unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
   { id: 'p-51936', sku: '51936', name: 'SCHWARZ MATT 400 ml',               stock: 1302, unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
 
   // ── Fahrzeugpflege ──────────────────────────────────────────────────────────
   { id: 'p-54412', sku: '54412', name: 'M ONE Bremsen&Teile Reiniger 500 ml', stock: 9987, unit: 'cope', purchase_price: 1.15, selling_price: 2.30 },
   { id: 'p-55718', sku: '55718', name: 'M ONE MOTORSTART 400ML',            stock: 3224, unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
-  { id: 'p-56117', sku: '56117', name: 'M ONE UBS 500ML',                   stock: 2969, unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
+  { id: 'p-56117', sku: '56117', name: 'M ONE UBS 500ML',                   stock: 2969, unit: 'cope', purchase_price: 1.50, selling_price: 3.70 },
 
   // ── Profi Mont ──────────────────────────────────────────────────────────────
-  { id: 'p-66701', sku: '66701', name: 'PROFI MONT EXTREME 280 ml',         stock: 757,  unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
+  { id: 'p-66701', sku: '66701', name: 'PROFI MONT EXTREME 280 ml',         stock: 757,  unit: 'cope', purchase_price: 1.50, selling_price: 5.80 },
 
   // ── Sonstige ────────────────────────────────────────────────────────────────
   { id: 'p-69236', sku: '69236', name: 'WEISS GLANZED 400 ML',              stock: 1453, unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
-  { id: 'p-72101', sku: '72101', name: 'ZINK SPRAY 400 ML',                 stock: 3739, unit: 'cope', purchase_price: 1.50, selling_price: 3.00 },
+  { id: 'p-72101', sku: '72101', name: 'ZINK SPRAY 400 ML',                 stock: 3739, unit: 'cope', purchase_price: 1.50, selling_price: 4.50 },
 ]
 
 // ──────────────────────────────────────────────────────────────────────────────
