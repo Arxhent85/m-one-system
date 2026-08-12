@@ -360,19 +360,10 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
         <div className="text-xs text-surface-400 font-mono">{new Date().toLocaleDateString('de-DE')}</div>
       </div>
 
-      {/* HAUPT-SCAN-BUTTON (IMMER SOFORT VERFÜGBAR) */}
-      <div className="p-4 space-y-2">
-        <button
-          type="button"
-          onClick={() => fileInputRef.current?.click()}
-          className="w-full py-4 rounded-2xl bg-gradient-to-r from-brand-600 via-emerald-600 to-teal-600 active:scale-98 text-white font-black text-lg shadow-xl flex items-center justify-center gap-3 transition-all hover:shadow-glow"
-        >
-          <Camera className="w-7 h-7 shrink-0" />
-          <span>{scanJobs.length > 0 ? 'Weitere Rechnung scannen' : 'Rechnung scannen'}</span>
-        </button>
-
-        {processingCount > 0 && (
-          <div className="p-3 rounded-xl bg-brand-950/90 border border-brand-800 flex items-center justify-between text-xs text-brand-300 animate-pulse">
+      {/* HINTERGRUND-ANALYSE STATUS (FALLS AKTIV) */}
+      {processingCount > 0 && (
+        <div className="px-4 pt-3">
+          <div className="p-3 rounded-2xl bg-brand-950/90 border border-brand-800 flex items-center justify-between text-xs text-brand-300 animate-pulse shadow-md">
             <div className="flex items-center gap-2">
               <Loader2 className="w-4 h-4 text-brand-400 animate-spin shrink-0" />
               <span className="font-bold">
@@ -381,8 +372,8 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
             </div>
             <span className="text-[10px] text-brand-400 font-mono shrink-0">Parallel-Scan</span>
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Hidden file input with camera capture */}
       <input
@@ -782,6 +773,18 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
           </div>
         </div>
       )}
+
+      {/* FLOATING ACTION BUTTON (FAB) UNTEN RECHTS - SCHNELLE DAUMEN-BEDIENUNG */}
+      <div className="fixed bottom-20 right-4 z-40">
+        <button
+          type="button"
+          onClick={() => fileInputRef.current?.click()}
+          className="px-4 py-3.5 rounded-full bg-gradient-to-r from-brand-600 via-emerald-600 to-teal-600 text-white font-bold text-sm shadow-2xl border border-emerald-400/50 flex items-center gap-2.5 active:scale-90 hover:scale-105 transition-all shadow-glow"
+        >
+          <Camera className="w-5 h-5 shrink-0" />
+          <span>{scanJobs.length > 0 ? 'Weitere scannen' : 'Rechnung scannen'}</span>
+        </button>
+      </div>
     </div>
   )
 }
@@ -1132,6 +1135,18 @@ function ScanReview({
           </div>
         </div>
       )}
+
+      {/* FLOATING ACTION BUTTON (FAB) UNTEN RECHTS - SCHNELLE DAUMEN-BEDIENUNG */}
+      <div className="fixed bottom-20 right-4 z-40">
+        <button
+          type="button"
+          onClick={() => fileInputRef.current?.click()}
+          className="px-4 py-3.5 rounded-full bg-gradient-to-r from-brand-600 via-emerald-600 to-teal-600 text-white font-bold text-sm shadow-2xl border border-emerald-400/50 flex items-center gap-2.5 active:scale-90 hover:scale-105 transition-all shadow-glow"
+        >
+          <Camera className="w-5 h-5 shrink-0" />
+          <span>{scanJobs.length > 0 ? 'Weitere scannen' : 'Rechnung scannen'}</span>
+        </button>
+      </div>
     </div>
   )
 }
@@ -1316,6 +1331,18 @@ function SaleDetailView({ sale, onBack }: { sale: SaleEntry; onBack: () => void 
           </div>
         </div>
       )}
+
+      {/* FLOATING ACTION BUTTON (FAB) UNTEN RECHTS - SCHNELLE DAUMEN-BEDIENUNG */}
+      <div className="fixed bottom-20 right-4 z-40">
+        <button
+          type="button"
+          onClick={() => fileInputRef.current?.click()}
+          className="px-4 py-3.5 rounded-full bg-gradient-to-r from-brand-600 via-emerald-600 to-teal-600 text-white font-bold text-sm shadow-2xl border border-emerald-400/50 flex items-center gap-2.5 active:scale-90 hover:scale-105 transition-all shadow-glow"
+        >
+          <Camera className="w-5 h-5 shrink-0" />
+          <span>{scanJobs.length > 0 ? 'Weitere scannen' : 'Rechnung scannen'}</span>
+        </button>
+      </div>
     </div>
   )
 }
