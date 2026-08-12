@@ -67,7 +67,7 @@ export const MOCK_PRODUCTS = [
     category_id: 'cat-reiniger',
     unit: 'cope',
     purchase_price: 1.00,
-    selling_price: 2.30,
+    selling_price: 2.00,
     min_stock: 100,
     is_active: true,
     created_at: '2026-01-01T00:00:00Z',

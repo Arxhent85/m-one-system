@@ -92,7 +92,7 @@ export const INITIAL_DEPO_PRODUCTS: ProductStockInfo[] = [
   { id: 'p-38136', sku: '38136', name: 'KLARLACK 400 ML',                   stock: 4,    unit: 'cope', purchase_price: 1.50, selling_price: 3.50 },
   { id: 'p-39505', sku: '39505', name: 'M ONE Silikonspray 400ml',          stock: 3712, unit: 'cope', purchase_price: 1.20, selling_price: 3.00 },
   { id: 'p-44001', sku: '44001', name: 'Fettspray 400ml',                   stock: 2960, unit: 'cope', purchase_price: 1.20, selling_price: 3.30 },
-  { id: 'p-49644', sku: '49644', name: 'M ONE Rostlöser 400 ml',            stock: 9569, unit: 'cope', purchase_price: 1.00, selling_price: 2.30 },
+  { id: 'p-49644', sku: '49644', name: 'M ONE Rostlöser 400 ml',            stock: 9569, unit: 'cope', purchase_price: 1.00, selling_price: 2.00 },
 
   // ── Dichtung / Acryl ────────────────────────────────────────────────────────
   { id: 'p-50912', sku: '50912', name: 'Universal Dichtung Schwarz',        stock: 1526, unit: 'cope', purchase_price: 1.50, selling_price: 8.00 },
