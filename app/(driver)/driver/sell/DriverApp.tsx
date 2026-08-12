@@ -55,6 +55,7 @@ interface SaleEntry {
 
 interface ScanJob {
   id: string
+  selectedPaymentMethod?: 'bar' | 'rechnung'
   timeStr: string
   status: 'processing' | 'ready' | 'error'
   statusMsg: string
@@ -115,8 +116,7 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
   // Asynchrone Scan-Warteschlange (Batch-Scanning)
   const [scanJobs, setScanJobs] = useState<ScanJob[]>([])
   const [activeJobId, setActiveJobId] = useState<string | null>(null)
-  const [quickBookJob, setQuickBookJob] = useState<ScanJob | null>(null)
-
+  
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   async function handlePhoto(e: React.ChangeEvent<HTMLInputElement>) {
@@ -477,7 +477,7 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
                       )}
                     </div>
 
-                    {/* Action Buttons: Prüfen & Nochmal scannen */}
+                    {/* Action Buttons: Prüfen (links), Rechnung (klein) & Buchen (rechts, grün, 1-Click) */}
                     <div className="flex items-center gap-1.5 shrink-0">
                       {job.status === 'ready' && (
                         <>
@@ -485,27 +485,67 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
                             type="button"
                             onClick={() => triggerRescanJob(job.id)}
                             title="Foto neu aufnehmen"
-                            className="p-2 rounded-xl bg-surface-800 hover:bg-surface-700 active:scale-90 text-surface-300 transition-all"
+                            className="p-1.5 rounded-xl bg-surface-800 hover:bg-surface-700 active:scale-90 text-surface-300 transition-all"
                           >
-                            <RotateCcw className="w-4 h-4 text-brand-400" />
+                            <RotateCcw className="w-3.5 h-3.5 text-brand-400" />
                           </button>
-                          {/* Prüfen Button (Links, sekundär) */}
+
+                          {/* 1. Prüfen Button (Links) */}
                           <button
                             type="button"
                             onClick={() => setActiveJobId(job.id)}
-                            className="px-3 py-2 rounded-xl bg-surface-800 hover:bg-surface-700 border border-surface-700 active:scale-95 text-surface-200 font-semibold text-xs flex items-center gap-1 transition-all"
+                            className="px-2.5 py-2 rounded-xl bg-surface-800 hover:bg-surface-700 border border-surface-700 active:scale-95 text-surface-200 font-semibold text-xs flex items-center gap-1 transition-all"
                             title="Prüfen & Details ansehen"
                           >
                             <Eye className="w-3.5 h-3.5 text-brand-400" />
                             <span>Prüfen</span>
                           </button>
 
-                          {/* Buchen Button (Rechts, Haupt-Button in Grün) */}
+                          {/* 2. Kleiner 3. Button: Auf Rechnung Option (selten genutzt) */}
                           <button
                             type="button"
-                            onClick={() => setQuickBookJob(job)}
+                            onClick={() => {
+                              setScanJobs((prev) =>
+                                prev.map((j) =>
+                                  j.id === job.id
+                                    ? {
+                                        ...j,
+                                        selectedPaymentMethod:
+                                          j.selectedPaymentMethod === 'rechnung' ? 'bar' : 'rechnung',
+                                      }
+                                    : j
+                                )
+                              )
+                            }}
+                            className={`px-2 py-2 rounded-xl border text-xs font-semibold flex items-center gap-1 transition-all ${
+                              job.selectedPaymentMethod === 'rechnung'
+                                ? 'bg-brand-950 border-brand-500 text-brand-300 shadow-glow'
+                                : 'bg-surface-800/80 hover:bg-surface-700 border-surface-700 text-surface-400'
+                            }`}
+                            title={
+                              job.selectedPaymentMethod === 'rechnung'
+                                ? 'Zahlungsart: Auf Rechnung (Aktiv)'
+                                : 'Klick für Zahlungsart: Auf Rechnung'
+                            }
+                          >
+                            <span>🧾</span>
+                            {job.selectedPaymentMethod === 'rechnung' && (
+                              <span className="text-[10px] font-bold">Rech.</span>
+                            )}
+                          </button>
+
+                          {/* 3. Buchen Button (Sofort 1-Klick Buchung ohne Fenster!) */}
+                          <button
+                            type="button"
+                            onClick={() => {
+                              confirmSale(
+                                job.id,
+                                job.draft,
+                                job.selectedPaymentMethod || 'bar'
+                              )
+                            }}
                             className="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold text-xs flex items-center gap-1 shadow-md transition-all"
-                            title="Direkt buchen"
+                            title="Sofort 1-Klick Buchen"
                           >
                             <span>Buchen</span>
                             <ChevronRight className="w-4 h-4" />
