@@ -150,6 +150,39 @@ export const LOCATION_IDS = {
 const STORAGE_KEY    = 'm_one_stock_map_v3'
 const TRANSFERS_KEY  = 'm_one_transfers_history_v3'
 const SALES_KEY      = 'm_one_sales_history_v1'
+const PRICES_KEY     = 'm_one_custom_prices_v1'
+
+export function getCustomPricesMap(): Record<string, number> {
+  if (typeof window === 'undefined') return {}
+  try {
+    const raw = localStorage.getItem(PRICES_KEY)
+    if (raw) return JSON.parse(raw)
+  } catch (e) {
+    console.error('Error reading custom prices', e)
+  }
+  return {}
+}
+
+export function saveCustomPricesMap(map: Record<string, number>) {
+  if (typeof window === 'undefined') return
+  try {
+    localStorage.setItem(PRICES_KEY, JSON.stringify(map))
+    window.dispatchEvent(new Event('m_one_products_changed'))
+    window.dispatchEvent(new Event('m_one_stock_changed'))
+  } catch (e) {
+    console.error('Error saving custom prices', e)
+  }
+}
+
+export function getActiveProductsList(): ProductStockInfo[] {
+  const customPrices = getCustomPricesMap()
+  return INITIAL_DEPO_PRODUCTS.map((p) => {
+    if (customPrices[p.sku] !== undefined) {
+      return { ...p, selling_price: customPrices[p.sku] }
+    }
+    return p
+  })
+}
 
 // ──────────────────────────────────────────────────────────────────────────────
 // HILFSFUNKTIONEN
