@@ -16,6 +16,7 @@ import {
   CheckCircle2,
   Layers,
   RotateCcw,
+  Eye,
 } from 'lucide-react'
 import { formatCurrency } from '@/lib/utils/currency'
 import { INITIAL_DEPO_PRODUCTS, executeSale, LOCATION_IDS } from '@/lib/stockStore'
@@ -114,6 +115,7 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
   // Asynchrone Scan-Warteschlange (Batch-Scanning)
   const [scanJobs, setScanJobs] = useState<ScanJob[]>([])
   const [activeJobId, setActiveJobId] = useState<string | null>(null)
+  const [quickBookJob, setQuickBookJob] = useState<ScanJob | null>(null)
 
   const fileInputRef = useRef<HTMLInputElement>(null)
 
@@ -487,12 +489,25 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
                           >
                             <RotateCcw className="w-4 h-4 text-brand-400" />
                           </button>
+                          {/* Prüfen Button (Links, sekundär) */}
                           <button
                             type="button"
                             onClick={() => setActiveJobId(job.id)}
-                            className="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold text-xs flex items-center gap-1 shadow-md transition-all"
+                            className="px-3 py-2 rounded-xl bg-surface-800 hover:bg-surface-700 border border-surface-700 active:scale-95 text-surface-200 font-semibold text-xs flex items-center gap-1 transition-all"
+                            title="Prüfen & Details ansehen"
                           >
+                            <Eye className="w-3.5 h-3.5 text-brand-400" />
                             <span>Prüfen</span>
+                          </button>
+
+                          {/* Buchen Button (Rechts, Haupt-Button in Grün) */}
+                          <button
+                            type="button"
+                            onClick={() => setQuickBookJob(job)}
+                            className="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold text-xs flex items-center gap-1 shadow-md transition-all"
+                            title="Direkt buchen"
+                          >
+                            <span>Buchen</span>
                             <ChevronRight className="w-4 h-4" />
                           </button>
                         </>
@@ -624,6 +639,106 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
                 onRescan={() => triggerRescanJob(activeJob.id)}
               />
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Schnellbuchungs-Modal (Direct Booking ohne Menü) */}
+      {quickBookJob && (
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="w-full max-w-md bg-surface-900 border border-surface-700 rounded-3xl p-5 space-y-4 shadow-2xl">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-2xl bg-emerald-950 text-emerald-400 border border-emerald-800/80 flex items-center justify-center font-bold text-base shadow-glow">
+                  ⚡
+                </div>
+                <div>
+                  <h3 className="font-bold text-surface-100 text-sm">Direkt buchen (Schnellbuchung)</h3>
+                  <p className="text-[11px] text-surface-400">Wähle die Zahlungsart zum sofortigen Buchen</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setQuickBookJob(null)}
+                className="p-2 rounded-full bg-surface-800 text-surface-400 hover:text-white"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Rechnungs-Info Summary */}
+            <div className="p-3.5 rounded-2xl bg-surface-950 border border-surface-800 space-y-1.5">
+              <div className="flex justify-between text-xs">
+                <span className="text-surface-400">Kunde:</span>
+                <span className="font-bold text-surface-100 truncate max-w-[200px] text-right">
+                  Kd. {quickBookJob.draft?.customer_number || 'Unbekannt'} · {
+                    customers.find((c) => c.customer_number === quickBookJob.draft?.customer_number)?.company_name || 'Kunde'
+                  }
+                </span>
+              </div>
+              <div className="flex justify-between text-xs">
+                <span className="text-surface-400">Positionen:</span>
+                <span className="font-mono text-surface-300">{quickBookJob.draft?.items?.length ?? 0} Artikel</span>
+              </div>
+              <div className="flex justify-between text-sm pt-2 border-t border-surface-800/80 font-bold">
+                <span className="text-surface-200">Gesamtbetrag:</span>
+                <span className="text-emerald-400 tabular-nums text-base">
+                  {formatCurrency(
+                    (quickBookJob.draft?.items || []).reduce(
+                      (s: number, i: ScannedItem) => s + i.qty * i.unit_price,
+                      0
+                    )
+                  )}
+                </span>
+              </div>
+            </div>
+
+            {/* 3 Große Touch-Buttons für Bar / Rechnung / Karte */}
+            <div className="grid grid-cols-3 gap-2.5 pt-1">
+              <button
+                type="button"
+                onClick={() => {
+                  confirmSale(quickBookJob.id, quickBookJob.draft, 'bar')
+                  setQuickBookJob(null)
+                }}
+                className="p-4 rounded-2xl bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-700/60 active:scale-95 flex flex-col items-center justify-center text-center transition-all group"
+              >
+                <span className="text-2xl mb-1.5 group-hover:scale-110 transition-transform">💶</span>
+                <span className="text-xs font-bold text-emerald-300">Bar</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  confirmSale(quickBookJob.id, quickBookJob.draft, 'rechnung')
+                  setQuickBookJob(null)
+                }}
+                className="p-4 rounded-2xl bg-brand-950/80 hover:bg-brand-900 border border-brand-700/60 active:scale-95 flex flex-col items-center justify-center text-center transition-all group"
+              >
+                <span className="text-2xl mb-1.5 group-hover:scale-110 transition-transform">🧾</span>
+                <span className="text-xs font-bold text-brand-300">Rechnung</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  confirmSale(quickBookJob.id, quickBookJob.draft, 'karte')
+                  setQuickBookJob(null)
+                }}
+                className="p-4 rounded-2xl bg-amber-950/80 hover:bg-amber-900 border border-amber-700/60 active:scale-95 flex flex-col items-center justify-center text-center transition-all group"
+              >
+                <span className="text-2xl mb-1.5 group-hover:scale-110 transition-transform">💳</span>
+                <span className="text-xs font-bold text-amber-300">Karte</span>
+              </button>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setQuickBookJob(null)}
+              className="w-full py-2.5 rounded-xl bg-surface-800 text-surface-400 text-xs font-medium hover:bg-surface-700 transition-colors"
+            >
+              Abbrechen
+            </button>
           </div>
         </div>
       )}
@@ -877,6 +992,106 @@ function ScanReview({
           Verkauf buchen
         </button>
       </div>
+
+      {/* Schnellbuchungs-Modal (Direct Booking ohne Menü) */}
+      {quickBookJob && (
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="w-full max-w-md bg-surface-900 border border-surface-700 rounded-3xl p-5 space-y-4 shadow-2xl">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-2xl bg-emerald-950 text-emerald-400 border border-emerald-800/80 flex items-center justify-center font-bold text-base shadow-glow">
+                  ⚡
+                </div>
+                <div>
+                  <h3 className="font-bold text-surface-100 text-sm">Direkt buchen (Schnellbuchung)</h3>
+                  <p className="text-[11px] text-surface-400">Wähle die Zahlungsart zum sofortigen Buchen</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setQuickBookJob(null)}
+                className="p-2 rounded-full bg-surface-800 text-surface-400 hover:text-white"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Rechnungs-Info Summary */}
+            <div className="p-3.5 rounded-2xl bg-surface-950 border border-surface-800 space-y-1.5">
+              <div className="flex justify-between text-xs">
+                <span className="text-surface-400">Kunde:</span>
+                <span className="font-bold text-surface-100 truncate max-w-[200px] text-right">
+                  Kd. {quickBookJob.draft?.customer_number || 'Unbekannt'} · {
+                    customers.find((c) => c.customer_number === quickBookJob.draft?.customer_number)?.company_name || 'Kunde'
+                  }
+                </span>
+              </div>
+              <div className="flex justify-between text-xs">
+                <span className="text-surface-400">Positionen:</span>
+                <span className="font-mono text-surface-300">{quickBookJob.draft?.items?.length ?? 0} Artikel</span>
+              </div>
+              <div className="flex justify-between text-sm pt-2 border-t border-surface-800/80 font-bold">
+                <span className="text-surface-200">Gesamtbetrag:</span>
+                <span className="text-emerald-400 tabular-nums text-base">
+                  {formatCurrency(
+                    (quickBookJob.draft?.items || []).reduce(
+                      (s: number, i: ScannedItem) => s + i.qty * i.unit_price,
+                      0
+                    )
+                  )}
+                </span>
+              </div>
+            </div>
+
+            {/* 3 Große Touch-Buttons für Bar / Rechnung / Karte */}
+            <div className="grid grid-cols-3 gap-2.5 pt-1">
+              <button
+                type="button"
+                onClick={() => {
+                  confirmSale(quickBookJob.id, quickBookJob.draft, 'bar')
+                  setQuickBookJob(null)
+                }}
+                className="p-4 rounded-2xl bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-700/60 active:scale-95 flex flex-col items-center justify-center text-center transition-all group"
+              >
+                <span className="text-2xl mb-1.5 group-hover:scale-110 transition-transform">💶</span>
+                <span className="text-xs font-bold text-emerald-300">Bar</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  confirmSale(quickBookJob.id, quickBookJob.draft, 'rechnung')
+                  setQuickBookJob(null)
+                }}
+                className="p-4 rounded-2xl bg-brand-950/80 hover:bg-brand-900 border border-brand-700/60 active:scale-95 flex flex-col items-center justify-center text-center transition-all group"
+              >
+                <span className="text-2xl mb-1.5 group-hover:scale-110 transition-transform">🧾</span>
+                <span className="text-xs font-bold text-brand-300">Rechnung</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  confirmSale(quickBookJob.id, quickBookJob.draft, 'karte')
+                  setQuickBookJob(null)
+                }}
+                className="p-4 rounded-2xl bg-amber-950/80 hover:bg-amber-900 border border-amber-700/60 active:scale-95 flex flex-col items-center justify-center text-center transition-all group"
+              >
+                <span className="text-2xl mb-1.5 group-hover:scale-110 transition-transform">💳</span>
+                <span className="text-xs font-bold text-amber-300">Karte</span>
+              </button>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setQuickBookJob(null)}
+              className="w-full py-2.5 rounded-xl bg-surface-800 text-surface-400 text-xs font-medium hover:bg-surface-700 transition-colors"
+            >
+              Abbrechen
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
@@ -961,6 +1176,106 @@ function SaleDetailView({ sale, onBack }: { sale: SaleEntry; onBack: () => void 
           </div>
         </div>
       </div>
+
+      {/* Schnellbuchungs-Modal (Direct Booking ohne Menü) */}
+      {quickBookJob && (
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="w-full max-w-md bg-surface-900 border border-surface-700 rounded-3xl p-5 space-y-4 shadow-2xl">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-2xl bg-emerald-950 text-emerald-400 border border-emerald-800/80 flex items-center justify-center font-bold text-base shadow-glow">
+                  ⚡
+                </div>
+                <div>
+                  <h3 className="font-bold text-surface-100 text-sm">Direkt buchen (Schnellbuchung)</h3>
+                  <p className="text-[11px] text-surface-400">Wähle die Zahlungsart zum sofortigen Buchen</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setQuickBookJob(null)}
+                className="p-2 rounded-full bg-surface-800 text-surface-400 hover:text-white"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Rechnungs-Info Summary */}
+            <div className="p-3.5 rounded-2xl bg-surface-950 border border-surface-800 space-y-1.5">
+              <div className="flex justify-between text-xs">
+                <span className="text-surface-400">Kunde:</span>
+                <span className="font-bold text-surface-100 truncate max-w-[200px] text-right">
+                  Kd. {quickBookJob.draft?.customer_number || 'Unbekannt'} · {
+                    customers.find((c) => c.customer_number === quickBookJob.draft?.customer_number)?.company_name || 'Kunde'
+                  }
+                </span>
+              </div>
+              <div className="flex justify-between text-xs">
+                <span className="text-surface-400">Positionen:</span>
+                <span className="font-mono text-surface-300">{quickBookJob.draft?.items?.length ?? 0} Artikel</span>
+              </div>
+              <div className="flex justify-between text-sm pt-2 border-t border-surface-800/80 font-bold">
+                <span className="text-surface-200">Gesamtbetrag:</span>
+                <span className="text-emerald-400 tabular-nums text-base">
+                  {formatCurrency(
+                    (quickBookJob.draft?.items || []).reduce(
+                      (s: number, i: ScannedItem) => s + i.qty * i.unit_price,
+                      0
+                    )
+                  )}
+                </span>
+              </div>
+            </div>
+
+            {/* 3 Große Touch-Buttons für Bar / Rechnung / Karte */}
+            <div className="grid grid-cols-3 gap-2.5 pt-1">
+              <button
+                type="button"
+                onClick={() => {
+                  confirmSale(quickBookJob.id, quickBookJob.draft, 'bar')
+                  setQuickBookJob(null)
+                }}
+                className="p-4 rounded-2xl bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-700/60 active:scale-95 flex flex-col items-center justify-center text-center transition-all group"
+              >
+                <span className="text-2xl mb-1.5 group-hover:scale-110 transition-transform">💶</span>
+                <span className="text-xs font-bold text-emerald-300">Bar</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  confirmSale(quickBookJob.id, quickBookJob.draft, 'rechnung')
+                  setQuickBookJob(null)
+                }}
+                className="p-4 rounded-2xl bg-brand-950/80 hover:bg-brand-900 border border-brand-700/60 active:scale-95 flex flex-col items-center justify-center text-center transition-all group"
+              >
+                <span className="text-2xl mb-1.5 group-hover:scale-110 transition-transform">🧾</span>
+                <span className="text-xs font-bold text-brand-300">Rechnung</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  confirmSale(quickBookJob.id, quickBookJob.draft, 'karte')
+                  setQuickBookJob(null)
+                }}
+                className="p-4 rounded-2xl bg-amber-950/80 hover:bg-amber-900 border border-amber-700/60 active:scale-95 flex flex-col items-center justify-center text-center transition-all group"
+              >
+                <span className="text-2xl mb-1.5 group-hover:scale-110 transition-transform">💳</span>
+                <span className="text-xs font-bold text-amber-300">Karte</span>
+              </button>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setQuickBookJob(null)}
+              className="w-full py-2.5 rounded-xl bg-surface-800 text-surface-400 text-xs font-medium hover:bg-surface-700 transition-colors"
+            >
+              Abbrechen
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
