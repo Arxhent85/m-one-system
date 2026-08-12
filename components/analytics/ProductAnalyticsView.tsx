@@ -15,8 +15,14 @@ export default function ProductAnalyticsView() {
 
   useEffect(() => {
     function loadData() {
+      const isCleared = typeof window !== 'undefined' && localStorage.getItem('m_one_sales_cleared') === 'true'
       const local = getSalesHistory()
-      const base = local && local.length > 0 ? local : MOCK_2026_SALES
+      const base = isCleared ? [] : (local && local.length > 0 ? local : MOCK_2026_SALES)
+
+      if (isCleared) {
+        setSalesList([])
+        return
+      }
 
       fetch('/api/sales/record')
         .then((res) => res.json())

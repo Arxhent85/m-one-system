@@ -35,7 +35,7 @@ export default async function DashboardPage() {
     loc.name.includes('Depo Qerimi')
   )
 
-  const orders = (dbOrders && dbOrders.length > 0) ? dbOrders : (MOCK_2026_SALES as any)
+  const orders = dbOrders ?? []
 
   return <DashboardView initialOrders={orders} locations={locations} />
 }

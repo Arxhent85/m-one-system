@@ -321,8 +321,11 @@ export function executeSale(
 // VERKAUFSHISTORIE LESEN
 // ──────────────────────────────────────────────────────────────────────────────
 export function getSalesHistory(): SaleRecord[] {
-  if (typeof window === 'undefined') return MOCK_2026_SALES as any
+  if (typeof window === 'undefined') return []
   try {
+    if (localStorage.getItem('m_one_sales_cleared') === 'true') {
+      return []
+    }
     const raw = localStorage.getItem(SALES_KEY)
     if (raw) return JSON.parse(raw)
   } catch (e) {
@@ -339,7 +342,8 @@ export function resetStockToInitial() {
   saveStockMap(defaultMap)
   if (typeof window !== 'undefined') {
     localStorage.removeItem(TRANSFERS_KEY)
-    localStorage.removeItem(SALES_KEY)
+    localStorage.setItem('m_one_sales_cleared', 'true')
+    localStorage.setItem(SALES_KEY, '[]')
     window.dispatchEvent(new Event('m_one_stock_changed'))
   }
 }

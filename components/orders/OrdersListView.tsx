@@ -55,6 +55,11 @@ export default function OrdersListView({ orders: initialOrders }: OrdersListView
 
   useEffect(() => {
     function loadSales() {
+      const isCleared = typeof window !== 'undefined' && localStorage.getItem('m_one_sales_cleared') === 'true'
+      if (isCleared) {
+        setAllSales([])
+        return
+      }
       const base = (() => {
         const local = getSalesHistory()
         return local && local.length > 0 ? local : (MOCK_2026_SALES as any[])

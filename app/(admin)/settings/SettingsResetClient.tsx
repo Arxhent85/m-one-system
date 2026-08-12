@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { RotateCcw, Trash2, AlertTriangle, CheckCircle2, RefreshCw } from 'lucide-react'
 import { resetStockToInitial } from '@/lib/stockStore'
 
+import MOCK_2026_SALES from '@/lib/mock2026Sales.json'
+
 export default function SettingsResetClient() {
   const [salesCleared, setSalesCleared] = useState(false)
   const [stockReset, setStockReset] = useState(false)
@@ -11,6 +13,10 @@ export default function SettingsResetClient() {
   const [confirmStock, setConfirmStock] = useState(false)
 
   async function loadDemo2026() {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('m_one_sales_cleared')
+      localStorage.setItem('m_one_sales_history_v1', JSON.stringify(MOCK_2026_SALES))
+    }
     try {
       await fetch('/api/sales/record', {
         method: 'POST',
@@ -30,7 +36,8 @@ export default function SettingsResetClient() {
 
   async function clearSalesOnly() {
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('m_one_sales_history_v1')
+      localStorage.setItem('m_one_sales_cleared', 'true')
+      localStorage.setItem('m_one_sales_history_v1', '[]')
       localStorage.removeItem('m_one_transfers_history_v3')
       window.dispatchEvent(new Event('m_one_stock_changed'))
       window.dispatchEvent(new Event('m_one_sale_recorded'))
@@ -47,7 +54,8 @@ export default function SettingsResetClient() {
   async function resetAll() {
     resetStockToInitial()
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('m_one_sales_history_v1')
+      localStorage.setItem('m_one_sales_cleared', 'true')
+      localStorage.setItem('m_one_sales_history_v1', '[]')
       localStorage.removeItem('m_one_transfers_history_v3')
       window.dispatchEvent(new Event('m_one_stock_changed'))
       window.dispatchEvent(new Event('m_one_sale_recorded'))

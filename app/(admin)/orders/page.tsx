@@ -15,7 +15,7 @@ export default async function OrdersPage() {
     .select('id, order_number, total_amount, status, payment_method, created_at, customers(company_name, customer_number), locations(name)')
     .order('created_at', { ascending: false })
 
-  const orders = (dbOrders && dbOrders.length > 0) ? dbOrders : (MOCK_2026_SALES as any)
+  const orders = dbOrders ?? []
   const totalVolume = orders.reduce((s: number, o: any) => s + (o.total_amount ?? 0), 0)
 
   return (
