@@ -19,7 +19,7 @@ import {
   Eye,
 } from 'lucide-react'
 import { formatCurrency } from '@/lib/utils/currency'
-import { INITIAL_DEPO_PRODUCTS, executeSale, LOCATION_IDS } from '@/lib/stockStore'
+import { INITIAL_DEPO_PRODUCTS, getActiveProductsList, executeSale, LOCATION_IDS } from '@/lib/stockStore'
 import { findNearestMatch } from '@/lib/utils/fuzzyMatch'
 import { createClient } from '@/lib/supabase/client'
 
@@ -378,6 +378,7 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
       {/* Hidden file input with camera capture */}
       <input
         ref={fileInputRef}
+        id="scan-camera-file-input"
         type="file"
         accept="image/*"
         capture="environment"
@@ -396,7 +397,7 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
           </div>
 
           <div className="space-y-2.5">
-            {scanJobs.map((job) => {
+            {scanJobs.map((job, idx) => {
               const cust = job.draft?.customer_number
                 ? customers.find((c) => c.customer_number === job.draft.customer_number)
                 : null
@@ -405,165 +406,152 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
                 0
               )
 
+              const pageNum = idx + 1
+
               return (
                 <div
                   key={job.id}
-                  className={`p-3.5 rounded-2xl border transition-all ${
+                  className={`p-3.5 rounded-2xl border transition-all space-y-3 ${
                     job.status === 'processing'
                       ? 'bg-surface-900/80 border-brand-800/60'
                       : job.status === 'ready'
-                      ? 'bg-gradient-to-r from-surface-900 via-surface-900 to-emerald-950/40 border-emerald-500/50 shadow-lg'
+                      ? 'bg-surface-900/90 border-surface-700/80 shadow-lg'
                       : 'bg-danger-950/40 border-danger-800'
                   }`}
                 >
-                  <div className="flex items-center justify-between gap-3">
-                    {/* Thumbnail */}
-                    <div className="w-12 h-12 rounded-xl bg-black overflow-hidden shrink-0 border border-surface-700 relative">
-                      <img src={job.imageThumb} alt="Scan" className="w-full h-full object-cover" />
-                      {job.status === 'processing' && (
-                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                          <Loader2 className="w-5 h-5 text-brand-400 animate-spin" />
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Content */}
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2">
-                        <span className="text-[10px] text-surface-400 font-mono">{job.timeStr} Uhr</span>
-                        {job.status === 'processing' && (
-                          <span className="text-[10px] bg-brand-950 text-brand-400 px-2 py-0.5 rounded-full font-bold border border-brand-800">
-                            ⏳ Liest aus…
-                          </span>
-                        )}
-                        {job.status === 'ready' && (
-                          <span className="text-[10px] bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded-full font-bold border border-emerald-800 flex items-center gap-1">
-                            <CheckCircle2 className="w-3 h-3" /> Bereit!
-                          </span>
-                        )}
+                  {/* SECTION 1: HEADER & INFO (Top Part of Card) */}
+                  <div className="flex items-start justify-between gap-2">
+                    {/* Left: Thumbnail & Customer / Items Info */}
+                    <div className="flex items-center gap-3 min-w-0 flex-1">
+                      <div className="w-12 h-12 rounded-xl bg-black overflow-hidden shrink-0 border border-surface-700 relative shadow-inner">
+                        <img src={job.imageThumb} alt="Scan" className="w-full h-full object-cover" />
                       </div>
 
-                      {job.status === 'processing' && (
-                        <p className="text-xs text-surface-300 font-medium mt-1 animate-pulse">
-                          Gemini KI liest Handschrift aus…
-                        </p>
-                      )}
-
-                      {job.status === 'ready' && (
-                        <div className="mt-1">
-                          <p className="text-xs font-bold text-surface-100 truncate">
-                            Kd. {job.draft?.customer_number || 'Unbekannt'} · {cust?.company_name || 'Kunde'}
-                          </p>
-                          <p className="text-[11px] text-surface-400 font-mono mt-0.5">
-                            {job.draft?.items?.length ?? 0} Positionen ·{' '}
-                            <span className="text-emerald-400 font-bold">{formatCurrency(totalAmount)}</span>
-                          </p>
+                      <div className="min-w-0 flex-1 space-y-1">
+                        {/* Top Badges: Page #, Kd-Nr, Time */}
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <span className="font-mono text-xs font-black text-brand-300 bg-brand-950 px-2 py-0.5 rounded-md border border-brand-800/80 shrink-0">
+                            #{pageNum}
+                          </span>
+                          <span className="font-mono text-xs font-black text-white bg-surface-800 px-2 py-0.5 rounded-md border border-surface-700 shrink-0">
+                            Kd.-Nr. {job.draft?.customer_number || 'Unbekannt'}
+                          </span>
+                          <span className="text-[11px] text-surface-400 font-mono shrink-0">{job.timeStr} Uhr</span>
                         </div>
-                      )}
 
-                      {job.status === 'error' && (
-                        <p className="text-xs text-danger-400 font-bold mt-1">
-                          ⚠️ {job.error || 'Lesefehler beim Scan'}
-                        </p>
-                      )}
+                        {/* Amount & Items Count */}
+                        {job.status === 'ready' && (
+                          <div className="flex items-center gap-2 text-xs font-mono">
+                            <span className="text-surface-300 font-bold">{job.draft?.items?.length ?? 0} Prod.</span>
+                            <span className="text-surface-600">·</span>
+                            <span className="text-emerald-400 font-black text-sm">{formatCurrency(totalAmount)}</span>
+                          </div>
+                        )}
+                        {job.status === 'processing' && (
+                          <p className="text-xs text-brand-300 font-medium animate-pulse">Handschrift wird ausgelesen...</p>
+                        )}
+                        {job.status === 'error' && (
+                          <p className="text-xs text-rose-400 font-bold">⚠️ Lesefehler beim Scan</p>
+                        )}
+                      </div>
                     </div>
 
-                    {/* Action Buttons: Prüfen (links), Rechnung (klein) & Buchen (rechts, grün, 1-Click) */}
+                    {/* Right: Rescan & Status Icon */}
                     <div className="flex items-center gap-1.5 shrink-0">
                       {job.status === 'ready' && (
-                        <>
-                          <button
-                            type="button"
-                            onClick={() => triggerRescanJob(job.id)}
-                            title="Foto neu aufnehmen"
-                            className="p-1.5 rounded-xl bg-surface-800 hover:bg-surface-700 active:scale-90 text-surface-300 transition-all"
-                          >
-                            <RotateCcw className="w-3.5 h-3.5 text-brand-400" />
-                          </button>
-
-                          {/* 1. Prüfen Button (Links) */}
-                          <button
-                            type="button"
-                            onClick={() => setActiveJobId(job.id)}
-                            className="px-2.5 py-2 rounded-xl bg-surface-800 hover:bg-surface-700 border border-surface-700 active:scale-95 text-surface-200 font-semibold text-xs flex items-center gap-1 transition-all"
-                            title="Prüfen & Details ansehen"
-                          >
-                            <Eye className="w-3.5 h-3.5 text-brand-400" />
-                            <span>Prüfen</span>
-                          </button>
-
-                          {/* 2. Kleiner 3. Button: Auf Rechnung Option (selten genutzt) */}
-                          <button
-                            type="button"
-                            onClick={() => {
-                              setScanJobs((prev) =>
-                                prev.map((j) =>
-                                  j.id === job.id
-                                    ? {
-                                        ...j,
-                                        selectedPaymentMethod:
-                                          j.selectedPaymentMethod === 'rechnung' ? 'bar' : 'rechnung',
-                                      }
-                                    : j
-                                )
-                              )
-                            }}
-                            className={`px-2 py-2 rounded-xl border text-xs font-semibold flex items-center gap-1 transition-all ${
-                              job.selectedPaymentMethod === 'rechnung'
-                                ? 'bg-brand-950 border-brand-500 text-brand-300 shadow-glow'
-                                : 'bg-surface-800/80 hover:bg-surface-700 border-surface-700 text-surface-400'
-                            }`}
-                            title={
-                              job.selectedPaymentMethod === 'rechnung'
-                                ? 'Zahlungsart: Auf Rechnung (Aktiv)'
-                                : 'Klick für Zahlungsart: Auf Rechnung'
-                            }
-                          >
-                            <span>🧾</span>
-                            {job.selectedPaymentMethod === 'rechnung' && (
-                              <span className="text-[10px] font-bold">Rech.</span>
-                            )}
-                          </button>
-
-                          {/* 3. Buchen Button (Sofort 1-Klick Buchung ohne Fenster!) */}
-                          <button
-                            type="button"
-                            onClick={() => {
-                              confirmSale(
-                                job.id,
-                                job.draft,
-                                job.selectedPaymentMethod || 'bar'
-                              )
-                            }}
-                            className="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold text-xs flex items-center gap-1 shadow-md transition-all"
-                            title="Sofort 1-Klick Buchen"
-                          >
-                            <span>Buchen</span>
-                            <ChevronRight className="w-4 h-4" />
-                          </button>
-                        </>
+                        <button
+                          type="button"
+                          onClick={() => triggerRescanJob(job.id)}
+                          title="Foto neu aufnehmen"
+                          className="p-2 rounded-xl bg-surface-800 hover:bg-surface-700 border border-surface-700 text-surface-300 transition-all active:scale-90"
+                        >
+                          <RotateCcw className="w-4 h-4 text-brand-400" />
+                        </button>
                       )}
-                      {job.status === 'error' && (
-                        <>
-                          <button
-                            type="button"
-                            onClick={() => triggerRescanJob(job.id)}
-                            className="px-3 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs flex items-center gap-1 shadow-md"
-                          >
-                            <RotateCcw className="w-3.5 h-3.5" />
-                            <span>Neu scannen</span>
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => setScanJobs((prev) => prev.filter((j) => j.id !== job.id))}
-                            className="p-2 rounded-xl bg-surface-800 text-surface-400 text-xs"
-                          >
-                            <Trash2 className="w-4 h-4" />
-                          </button>
-                        </>
+                      {job.status === 'ready' && (
+                        <span className="text-[10px] bg-emerald-950 text-emerald-400 px-2 py-1 rounded-xl font-bold border border-emerald-800 flex items-center gap-1">
+                          <CheckCircle2 className="w-3.5 h-3.5" /> Bereit!
+                        </span>
                       )}
                     </div>
                   </div>
+
+                  {/* SECTION 2: ACTION BUTTONS ROW (Bottom Part of Card) */}
+                  {job.status === 'ready' && (
+                    <div className="pt-2 border-t border-surface-800/80 flex items-center gap-2">
+                      {/* 1. Prüfen Button */}
+                      <button
+                        type="button"
+                        onClick={() => setActiveJobId(job.id)}
+                        className="flex-1 py-2.5 px-3 rounded-xl bg-surface-800 hover:bg-surface-700 border border-surface-700 active:scale-95 text-surface-100 font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-sm"
+                      >
+                        <Eye className="w-4 h-4 text-brand-400" />
+                        <span>Prüfen</span>
+                      </button>
+
+                      {/* 2. Zahlungsart Button: Bar (Standard) vs Auf Rechnung */}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setScanJobs((prev) =>
+                            prev.map((j) =>
+                              j.id === job.id
+                                ? {
+                                    ...j,
+                                    selectedPaymentMethod:
+                                      j.selectedPaymentMethod === 'rechnung' ? 'bar' : 'rechnung',
+                                  }
+                                : j
+                            )
+                          )
+                        }}
+                        className={`py-2.5 px-3 rounded-xl border text-xs font-bold flex items-center justify-center gap-1.5 transition-all ${
+                          job.selectedPaymentMethod === 'rechnung'
+                            ? 'bg-brand-950 border-brand-500 text-brand-300 shadow-glow'
+                            : 'bg-surface-800/90 hover:bg-surface-700 border-surface-700 text-surface-300'
+                        }`}
+                      >
+                        <span>🧾</span>
+                        <span>{job.selectedPaymentMethod === 'rechnung' ? 'Rechnung' : 'Bar'}</span>
+                      </button>
+
+                      {/* 3. Buchen Button (Sofort 1-Klick Buchung) */}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          confirmSale(
+                            job.id,
+                            job.draft,
+                            job.selectedPaymentMethod || 'bar'
+                          )
+                        }}
+                        className="flex-1 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-black text-xs flex items-center justify-center gap-1.5 shadow-md transition-all"
+                      >
+                        <span>Buchen</span>
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  )}
+
+                  {job.status === 'error' && (
+                    <div className="pt-2 border-t border-surface-800/80 flex items-center justify-end gap-2">
+                      <label
+                        htmlFor="scan-camera-file-input"
+                        onClick={() => setScanJobs((prev) => prev.filter((j) => j.id !== job.id))}
+                        className="px-3 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs flex items-center gap-1 shadow-md cursor-pointer select-none"
+                      >
+                        <RotateCcw className="w-3.5 h-3.5" />
+                        <span>Neu scannen</span>
+                      </label>
+                      <button
+                        type="button"
+                        onClick={() => setScanJobs((prev) => prev.filter((j) => j.id !== job.id))}
+                        className="p-2 rounded-xl bg-surface-800 text-surface-400 text-xs"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  )}
                 </div>
               )
             })}
@@ -575,10 +563,16 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
       <div className="px-4 pb-12 flex-1">
         {sales.length === 0 ? (
           scanJobs.length === 0 && (
-            <div className="text-center py-14 space-y-2">
+            <div className="text-center py-14 space-y-3">
               <Package className="w-12 h-12 text-surface-700 mx-auto" />
               <p className="text-sm text-surface-500 font-medium">Noch keine Verkäufe heute</p>
-              <p className="text-xs text-surface-600">Rechnung scannen um zu starten</p>
+              <label
+                htmlFor="scan-camera-file-input"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold shadow-md cursor-pointer select-none active:scale-95 transition-all"
+              >
+                <Camera className="w-4 h-4" />
+                <span>Rechnung scannen um zu starten</span>
+              </label>
             </div>
           )
         ) : (
@@ -678,14 +672,13 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
 
       {/* FLOATING ACTION BUTTON (FAB) UNTEN RECHTS - SCHNELLE DAUMEN-BEDIENUNG */}
       <div className="fixed bottom-20 right-4 z-40">
-        <button
-          type="button"
-          onClick={() => fileInputRef.current?.click()}
-          className="px-4 py-3.5 rounded-full bg-gradient-to-r from-brand-600 via-emerald-600 to-teal-600 text-white font-bold text-sm shadow-2xl border border-emerald-400/50 flex items-center gap-2.5 active:scale-90 hover:scale-105 transition-all shadow-glow"
+        <label
+          htmlFor="scan-camera-file-input"
+          className="px-4 py-3.5 rounded-full bg-gradient-to-r from-brand-600 via-emerald-600 to-teal-600 text-white font-bold text-sm shadow-2xl border border-emerald-400/50 flex items-center gap-2.5 active:scale-90 hover:scale-105 transition-all shadow-glow cursor-pointer select-none"
         >
           <Camera className="w-5 h-5 shrink-0" />
           <span>{scanJobs.length > 0 ? 'Weitere scannen' : 'Rechnung scannen'}</span>
-        </button>
+        </label>
       </div>
     </div>
   )
@@ -803,7 +796,7 @@ function ScanReview({
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <p className="text-xs font-bold text-surface-400 uppercase tracking-wider">
-            Positionen ({draft.items?.length ?? 0})
+            Positionen ({(draft.items || []).length} Artikel · {(draft.items || []).reduce((s: number, i: ScannedItem) => s + (i.qty || 0), 0)} Stk. gesamt)
           </p>
           <button
             type="button"
@@ -819,7 +812,7 @@ function ScanReview({
           <div className="p-3 rounded-xl bg-surface-950 border border-brand-800 space-y-2">
             <p className="text-xs font-bold text-surface-300">Artikel antippen zum Hinzufügen:</p>
             <div className="max-h-48 overflow-y-auto space-y-1">
-              {INITIAL_DEPO_PRODUCTS.map((prod) => (
+              {getActiveProductsList().map((prod) => (
                 <button
                   key={prod.id}
                   type="button"
@@ -856,7 +849,10 @@ function ScanReview({
             >
               <div className="flex items-center justify-between gap-2">
                 <div className="min-w-0 flex-1">
-                  <div className="mb-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs font-black font-mono text-emerald-300 bg-emerald-950 px-2 py-0.5 rounded-md border border-emerald-700/70 shadow-sm">
+                      Pos. {idx + 1}
+                    </span>
                     <span className="text-base font-black font-mono tracking-wider text-brand-300 bg-brand-950 px-2.5 py-1 rounded-lg border border-brand-800 shadow-sm inline-block">
                       {item.sku}
                     </span>
@@ -978,7 +974,7 @@ function SaleDetailView({ sale, onBack }: { sale: SaleEntry; onBack: () => void 
         {/* Artikel Details */}
         <div className="space-y-2">
           <p className="text-xs font-bold text-surface-400 uppercase tracking-wider">
-            Positionen ({sale.items.length})
+            Positionen ({sale.items.length} Artikel · {sale.items.reduce((s, i) => s + (i.qty || 0), 0)} Stk. gesamt)
           </p>
           {sale.items.map((item, idx) => (
             <div
@@ -986,9 +982,14 @@ function SaleDetailView({ sale, onBack }: { sale: SaleEntry; onBack: () => void 
               className="p-3.5 rounded-xl bg-surface-900 border border-surface-800 flex items-center justify-between"
             >
               <div className="min-w-0 flex-1">
-                <span className="text-base font-black font-mono tracking-wider text-brand-300 bg-brand-950 px-2.5 py-1 rounded-lg border border-brand-800 shadow-sm inline-block mb-1">
-                  {item.sku}
-                </span>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-black font-mono text-emerald-300 bg-emerald-950 px-2 py-0.5 rounded-md border border-emerald-700/70 shadow-sm">
+                    Pos. {idx + 1}
+                  </span>
+                  <span className="text-base font-black font-mono tracking-wider text-brand-300 bg-brand-950 px-2.5 py-1 rounded-lg border border-brand-800 shadow-sm inline-block">
+                    {item.sku}
+                  </span>
+                </div>
                 <p className="text-xs font-medium text-surface-300 truncate">{item.name}</p>
                 <p className="text-[10px] text-surface-400 mt-0.5">
                   {item.qty} × {formatCurrency(item.unit_price)}
@@ -1020,118 +1021,6 @@ function SaleDetailView({ sale, onBack }: { sale: SaleEntry; onBack: () => void 
             </span>
           </div>
         </div>
-      </div>
-
-      {/* Schnellbuchungs-Modal (Direct Booking ohne Menü) */}
-      {quickBookJob && (
-        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="w-full max-w-md bg-surface-900 border border-surface-700 rounded-3xl p-5 space-y-4 shadow-2xl">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-2xl bg-emerald-950 text-emerald-400 border border-emerald-800/80 flex items-center justify-center font-bold text-base shadow-glow">
-                  ⚡
-                </div>
-                <div>
-                  <h3 className="font-bold text-surface-100 text-sm">Direkt buchen (Schnellbuchung)</h3>
-                  <p className="text-[11px] text-surface-400">Wähle die Zahlungsart zum sofortigen Buchen</p>
-                </div>
-              </div>
-              <button
-                type="button"
-                onClick={() => setQuickBookJob(null)}
-                className="p-2 rounded-full bg-surface-800 text-surface-400 hover:text-white"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            {/* Rechnungs-Info Summary */}
-            <div className="p-3.5 rounded-2xl bg-surface-950 border border-surface-800 space-y-1.5">
-              <div className="flex justify-between text-xs">
-                <span className="text-surface-400">Kunde:</span>
-                <span className="font-bold text-surface-100 truncate max-w-[200px] text-right">
-                  Kd. {quickBookJob.draft?.customer_number || 'Unbekannt'} · {
-                    customers.find((c) => c.customer_number === quickBookJob.draft?.customer_number)?.company_name || 'Kunde'
-                  }
-                </span>
-              </div>
-              <div className="flex justify-between text-xs">
-                <span className="text-surface-400">Positionen:</span>
-                <span className="font-mono text-surface-300">{quickBookJob.draft?.items?.length ?? 0} Artikel</span>
-              </div>
-              <div className="flex justify-between text-sm pt-2 border-t border-surface-800/80 font-bold">
-                <span className="text-surface-200">Gesamtbetrag:</span>
-                <span className="text-emerald-400 tabular-nums text-base">
-                  {formatCurrency(
-                    (quickBookJob.draft?.items || []).reduce(
-                      (s: number, i: ScannedItem) => s + i.qty * i.unit_price,
-                      0
-                    )
-                  )}
-                </span>
-              </div>
-            </div>
-
-            {/* 3 Große Touch-Buttons für Bar / Rechnung / Karte */}
-            <div className="grid grid-cols-3 gap-2.5 pt-1">
-              <button
-                type="button"
-                onClick={() => {
-                  confirmSale(quickBookJob.id, quickBookJob.draft, 'bar')
-                  setQuickBookJob(null)
-                }}
-                className="p-4 rounded-2xl bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-700/60 active:scale-95 flex flex-col items-center justify-center text-center transition-all group"
-              >
-                <span className="text-2xl mb-1.5 group-hover:scale-110 transition-transform">💶</span>
-                <span className="text-xs font-bold text-emerald-300">Bar</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => {
-                  confirmSale(quickBookJob.id, quickBookJob.draft, 'rechnung')
-                  setQuickBookJob(null)
-                }}
-                className="p-4 rounded-2xl bg-brand-950/80 hover:bg-brand-900 border border-brand-700/60 active:scale-95 flex flex-col items-center justify-center text-center transition-all group"
-              >
-                <span className="text-2xl mb-1.5 group-hover:scale-110 transition-transform">🧾</span>
-                <span className="text-xs font-bold text-brand-300">Rechnung</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => {
-                  confirmSale(quickBookJob.id, quickBookJob.draft, 'karte')
-                  setQuickBookJob(null)
-                }}
-                className="p-4 rounded-2xl bg-amber-950/80 hover:bg-amber-900 border border-amber-700/60 active:scale-95 flex flex-col items-center justify-center text-center transition-all group"
-              >
-                <span className="text-2xl mb-1.5 group-hover:scale-110 transition-transform">💳</span>
-                <span className="text-xs font-bold text-amber-300">Karte</span>
-              </button>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => setQuickBookJob(null)}
-              className="w-full py-2.5 rounded-xl bg-surface-800 text-surface-400 text-xs font-medium hover:bg-surface-700 transition-colors"
-            >
-              Abbrechen
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* FLOATING ACTION BUTTON (FAB) UNTEN RECHTS - SCHNELLE DAUMEN-BEDIENUNG */}
-      <div className="fixed bottom-20 right-4 z-40">
-        <button
-          type="button"
-          onClick={() => fileInputRef.current?.click()}
-          className="px-4 py-3.5 rounded-full bg-gradient-to-r from-brand-600 via-emerald-600 to-teal-600 text-white font-bold text-sm shadow-2xl border border-emerald-400/50 flex items-center gap-2.5 active:scale-90 hover:scale-105 transition-all shadow-glow"
-        >
-          <Camera className="w-5 h-5 shrink-0" />
-          <span>{scanJobs.length > 0 ? 'Weitere scannen' : 'Rechnung scannen'}</span>
-        </button>
       </div>
     </div>
   )

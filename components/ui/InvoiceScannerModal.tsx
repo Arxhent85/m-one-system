@@ -117,6 +117,7 @@ export default function InvoiceScannerModal({
           {/* Invisible Camera File Input for Native Camera Trigger */}
           <input
             ref={fileInputRef}
+            id="modal-camera-file-input"
             type="file"
             accept="image/*"
             capture="environment"
@@ -127,9 +128,9 @@ export default function InvoiceScannerModal({
           {!imageSrc ? (
             /* KAMERA FOTO AUSLÖSEN / DROPAREA */
             <div className="space-y-4 text-center py-4">
-              <div
-                onClick={() => fileInputRef.current?.click()}
-                className="p-8 rounded-3xl border-2 border-dashed border-brand-500/60 hover:border-brand-400 bg-surface-950/80 hover:bg-brand-950/20 transition-all cursor-pointer space-y-3 active:scale-95 group"
+              <label
+                htmlFor="modal-camera-file-input"
+                className="block p-8 rounded-3xl border-2 border-dashed border-brand-500/60 hover:border-brand-400 bg-surface-950/80 hover:bg-brand-950/20 transition-all cursor-pointer space-y-3 active:scale-95 group select-none"
               >
                 <div className="w-16 h-16 rounded-full bg-brand-600 group-hover:bg-brand-500 text-white flex items-center justify-center mx-auto shadow-lg shadow-brand-900/50 transition-all">
                   <Camera className="w-8 h-8" />
@@ -140,7 +141,7 @@ export default function InvoiceScannerModal({
                     Öffnet direkt die Smartphone-Kamera
                   </p>
                 </div>
-              </div>
+              </label>
 
               <div className="flex items-center justify-center gap-2 text-xs text-surface-500 font-medium">
                 <Sparkles className="w-4 h-4 text-brand-400" />

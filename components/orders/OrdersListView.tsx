@@ -86,11 +86,9 @@ export default function OrdersListView({ orders: initialOrders }: OrdersListView
     }
 
     loadSales()
-    const interval = setInterval(loadSales, 5000)
     window.addEventListener('focus', loadSales)
     window.addEventListener('m_one_sale_recorded', loadSales)
     return () => {
-      clearInterval(interval)
       window.removeEventListener('focus', loadSales)
       window.removeEventListener('m_one_sale_recorded', loadSales)
     }

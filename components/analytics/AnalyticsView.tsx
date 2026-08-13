@@ -4,6 +4,8 @@ import { useState, useEffect, useMemo } from 'react'
 import { BarChart3, TrendingUp, Package, Users, Truck } from 'lucide-react'
 import { formatCurrency, formatNumber } from '@/lib/utils/currency'
 import { getSalesHistory, INITIAL_DEPO_PRODUCTS, LOCATION_IDS } from '@/lib/stockStore'
+import ProductDetailModal from './ProductDetailModal'
+import CustomerDetailModal from './CustomerDetailModal'
 
 import MOCK_2026_SALES from '@/lib/mock2026Sales.json'
 
@@ -14,43 +16,64 @@ export default function AnalyticsView() {
     function loadData() {
       const isCleared = typeof window !== 'undefined' && localStorage.getItem('m_one_sales_cleared') === 'true'
       const local = getSalesHistory()
-      const base = isCleared ? [] : (local && local.length > 0 ? local : MOCK_2026_SALES)
-
-      if (isCleared) {
-        setSalesList([])
-        return
-      }
 
       fetch('/api/sales/record')
         .then((res) => res.json())
         .then((data) => {
-          if (data.success && Array.isArray(data.sales) && data.sales.length > 0) {
-            const combined = [...data.sales]
-            base.forEach((l: any) => {
-              if (!combined.some((c) => c.id === l.id || c.order_number === l.order_number)) {
-                combined.push(l)
-              }
-            })
+          const serverSales = data.success && Array.isArray(data.sales) ? data.sales : []
+          const combined = [...serverSales]
+          local.forEach((l: any) => {
+            if (!combined.some((c) => c.id === l.id || c.order_number === l.order_number)) {
+              combined.push(l)
+            }
+          })
+          if (combined.length > 0) {
             setSalesList(combined)
+          } else if (isCleared) {
+            setSalesList([])
           } else {
-            setSalesList(base)
+            setSalesList(MOCK_2026_SALES)
           }
         })
         .catch(() => {
-          setSalesList(base)
+          if (local.length > 0) {
+            setSalesList(local)
+          } else if (isCleared) {
+            setSalesList([])
+          } else {
+            setSalesList(MOCK_2026_SALES)
+          }
         })
     }
 
     loadData()
-    const interval = setInterval(loadData, 3000)
     window.addEventListener('focus', loadData)
     window.addEventListener('m_one_sale_recorded', loadData)
     return () => {
-      clearInterval(interval)
       window.removeEventListener('focus', loadData)
       window.removeEventListener('m_one_sale_recorded', loadData)
     }
   }, [])
+
+  async function loadDemo2026Data() {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('m_one_sales_cleared')
+      localStorage.setItem('m_one_sales_history_v1', JSON.stringify(MOCK_2026_SALES))
+    }
+    try {
+      await fetch('/api/sales/record', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'load_2026_demo' }),
+      })
+    } catch (e) {
+      console.warn('Demo load warning:', e)
+    }
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new Event('m_one_sale_recorded'))
+    }
+    setSalesList(MOCK_2026_SALES)
+  }
 
   // KPI Computations
   const totalRevenue = useMemo(() => {
@@ -138,10 +161,29 @@ export default function AnalyticsView() {
     }))
   }, [salesList])
 
+  const [selectedProduct, setSelectedProduct] = useState<any | null>(null)
+  const [selectedCustomer, setSelectedCustomer] = useState<any | null>(null)
+
   const maxProductRevenue = productSummary[0]?.revenue || 1
 
   return (
     <div className="space-y-6 animate-in">
+      {/* Modals */}
+      {selectedProduct && (
+        <ProductDetailModal
+          product={selectedProduct}
+          sales={salesList}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
+      {selectedCustomer && (
+        <CustomerDetailModal
+          customer={selectedCustomer}
+          sales={salesList}
+          onClose={() => setSelectedCustomer(null)}
+        />
+      )}
+
       {/* Header */}
       <div>
         <h1 className="text-2xl font-bold text-surface-50 flex items-center gap-2">
@@ -152,6 +194,30 @@ export default function AnalyticsView() {
           Echtzeit Umsatz-, Produkt- und Kunden-KPIs im Überblick (2026)
         </p>
       </div>
+
+      {/* Banner bei leerer Historie (System-Reset) */}
+      {salesList.length === 0 && (
+        <div className="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/50 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-amber-900/60 border border-amber-700/50 flex items-center justify-center text-amber-400 shrink-0">
+              ⚡
+            </div>
+            <div>
+              <p className="text-sm font-bold text-amber-200">Verkaufshistorie ist aktuell zurückgesetzt (0,00 €)</p>
+              <p className="text-xs text-surface-400 mt-0.5">
+                Neue Verkäufe aus der Fahrer-App werden in Echtzeit hier gelistet. Oder lade alle 253 Fakturen aus 2026.
+              </p>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={loadDemo2026Data}
+            className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shrink-0 shadow-md transition-all active:scale-95"
+          >
+            2026 Echtdaten laden
+          </button>
+        </div>
+      )}
 
       {/* Top-KPIs */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -200,11 +266,15 @@ export default function AnalyticsView() {
               {productSummary.map((p: any, i: number) => {
                 const barWidth = Math.max(5, ((p.revenue || 0) / maxProductRevenue) * 100)
                 return (
-                  <div key={p.sku || i}>
+                  <div
+                    key={p.sku || i}
+                    onClick={() => setSelectedProduct({ sku: p.sku, name: p.name })}
+                    className="cursor-pointer group hover:bg-surface-800/40 p-1.5 rounded-xl transition-all"
+                  >
                     <div className="flex items-center justify-between mb-1">
                       <div className="flex items-center gap-2 min-w-0">
                         <span className="text-xs font-bold text-surface-500 w-5 shrink-0">{i + 1}.</span>
-                        <span className="text-xs font-semibold text-surface-200 truncate">{p.name}</span>
+                        <span className="text-xs font-semibold text-surface-200 group-hover:text-brand-300 transition-colors truncate">{p.name}</span>
                         <span className="text-[10px] text-surface-500 font-mono">({p.sku})</span>
                       </div>
                       <div className="text-right ml-2 shrink-0">
@@ -246,13 +316,17 @@ export default function AnalyticsView() {
           ) : (
             <div className="space-y-2">
               {customerSummary.map((c: any, i: number) => (
-                <div key={c.custNo || i} className="flex items-center justify-between py-2 border-b border-surface-800/50 last:border-0">
+                <div
+                  key={c.custNo || i}
+                  onClick={() => setSelectedCustomer({ customer_number: c.custNo, company_name: c.companyName, total_revenue: c.revenue, orders_count: c.ordersCount })}
+                  className="flex items-center justify-between py-2 px-2 rounded-xl hover:bg-surface-800/40 cursor-pointer transition-all border-b border-surface-800/50 last:border-0 group"
+                >
                   <div className="flex items-center gap-3 min-w-0">
                     <span className="w-6 h-6 rounded-full bg-brand-950 text-brand-400 border border-brand-800/40 flex items-center justify-center text-xs font-bold shrink-0">
                       {i + 1}
                     </span>
                     <div className="min-w-0">
-                      <p className="text-xs font-semibold text-surface-100 truncate">{c.companyName}</p>
+                      <p className="text-xs font-semibold text-surface-100 group-hover:text-emerald-300 transition-colors truncate">{c.companyName}</p>
                       <p className="text-[10px] text-surface-500 font-mono">
                         {c.custNo !== '—' ? `Kd.-Nr. ${c.custNo} · ` : ''}{c.ordersCount} Verkauf/Verkäufe
                       </p>
@@ -301,16 +375,12 @@ export default function AnalyticsView() {
                     </span>
                   </div>
                   <div className="flex justify-between text-xs">
-                    <span className="text-surface-400">Verkäufe</span>
-                    <span className="text-surface-100 font-semibold tabular-nums">
-                      {formatNumber(loc.total_orders || 0)}
-                    </span>
+                    <span className="text-surface-400">Fakturen</span>
+                    <span className="text-surface-100 font-bold tabular-nums">{loc.total_orders}</span>
                   </div>
                   <div className="flex justify-between text-xs">
                     <span className="text-surface-400">Aktive Kunden</span>
-                    <span className="text-surface-100 tabular-nums">
-                      {formatNumber(loc.unique_customers || 0)}
-                    </span>
+                    <span className="text-surface-100 font-bold tabular-nums">{loc.unique_customers}</span>
                   </div>
                 </div>
               </div>

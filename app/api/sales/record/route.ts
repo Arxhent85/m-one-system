@@ -70,24 +70,22 @@ export async function POST(req: Request) {
 
     globalServerSales.unshift(saleEntry)
 
-    // 3. Persist to Supabase if connected
-    try {
-      const supabase = await createClient()
-      const paymentMap: Record<string, string> = { bar: 'cash', rechnung: 'invoice', karte: 'card' }
-      const itemsSummary = items.map((i) => `${i.qty}x ${i.sku} ${i.name}`).join(', ')
-
-      await (supabase.from('sales_orders') as any).insert({
-        order_number: orderNumber,
-        location_id: vehicleLocId,
-        total_amount: saleEntry.total_amount,
-        payment_method: paymentMap[paymentMethod] || 'cash',
-        payment_status: paymentMethod === 'bar' ? 'paid' : 'pending',
-        status: 'confirmed',
-        notes: `Fahrer-App Verkauf | Fahrer ${driverName} | Kd. ${customerNumber} (${customerName}) | ${itemsSummary}`,
+    // 3. Persist to Supabase if connected (Fire-and-forget in background, non-blocking)
+    createClient()
+      .then((supabase) => {
+        const paymentMap: Record<string, string> = { bar: 'cash', rechnung: 'invoice', karte: 'card' }
+        const itemsSummary = items.map((i) => `${i.qty}x ${i.sku} ${i.name}`).join(', ')
+        return (supabase.from('sales_orders') as any).insert({
+          order_number: orderNumber,
+          location_id: vehicleLocId,
+          total_amount: saleEntry.total_amount,
+          payment_method: paymentMap[paymentMethod] || 'cash',
+          payment_status: paymentMethod === 'bar' ? 'paid' : 'pending',
+          status: 'confirmed',
+          notes: `Fahrer-App Verkauf | Fahrer ${driverName} | Kd. ${customerNumber} (${customerName}) | ${itemsSummary}`,
+        })
       })
-    } catch (dbErr) {
-      console.warn('Supabase insert warning:', dbErr)
-    }
+      .catch((dbErr) => console.warn('Supabase insert warning:', dbErr))
 
     return NextResponse.json({
       success: true,

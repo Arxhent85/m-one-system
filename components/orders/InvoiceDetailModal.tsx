@@ -99,7 +99,9 @@ export default function InvoiceDetailModal({ invoice, onClose }: InvoiceDetailMo
         <div className="px-6 pb-6">
           <div className="flex items-center gap-2 mb-3">
             <Package className="w-4 h-4 text-surface-400" />
-            <h3 className="text-sm font-semibold text-surface-300 uppercase tracking-wider">Positionen ({items.length})</h3>
+            <h3 className="text-sm font-semibold text-surface-300 uppercase tracking-wider">
+              Positionen ({items.length} Artikel · {items.reduce((s, i) => s + (i.qty || 0), 0)} Stk. gesamt)
+            </h3>
           </div>
           {items.length === 0 ? (
             <div className="py-6 text-center text-surface-500 text-sm bg-surface-800/30 rounded-xl border border-surface-700/30">Keine Positionsdaten</div>
@@ -108,6 +110,7 @@ export default function InvoiceDetailModal({ invoice, onClose }: InvoiceDetailMo
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-surface-800/60 text-surface-400 text-xs uppercase tracking-wider">
+                    <th className="px-3 py-2.5 text-center w-12">Pos.</th>
                     <th className="px-4 py-2.5 text-left w-24">Art.-Nr.</th>
                     <th className="px-4 py-2.5 text-left">Bezeichnung</th>
                     <th className="px-4 py-2.5 text-right w-16">Menge</th>
@@ -120,6 +123,7 @@ export default function InvoiceDetailModal({ invoice, onClose }: InvoiceDetailMo
                     const lineTotal = item.total ?? (item.qty * item.unit_price)
                     return (
                       <tr key={i} className={(i % 2 === 0 ? 'bg-surface-900/20 ' : 'bg-surface-900/40 ') + 'hover:bg-brand-900/20 transition-colors'}>
+                        <td className="px-3 py-2.5 text-center font-mono text-xs font-bold text-emerald-400">Pos. {i + 1}</td>
                         <td className="px-4 py-2.5 font-mono text-xs font-bold text-brand-400">{item.sku}</td>
                         <td className="px-4 py-2.5 text-surface-100 font-medium">{item.name}</td>
                         <td className="px-4 py-2.5 text-right tabular-nums text-surface-200 font-semibold">{item.qty}</td>
@@ -131,7 +135,7 @@ export default function InvoiceDetailModal({ invoice, onClose }: InvoiceDetailMo
                 </tbody>
                 <tfoot>
                   <tr className="bg-surface-800/80 border-t-2 border-surface-700/60">
-                    <td colSpan={4} className="px-4 py-3 font-bold text-surface-200 text-sm uppercase tracking-wider">Gesamtbetrag</td>
+                    <td colSpan={5} className="px-4 py-3 font-bold text-surface-200 text-sm uppercase tracking-wider">Gesamtbetrag</td>
                     <td className="px-4 py-3 text-right font-black text-emerald-400 text-base tabular-nums">{formatCurrency(invoice.total_amount)}</td>
                   </tr>
                 </tfoot>

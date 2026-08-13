@@ -1,0 +1,546 @@
+
+> m-one-erp@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.0 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.88.101:3000
+- Environments: .env.local
+✓ Ready in 1254ms
+✓ Running next.config.js took 39ms
+⚠ Slow filesystem detected. The benchmark took 284ms. If \\?\D:\M ONE SYSTEM APP\.next\dev is a network drive, consider moving it to a local folder.
+See more: https://nextjs.org/docs/app/guides/local-development
+
+ GET /driver/sell 200 in 1071ms (next.js: 157ms, proxy.ts: 227ms, application-code: 687ms)
+ GET /login 200 in 77ms (next.js: 40ms, proxy.ts: 7ms, application-code: 31ms)
+ GET /login 200 in 41ms (next.js: 9ms, proxy.ts: 6ms, application-code: 26ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /dashboard 200 in 325ms (next.js: 42ms, proxy.ts: 8ms, application-code: 275ms)
+ GET /dashboard 200 in 238ms (next.js: 14ms, proxy.ts: 11ms, application-code: 214ms)
+ GET /api/sales/record 200 in 206ms (next.js: 162ms, proxy.ts: 7ms, application-code: 37ms)
+ GET /api/sales/record 200 in 35ms (next.js: 6ms, proxy.ts: 10ms, application-code: 19ms)
+ GET /inventory 200 in 185ms (next.js: 39ms, proxy.ts: 5ms, application-code: 141ms)
+ GET /api/sales/record 200 in 23ms (next.js: 4ms, proxy.ts: 4ms, application-code: 15ms)
+ GET /api/sales/record 200 in 38ms (next.js: 7ms, proxy.ts: 12ms, application-code: 18ms)
+ GET /inventory 200 in 254ms (next.js: 9ms, proxy.ts: 5ms, application-code: 240ms)
+ GET /dashboard 200 in 225ms (next.js: 8ms, proxy.ts: 6ms, application-code: 211ms)
+ GET /api/sales/record 200 in 24ms (next.js: 4ms, proxy.ts: 3ms, application-code: 16ms)
+ GET /api/sales/record 200 in 24ms (next.js: 5ms, proxy.ts: 4ms, application-code: 16ms)
+ GET /driver/sell 200 in 324ms (next.js: 6ms, proxy.ts: 6ms, application-code: 312ms)
+ GET /driver/sell 200 in 270ms (next.js: 6ms, proxy.ts: 3ms, application-code: 261ms)
+ GET /login 200 in 65ms (next.js: 20ms, proxy.ts: 16ms, application-code: 28ms)
+ GET /login 200 in 44ms (next.js: 6ms, proxy.ts: 13ms, application-code: 25ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /driver/sell?driver=qerimi 200 in 246ms (next.js: 7ms, proxy.ts: 4ms, application-code: 235ms)
+ GET /driver/sell?driver=qerimi 200 in 170ms (next.js: 9ms, proxy.ts: 8ms, application-code: 154ms)
+ GET /driver/sell 200 in 423ms (next.js: 13ms, proxy.ts: 14ms, application-code: 395ms)
+ GET /driver/sell?driver=qerimi 200 in 228ms (next.js: 7ms, proxy.ts: 4ms, application-code: 217ms)
+ GET /login 200 in 32ms (next.js: 7ms, proxy.ts: 3ms, application-code: 22ms)
+ GET /driver/sell?driver=qerimi 200 in 210ms (next.js: 6ms, proxy.ts: 4ms, application-code: 200ms)
+ GET /driver/sell?driver=qerimi 200 in 145ms (next.js: 7ms, proxy.ts: 6ms, application-code: 132ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /login 200 in 40ms (next.js: 6ms, proxy.ts: 12ms, application-code: 22ms)
+ GET /login 200 in 36ms (next.js: 9ms, proxy.ts: 3ms, application-code: 24ms)
+ GET /login 200 in 32ms (next.js: 6ms, proxy.ts: 3ms, application-code: 22ms)
+ GET /login 200 in 31ms (next.js: 7ms, proxy.ts: 3ms, application-code: 20ms)
+ GET /login 200 in 62ms (next.js: 12ms, proxy.ts: 4ms, application-code: 46ms)
+ GET /login 200 in 62ms (next.js: 29ms, proxy.ts: 6ms, application-code: 27ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /driver/sell?driver=mensuri 200 in 261ms (next.js: 10ms, proxy.ts: 5ms, application-code: 246ms)
+ GET /driver/sell?driver=mensuri 200 in 229ms (next.js: 9ms, proxy.ts: 4ms, application-code: 217ms)
+ GET /driver/sell?driver=mensuri 200 in 148ms (next.js: 7ms, proxy.ts: 14ms, application-code: 127ms)
+ GET /driver/sell?driver=mensuri 200 in 157ms (next.js: 10ms, proxy.ts: 6ms, application-code: 142ms)
+ GET /login 200 in 31ms (next.js: 6ms, proxy.ts: 4ms, application-code: 22ms)
+ GET /driver/sell?driver=qerimi 200 in 261ms (next.js: 13ms, proxy.ts: 14ms, application-code: 233ms)
+ GET /driver/sell?driver=qerimi 200 in 222ms (next.js: 6ms, proxy.ts: 3ms, application-code: 213ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 32.166776797s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"32s"}]
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 28.667092478s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"28s"}]
+ POST /api/ocr/scan-invoice 200 in 4.2s (next.js: 58ms, proxy.ts: 26ms, application-code: 4.1s)
+ POST /api/ocr/scan-invoice 200 in 1809ms (next.js: 9ms, proxy.ts: 16ms, application-code: 1785ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 25.234319834s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"25s"}]
+ POST /api/ocr/scan-invoice 200 in 1867ms (next.js: 3ms, proxy.ts: 12ms, application-code: 1852ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 21.972489642s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"21s"}]
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 19.11881668s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"19s"}]
+ POST /api/ocr/scan-invoice 200 in 4.6s (next.js: 14ms, proxy.ts: 15ms, application-code: 4.6s)
+ POST /api/ocr/scan-invoice 200 in 2.3s (next.js: 3ms, proxy.ts: 4ms, application-code: 2.3s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 15.288578698s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"15s"}]
+ POST /api/ocr/scan-invoice 200 in 2.0s (next.js: 4ms, proxy.ts: 4ms, application-code: 2.0s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 11.339547722s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"11s"}]
+ POST /api/ocr/scan-invoice 200 in 2.0s (next.js: 10ms, proxy.ts: 15ms, application-code: 1986ms)
+ GET /login 200 in 59ms (next.js: 16ms, proxy.ts: 16ms, application-code: 27ms)
+ GET /driver/sell?driver=qerimi 200 in 260ms (next.js: 14ms, proxy.ts: 14ms, application-code: 232ms)
+ GET /driver/sell?driver=qerimi 200 in 227ms (next.js: 6ms, proxy.ts: 8ms, application-code: 213ms)
+ GET /driver/stock 200 in 99ms (next.js: 63ms, proxy.ts: 14ms, application-code: 22ms)
+ POST /api/sales/record 200 in 15ms (next.js: 4ms, proxy.ts: 3ms, application-code: 8ms)
+ POST /api/sales/record 200 in 25ms (next.js: 4ms, proxy.ts: 14ms, application-code: 7ms)
+ POST /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ POST /api/sales/record 200 in 32ms (next.js: 8ms, proxy.ts: 14ms, application-code: 11ms)
+ POST /api/sales/record 200 in 27ms (next.js: 7ms, proxy.ts: 8ms, application-code: 13ms)
+ POST /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 34ms (next.js: 9ms, proxy.ts: 14ms, application-code: 11ms)
+ GET /driver/sell 200 in 426ms (next.js: 7ms, proxy.ts: 3ms, application-code: 416ms)
+ GET /driver/stock 200 in 37ms (next.js: 7ms, proxy.ts: 13ms, application-code: 18ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /login 200 in 34ms (next.js: 6ms, proxy.ts: 6ms, application-code: 22ms)
+ GET /login 200 in 35ms (next.js: 6ms, proxy.ts: 3ms, application-code: 26ms)
+ GET /driver/sell?driver=qerimi 200 in 240ms (next.js: 6ms, proxy.ts: 9ms, application-code: 226ms)
+ GET /driver/sell?driver=qerimi 200 in 152ms (next.js: 8ms, proxy.ts: 6ms, application-code: 138ms)
+ GET /api/sales/record 200 in 28ms (next.js: 5ms, proxy.ts: 5ms, application-code: 18ms)
+ GET /login 200 in 35ms (next.js: 6ms, proxy.ts: 3ms, application-code: 25ms)
+ GET /driver/sell?driver=qerimi 200 in 261ms (next.js: 6ms, proxy.ts: 3ms, application-code: 252ms)
+ GET /driver/sell?driver=qerimi 200 in 171ms (next.js: 10ms, proxy.ts: 17ms, application-code: 144ms)
+ GET /login 200 in 69ms (next.js: 23ms, proxy.ts: 14ms, application-code: 32ms)
+ GET /driver/sell?driver=mensuri 200 in 267ms (next.js: 15ms, proxy.ts: 14ms, application-code: 238ms)
+ GET /driver/sell?driver=mensuri 200 in 158ms (next.js: 6ms, proxy.ts: 4ms, application-code: 148ms)
+ GET /login 200 in 55ms (next.js: 15ms, proxy.ts: 14ms, application-code: 26ms)
+ GET /driver/stock 200 in 54ms (next.js: 16ms, proxy.ts: 14ms, application-code: 24ms)
+✓ Compiled in 11.7s
+ GET /dashboard 200 in 1364ms (next.js: 28ms, proxy.ts: 4ms, application-code: 1332ms)
+ GET /driver/sell 200 in 908ms (next.js: 136ms, proxy.ts: 11ms, application-code: 762ms)
+ GET /orders 200 in 1685ms (next.js: 354ms, proxy.ts: 3ms, application-code: 1328ms)
+ GET /api/sales/record 200 in 143ms (next.js: 87ms, proxy.ts: 3ms, application-code: 53ms)
+ GET /api/sales/record 200 in 28ms (next.js: 4ms, proxy.ts: 4ms, application-code: 20ms)
+ GET /api/sales/record 200 in 23ms (next.js: 4ms, proxy.ts: 3ms, application-code: 16ms)
+ GET /login 200 in 98ms (next.js: 30ms, proxy.ts: 14ms, application-code: 55ms)
+ GET /login 200 in 36ms (next.js: 6ms, proxy.ts: 4ms, application-code: 26ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /driver/sell?driver=mensuri 200 in 260ms (next.js: 8ms, proxy.ts: 4ms, application-code: 249ms)
+ GET /driver/sell?driver=mensuri 200 in 280ms (next.js: 14ms, proxy.ts: 6ms, application-code: 259ms)
+ GET /driver/sell?driver=mensuri 200 in 231ms (next.js: 6ms, proxy.ts: 3ms, application-code: 221ms)
+ GET /dashboard 307 in 267ms (next.js: 80ms, proxy.ts: 4ms, application-code: 183ms)
+ GET /login 200 in 356ms (next.js: 6ms, proxy.ts: 3ms, application-code: 347ms)
+ GET /dashboard 200 in 197ms (next.js: 21ms, proxy.ts: 16ms, application-code: 159ms)
+ GET /dashboard 200 in 163ms (next.js: 13ms, proxy.ts: 11ms, application-code: 139ms)
+ GET /api/sales/record 200 in 102ms (next.js: 76ms, proxy.ts: 3ms, application-code: 23ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /api/sales/record 200 in 33ms (next.js: 6ms, proxy.ts: 5ms, application-code: 22ms)
+ GET /driver/sell?driver=mensuri 200 in 319ms (next.js: 5ms, proxy.ts: 3ms, application-code: 310ms)
+ GET /settings 200 in 378ms (next.js: 323ms, proxy.ts: 7ms, application-code: 48ms)
+ DELETE /api/sales/record 200 in 222ms (next.js: 4ms, proxy.ts: 4ms, application-code: 214ms)
+ DELETE /api/sales/record 200 in 111ms (next.js: 4ms, proxy.ts: 5ms, application-code: 103ms)
+ GET /dashboard 200 in 199ms (next.js: 7ms, proxy.ts: 3ms, application-code: 189ms)
+ GET /api/sales/record 200 in 29ms (next.js: 8ms, proxy.ts: 13ms, application-code: 9ms)
+ GET /api/sales/record 200 in 30ms (next.js: 10ms, proxy.ts: 10ms, application-code: 11ms)
+ POST /api/ocr/scan-invoice 200 in 8.4s (next.js: 48ms, proxy.ts: 23ms, application-code: 8.4s)
+ POST /api/ocr/scan-invoice 200 in 7.2s (next.js: 4ms, proxy.ts: 27ms, application-code: 7.1s)
+ POST /api/ocr/scan-invoice 200 in 7.5s (next.js: 4ms, proxy.ts: 20ms, application-code: 7.5s)
+ POST /api/ocr/scan-invoice 200 in 8.8s (next.js: 3ms, proxy.ts: 18ms, application-code: 8.8s)
+ POST /api/ocr/scan-invoice 200 in 5.3s (next.js: 4ms, proxy.ts: 23ms, application-code: 5.2s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash
+Please retry in 9.603597199s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"5"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"9s"}]
+ POST /api/ocr/scan-invoice 200 in 2.9s (next.js: 11ms, proxy.ts: 18ms, application-code: 2.8s)
+ POST /api/ocr/scan-invoice 200 in 8.7s (next.js: 3ms, proxy.ts: 16ms, application-code: 8.7s)
+ GET /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ POST /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 37ms (next.js: 12ms, proxy.ts: 14ms, application-code: 11ms)
+ POST /api/sales/record 200 in 34ms (next.js: 9ms, proxy.ts: 14ms, application-code: 10ms)
+ POST /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ POST /api/sales/record 200 in 33ms (next.js: 9ms, proxy.ts: 14ms, application-code: 11ms)
+ POST /api/sales/record 200 in 44ms (next.js: 13ms, proxy.ts: 14ms, application-code: 16ms)
+✓ Compiled in 372ms
+ GET /dashboard 200 in 289ms (next.js: 8ms, proxy.ts: 4ms, application-code: 277ms)
+ GET /driver/sell?driver=mensuri 200 in 280ms (next.js: 48ms, proxy.ts: 8ms, application-code: 224ms)
+ GET /driver/sell?driver=mensuri 200 in 313ms (next.js: 72ms, proxy.ts: 10ms, application-code: 231ms)
+ GET /api/sales/record 200 in 17ms (next.js: 5ms, proxy.ts: 5ms, application-code: 7ms)
+ GET /dashboard 200 in 456ms (next.js: 11ms, proxy.ts: 5ms, application-code: 440ms)
+✓ Compiled in 139ms
+ GET /driver/sell?driver=mensuri 200 in 240ms (next.js: 6ms, proxy.ts: 4ms, application-code: 230ms)
+ GET /dashboard 200 in 316ms (next.js: 6ms, proxy.ts: 4ms, application-code: 306ms)
+ GET /dashboard 200 in 768ms (next.js: 21ms, proxy.ts: 5ms, application-code: 743ms)
+ GET /driver/sell?driver=mensuri 200 in 883ms (next.js: 48ms, proxy.ts: 5ms, application-code: 831ms)
+✓ Compiled in 4s
+ GET /dashboard 200 in 307ms (next.js: 71ms, proxy.ts: 5ms, application-code: 231ms)
+ GET /driver/sell?driver=mensuri 200 in 413ms (next.js: 94ms, proxy.ts: 5ms, application-code: 314ms)
+ GET /dashboard 200 in 217ms (next.js: 7ms, proxy.ts: 3ms, application-code: 207ms)
+✓ Finished filesystem cache database compaction in 26.4s
+ GET /inventory 200 in 649ms (next.js: 70ms, proxy.ts: 3ms, application-code: 576ms)
+ GET /api/sales/record 200 in 16ms (next.js: 6ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /dashboard 200 in 239ms (next.js: 9ms, proxy.ts: 4ms, application-code: 225ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /login 200 in 39ms (next.js: 10ms, proxy.ts: 3ms, application-code: 26ms)
+ GET /login 200 in 37ms (next.js: 7ms, proxy.ts: 3ms, application-code: 27ms)
+ GET /dashboard 200 in 264ms (next.js: 11ms, proxy.ts: 5ms, application-code: 248ms)
+ GET /dashboard 200 in 371ms (next.js: 44ms, proxy.ts: 5ms, application-code: 322ms)
+ GET /api/sales/record 200 in 27ms (next.js: 7ms, proxy.ts: 11ms, application-code: 9ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /login 200 in 75ms (next.js: 24ms, proxy.ts: 13ms, application-code: 37ms)
+ GET /login 200 in 33ms (next.js: 6ms, proxy.ts: 4ms, application-code: 23ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /driver/sell?driver=qerimi 200 in 293ms (next.js: 8ms, proxy.ts: 4ms, application-code: 281ms)
+ GET /driver/sell?driver=qerimi 200 in 240ms (next.js: 28ms, proxy.ts: 14ms, application-code: 199ms)
+ GET /driver/sell?driver=qerimi 200 in 186ms (next.js: 11ms, proxy.ts: 6ms, application-code: 169ms)
+ GET /driver/sell?driver=qerimi 200 in 220ms (next.js: 27ms, proxy.ts: 6ms, application-code: 187ms)
+ GET /driver/sell?driver=qerimi 200 in 202ms (next.js: 11ms, proxy.ts: 5ms, application-code: 185ms)
+ GET /driver/sell?driver=qerimi 200 in 200ms (next.js: 27ms, proxy.ts: 4ms, application-code: 168ms)
+ POST /api/ocr/scan-invoice 200 in 9.0s (next.js: 5ms, proxy.ts: 17ms, application-code: 9.0s)
+ POST /api/ocr/scan-invoice 200 in 11.1s (next.js: 4ms, proxy.ts: 18ms, application-code: 11.1s)
+ POST /api/ocr/scan-invoice 200 in 4.9s (next.js: 7ms, proxy.ts: 20ms, application-code: 4.9s)
+Gemini Model gemini-3.5-flash failed: Expected ',' or '}' after property value in JSON at position 230 (line 17 column 4)
+ POST /api/ocr/scan-invoice 200 in 10.1s (next.js: 5ms, proxy.ts: 22ms, application-code: 10.0s)
+ POST /api/ocr/scan-invoice 200 in 7.3s (next.js: 13ms, proxy.ts: 17ms, application-code: 7.3s)
+ POST /api/ocr/scan-invoice 200 in 10.3s (next.js: 4ms, proxy.ts: 19ms, application-code: 10.2s)
+ POST /api/sales/record 200 in 14ms (next.js: 3ms, proxy.ts: 4ms, application-code: 7ms)
+ POST /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ POST /api/sales/record 200 in 52ms (next.js: 13ms, proxy.ts: 14ms, application-code: 24ms)
+ POST /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 7ms)
+ POST /api/sales/record 200 in 35ms (next.js: 10ms, proxy.ts: 14ms, application-code: 11ms)
+ POST /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /inventory 200 in 239ms (next.js: 8ms, proxy.ts: 4ms, application-code: 227ms)
+ GET /api/sales/record 200 in 20ms (next.js: 7ms, proxy.ts: 7ms, application-code: 6ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /dashboard 200 in 200ms (next.js: 6ms, proxy.ts: 4ms, application-code: 191ms)
+ GET /api/sales/record 200 in 15ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /analytics/products 200 in 406ms (next.js: 350ms, proxy.ts: 4ms, application-code: 52ms)
+ GET /analytics 200 in 251ms (next.js: 204ms, proxy.ts: 4ms, application-code: 43ms)
+ GET /analytics 200 in 43ms (next.js: 11ms, proxy.ts: 6ms, application-code: 27ms)
+✓ Compiled in 1352ms
+ GET /analytics 200 in 82ms (next.js: 48ms, proxy.ts: 4ms, application-code: 29ms)
+ GET /dashboard 200 in 402ms (next.js: 7ms, proxy.ts: 3ms, application-code: 391ms)
+ GET /driver/sell?driver=qerimi 200 in 262ms (next.js: 7ms, proxy.ts: 3ms, application-code: 252ms)
+ GET /driver/sell?driver=mensuri 200 in 264ms (next.js: 20ms, proxy.ts: 4ms, application-code: 240ms)
+✓ Compiled in 154ms
+ GET /analytics 200 in 198ms (next.js: 94ms, proxy.ts: 9ms, application-code: 95ms)
+ GET /driver/sell?driver=mensuri 200 in 345ms (next.js: 13ms, proxy.ts: 9ms, application-code: 324ms)
+ GET /dashboard 200 in 345ms (next.js: 67ms, proxy.ts: 9ms, application-code: 269ms)
+ GET /driver/sell?driver=qerimi 200 in 216ms (next.js: 7ms, proxy.ts: 8ms, application-code: 201ms)
+ GET /analytics 200 in 180ms (next.js: 84ms, proxy.ts: 14ms, application-code: 81ms)
+ GET /dashboard 200 in 341ms (next.js: 19ms, proxy.ts: 17ms, application-code: 305ms)
+ GET /driver/sell?driver=qerimi 200 in 320ms (next.js: 7ms, proxy.ts: 110ms, application-code: 203ms)
+ GET /driver/sell?driver=mensuri 200 in 567ms (next.js: 62ms, proxy.ts: 15ms, application-code: 491ms)
+ GET /analytics 200 in 132ms (next.js: 14ms, proxy.ts: 7ms, application-code: 112ms)
+ GET /driver/sell?driver=mensuri 200 in 506ms (next.js: 34ms, proxy.ts: 6ms, application-code: 466ms)
+ GET /driver/sell?driver=qerimi 200 in 162ms (next.js: 8ms, proxy.ts: 4ms, application-code: 150ms)
+ GET /dashboard 200 in 1560ms (next.js: 72ms, proxy.ts: 6ms, application-code: 1482ms)
+ GET /inventory 200 in 237ms (next.js: 7ms, proxy.ts: 3ms, application-code: 226ms)
+ GET /api/sales/record 200 in 43ms (next.js: 13ms, proxy.ts: 15ms, application-code: 15ms)
+ GET /api/sales/record 200 in 26ms (next.js: 7ms, proxy.ts: 10ms, application-code: 8ms)
+ GET /orders 200 in 168ms (next.js: 17ms, proxy.ts: 4ms, application-code: 146ms)
+ GET /dashboard 200 in 215ms (next.js: 7ms, proxy.ts: 11ms, application-code: 197ms)
+ GET /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/sales/record 200 in 27ms (next.js: 10ms, proxy.ts: 9ms, application-code: 8ms)
+ GET /analytics 200 in 176ms (next.js: 13ms, proxy.ts: 5ms, application-code: 158ms)
+ GET /api/sales/record 200 in 16ms (next.js: 6ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /analytics/products 200 in 45ms (next.js: 19ms, proxy.ts: 3ms, application-code: 23ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /api/sales/record 200 in 19ms (next.js: 5ms, proxy.ts: 6ms, application-code: 8ms)
+ GET /api/sales/record 200 in 15ms (next.js: 5ms, proxy.ts: 5ms, application-code: 6ms)
+ GET /analytics/products 200 in 28ms (next.js: 6ms, proxy.ts: 3ms, application-code: 19ms)
+ GET /inventory 200 in 700ms (next.js: 9ms, proxy.ts: 3ms, application-code: 687ms)
+ GET /api/sales/record 200 in 31ms (next.js: 7ms, proxy.ts: 15ms, application-code: 9ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /dashboard 200 in 220ms (next.js: 9ms, proxy.ts: 3ms, application-code: 208ms)
+ GET /api/sales/record 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /analytics/products 200 in 34ms (next.js: 6ms, proxy.ts: 3ms, application-code: 24ms)
+ GET /api/sales/record 200 in 15ms (next.js: 5ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 15ms (next.js: 4ms, proxy.ts: 3ms, application-code: 8ms)
+✓ Compiled in 6.4s
+ GET /analytics/products 200 in 62ms (next.js: 18ms, proxy.ts: 7ms, application-code: 37ms)
+ GET /dashboard 200 in 636ms (next.js: 171ms, proxy.ts: 29ms, application-code: 435ms)
+ GET /driver/sell?driver=mensuri 200 in 709ms (next.js: 9ms, proxy.ts: 4ms, application-code: 696ms)
+ GET /dashboard 200 in 619ms (next.js: 32ms, proxy.ts: 15ms, application-code: 573ms)
+ GET /analytics/products 200 in 186ms (next.js: 55ms, proxy.ts: 28ms, application-code: 103ms)
+ GET /driver/sell?driver=mensuri 200 in 477ms (next.js: 87ms, proxy.ts: 33ms, application-code: 357ms)
+ GET /dashboard 200 in 614ms (next.js: 115ms, proxy.ts: 27ms, application-code: 472ms)
+ GET /dashboard 200 in 141ms (next.js: 6ms, proxy.ts: 4ms, application-code: 131ms)
+ GET /analytics/products 200 in 145ms (next.js: 101ms, proxy.ts: 6ms, application-code: 38ms)
+ GET /dashboard 200 in 249ms (next.js: 17ms, proxy.ts: 17ms, application-code: 215ms)
+ GET /dashboard 200 in 570ms (next.js: 26ms, proxy.ts: 7ms, application-code: 538ms)
+ GET /driver/sell?driver=mensuri 200 in 572ms (next.js: 49ms, proxy.ts: 6ms, application-code: 516ms)
+✓ Compiled in 268ms
+ GET /analytics/products 200 in 137ms (next.js: 27ms, proxy.ts: 7ms, application-code: 103ms)
+ GET /driver/sell?driver=mensuri 200 in 334ms (next.js: 55ms, proxy.ts: 7ms, application-code: 272ms)
+ GET /dashboard 200 in 333ms (next.js: 87ms, proxy.ts: 7ms, application-code: 239ms)
+ GET /dashboard 200 in 236ms (next.js: 11ms, proxy.ts: 6ms, application-code: 218ms)
+✓ Compiled in 158ms
+ GET /analytics/products 200 in 137ms (next.js: 91ms, proxy.ts: 8ms, application-code: 38ms)
+ GET /dashboard 200 in 329ms (next.js: 44ms, proxy.ts: 9ms, application-code: 276ms)
+ GET /dashboard 200 in 236ms (next.js: 9ms, proxy.ts: 8ms, application-code: 219ms)
+ GET /driver/sell?driver=mensuri 200 in 598ms (next.js: 19ms, proxy.ts: 7ms, application-code: 571ms)
+ GET /api/sales/record 200 in 15ms (next.js: 5ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /customers 200 in 509ms (next.js: 223ms, proxy.ts: 5ms, application-code: 281ms)
+ GET /analytics/products 200 in 36ms (next.js: 8ms, proxy.ts: 4ms, application-code: 24ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 15ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /analytics/products 200 in 139ms (next.js: 6ms, proxy.ts: 3ms, application-code: 129ms)
+ GET /api/sales/record 200 in 73ms (next.js: 47ms, proxy.ts: 10ms, application-code: 16ms)
+ GET /api/sales/record 200 in 35ms (next.js: 26ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /inventory 200 in 264ms (next.js: 23ms, proxy.ts: 4ms, application-code: 237ms)
+ GET /api/sales/record 200 in 25ms (next.js: 11ms, proxy.ts: 7ms, application-code: 7ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /inventory/transfers 200 in 468ms (next.js: 213ms, proxy.ts: 4ms, application-code: 252ms)
+ GET /dashboard 200 in 214ms (next.js: 9ms, proxy.ts: 4ms, application-code: 201ms)
+ GET /api/sales/record 200 in 16ms (next.js: 4ms, proxy.ts: 4ms, application-code: 8ms)
+ GET /api/sales/record 200 in 15ms (next.js: 5ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /analytics/products 200 in 36ms (next.js: 11ms, proxy.ts: 4ms, application-code: 21ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /settings 200 in 39ms (next.js: 12ms, proxy.ts: 4ms, application-code: 23ms)
+ DELETE /api/sales/record 200 in 198ms (next.js: 4ms, proxy.ts: 5ms, application-code: 190ms)
+ DELETE /api/sales/record 200 in 128ms (next.js: 3ms, proxy.ts: 3ms, application-code: 121ms)
+ GET /dashboard 200 in 205ms (next.js: 7ms, proxy.ts: 5ms, application-code: 194ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/sales/record 200 in 25ms (next.js: 7ms, proxy.ts: 7ms, application-code: 11ms)
+ GET /inventory 200 in 156ms (next.js: 6ms, proxy.ts: 4ms, application-code: 146ms)
+ GET /api/sales/record 200 in 32ms (next.js: 10ms, proxy.ts: 13ms, application-code: 9ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /driver/sell?driver=mensuri 200 in 224ms (next.js: 10ms, proxy.ts: 3ms, application-code: 211ms)
+ GET /driver/sell?driver=mensuri 200 in 506ms (next.js: 6ms, proxy.ts: 3ms, application-code: 497ms)
+ POST /api/ocr/scan-invoice 200 in 10.6s (next.js: 11ms, proxy.ts: 459ms, application-code: 10.1s)
+ POST /api/ocr/scan-invoice 200 in 6.7s (next.js: 7ms, proxy.ts: 287ms, application-code: 6.5s)
+ POST /api/ocr/scan-invoice 200 in 9.3s (next.js: 9ms, proxy.ts: 244ms, application-code: 9.1s)
+ POST /api/ocr/scan-invoice 200 in 9.3s (next.js: 9ms, proxy.ts: 222ms, application-code: 9.1s)
+ POST /api/ocr/scan-invoice 200 in 6.6s (next.js: 9ms, proxy.ts: 186ms, application-code: 6.4s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash
+Please retry in 35.286428587s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"5"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"35s"}]
+ POST /api/ocr/scan-invoice 200 in 6.6s (next.js: 15ms, proxy.ts: 160ms, application-code: 6.4s)
+ POST /api/ocr/scan-invoice 200 in 5.6s (next.js: 9ms, proxy.ts: 157ms, application-code: 5.4s)
+ POST /api/sales/record 200 in 34ms (next.js: 7ms, proxy.ts: 16ms, application-code: 10ms)
+ POST /api/sales/record 200 in 23ms (next.js: 8ms, proxy.ts: 9ms, application-code: 6ms)
+ GET /products 200 in 422ms (next.js: 184ms, proxy.ts: 3ms, application-code: 234ms)
+ GET /api/products/prices 200 in 2.0s (next.js: 2.0s, proxy.ts: 4ms, application-code: 8ms)
+ GET /api/products/prices 200 in 26ms (next.js: 7ms, proxy.ts: 10ms, application-code: 9ms)
+ GET /analytics/products 200 in 48ms (next.js: 15ms, proxy.ts: 13ms, application-code: 19ms)
+ GET /api/sales/record 200 in 13ms (next.js: 5ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 14ms (next.js: 6ms, proxy.ts: 3ms, application-code: 5ms)
+ POST /api/products/prices 200 in 20ms (next.js: 8ms, proxy.ts: 4ms, application-code: 8ms)
+ GET /analytics/products 200 in 139ms (next.js: 24ms, proxy.ts: 4ms, application-code: 111ms)
+ GET /api/sales/record 200 in 30ms (next.js: 17ms, proxy.ts: 7ms, application-code: 7ms)
+[browser] Uncaught Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <LoadingBoundary name="products/" loading={null}>
+      <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <InnerLayoutRouter url="/analytics..." tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} ...>
+              <SegmentViewNode type="page" pagePath="(admin)/an...">
+                <SegmentTrieNode>
+                <AnalyticsProductsPage>
+                  <ProductAnalyticsView>
+                    <div className="space-y-6 ...">
+                      <div>
+                      <div className="glass-card...">
+                        <div className="overflow-x...">
+                          <table className="w-full tex...">
+                            <thead>
+                            <tbody className="divide-y d...">
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr>
+                              <tr onClick={function onClick} className="hover:bg-b...">
+                                <td>
+                                <td>
+                                <td>
+                                <td>
+                                <td>
+                                <td className="px-4 py-3 text-right font-semibold text-surface-200 tabular-nums">
++                                 2,30 €
+-                                 2,20 €
+                                ...
+                              ...
+              ...
+            ...
+
+    at <unknown> (https://react.dev/link/hydration-mismatch)
+    at td (<anonymous>)
+    at <unknown> (components/analytics/ProductAnalyticsView.tsx:220:21)
+    at Array.map (<anonymous>)
+    at ProductAnalyticsView (components/analytics/ProductAnalyticsView.tsx:188:33)
+    at AnalyticsProductsPage (app\(admin)\analytics\products\page.tsx:7:10)
+  218 |                       )}
+  219 |                     </td>
+> 220 |                     <td className="px-4 py-3 text-right font-semibold text-surface-200 tabular-nums">
+      |                     ^
+  221 |                       {formatCurrency(p.selling_price)}
+  222 |                     </td>
+  223 |                     <td className="px-4 py-3 text-right font-bold text-surface-300 tabular-nums">
+ GET /analytics 200 in 43ms (next.js: 19ms, proxy.ts: 3ms, application-code: 20ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 5ms, application-code: 6ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /analytics/products 200 in 30ms (next.js: 6ms, proxy.ts: 4ms, application-code: 20ms)
+ GET /api/sales/record 200 in 20ms (next.js: 5ms, proxy.ts: 7ms, application-code: 8ms)
+ GET /api/sales/record 200 in 16ms (next.js: 4ms, proxy.ts: 4ms, application-code: 8ms)
+ GET /inventory 200 in 336ms (next.js: 10ms, proxy.ts: 3ms, application-code: 323ms)
+ GET /api/sales/record 200 in 25ms (next.js: 7ms, proxy.ts: 11ms, application-code: 8ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /dashboard 200 in 226ms (next.js: 10ms, proxy.ts: 3ms, application-code: 213ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 15ms (next.js: 3ms, proxy.ts: 3ms, application-code: 9ms)
+ POST /api/sales/record 200 in 14ms (next.js: 5ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ POST /api/sales/record 200 in 21ms (next.js: 3ms, proxy.ts: 11ms, application-code: 7ms)
+ GET /dashboard 200 in 228ms (next.js: 18ms, proxy.ts: 13ms, application-code: 197ms)
+ POST /api/sales/record 200 in 32ms (next.js: 8ms, proxy.ts: 13ms, application-code: 10ms)
+ GET /inventory 200 in 140ms (next.js: 7ms, proxy.ts: 3ms, application-code: 131ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /dashboard 200 in 143ms (next.js: 7ms, proxy.ts: 3ms, application-code: 133ms)
+ GET /api/sales/record 200 in 16ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/sales/record 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 34ms (next.js: 9ms, proxy.ts: 14ms, application-code: 11ms)
+ GET /login 200 in 51ms (next.js: 17ms, proxy.ts: 13ms, application-code: 21ms)
+ GET /login 200 in 37ms (next.js: 7ms, proxy.ts: 3ms, application-code: 27ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /driver/sell?driver=qerimi 200 in 285ms (next.js: 14ms, proxy.ts: 13ms, application-code: 258ms)
+ GET /driver/sell?driver=qerimi 200 in 238ms (next.js: 19ms, proxy.ts: 14ms, application-code: 205ms)
+Gemini Model gemini-3.5-flash failed: Expected ',' or '}' after property value in JSON at position 131 (line 9 column 4)
+ POST /api/ocr/scan-invoice 200 in 11.9s (next.js: 19ms, proxy.ts: 156ms, application-code: 11.7s)
+ POST /api/ocr/scan-invoice 200 in 10.8s (next.js: 8ms, proxy.ts: 898ms, application-code: 9.9s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 35.60234226s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"35s"}]
+ POST /api/ocr/scan-invoice 200 in 12.2s (next.js: 4ms, proxy.ts: 630ms, application-code: 11.6s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 29.235194953s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"29s"}]
+ POST /api/ocr/scan-invoice 200 in 10.7s (next.js: 4ms, proxy.ts: 360ms, application-code: 10.3s)
+ POST /api/ocr/scan-invoice 200 in 6.0s (next.js: 15ms, proxy.ts: 270ms, application-code: 5.7s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 22.075318844s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"22s"}]
+ POST /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/ocr/scan-invoice 200 in 6.1s (next.js: 14ms, proxy.ts: 249ms, application-code: 5.8s)
+ GET /inventory 200 in 386ms (next.js: 8ms, proxy.ts: 4ms, application-code: 374ms)
+ GET /api/sales/record 200 in 23ms (next.js: 6ms, proxy.ts: 8ms, application-code: 9ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /dashboard 200 in 215ms (next.js: 6ms, proxy.ts: 3ms, application-code: 205ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /inventory 200 in 172ms (next.js: 10ms, proxy.ts: 8ms, application-code: 154ms)
+ GET /api/sales/record 200 in 14ms (next.js: 3ms, proxy.ts: 5ms, application-code: 6ms)
+ GET /api/sales/record 200 in 15ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /dashboard 200 in 204ms (next.js: 7ms, proxy.ts: 4ms, application-code: 193ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/sales/record 200 in 16ms (next.js: 4ms, proxy.ts: 4ms, application-code: 8ms)
+ POST /api/sales/record 200 in 14ms (next.js: 3ms, proxy.ts: 5ms, application-code: 6ms)
+ POST /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /inventory 200 in 239ms (next.js: 9ms, proxy.ts: 7ms, application-code: 222ms)
+ GET /api/sales/record 200 in 25ms (next.js: 6ms, proxy.ts: 11ms, application-code: 8ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /dashboard 200 in 352ms (next.js: 9ms, proxy.ts: 5ms, application-code: 339ms)
+ GET /api/sales/record 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 15ms (next.js: 5ms, proxy.ts: 3ms, application-code: 7ms)
+ POST /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+✓ Compiled in 148ms
+ GET /dashboard 200 in 236ms (next.js: 9ms, proxy.ts: 6ms, application-code: 221ms)
+ GET /driver/sell?driver=mensuri 200 in 630ms (next.js: 21ms, proxy.ts: 12ms, application-code: 596ms)
+ GET /dashboard 200 in 667ms (next.js: 80ms, proxy.ts: 11ms, application-code: 576ms)
+ GET /dashboard 200 in 237ms (next.js: 9ms, proxy.ts: 4ms, application-code: 224ms)
+✓ Compiled in 148ms
+ GET /dashboard 200 in 294ms (next.js: 52ms, proxy.ts: 8ms, application-code: 234ms)
+ GET /driver/sell?driver=mensuri 200 in 425ms (next.js: 17ms, proxy.ts: 9ms, application-code: 399ms)
+ GET /dashboard 200 in 174ms (next.js: 9ms, proxy.ts: 24ms, application-code: 141ms)
+ GET /dashboard 200 in 1519ms (next.js: 11ms, proxy.ts: 6ms, application-code: 1502ms)
+✓ Compiled in 125ms
+ GET /dashboard 200 in 267ms (next.js: 6ms, proxy.ts: 4ms, application-code: 257ms)
+ GET /dashboard 200 in 252ms (next.js: 43ms, proxy.ts: 4ms, application-code: 204ms)
+ GET /driver/sell?driver=mensuri 200 in 513ms (next.js: 13ms, proxy.ts: 5ms, application-code: 496ms)
+ GET /dashboard 200 in 184ms (next.js: 22ms, proxy.ts: 15ms, application-code: 147ms)
+⨯ ReferenceError: productsVersion is not defined
+    at ProductAnalyticsView (components\analytics\ProductAnalyticsView.tsx:136:18)
+  134 |
+  135 |     return Object.values(map)
+> 136 |   }, [salesList, productsVersion, isMounted])
+      |                  ^
+  137 |
+  138 |   const filteredProducts = useMemo(() => {
+  139 |     if (!searchQuery.trim()) return productStats {
+  digest: '306331166'
+}
+ GET /analytics/products 200 in 148ms (next.js: 17ms, proxy.ts: 4ms, application-code: 128ms)
+[browser] Uncaught ReferenceError: productsVersion is not defined
+    at ProductAnalyticsView (components/analytics/ProductAnalyticsView.tsx:136:18)
+    at AnalyticsProductsPage (app\(admin)\analytics\products\page.tsx:7:10)
+  134 |
+  135 |     return Object.values(map)
+> 136 |   }, [salesList, productsVersion, isMounted])
+      |                  ^
+  137 |
+  138 |   const filteredProducts = useMemo(() => {
+  139 |     if (!searchQuery.trim()) return productStats
+✓ Compiled in 125ms
+⨯ ReferenceError: INITIAL_DEPO_PRODUCTS is not defined
+    at eval (components\analytics\ProductAnalyticsView.tsx:82:66)
+    at ProductAnalyticsView (components\analytics\ProductAnalyticsView.tsx:67:31)
+  80 |
+  81 |     // Initialize all products with current active prices (hydration safe)
+> 82 |     const activeProducts = isMounted ? getActiveProductsList() : INITIAL_DEPO_PRODUCTS
+     |                                                                  ^
+  83 |     activeProducts.forEach((p) => {
+  84 |       map[p.sku] = {
+  85 |         sku: p.sku, {
+  digest: '4050558180'
+}
+ GET /analytics/products 200 in 621ms (next.js: 17ms, proxy.ts: 5ms, application-code: 600ms)
+ GET /dashboard 200 in 1869ms (next.js: 59ms, proxy.ts: 5ms, application-code: 1804ms)
+ GET /dashboard 200 in 1162ms (next.js: 10ms, proxy.ts: 6ms, application-code: 1146ms)
+ GET /dashboard 200 in 1347ms (next.js: 21ms, proxy.ts: 8ms, application-code: 1317ms)
+ GET /driver/sell?driver=mensuri 200 in 1346ms (next.js: 44ms, proxy.ts: 8ms, application-code: 1294ms)

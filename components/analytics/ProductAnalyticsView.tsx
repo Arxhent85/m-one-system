@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { Package, Search, MapPin, Users, TrendingUp, Eye } from 'lucide-react'
 import { formatCurrency, formatNumber } from '@/lib/utils/currency'
-import { getSalesHistory, INITIAL_DEPO_PRODUCTS } from '@/lib/stockStore'
+import { getSalesHistory, getActiveProductsList, INITIAL_DEPO_PRODUCTS } from '@/lib/stockStore'
 import ProductDetailModal from './ProductDetailModal'
 
 import MOCK_2026_SALES from '@/lib/mock2026Sales.json'
@@ -12,44 +12,54 @@ export default function ProductAnalyticsView() {
   const [salesList, setSalesList] = useState<any[]>(MOCK_2026_SALES)
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedProduct, setSelectedProduct] = useState<any | null>(null)
+  const [isMounted, setIsMounted] = useState(false)
+  const [productsVersion, setProductsVersion] = useState(0)
 
   useEffect(() => {
+    setIsMounted(true)
     function loadData() {
       const isCleared = typeof window !== 'undefined' && localStorage.getItem('m_one_sales_cleared') === 'true'
       const local = getSalesHistory()
-      const base = isCleared ? [] : (local && local.length > 0 ? local : MOCK_2026_SALES)
-
-      if (isCleared) {
-        setSalesList([])
-        return
-      }
 
       fetch('/api/sales/record')
         .then((res) => res.json())
         .then((data) => {
-          if (data.success && Array.isArray(data.sales) && data.sales.length > 0) {
-            const combined = [...data.sales]
-            base.forEach((l: any) => {
-              if (!combined.some((c) => c.id === l.id || c.order_number === l.order_number)) {
-                combined.push(l)
-              }
-            })
+          const serverSales = data.success && Array.isArray(data.sales) ? data.sales : []
+          const combined = [...serverSales]
+          local.forEach((l: any) => {
+            if (!combined.some((c) => c.id === l.id || c.order_number === l.order_number)) {
+              combined.push(l)
+            }
+          })
+          if (combined.length > 0) {
             setSalesList(combined)
+          } else if (isCleared) {
+            setSalesList([])
           } else {
-            setSalesList(base)
+            setSalesList(MOCK_2026_SALES)
           }
         })
-        .catch(() => setSalesList(base))
+        .catch(() => {
+          if (local.length > 0) {
+            setSalesList(local)
+          } else if (isCleared) {
+            setSalesList([])
+          } else {
+            setSalesList(MOCK_2026_SALES)
+          }
+        })
     }
 
     loadData()
-    const interval = setInterval(loadData, 3000)
+    const handleProductsChange = () => setProductsVersion((v) => v + 1)
+
     window.addEventListener('focus', loadData)
     window.addEventListener('m_one_sale_recorded', loadData)
+    window.addEventListener('m_one_products_changed', handleProductsChange)
     return () => {
-      clearInterval(interval)
       window.removeEventListener('focus', loadData)
       window.removeEventListener('m_one_sale_recorded', loadData)
+      window.removeEventListener('m_one_products_changed', handleProductsChange)
     }
   }, [])
 
@@ -68,13 +78,14 @@ export default function ProductAnalyticsView() {
       topCity: string
     }> = {}
 
-    // Initialize all 42 depo products
-    INITIAL_DEPO_PRODUCTS.forEach((p) => {
+    // Initialize all products with current active prices (hydration safe)
+    const activeProducts = isMounted ? getActiveProductsList() : INITIAL_DEPO_PRODUCTS
+    activeProducts.forEach((p) => {
       map[p.sku] = {
         sku: p.sku,
         name: p.name,
-        purchase_price: p.price * 0.65, // ~35% margin
-        selling_price: p.price,
+        purchase_price: p.purchase_price || (p.selling_price || 0) * 0.65,
+        selling_price: p.selling_price || 0,
         stock: p.stock,
         qtySold: 0,
         revenue: 0,
@@ -123,7 +134,7 @@ export default function ProductAnalyticsView() {
     })
 
     return Object.values(map)
-  }, [salesList])
+  }, [salesList, productsVersion, isMounted])
 
   const filteredProducts = useMemo(() => {
     if (!searchQuery.trim()) return productStats
@@ -208,7 +219,7 @@ export default function ProductAnalyticsView() {
                         <span className="text-surface-600 text-xs">0,00 €</span>
                       )}
                     </td>
-                    <td className="px-4 py-3 text-right font-semibold text-surface-200 tabular-nums">
+                    <td className="px-4 py-3 text-right font-semibold text-surface-200 tabular-nums" suppressHydrationWarning>
                       {formatCurrency(p.selling_price)}
                     </td>
                     <td className="px-4 py-3 text-right font-bold text-surface-300 tabular-nums">

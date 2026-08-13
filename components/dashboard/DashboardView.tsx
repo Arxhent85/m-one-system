@@ -100,12 +100,10 @@ export default function DashboardView({ initialOrders, locations }: DashboardVie
     }
 
     loadData()
-    const interval = setInterval(loadData, 3000)
     window.addEventListener('focus', loadData)
     window.addEventListener('m_one_sale_recorded', loadData)
     window.addEventListener('m_one_stock_changed', loadData)
     return () => {
-      clearInterval(interval)
       window.removeEventListener('focus', loadData)
       window.removeEventListener('m_one_sale_recorded', loadData)
       window.removeEventListener('m_one_stock_changed', loadData)

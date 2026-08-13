@@ -32,37 +32,40 @@ export default function CustomerAnalyticsView() {
     function loadData() {
       const isCleared = typeof window !== 'undefined' && localStorage.getItem('m_one_sales_cleared') === 'true'
       const local = getSalesHistory()
-      const base = isCleared ? [] : (local && local.length > 0 ? local : MOCK_2026_SALES)
-
-      if (isCleared) {
-        setSalesList([])
-        return
-      }
 
       fetch('/api/sales/record')
         .then((res) => res.json())
         .then((data) => {
-          if (data.success && Array.isArray(data.sales) && data.sales.length > 0) {
-            const combined = [...data.sales]
-            base.forEach((l: any) => {
-              if (!combined.some((c) => c.id === l.id || c.order_number === l.order_number)) {
-                combined.push(l)
-              }
-            })
+          const serverSales = data.success && Array.isArray(data.sales) ? data.sales : []
+          const combined = [...serverSales]
+          local.forEach((l: any) => {
+            if (!combined.some((c) => c.id === l.id || c.order_number === l.order_number)) {
+              combined.push(l)
+            }
+          })
+          if (combined.length > 0) {
             setSalesList(combined)
+          } else if (isCleared) {
+            setSalesList([])
           } else {
-            setSalesList(base)
+            setSalesList(MOCK_2026_SALES)
           }
         })
-        .catch(() => setSalesList(base))
+        .catch(() => {
+          if (local.length > 0) {
+            setSalesList(local)
+          } else if (isCleared) {
+            setSalesList([])
+          } else {
+            setSalesList(MOCK_2026_SALES)
+          }
+        })
     }
 
     loadData()
-    const interval = setInterval(loadData, 3000)
     window.addEventListener('focus', loadData)
     window.addEventListener('m_one_sale_recorded', loadData)
     return () => {
-      clearInterval(interval)
       window.removeEventListener('focus', loadData)
       window.removeEventListener('m_one_sale_recorded', loadData)
     }

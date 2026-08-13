@@ -62,11 +62,9 @@ export default function InventoryView({ locations: initialLocations }: Inventory
     }
 
     syncServerStock()
-    const interval = setInterval(syncServerStock, 3000)
     window.addEventListener('focus', syncServerStock)
     window.addEventListener('m_one_stock_changed', syncServerStock)
     return () => {
-      clearInterval(interval)
       window.removeEventListener('focus', syncServerStock)
       window.removeEventListener('m_one_stock_changed', syncServerStock)
     }

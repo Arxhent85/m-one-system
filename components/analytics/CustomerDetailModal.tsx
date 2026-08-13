@@ -74,8 +74,33 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
       itemMap[key].total += i.total || (i.qty || 1) * (i.unit_price || 0)
     })
   })
-
   const topItems = Object.values(itemMap).sort((a, b) => b.total - a.total)
+
+  // Trend analysis by month for customer (2026-01 to 2026-08)
+  const monthlyVolume: Record<string, number> = {
+    '01': 0, '02': 0, '03': 0, '04': 0, '05': 0, '06': 0, '07': 0, '08': 0
+  }
+  customerSales.forEach((s) => {
+    const createdStr = s.created_at || ''
+    const monthMatch = createdStr.match(/-(\d{2})-/)
+    const rev = s.total_amount || 0
+    if (monthMatch && monthlyVolume[monthMatch[1]] !== undefined) {
+      monthlyVolume[monthMatch[1]] += rev
+    } else {
+      monthlyVolume['08'] += rev
+    }
+  })
+  const monthLabels = [
+    { key: '01', name: 'Jan' },
+    { key: '02', name: 'Feb' },
+    { key: '03', name: 'Mär' },
+    { key: '04', name: 'Apr' },
+    { key: '05', name: 'Mai' },
+    { key: '06', name: 'Jun' },
+    { key: '07', name: 'Jul' },
+    { key: '08', name: 'Aug' },
+  ]
+  const maxMonthVal = Math.max(...Object.values(monthlyVolume), 1)
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
@@ -133,6 +158,43 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
               <p className="text-lg font-black text-brand-400 tabular-nums mt-0.5">
                 {formatNumber(topItems.reduce((s, i) => s + i.qty, 0))} Stk.
               </p>
+            </div>
+          </div>
+
+          {/* VISUELLE UMSATZ-GRAFIK FÜR DIESEN KUNDEN */}
+          <div className="glass-card p-4 border border-surface-800 space-y-3">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xs font-bold text-surface-300 uppercase tracking-wider flex items-center gap-2">
+                <ShoppingCart className="w-4 h-4 text-emerald-400" />
+                Umsatz-Entwicklung dieses Kunden (2026)
+              </h3>
+            </div>
+
+            {/* Visual Bar Chart */}
+            <div className="h-28 pt-4 pb-1 px-2 flex items-end justify-between gap-2 border-b border-surface-800 bg-surface-950/50 rounded-xl">
+              {monthLabels.map((m) => {
+                const val = monthlyVolume[m.key] || 0
+                const pct = Math.min(100, Math.max(8, Math.round((val / maxMonthVal) * 100)))
+
+                return (
+                  <div key={m.key} className="flex-1 flex flex-col items-center gap-1.5 h-full justify-end group">
+                    <span className="text-[9px] font-mono text-surface-400 font-bold group-hover:text-emerald-400 transition-colors">
+                      {val > 0 ? `${Math.round(val)}€` : '0'}
+                    </span>
+                    <div className="w-full max-w-[28px] bg-surface-800 rounded-t-md overflow-hidden flex items-end h-full">
+                      <div
+                        style={{ height: `${pct}%` }}
+                        className={`w-full transition-all duration-500 rounded-t-md ${
+                          val > 0
+                            ? 'bg-gradient-to-t from-emerald-700 via-teal-600 to-emerald-400 group-hover:from-emerald-600 group-hover:to-emerald-300 shadow-glow'
+                            : 'bg-surface-800'
+                        }`}
+                      />
+                    </div>
+                    <span className="text-[10px] font-mono text-surface-500 font-bold uppercase">{m.name}</span>
+                  </div>
+                )
+              })}
             </div>
           </div>
 
