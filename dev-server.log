@@ -544,3 +544,883 @@ Please retry in 22.075318844s. [{"@type":"type.googleapis.com/google.rpc.Help","
  GET /dashboard 200 in 1162ms (next.js: 10ms, proxy.ts: 6ms, application-code: 1146ms)
  GET /dashboard 200 in 1347ms (next.js: 21ms, proxy.ts: 8ms, application-code: 1317ms)
  GET /driver/sell?driver=mensuri 200 in 1346ms (next.js: 44ms, proxy.ts: 8ms, application-code: 1294ms)
+⨯ ReferenceError: INITIAL_DEPO_PRODUCTS is not defined
+    at eval (components\analytics\ProductAnalyticsView.tsx:82:66)
+    at ProductAnalyticsView (components\analytics\ProductAnalyticsView.tsx:67:31)
+  80 |
+  81 |     // Initialize all products with current active prices (hydration safe)
+> 82 |     const activeProducts = isMounted ? getActiveProductsList() : INITIAL_DEPO_PRODUCTS
+     |                                                                  ^
+  83 |     activeProducts.forEach((p) => {
+  84 |       map[p.sku] = {
+  85 |         sku: p.sku, {
+  digest: '4050558180'
+}
+ GET /analytics/products 200 in 77ms (next.js: 8ms, proxy.ts: 4ms, application-code: 65ms)
+[browser] Uncaught ReferenceError: INITIAL_DEPO_PRODUCTS is not defined
+    at ProductAnalyticsView.useMemo[productStats] (components/analytics/ProductAnalyticsView.tsx:82:66)
+    at ProductAnalyticsView (components/analytics/ProductAnalyticsView.tsx:67:31)
+    at AnalyticsProductsPage (app\(admin)\analytics\products\page.tsx:7:10)
+  80 |
+  81 |     // Initialize all products with current active prices (hydration safe)
+> 82 |     const activeProducts = isMounted ? getActiveProductsList() : INITIAL_DEPO_PRODUCTS
+     |                                                                  ^
+  83 |     activeProducts.forEach((p) => {
+  84 |       map[p.sku] = {
+  85 |         sku: p.sku,
+✓ Compiled in 133ms
+ GET /analytics/products 200 in 220ms (next.js: 31ms, proxy.ts: 36ms, application-code: 153ms)
+ GET /dashboard 200 in 349ms (next.js: 13ms, proxy.ts: 4ms, application-code: 332ms)
+ GET /driver/sell?driver=mensuri 200 in 366ms (next.js: 60ms, proxy.ts: 49ms, application-code: 257ms)
+ GET /dashboard 200 in 561ms (next.js: 13ms, proxy.ts: 7ms, application-code: 541ms)
+ GET /dashboard 200 in 268ms (next.js: 15ms, proxy.ts: 12ms, application-code: 241ms)
+ GET /analytics/products 200 in 144ms (next.js: 8ms, proxy.ts: 4ms, application-code: 132ms)
+ GET /analytics/products 200 in 118ms (next.js: 8ms, proxy.ts: 6ms, application-code: 105ms)
+ GET /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /inventory 200 in 292ms (next.js: 12ms, proxy.ts: 6ms, application-code: 274ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /api/sales/record 200 in 27ms (next.js: 7ms, proxy.ts: 12ms, application-code: 9ms)
+ GET /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /analytics/products 200 in 34ms (next.js: 6ms, proxy.ts: 4ms, application-code: 23ms)
+ GET /api/sales/record 200 in 23ms (next.js: 7ms, proxy.ts: 9ms, application-code: 8ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /inventory 200 in 385ms (next.js: 6ms, proxy.ts: 3ms, application-code: 375ms)
+ GET /api/sales/record 200 in 24ms (next.js: 7ms, proxy.ts: 10ms, application-code: 8ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /settings 200 in 36ms (next.js: 9ms, proxy.ts: 3ms, application-code: 23ms)
+ DELETE /api/sales/record 200 in 229ms (next.js: 3ms, proxy.ts: 4ms, application-code: 221ms)
+ DELETE /api/sales/record 200 in 117ms (next.js: 4ms, proxy.ts: 4ms, application-code: 109ms)
+ GET /dashboard 200 in 209ms (next.js: 6ms, proxy.ts: 3ms, application-code: 200ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /inventory 200 in 274ms (next.js: 6ms, proxy.ts: 3ms, application-code: 265ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /driver/sell?driver=mensuri 200 in 277ms (next.js: 6ms, proxy.ts: 3ms, application-code: 268ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 14.872328297s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"14s"}]
+ POST /api/ocr/scan-invoice 200 in 2.6s (next.js: 4ms, proxy.ts: 47ms, application-code: 2.6s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 10.875567894s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"10s"}]
+ POST /api/ocr/scan-invoice 200 in 3.5s (next.js: 4ms, proxy.ts: 64ms, application-code: 3.4s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 6.977388971s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"6s"}]
+ POST /api/ocr/scan-invoice 200 in 3.5s (next.js: 4ms, proxy.ts: 74ms, application-code: 3.4s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 3.332597013s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"3s"}]
+ POST /api/ocr/scan-invoice 200 in 3.1s (next.js: 4ms, proxy.ts: 67ms, application-code: 3.0s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 59.676584235s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"59s"}]
+ POST /api/ocr/scan-invoice 200 in 2.9s (next.js: 4ms, proxy.ts: 66ms, application-code: 2.8s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 55.334447034s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"55s"}]
+ POST /api/ocr/scan-invoice 200 in 3.0s (next.js: 14ms, proxy.ts: 61ms, application-code: 2.9s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 51.534883301s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"51s"}]
+ POST /api/sales/record 200 in 24ms (next.js: 3ms, proxy.ts: 3ms, application-code: 17ms)
+ POST /api/ocr/scan-invoice 200 in 3.3s (next.js: 4ms, proxy.ts: 59ms, application-code: 3.2s)
+ POST /api/sales/record 200 in 32ms (next.js: 9ms, proxy.ts: 14ms, application-code: 10ms)
+ POST /api/sales/record 200 in 35ms (next.js: 10ms, proxy.ts: 14ms, application-code: 11ms)
+ POST /api/sales/record 200 in 25ms (next.js: 4ms, proxy.ts: 14ms, application-code: 6ms)
+ POST /api/sales/record 200 in 37ms (next.js: 11ms, proxy.ts: 14ms, application-code: 12ms)
+ POST /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 21ms (next.js: 6ms, proxy.ts: 5ms, application-code: 10ms)
+ GET /dashboard 200 in 262ms (next.js: 8ms, proxy.ts: 4ms, application-code: 250ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /inventory 200 in 237ms (next.js: 6ms, proxy.ts: 4ms, application-code: 227ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /login 200 in 49ms (next.js: 6ms, proxy.ts: 3ms, application-code: 40ms)
+ GET /login 200 in 35ms (next.js: 7ms, proxy.ts: 4ms, application-code: 23ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /driver/sell?driver=qerimi 200 in 239ms (next.js: 6ms, proxy.ts: 3ms, application-code: 229ms)
+ GET /driver/sell?driver=qerimi 200 in 164ms (next.js: 6ms, proxy.ts: 7ms, application-code: 151ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 57.597001226s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"57s"}]
+ POST /api/ocr/scan-invoice 200 in 3.5s (next.js: 6ms, proxy.ts: 72ms, application-code: 3.5s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 54.783361089s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"54s"}]
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 50.745227298s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"50s"}]
+ POST /api/ocr/scan-invoice 200 in 4.9s (next.js: 11ms, proxy.ts: 72ms, application-code: 4.9s)
+ POST /api/ocr/scan-invoice 200 in 2.8s (next.js: 3ms, proxy.ts: 65ms, application-code: 2.7s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 47.701665467s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"47s"}]
+ POST /api/ocr/scan-invoice 200 in 2.5s (next.js: 14ms, proxy.ts: 63ms, application-code: 2.4s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 43.553589469s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"43s"}]
+ POST /api/ocr/scan-invoice 200 in 4.1s (next.js: 3ms, proxy.ts: 57ms, application-code: 4.0s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 39.221330984s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"39s"}]
+ POST /api/ocr/scan-invoice 200 in 2.9s (next.js: 3ms, proxy.ts: 55ms, application-code: 2.9s)
+ POST /api/sales/record 200 in 35ms (next.js: 11ms, proxy.ts: 14ms, application-code: 11ms)
+ POST /api/sales/record 200 in 15ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ POST /api/sales/record 200 in 40ms (next.js: 13ms, proxy.ts: 14ms, application-code: 13ms)
+ POST /api/sales/record 200 in 18ms (next.js: 3ms, proxy.ts: 9ms, application-code: 6ms)
+ POST /api/sales/record 200 in 24ms (next.js: 5ms, proxy.ts: 13ms, application-code: 6ms)
+ POST /api/sales/record 200 in 33ms (next.js: 9ms, proxy.ts: 13ms, application-code: 11ms)
+ GET /dashboard 200 in 220ms (next.js: 6ms, proxy.ts: 6ms, application-code: 208ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 23ms (next.js: 11ms, proxy.ts: 5ms, application-code: 7ms)
+ GET /inventory 200 in 167ms (next.js: 7ms, proxy.ts: 3ms, application-code: 157ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /analytics/vehicles 200 in 447ms (next.js: 202ms, proxy.ts: 4ms, application-code: 241ms)
+ GET /analytics/products 200 in 47ms (next.js: 7ms, proxy.ts: 4ms, application-code: 36ms)
+ GET /api/sales/record 200 in 14ms (next.js: 3ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /analytics 200 in 50ms (next.js: 8ms, proxy.ts: 4ms, application-code: 38ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/sales/record 200 in 23ms (next.js: 9ms, proxy.ts: 7ms, application-code: 7ms)
+[browser] Uncaught ReferenceError: ProductDetailModal is not defined
+    at AnalyticsView (components/analytics/AnalyticsView.tsx:171:10)
+    at AnalyticsPage (app\(admin)\analytics\page.tsx:7:10)
+  169 |       {/* Modals */}
+  170 |       {selectedProduct && (
+> 171 |         <ProductDetailModal
+      |          ^
+  172 |           product={selectedProduct}
+  173 |           sales={salesList}
+  174 |           onClose={() => setSelectedProduct(null)}
+ GET /analytics? 200 in 90ms (next.js: 6ms, proxy.ts: 4ms, application-code: 80ms)
+ GET /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+[browser] Uncaught ReferenceError: ProductDetailModal is not defined
+    at AnalyticsView (components/analytics/AnalyticsView.tsx:171:10)
+    at AnalyticsPage (app\(admin)\analytics\page.tsx:7:10)
+  169 |       {/* Modals */}
+  170 |       {selectedProduct && (
+> 171 |         <ProductDetailModal
+      |          ^
+  172 |           product={selectedProduct}
+  173 |           sales={salesList}
+  174 |           onClose={() => setSelectedProduct(null)}
+ GET /analytics? 200 in 89ms (next.js: 7ms, proxy.ts: 4ms, application-code: 79ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 5ms, application-code: 5ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+✓ Compiled in 1049ms
+ GET /analytics/products 200 in 233ms (next.js: 24ms, proxy.ts: 12ms, application-code: 197ms)
+ GET /analytics 200 in 228ms (next.js: 152ms, proxy.ts: 11ms, application-code: 65ms)
+ GET /analytics/products 200 in 64ms (next.js: 12ms, proxy.ts: 8ms, application-code: 44ms)
+ GET /driver/sell?driver=mensuri 200 in 462ms (next.js: 50ms, proxy.ts: 13ms, application-code: 399ms)
+ GET /dashboard 200 in 663ms (next.js: 119ms, proxy.ts: 13ms, application-code: 531ms)
+ GET /dashboard 200 in 180ms (next.js: 9ms, proxy.ts: 5ms, application-code: 166ms)
+ GET /dashboard 200 in 889ms (next.js: 6ms, proxy.ts: 4ms, application-code: 879ms)
+ GET /driver/sell?driver=qerimi 200 in 7.5s (next.js: 7ms, proxy.ts: 3ms, application-code: 7.5s)
+ GET /api/sales/record 200 in 20ms (next.js: 5ms, proxy.ts: 7ms, application-code: 9ms)
+ GET /api/sales/record 200 in 17ms (next.js: 5ms, proxy.ts: 6ms, application-code: 6ms)
+ GET /api/sales/record 200 in 15ms (next.js: 5ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/sales/record 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 14ms (next.js: 5ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /settings 200 in 53ms (next.js: 8ms, proxy.ts: 3ms, application-code: 42ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ POST /api/sales/record 200 in 24ms (next.js: 4ms, proxy.ts: 4ms, application-code: 16ms)
+ GET /dashboard 200 in 686ms (next.js: 7ms, proxy.ts: 4ms, application-code: 675ms)
+ GET /api/sales/record 200 in 19ms (next.js: 3ms, proxy.ts: 3ms, application-code: 13ms)
+ GET /api/sales/record 200 in 22ms (next.js: 3ms, proxy.ts: 5ms, application-code: 14ms)
+ GET /dashboard 200 in 597ms (next.js: 6ms, proxy.ts: 3ms, application-code: 588ms)
+ GET /api/sales/record 200 in 47ms (next.js: 8ms, proxy.ts: 15ms, application-code: 24ms)
+ GET /api/sales/record 200 in 22ms (next.js: 4ms, proxy.ts: 3ms, application-code: 15ms)
+ GET /inventory 200 in 176ms (next.js: 9ms, proxy.ts: 4ms, application-code: 163ms)
+ GET /api/sales/record 200 in 33ms (next.js: 6ms, proxy.ts: 9ms, application-code: 18ms)
+ GET /api/sales/record 200 in 35ms (next.js: 6ms, proxy.ts: 6ms, application-code: 23ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /inventory 200 in 412ms (next.js: 6ms, proxy.ts: 5ms, application-code: 401ms)
+ GET /inventory/transfers 200 in 178ms (next.js: 8ms, proxy.ts: 3ms, application-code: 167ms)
+ GET /dashboard 200 in 597ms (next.js: 10ms, proxy.ts: 5ms, application-code: 582ms)
+ GET /api/sales/record 200 in 19ms (next.js: 3ms, proxy.ts: 3ms, application-code: 13ms)
+ GET /api/sales/record 200 in 49ms (next.js: 9ms, proxy.ts: 15ms, application-code: 25ms)
+ GET /analytics/products 200 in 32ms (next.js: 6ms, proxy.ts: 3ms, application-code: 23ms)
+ GET /api/sales/record 200 in 22ms (next.js: 3ms, proxy.ts: 4ms, application-code: 14ms)
+ GET /api/sales/record 200 in 29ms (next.js: 3ms, proxy.ts: 13ms, application-code: 13ms)
+ GET /analytics 200 in 30ms (next.js: 6ms, proxy.ts: 3ms, application-code: 20ms)
+ GET /api/sales/record 200 in 31ms (next.js: 9ms, proxy.ts: 7ms, application-code: 15ms)
+ GET /api/sales/record 200 in 45ms (next.js: 10ms, proxy.ts: 14ms, application-code: 21ms)
+ GET /dashboard 200 in 632ms (next.js: 15ms, proxy.ts: 8ms, application-code: 609ms)
+ GET /api/sales/record 200 in 21ms (next.js: 4ms, proxy.ts: 3ms, application-code: 14ms)
+ GET /api/sales/record 200 in 47ms (next.js: 11ms, proxy.ts: 14ms, application-code: 22ms)
+ GET /analytics 200 in 31ms (next.js: 9ms, proxy.ts: 3ms, application-code: 18ms)
+ GET /api/sales/record 200 in 21ms (next.js: 3ms, proxy.ts: 3ms, application-code: 14ms)
+ GET /api/sales/record 200 in 28ms (next.js: 5ms, proxy.ts: 5ms, application-code: 18ms)
+✓ Compiled in 278ms
+ GET /customers 200 in 594ms (next.js: 7ms, proxy.ts: 3ms, application-code: 583ms)
+ GET /dashboard 200 in 515ms (next.js: 39ms, proxy.ts: 3ms, application-code: 472ms)
+ GET /analytics/products 200 in 82ms (next.js: 41ms, proxy.ts: 8ms, application-code: 33ms)
+ GET /driver/sell?driver=mensuri 200 in 310ms (next.js: 45ms, proxy.ts: 4ms, application-code: 261ms)
+ GET /analytics/products 200 in 83ms (next.js: 47ms, proxy.ts: 7ms, application-code: 28ms)
+ GET /dashboard 200 in 530ms (next.js: 10ms, proxy.ts: 8ms, application-code: 512ms)
+ GET /dashboard 200 in 158ms (next.js: 11ms, proxy.ts: 17ms, application-code: 131ms)
+ GET /dashboard 200 in 476ms (next.js: 7ms, proxy.ts: 4ms, application-code: 465ms)
+ GET /driver/sell?driver=qerimi 200 in 474ms (next.js: 7ms, proxy.ts: 3ms, application-code: 464ms)
+ GET /dashboard 200 in 143ms (next.js: 7ms, proxy.ts: 4ms, application-code: 132ms)
+ GET /api/sales/record 200 in 65ms (next.js: 45ms, proxy.ts: 4ms, application-code: 16ms)
+ GET /api/sales/record 200 in 22ms (next.js: 4ms, proxy.ts: 3ms, application-code: 15ms)
+ GET /api/sales/record 200 in 21ms (next.js: 3ms, proxy.ts: 3ms, application-code: 15ms)
+[browser] Uncaught ReferenceError: allSales is not defined
+    at DashboardView (components/dashboard/DashboardView.tsx:215:18)
+    at DashboardPage (app\(admin)\dashboard\page.tsx:40:10)
+  213 |         <CustomerDetailModal
+  214 |           customer={selectedCustomer}
+> 215 |           sales={allSales.map((o) => ({
+      |                  ^
+  216 |             ...o,
+  217 |             customer_number: o.customer_number ?? o.customers?.customer_number,
+  218 |             customer_name: o.customer_name ?? o.customers?.company_name,
+✓ Compiled in 141ms
+ GET /analytics/products 200 in 351ms (next.js: 13ms, proxy.ts: 9ms, application-code: 329ms)
+ GET /analytics/products 200 in 144ms (next.js: 54ms, proxy.ts: 7ms, application-code: 84ms)
+ GET /driver/sell?driver=qerimi 200 in 509ms (next.js: 184ms, proxy.ts: 9ms, application-code: 317ms)
+ GET /dashboard 200 in 524ms (next.js: 57ms, proxy.ts: 9ms, application-code: 458ms)
+ GET /driver/sell?driver=mensuri 200 in 361ms (next.js: 13ms, proxy.ts: 90ms, application-code: 259ms)
+ GET /dashboard 200 in 245ms (next.js: 7ms, proxy.ts: 42ms, application-code: 196ms)
+ GET /dashboard 200 in 632ms (next.js: 88ms, proxy.ts: 10ms, application-code: 535ms)
+ GET /dashboard 200 in 182ms (next.js: 16ms, proxy.ts: 14ms, application-code: 152ms)
+ GET /api/sales/record 200 in 28ms (next.js: 5ms, proxy.ts: 3ms, application-code: 20ms)
+ GET /api/sales/record 200 in 45ms (next.js: 11ms, proxy.ts: 13ms, application-code: 22ms)
+ GET /api/sales/record 200 in 24ms (next.js: 4ms, proxy.ts: 5ms, application-code: 16ms)
+ GET /products 200 in 632ms (next.js: 39ms, proxy.ts: 3ms, application-code: 589ms)
+ GET /api/products/prices 200 in 55ms (next.js: 34ms, proxy.ts: 4ms, application-code: 18ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 16ms (next.js: 3ms, proxy.ts: 7ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 16ms (next.js: 5ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 3ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 15ms (next.js: 3ms, proxy.ts: 6ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 15ms (next.js: 6ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 25ms (next.js: 7ms, proxy.ts: 10ms, application-code: 8ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 14ms (next.js: 5ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/products/prices 200 in 14ms (next.js: 5ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 18ms (next.js: 4ms, proxy.ts: 8ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 43ms (next.js: 14ms, proxy.ts: 14ms, application-code: 15ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 14ms (next.js: 6ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 18ms (next.js: 5ms, proxy.ts: 5ms, application-code: 8ms)
+ GET /api/products/prices 200 in 16ms (next.js: 5ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 15ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 16ms (next.js: 5ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 14ms (next.js: 5ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 24ms (next.js: 4ms, proxy.ts: 15ms, application-code: 5ms)
+ GET /api/products/prices 200 in 16ms (next.js: 7ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 15ms (next.js: 6ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 21ms (next.js: 5ms, proxy.ts: 5ms, application-code: 11ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 16ms (next.js: 4ms, proxy.ts: 7ms, application-code: 5ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 15ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 15ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 18ms (next.js: 5ms, proxy.ts: 5ms, application-code: 8ms)
+ GET /api/products/prices 200 in 16ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 15ms (next.js: 7ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 5ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 25ms (next.js: 6ms, proxy.ts: 13ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 14ms (next.js: 5ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 28ms (next.js: 5ms, proxy.ts: 16ms, application-code: 7ms)
+ GET /api/products/prices 200 in 32ms (next.js: 10ms, proxy.ts: 13ms, application-code: 10ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 15ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 16ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 15ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 16ms (next.js: 5ms, proxy.ts: 4ms, application-code: 8ms)
+ GET /api/products/prices 200 in 15ms (next.js: 5ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/products/prices 200 in 13ms (next.js: 3ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 50ms (next.js: 13ms, proxy.ts: 13ms, application-code: 24ms)
+ GET /api/products/prices 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/products/prices 200 in 13ms (next.js: 3ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 23ms (next.js: 6ms, proxy.ts: 9ms, application-code: 8ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 28ms (next.js: 13ms, proxy.ts: 10ms, application-code: 5ms)
+ GET /api/products/prices 200 in 20ms (next.js: 7ms, proxy.ts: 6ms, application-code: 8ms)
+ GET /dashboard 200 in 253ms (next.js: 6ms, proxy.ts: 3ms, application-code: 244ms)
+ GET /api/products/prices 200 in 16ms (next.js: 5ms, proxy.ts: 6ms, application-code: 6ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /api/sales/record 200 in 22ms (next.js: 4ms, proxy.ts: 3ms, application-code: 15ms)
+ GET /api/sales/record 200 in 45ms (next.js: 10ms, proxy.ts: 13ms, application-code: 22ms)
+ GET /products 200 in 406ms (next.js: 6ms, proxy.ts: 3ms, application-code: 397ms)
+ GET /api/products/prices 200 in 16ms (next.js: 5ms, proxy.ts: 4ms, application-code: 8ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 33ms (next.js: 13ms, proxy.ts: 14ms, application-code: 6ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 35ms (next.js: 10ms, proxy.ts: 15ms, application-code: 10ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 15ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 16ms (next.js: 5ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 16ms (next.js: 4ms, proxy.ts: 3ms, application-code: 9ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 18ms (next.js: 5ms, proxy.ts: 5ms, application-code: 9ms)
+ GET /api/products/prices 200 in 15ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 25ms (next.js: 3ms, proxy.ts: 3ms, application-code: 18ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/products/prices 200 in 14ms (next.js: 3ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 16ms (next.js: 4ms, proxy.ts: 5ms, application-code: 7ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/products/prices 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 14ms (next.js: 5ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/products/prices 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/products/prices 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 11ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/products/prices 200 in 45ms (next.js: 4ms, proxy.ts: 36ms, application-code: 5ms)
+ GET /dashboard 200 in 219ms (next.js: 9ms, proxy.ts: 4ms, application-code: 206ms)
+ GET /api/sales/record 200 in 20ms (next.js: 3ms, proxy.ts: 3ms, application-code: 14ms)
+ GET /api/sales/record 200 in 61ms (next.js: 10ms, proxy.ts: 11ms, application-code: 39ms)
+ GET /analytics 200 in 38ms (next.js: 16ms, proxy.ts: 4ms, application-code: 17ms)
+ GET /api/sales/record 200 in 21ms (next.js: 4ms, proxy.ts: 3ms, application-code: 14ms)
+ GET /api/sales/record 200 in 28ms (next.js: 5ms, proxy.ts: 7ms, application-code: 16ms)
+ GET /settings 200 in 63ms (next.js: 36ms, proxy.ts: 5ms, application-code: 22ms)
+ DELETE /api/sales/record 200 in 278ms (next.js: 7ms, proxy.ts: 4ms, application-code: 267ms)
+ DELETE /api/sales/record 200 in 120ms (next.js: 3ms, proxy.ts: 4ms, application-code: 112ms)
+ DELETE /api/sales/record 200 in 134ms (next.js: 5ms, proxy.ts: 4ms, application-code: 124ms)
+ GET /customers 200 in 150ms (next.js: 10ms, proxy.ts: 5ms, application-code: 135ms)
+ GET /analytics 200 in 29ms (next.js: 7ms, proxy.ts: 3ms, application-code: 20ms)
+ GET /api/sales/record 200 in 20ms (next.js: 6ms, proxy.ts: 7ms, application-code: 7ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /inventory 200 in 208ms (next.js: 59ms, proxy.ts: 4ms, application-code: 145ms)
+ GET /api/sales/record 200 in 16ms (next.js: 5ms, proxy.ts: 5ms, application-code: 6ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /driver/sell 200 in 256ms (next.js: 6ms, proxy.ts: 3ms, application-code: 248ms)
+ GET /driver/sell 200 in 246ms (next.js: 7ms, proxy.ts: 4ms, application-code: 236ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 21.137226567s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"21s"}]
+ POST /api/ocr/scan-invoice 200 in 3.2s (next.js: 87ms, proxy.ts: 130ms, application-code: 3.0s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 18.538329643s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"18s"}]
+ POST /api/ocr/scan-invoice 200 in 2.8s (next.js: 6ms, proxy.ts: 127ms, application-code: 2.7s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 15.949793985s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"15s"}]
+ POST /api/ocr/scan-invoice 200 in 3.2s (next.js: 14ms, proxy.ts: 124ms, application-code: 3.0s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 13.13418062s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"13s"}]
+ POST /api/ocr/scan-invoice 200 in 2.8s (next.js: 9ms, proxy.ts: 110ms, application-code: 2.7s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 9.861758534s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"9s"}]
+ POST /api/ocr/scan-invoice 200 in 4.0s (next.js: 14ms, proxy.ts: 104ms, application-code: 3.9s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 4.519959525s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"4s"}]
+ POST /api/ocr/scan-invoice 200 in 3.2s (next.js: 4ms, proxy.ts: 85ms, application-code: 3.2s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 103.364112ms. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"0s"}]
+ POST /api/ocr/scan-invoice 200 in 3.3s (next.js: 4ms, proxy.ts: 96ms, application-code: 3.2s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 14.45033157s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"14s"}]
+ POST /api/ocr/scan-invoice 200 in 3.4s (next.js: 4ms, proxy.ts: 85ms, application-code: 3.3s)
+ POST /api/sales/record 200 in 35ms (next.js: 10ms, proxy.ts: 14ms, application-code: 11ms)
+ POST /api/sales/record 200 in 37ms (next.js: 10ms, proxy.ts: 17ms, application-code: 11ms)
+ POST /api/sales/record 200 in 35ms (next.js: 11ms, proxy.ts: 13ms, application-code: 10ms)
+ POST /api/sales/record 200 in 34ms (next.js: 9ms, proxy.ts: 13ms, application-code: 11ms)
+ POST /api/sales/record 200 in 36ms (next.js: 12ms, proxy.ts: 13ms, application-code: 10ms)
+ POST /api/sales/record 200 in 33ms (next.js: 10ms, proxy.ts: 13ms, application-code: 10ms)
+ GET /driver/sell 200 in 187ms (next.js: 19ms, proxy.ts: 13ms, application-code: 155ms)
+ GET /login 200 in 36ms (next.js: 7ms, proxy.ts: 3ms, application-code: 26ms)
+ GET /login 200 in 39ms (next.js: 6ms, proxy.ts: 5ms, application-code: 27ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /dashboard 200 in 262ms (next.js: 8ms, proxy.ts: 4ms, application-code: 250ms)
+ GET /dashboard 200 in 227ms (next.js: 7ms, proxy.ts: 3ms, application-code: 216ms)
+ GET /api/sales/record 200 in 18ms (next.js: 5ms, proxy.ts: 6ms, application-code: 8ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /settings 200 in 34ms (next.js: 7ms, proxy.ts: 4ms, application-code: 24ms)
+ DELETE /api/sales/record 200 in 188ms (next.js: 4ms, proxy.ts: 4ms, application-code: 180ms)
+ DELETE /api/sales/record 200 in 104ms (next.js: 4ms, proxy.ts: 3ms, application-code: 97ms)
+ DELETE /api/sales/record 200 in 109ms (next.js: 4ms, proxy.ts: 4ms, application-code: 102ms)
+ GET /dashboard 200 in 222ms (next.js: 7ms, proxy.ts: 4ms, application-code: 211ms)
+ GET /api/sales/record 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 22.546016877s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"22s"}]
+ POST /api/ocr/scan-invoice 200 in 3.3s (next.js: 8ms, proxy.ts: 74ms, application-code: 3.2s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 18.701442068s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"18s"}]
+ POST /api/ocr/scan-invoice 200 in 3.2s (next.js: 14ms, proxy.ts: 73ms, application-code: 3.2s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 15.096618462s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"15s"}]
+ POST /api/ocr/scan-invoice 200 in 3.6s (next.js: 3ms, proxy.ts: 76ms, application-code: 3.5s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 10.889346575s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"10s"}]
+ POST /api/ocr/scan-invoice 200 in 3.1s (next.js: 8ms, proxy.ts: 87ms, application-code: 3.0s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 7.790305484s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"7s"}]
+ POST /api/ocr/scan-invoice 200 in 2.7s (next.js: 10ms, proxy.ts: 73ms, application-code: 2.6s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 4.120780532s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"4s"}]
+ POST /api/ocr/scan-invoice 200 in 3.1s (next.js: 13ms, proxy.ts: 73ms, application-code: 3.0s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 58.750352809s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"58s"}]
+ POST /api/ocr/scan-invoice 200 in 2.6s (next.js: 4ms, proxy.ts: 60ms, application-code: 2.6s)
+✓ Compiled in 212ms
+ GET /analytics/products 200 in 182ms (next.js: 66ms, proxy.ts: 9ms, application-code: 106ms)
+ GET /inventory 200 in 181ms (next.js: 117ms, proxy.ts: 9ms, application-code: 55ms)
+ GET /analytics/products 200 in 84ms (next.js: 11ms, proxy.ts: 4ms, application-code: 69ms)
+ GET /dashboard 200 in 522ms (next.js: 93ms, proxy.ts: 9ms, application-code: 420ms)
+ GET /driver/sell?driver=mensuri 200 in 525ms (next.js: 26ms, proxy.ts: 9ms, application-code: 490ms)
+ GET /dashboard 200 in 265ms (next.js: 34ms, proxy.ts: 10ms, application-code: 222ms)
+ GET /dashboard 200 in 205ms (next.js: 12ms, proxy.ts: 12ms, application-code: 182ms)
+ GET /dashboard 200 in 155ms (next.js: 12ms, proxy.ts: 4ms, application-code: 139ms)
+ GET /dashboard 200 in 169ms (next.js: 12ms, proxy.ts: 13ms, application-code: 144ms)
+ GET /driver/sell 200 in 301ms (next.js: 7ms, proxy.ts: 4ms, application-code: 289ms)
+ GET /driver/sell 200 in 272ms (next.js: 7ms, proxy.ts: 13ms, application-code: 252ms)
+ GET /login 200 in 36ms (next.js: 6ms, proxy.ts: 3ms, application-code: 26ms)
+ GET /login 200 in 38ms (next.js: 6ms, proxy.ts: 3ms, application-code: 29ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /dashboard 200 in 513ms (next.js: 8ms, proxy.ts: 4ms, application-code: 501ms)
+ GET /dashboard 200 in 396ms (next.js: 6ms, proxy.ts: 4ms, application-code: 386ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /inventory 200 in 169ms (next.js: 7ms, proxy.ts: 3ms, application-code: 159ms)
+ GET /api/sales/record 200 in 18ms (next.js: 4ms, proxy.ts: 9ms, application-code: 6ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /analytics 200 in 49ms (next.js: 11ms, proxy.ts: 11ms, application-code: 27ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /inventory 200 in 168ms (next.js: 7ms, proxy.ts: 3ms, application-code: 158ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /dashboard 200 in 224ms (next.js: 6ms, proxy.ts: 4ms, application-code: 214ms)
+ GET /api/sales/record 200 in 32ms (next.js: 9ms, proxy.ts: 13ms, application-code: 9ms)
+ GET /api/sales/record 200 in 23ms (next.js: 6ms, proxy.ts: 6ms, application-code: 10ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 42.858814513s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"42s"}]
+ POST /api/ocr/scan-invoice 200 in 3.1s (next.js: 14ms, proxy.ts: 64ms, application-code: 3.0s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 39.189878306s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"39s"}]
+ POST /api/ocr/scan-invoice 200 in 3.4s (next.js: 14ms, proxy.ts: 67ms, application-code: 3.3s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 36.776117983s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"36s"}]
+ POST /api/ocr/scan-invoice 200 in 3.6s (next.js: 14ms, proxy.ts: 47ms, application-code: 3.5s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 33.851503787s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"33s"}]
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 31.24987671s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"31s"}]
+ POST /api/ocr/scan-invoice 200 in 4.3s (next.js: 14ms, proxy.ts: 74ms, application-code: 4.2s)
+ POST /api/ocr/scan-invoice 200 in 2.9s (next.js: 14ms, proxy.ts: 60ms, application-code: 2.9s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 28.344299475s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"28s"}]
+ POST /api/ocr/scan-invoice 200 in 2.5s (next.js: 14ms, proxy.ts: 61ms, application-code: 2.4s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 24.859862014s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"24s"}]
+ POST /api/ocr/scan-invoice 200 in 3.7s (next.js: 4ms, proxy.ts: 56ms, application-code: 3.7s)
+✓ Compiled in 227ms
+ GET /analytics/products 200 in 150ms (next.js: 27ms, proxy.ts: 11ms, application-code: 112ms)
+ GET /inventory 200 in 145ms (next.js: 89ms, proxy.ts: 8ms, application-code: 47ms)
+ GET /analytics/products 200 in 39ms (next.js: 6ms, proxy.ts: 4ms, application-code: 29ms)
+ GET /driver/sell?driver=mensuri 200 in 471ms (next.js: 53ms, proxy.ts: 8ms, application-code: 409ms)
+ GET /dashboard 200 in 308ms (next.js: 28ms, proxy.ts: 24ms, application-code: 256ms)
+ GET /dashboard 200 in 586ms (next.js: 7ms, proxy.ts: 6ms, application-code: 572ms)
+ GET /dashboard 200 in 246ms (next.js: 7ms, proxy.ts: 3ms, application-code: 236ms)
+ GET /dashboard 200 in 154ms (next.js: 12ms, proxy.ts: 7ms, application-code: 136ms)
+ GET /dashboard 200 in 507ms (next.js: 14ms, proxy.ts: 8ms, application-code: 486ms)
+ GET /dashboard 200 in 404ms (next.js: 8ms, proxy.ts: 3ms, application-code: 393ms)
+ GET /driver/sell 200 in 244ms (next.js: 7ms, proxy.ts: 3ms, application-code: 234ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 42.752506753s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"42s"}]
+ POST /api/ocr/scan-invoice 200 in 3.6s (next.js: 3ms, proxy.ts: 61ms, application-code: 3.5s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 40.151243035s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"40s"}]
+ POST /api/ocr/scan-invoice 200 in 3.4s (next.js: 10ms, proxy.ts: 54ms, application-code: 3.4s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 33.193525385s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"33s"}]
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 30.730206617s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"30s"}]
+ POST /api/ocr/scan-invoice 200 in 3.6s (next.js: 10ms, proxy.ts: 59ms, application-code: 3.6s)
+ POST /api/ocr/scan-invoice 200 in 2.9s (next.js: 3ms, proxy.ts: 52ms, application-code: 2.9s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 27.77179828s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"27s"}]
+ POST /api/ocr/scan-invoice 200 in 3.0s (next.js: 5ms, proxy.ts: 52ms, application-code: 2.9s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 20.444377619s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"20s"}]
+ POST /api/ocr/scan-invoice 200 in 5.9s (next.js: 15ms, proxy.ts: 37ms, application-code: 5.8s)
+ POST /api/ocr/scan-invoice 200 in 2.7s (next.js: 6ms, proxy.ts: 49ms, application-code: 2.6s)
+ POST /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 36ms (next.js: 10ms, proxy.ts: 14ms, application-code: 11ms)
+ POST /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ POST /api/sales/record 200 in 38ms (next.js: 12ms, proxy.ts: 16ms, application-code: 11ms)
+ POST /api/sales/record 200 in 25ms (next.js: 6ms, proxy.ts: 7ms, application-code: 12ms)
+ POST /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 7ms)
+ POST /api/sales/record 200 in 14ms (next.js: 3ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /login 200 in 63ms (next.js: 13ms, proxy.ts: 15ms, application-code: 35ms)
+ GET /login 200 in 36ms (next.js: 6ms, proxy.ts: 3ms, application-code: 27ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /driver/sell?driver=qerimi 200 in 207ms (next.js: 8ms, proxy.ts: 4ms, application-code: 195ms)
+ GET /driver/sell?driver=qerimi 200 in 132ms (next.js: 7ms, proxy.ts: 3ms, application-code: 122ms)
+ GET /driver/sell?driver=qerimi 200 in 156ms (next.js: 17ms, proxy.ts: 14ms, application-code: 125ms)
+ GET /driver/sell?driver=qerimi 200 in 167ms (next.js: 16ms, proxy.ts: 8ms, application-code: 144ms)
+ GET /driver/sell 200 in 252ms (next.js: 7ms, proxy.ts: 4ms, application-code: 240ms)
+ GET /login 200 in 36ms (next.js: 7ms, proxy.ts: 4ms, application-code: 25ms)
+ GET /login 200 in 34ms (next.js: 6ms, proxy.ts: 3ms, application-code: 25ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /driver/sell?driver=qerimi 200 in 172ms (next.js: 18ms, proxy.ts: 13ms, application-code: 141ms)
+ GET /driver/sell?driver=qerimi 200 in 149ms (next.js: 6ms, proxy.ts: 4ms, application-code: 138ms)
+ GET /dashboard 200 in 227ms (next.js: 7ms, proxy.ts: 3ms, application-code: 216ms)
+ GET /dashboard 200 in 148ms (next.js: 8ms, proxy.ts: 7ms, application-code: 133ms)
+ GET /api/sales/record 200 in 26ms (next.js: 7ms, proxy.ts: 9ms, application-code: 10ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 6.192849847s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"6s"}]
+ POST /api/ocr/scan-invoice 200 in 3.0s (next.js: 14ms, proxy.ts: 53ms, application-code: 3.0s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 2.291394954s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"2s"}]
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 58.864698951s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"58s"}]
+ POST /api/ocr/scan-invoice 200 in 4.2s (next.js: 5ms, proxy.ts: 54ms, application-code: 4.1s)
+Gemini Model gemini-3.5-flash-lite failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent: [503 Service Unavailable] Deadline expired before operation could complete.
+Gemini Model gemini-2.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [404 Not Found] This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/migrate-to-interactions).
+Gemini Model gemini-2.5-flash-lite failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent: [404 Not Found] This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use a newer model for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/migrate-to-interactions).
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 55.089845336s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"55s"}]
+ POST /api/ocr/scan-invoice 200 in 3.6s (next.js: 10ms, proxy.ts: 55ms, application-code: 3.5s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 52.250538204s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"52s"}]
+ POST /api/ocr/scan-invoice 200 in 7.6s (next.js: 4ms, proxy.ts: 53ms, application-code: 7.5s)
+ POST /api/ocr/scan-invoice 200 in 4.7s (next.js: 4ms, proxy.ts: 44ms, application-code: 4.6s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 48.232536467s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"48s"}]
+ POST /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/ocr/scan-invoice 200 in 4.4s (next.js: 3ms, proxy.ts: 49ms, application-code: 4.3s)
+ GET /dashboard 200 in 221ms (next.js: 6ms, proxy.ts: 3ms, application-code: 212ms)
+ GET /inventory 200 in 164ms (next.js: 8ms, proxy.ts: 4ms, application-code: 152ms)
+ GET /api/sales/record 200 in 20ms (next.js: 6ms, proxy.ts: 7ms, application-code: 8ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /dashboard 200 in 145ms (next.js: 6ms, proxy.ts: 3ms, application-code: 135ms)
+ GET /api/sales/record 200 in 16ms (next.js: 4ms, proxy.ts: 5ms, application-code: 7ms)
+ GET /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 4ms, application-code: 5ms)
+ POST /api/sales/record 200 in 15ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ POST /api/sales/record 200 in 17ms (next.js: 3ms, proxy.ts: 8ms, application-code: 6ms)
+ POST /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 34ms (next.js: 10ms, proxy.ts: 14ms, application-code: 10ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 5.967205205s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"5s"}]
+ POST /api/ocr/scan-invoice 200 in 3.1s (next.js: 16ms, proxy.ts: 52ms, application-code: 3.1s)
+ POST /api/sales/record 200 in 24ms (next.js: 10ms, proxy.ts: 5ms, application-code: 9ms)
+ GET /inventory 200 in 170ms (next.js: 9ms, proxy.ts: 4ms, application-code: 157ms)
+ GET /api/sales/record 200 in 37ms (next.js: 9ms, proxy.ts: 14ms, application-code: 14ms)
+ GET /api/sales/record 200 in 15ms (next.js: 4ms, proxy.ts: 3ms, application-code: 8ms)
+ GET /dashboard 200 in 217ms (next.js: 7ms, proxy.ts: 3ms, application-code: 206ms)
+ GET /api/sales/record 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /analytics 200 in 36ms (next.js: 11ms, proxy.ts: 3ms, application-code: 22ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /analytics/customers 200 in 270ms (next.js: 226ms, proxy.ts: 3ms, application-code: 41ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+[browser] Uncaught ReferenceError: topItems is not defined
+    at CustomerDetailModal (components/analytics/CustomerDetailModal.tsx:158:31)
+    at AnalyticsCustomersPage (app\(admin)\analytics\customers\page.tsx:7:10)
+  156 |               <p className="text-xs text-surface-400">Gekaufte Einheiten</p>
+  157 |               <p className="text-lg font-black text-brand-400 tabular-nums mt-0.5">
+> 158 |                 {formatNumber(topItems.reduce((s, i) => s + i.qty, 0))} Stk.
+      |                               ^
+  159 |               </p>
+  160 |             </div>
+  161 |           </div>
+ GET /analytics/customers? 200 in 386ms (next.js: 7ms, proxy.ts: 4ms, application-code: 375ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 15ms (next.js: 3ms, proxy.ts: 4ms, application-code: 7ms)
+[browser] Uncaught ReferenceError: topItems is not defined
+    at CustomerDetailModal (components/analytics/CustomerDetailModal.tsx:158:31)
+    at AnalyticsCustomersPage (app\(admin)\analytics\customers\page.tsx:7:10)
+  156 |               <p className="text-xs text-surface-400">Gekaufte Einheiten</p>
+  157 |               <p className="text-lg font-black text-brand-400 tabular-nums mt-0.5">
+> 158 |                 {formatNumber(topItems.reduce((s, i) => s + i.qty, 0))} Stk.
+      |                               ^
+  159 |               </p>
+  160 |             </div>
+  161 |           </div>
+✓ Compiled in 536ms
+✓ Compiled in 228ms
+ GET /analytics/customers 200 in 690ms (next.js: 35ms, proxy.ts: 57ms, application-code: 599ms)
+ GET /analytics/products 200 in 657ms (next.js: 183ms, proxy.ts: 37ms, application-code: 437ms)
+ GET /inventory 200 in 684ms (next.js: 143ms, proxy.ts: 54ms, application-code: 487ms)
+ GET /analytics/products 200 in 118ms (next.js: 42ms, proxy.ts: 11ms, application-code: 65ms)
+ GET /dashboard 200 in 716ms (next.js: 16ms, proxy.ts: 11ms, application-code: 689ms)
+ GET /dashboard 200 in 589ms (next.js: 10ms, proxy.ts: 7ms, application-code: 572ms)
+ GET /dashboard 200 in 496ms (next.js: 19ms, proxy.ts: 11ms, application-code: 466ms)
+ GET /dashboard 200 in 242ms (next.js: 6ms, proxy.ts: 4ms, application-code: 233ms)
+ GET /dashboard 200 in 151ms (next.js: 11ms, proxy.ts: 4ms, application-code: 135ms)
+ GET /driver/sell?driver=mensuri 200 in 2.3s (next.js: 159ms, proxy.ts: 40ms, application-code: 2.1s)
+ GET /dashboard 200 in 7.8s (next.js: 76ms, proxy.ts: 55ms, application-code: 7.7s)
+ GET /analytics/customers 200 in 322ms (next.js: 7ms, proxy.ts: 4ms, application-code: 311ms)
+ GET /api/sales/record 200 in 33ms (next.js: 9ms, proxy.ts: 13ms, application-code: 10ms)
+ GET /api/sales/record 200 in 16ms (next.js: 4ms, proxy.ts: 4ms, application-code: 8ms)
+ GET /analytics 200 in 43ms (next.js: 19ms, proxy.ts: 6ms, application-code: 18ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /api/sales/record 200 in 17ms (next.js: 5ms, proxy.ts: 5ms, application-code: 7ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /analytics/customers 200 in 35ms (next.js: 7ms, proxy.ts: 4ms, application-code: 24ms)
+ GET /api/sales/record 200 in 21ms (next.js: 7ms, proxy.ts: 7ms, application-code: 7ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /settings 200 in 35ms (next.js: 8ms, proxy.ts: 3ms, application-code: 24ms)
+ POST /api/sales/record 200 in 30ms (next.js: 4ms, proxy.ts: 3ms, application-code: 23ms)
+ GET /inventory 200 in 247ms (next.js: 9ms, proxy.ts: 5ms, application-code: 233ms)
+ GET /api/sales/record 200 in 43ms (next.js: 8ms, proxy.ts: 13ms, application-code: 21ms)
+ GET /api/sales/record 200 in 36ms (next.js: 7ms, proxy.ts: 11ms, application-code: 18ms)
+ GET /dashboard 200 in 232ms (next.js: 8ms, proxy.ts: 3ms, application-code: 220ms)
+ GET /api/sales/record 200 in 22ms (next.js: 3ms, proxy.ts: 3ms, application-code: 15ms)
+ GET /api/sales/record 200 in 24ms (next.js: 3ms, proxy.ts: 7ms, application-code: 14ms)
+ GET /analytics 200 in 32ms (next.js: 9ms, proxy.ts: 3ms, application-code: 19ms)
+ GET /api/sales/record 200 in 32ms (next.js: 7ms, proxy.ts: 8ms, application-code: 17ms)
+ GET /api/sales/record 200 in 25ms (next.js: 4ms, proxy.ts: 4ms, application-code: 17ms)
+ GET /analytics/products 200 in 28ms (next.js: 6ms, proxy.ts: 4ms, application-code: 18ms)
+ GET /api/sales/record 200 in 36ms (next.js: 5ms, proxy.ts: 9ms, application-code: 22ms)
+ GET /api/sales/record 200 in 21ms (next.js: 4ms, proxy.ts: 3ms, application-code: 14ms)
+ GET /analytics/customers 200 in 52ms (next.js: 15ms, proxy.ts: 13ms, application-code: 24ms)
+ GET /api/sales/record 200 in 20ms (next.js: 3ms, proxy.ts: 3ms, application-code: 14ms)
+ GET /api/sales/record 200 in 26ms (next.js: 5ms, proxy.ts: 6ms, application-code: 16ms)
+ GET /settings 200 in 43ms (next.js: 16ms, proxy.ts: 3ms, application-code: 23ms)
+ DELETE /api/sales/record 200 in 299ms (next.js: 5ms, proxy.ts: 3ms, application-code: 291ms)
+ DELETE /api/sales/record 200 in 133ms (next.js: 4ms, proxy.ts: 4ms, application-code: 125ms)
+ GET /dashboard 200 in 237ms (next.js: 7ms, proxy.ts: 5ms, application-code: 225ms)
+ GET /api/sales/record 200 in 19ms (next.js: 5ms, proxy.ts: 7ms, application-code: 8ms)
+ GET /api/sales/record 200 in 26ms (next.js: 7ms, proxy.ts: 7ms, application-code: 12ms)

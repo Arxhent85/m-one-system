@@ -57,7 +57,7 @@ export const INITIAL_DEPO_PRODUCTS: ProductStockInfo[] = [
   { id: 'p-11000', sku: '11000', name: 'Bodenreiniger 4 Ltr',              stock: 14,   unit: 'cope', purchase_price: 1.50, selling_price: 8.00 },
   { id: 'p-16936', sku: '16936', name: 'FELGENSILBER 400 ML',               stock: 40,   unit: 'cope', purchase_price: 1.50, selling_price: 3.50 },
   { id: 'p-17101', sku: '17101', name: 'KÜHLERREINIGER 400 ML',             stock: 300,  unit: 'cope', purchase_price: 1.20, selling_price: 3.10 },
-  { id: 'p-26736', sku: '26736', name: 'HAFTGRUND 400 ml',                  stock: 209,  unit: 'cope', purchase_price: 1.50, selling_price: 3.50 },
+  { id: 'p-26736', sku: '26736', name: 'HAFTGRUND 400 ml',                  stock: 209,  unit: 'cope', purchase_price: 1.50, selling_price: 2.00 },
   { id: 'p-30276', sku: '30276', name: 'Bio Blic Antikalk 750 ml',          stock: 13,   unit: 'cope', purchase_price: 2.50, selling_price: 1.80 },
 
   // ── Lack-Sprays ────────────────────────────────────────────────────────────
