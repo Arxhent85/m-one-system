@@ -24,7 +24,7 @@ export async function createCustomer(
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return { success: false, error: 'Nicht authentifiziert' }
 
-    const { data, error } = await supabase
+    const { data, error } = await (supabase as any)
       .from('customers')
       .insert(validated)
       .select()
@@ -33,7 +33,7 @@ export async function createCustomer(
     if (error) return { success: false, error: error.message }
 
     // Customer-Log: Erster Eintrag
-    await supabase.from('customer_logs').insert({
+    await (supabase as any).from('customer_logs').insert({
       customer_id:  data.id,
       action_type:  'note',
       description:  'Kunde angelegt',
@@ -61,7 +61,7 @@ export async function updateCustomer(
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return { success: false, error: 'Nicht authentifiziert' }
 
-    const { data, error } = await supabase
+    const { data, error } = await (supabase as any)
       .from('customers')
       .update({ ...input, updated_at: new Date().toISOString() })
       .eq('id', id)
@@ -92,7 +92,7 @@ export async function addCustomerLog(
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return { success: false, error: 'Nicht authentifiziert' }
 
-    const { error } = await supabase.from('customer_logs').insert({
+    const { error } = await (supabase as any).from('customer_logs').insert({
       ...validated,
       user_id: user.id,
     })

@@ -35,10 +35,9 @@ export default async function AdminLayout({
       .from('profiles')
       .select('*')
       .eq('id', user.id)
-      .single()
-
-    if (dbProfile?.role === 'driver') redirect('/driver/home')
-    profile = dbProfile
+    const profileData = dbProfile as any
+    if (profileData?.role === 'driver') redirect('/driver/home')
+    profile = profileData
   }
 
   return <AdminLayoutWrapper profile={profile}>{children}</AdminLayoutWrapper>

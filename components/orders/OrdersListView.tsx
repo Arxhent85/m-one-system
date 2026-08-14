@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo, useEffect } from 'react'
-import { ShoppingCart, Search, Truck, Eye, User, Package } from 'lucide-react'
+import { ShoppingCart, Search, Truck, Eye, User, Package, MapPin, ExternalLink } from 'lucide-react'
 import { formatCurrency } from '@/lib/utils/currency'
 import { getSalesHistory } from '@/lib/stockStore'
 import MOCK_2026_SALES from '@/lib/mock2026Sales.json'
@@ -19,6 +19,10 @@ interface Order {
   customer_name?: string
   vehicle_location_name?: string
   driver_name?: string
+  latitude?: number
+  longitude?: number
+  gps_accuracy?: number
+  google_maps_url?: string
   items?: any[]
   customers?: { company_name: string; customer_number?: string }
   locations?: { name: string }
@@ -39,6 +43,10 @@ function toRichOrder(s: any): Order {
     customer_name: s.customer_name ?? s.customers?.company_name,
     vehicle_location_name: s.vehicle_location_name ?? s.locations?.name,
     driver_name: s.driver_name,
+    latitude: s.latitude,
+    longitude: s.longitude,
+    gps_accuracy: s.gps_accuracy,
+    google_maps_url: s.google_maps_url,
     items: s.items ?? [],
   }
 }
@@ -47,11 +55,36 @@ export default function OrdersListView({ orders: initialOrders }: OrdersListView
   const [searchQuery, setSearchQuery] = useState('')
   const [driverFilter, setDriverFilter] = useState('all')
   const [allSales, setAllSales] = useState<Order[]>(() => (MOCK_2026_SALES as any[]).map(toRichOrder))
+  const [isReloading, setIsReloading] = useState(false)
 
   // Modals
   const [selectedInvoice, setSelectedInvoice] = useState<Order | null>(null)
   const [selectedCustomer, setSelectedCustomer] = useState<any | null>(null)
   const [selectedProduct, setSelectedProduct] = useState<any | null>(null)
+
+  async function handleLoad2026() {
+    setIsReloading(true)
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('m_one_sales_cleared')
+      localStorage.setItem('m_one_sales_history_v1', JSON.stringify(MOCK_2026_SALES))
+    }
+    try {
+      await fetch('/api/sales/record', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'load_2026_demo' }),
+      })
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new Event('m_one_stock_changed'))
+        window.dispatchEvent(new Event('m_one_sale_recorded'))
+      }
+      setAllSales((MOCK_2026_SALES as any[]).map(toRichOrder))
+    } catch (e) {
+      console.warn('Reload 2026 error:', e)
+    } finally {
+      setTimeout(() => setIsReloading(false), 2000)
+    }
+  }
 
   useEffect(() => {
     function loadSales() {
@@ -86,43 +119,64 @@ export default function OrdersListView({ orders: initialOrders }: OrdersListView
     }
 
     loadSales()
-    window.addEventListener('focus', loadSales)
     window.addEventListener('m_one_sale_recorded', loadSales)
-    return () => {
-      window.removeEventListener('focus', loadSales)
-      window.removeEventListener('m_one_sale_recorded', loadSales)
-    }
+    return () => window.removeEventListener('m_one_sale_recorded', loadSales)
   }, [])
-
-  const totalVolume = useMemo(() => allSales.reduce((s, o) => s + (o.total_amount ?? 0), 0), [allSales])
 
   const filteredOrders = useMemo(() => {
     return allSales.filter((o) => {
+      // Driver filter
       if (driverFilter !== 'all') {
-        const loc = (o.vehicle_location_name ?? '').toLowerCase()
-        if (!loc.includes(driverFilter.toLowerCase())) return false
+        const matchesDriver =
+          (o.driver_name ?? '').toLowerCase().includes(driverFilter.toLowerCase()) ||
+          (o.vehicle_location_name ?? '').toLowerCase().includes(driverFilter.toLowerCase())
+        if (!matchesDriver) return false
       }
-      if (!searchQuery.trim()) return true
-      const q = searchQuery.toLowerCase()
-      const no = (o.order_number ?? '').toLowerCase()
-      const cust = (o.customer_name ?? '').toLowerCase()
-      const custNo = (o.customer_number ?? '').toLowerCase()
-      const skus = (o.items ?? []).map((i: any) => (i.sku ?? '').toLowerCase()).join(' ')
-      return no.includes(q) || cust.includes(q) || custNo.includes(q) || skus.includes(q)
+
+      // Search query
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase()
+        const matchNo = (o.order_number ?? '').toLowerCase().includes(q)
+        const matchCust = (o.customer_name ?? '').toLowerCase().includes(q)
+        const matchCustNo = (o.customer_number ?? '').toLowerCase().includes(q)
+        const matchItems = (o.items ?? []).some(
+          (i) =>
+            (i.name ?? '').toLowerCase().includes(q) ||
+            (i.sku ?? '').toLowerCase().includes(q)
+        )
+        if (!matchNo && !matchCust && !matchCustNo && !matchItems) return false
+      }
+
+      return true
     })
-  }, [allSales, searchQuery, driverFilter])
+  }, [allSales, driverFilter, searchQuery])
+
+  const totalVolume = useMemo(() => {
+    return filteredOrders.reduce((sum, o) => sum + (o.total_amount || 0), 0)
+  }, [filteredOrders])
+
+  function openInvoice(order: Order) {
+    setSelectedInvoice(order)
+  }
 
   function openCustomer(order: Order) {
-    if (!order.customer_number && !order.customer_name) return
+    const custNo = order.customer_number ?? '—'
+    const custName = order.customer_name ?? 'Laufkunde'
     const custOrders = allSales.filter(
-      (s) => s.customer_number === order.customer_number || s.customer_name === order.customer_name
+      (s) =>
+        s.customer_number === custNo ||
+        s.customer_name === custName
     )
-    const totalRev = custOrders.reduce((s, o) => s + (o.total_amount ?? 0), 0)
-    const totalItems = custOrders.reduce((s, o) => s + (o.items ?? []).reduce((iq: number, it: any) => iq + (it.qty ?? 0), 0), 0)
-    const lastDate = custOrders[0]?.created_at ?? ''
+    const totalRev = custOrders.reduce((s, o) => s + (o.total_amount || 0), 0)
+    const totalItems = custOrders.reduce(
+      (s, o) => s + (o.items ?? []).reduce((is: number, i: any) => is + (i.qty || 0), 0),
+      0
+    )
+    const lastDate = custOrders[0]?.created_at ?? new Date().toISOString()
+
     setSelectedCustomer({
-      customer_number: order.customer_number ?? '',
-      company_name: order.customer_name ?? 'Laufkunde',
+      customer_number: custNo,
+      company_name: custName,
       city: '',
       agent: order.driver_name ?? '',
       total_revenue: totalRev,
@@ -186,6 +240,43 @@ export default function OrdersListView({ orders: initialOrders }: OrdersListView
         />
       )}
 
+      {/* Top Banner / Quick Action to Load 2026 Dataset */}
+      <div className="glass-card p-4 border border-emerald-500/30 bg-emerald-950/20 flex flex-wrap items-center justify-between gap-4 shadow-lg">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-emerald-900/50 border border-emerald-700/50 flex items-center justify-center text-emerald-400 shrink-0 shadow-inner">
+            <ShoppingCart className="w-5 h-5" />
+          </div>
+          <div>
+            <h3 className="font-bold text-surface-100 text-sm flex items-center gap-2">
+              Verkaufsdatenbasis 2026 (2026 Sells)
+              <span className="text-[11px] bg-emerald-900/80 text-emerald-300 px-2 py-0.5 rounded border border-emerald-700/60 font-mono font-bold">
+                2.187 Fakturen · 296.929 € · 85.264 Stk.
+              </span>
+            </h3>
+            <p className="text-xs text-surface-400">
+              Vollständige Erfassung Januar bis August 2026 (2026 Sells.xlsx)
+            </p>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          onClick={handleLoad2026}
+          className="btn-primary py-2 px-4 text-xs font-bold flex items-center gap-2 shadow-glow active:scale-95 transition-all"
+        >
+          {isReloading ? (
+            <>
+              <span className="w-2 h-2 rounded-full bg-white animate-ping"></span>
+              2026 Daten geladen!
+            </>
+          ) : (
+            <>
+              📥 2026 Datenbasis laden
+            </>
+          )}
+        </button>
+      </div>
+
       {/* Controls */}
       <div className="glass-card p-4 space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-4">
@@ -200,7 +291,7 @@ export default function OrdersListView({ orders: initialOrders }: OrdersListView
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="FK-2026-xxxx, Kundenname, Art.-Nr..."
-                className="input pl-9 py-2 bg-surface-900 border-surface-700 w-full"
+                className="input pl-9 py-2 bg-surface-900 border-surface-700 text-surface-100 placeholder:text-surface-500 w-full"
               />
             </div>
           </div>

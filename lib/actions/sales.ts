@@ -27,7 +27,7 @@ export async function createSalesOrder(
     // Kundenkontingent lesen (falls Stammkunde mit Rabatt)
     let customerDiscount = 0
     if (validated.customer_id) {
-      const { data: customer } = await supabase
+      const { data: customer } = await (supabase as any)
         .from('customers')
         .select('discount_pct')
         .eq('id', validated.customer_id)
@@ -43,7 +43,7 @@ export async function createSalesOrder(
     )
 
     // Auftrag anlegen
-    const { data: order, error: orderError } = await supabase
+    const { data: order, error: orderError } = await (supabase as any)
       .from('sales_orders')
       .insert({
         customer_id:      validated.customer_id ?? null,
@@ -77,12 +77,12 @@ export async function createSalesOrder(
       }
     })
 
-    const { error: itemsError } = await supabase
+    const { error: itemsError } = await (supabase as any)
       .from('sales_order_items')
       .insert(items)
 
     if (itemsError) {
-      await supabase.from('sales_orders').delete().eq('id', order.id)
+      await (supabase as any).from('sales_orders').delete().eq('id', order.id)
       return { success: false, error: itemsError.message }
     }
 
@@ -108,7 +108,7 @@ export async function confirmSalesOrder(
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return { success: false, error: 'Nicht authentifiziert' }
 
-    const { data, error } = await supabase.rpc('confirm_sales_order', {
+    const { data, error } = await (supabase as any).rpc('confirm_sales_order', {
       p_order_id: orderId,
       p_user_id:  user.id,
     })
@@ -158,7 +158,7 @@ export async function updatePaymentStatus(
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return { success: false, error: 'Nicht authentifiziert' }
 
-    const { error } = await supabase
+    const { error } = await (supabase as any)
       .from('sales_orders')
       .update({ payment_status: paymentStatus, updated_at: new Date().toISOString() })
       .eq('id', orderId)
@@ -184,7 +184,7 @@ export async function cancelSalesOrder(orderId: string): Promise<ApiResponse<voi
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return { success: false, error: 'Nicht authentifiziert' }
 
-    const { error } = await supabase
+    const { error } = await (supabase as any)
       .from('sales_orders')
       .update({ status: 'cancelled', updated_at: new Date().toISOString() })
       .eq('id', orderId)

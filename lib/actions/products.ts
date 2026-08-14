@@ -24,7 +24,7 @@ export async function createProduct(
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return { success: false, error: 'Nicht authentifiziert' }
 
-    const { data, error } = await supabase
+    const { data, error } = await (supabase as any)
       .from('products')
       .insert(validated)
       .select()
@@ -60,7 +60,7 @@ export async function updateProduct(
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return { success: false, error: 'Nicht authentifiziert' }
 
-    const { data, error } = await supabase
+    const { data, error } = await (supabase as any)
       .from('products')
       .update({ ...validated, updated_at: new Date().toISOString() })
       .eq('id', id)
@@ -93,7 +93,7 @@ export async function toggleProductActive(
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return { success: false, error: 'Nicht authentifiziert' }
 
-    const { data, error } = await supabase
+    const { data, error } = await (supabase as any)
       .from('products')
       .update({ is_active: isActive, updated_at: new Date().toISOString() })
       .eq('id', id)

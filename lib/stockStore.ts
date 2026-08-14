@@ -44,6 +44,10 @@ export interface SaleRecord {
   discount_pct: number
   total_amount: number
   payment_method: 'cash' | 'card' | 'invoice'
+  latitude?: number
+  longitude?: number
+  gps_accuracy?: number
+  google_maps_url?: string
   created_at: string
 }
 
@@ -288,6 +292,46 @@ export function getTransfersHistory(): StockTransferRecord[] {
 
 // ──────────────────────────────────────────────────────────────────────────────
 // VERKAUF BUCHEN — Zieht Bestand vom Fahrzeuglager ab & speichert Verkaufshistorie
+export const CUSTOMER_GPS_KEY = 'm_one_customer_gps_map'
+
+export interface CustomerGpsInfo {
+  lat: number
+  lng: number
+  accuracy?: number
+  updatedAt: string
+  google_maps_url: string
+}
+
+export function getCustomerGpsMap(): Record<string, CustomerGpsInfo> {
+  if (typeof window === 'undefined') return {}
+  try {
+    const raw = localStorage.getItem(CUSTOMER_GPS_KEY)
+    if (raw) return JSON.parse(raw)
+  } catch (e) {
+    console.error('Error reading customer GPS map:', e)
+  }
+  return {}
+}
+
+export function saveCustomerGps(customerNumber: string, lat: number, lng: number, accuracy?: number): CustomerGpsInfo {
+  const currentMap = getCustomerGpsMap()
+  const info: CustomerGpsInfo = {
+    lat,
+    lng,
+    accuracy,
+    updatedAt: new Date().toISOString(),
+    google_maps_url: `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`,
+  }
+  currentMap[customerNumber] = info
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(CUSTOMER_GPS_KEY, JSON.stringify(currentMap))
+    window.dispatchEvent(new CustomEvent('m_one_customer_gps_updated', { detail: { customerNumber, info } }))
+  }
+  return info
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+// VERKAUF DURCHFÜHREN (Direktverkauf durch Fahrer)
 // ──────────────────────────────────────────────────────────────────────────────
 export function executeSale(
   vehicleLocId: string,
@@ -297,7 +341,8 @@ export function executeSale(
   customerName: string,
   items: { sku: string; name: string; qty: number; unit_price: number }[],
   discountPct: number,
-  paymentMethod: 'cash' | 'card' | 'invoice'
+  paymentMethod: 'cash' | 'card' | 'invoice',
+  gps?: { latitude?: number; longitude?: number; accuracy?: number }
 ): SaleRecord {
   // 1. Bestand vom Fahrzeuglager abziehen
   const map = getStockMap()
@@ -317,6 +362,10 @@ export function executeSale(
 
   const salesHistory = getSalesHistory()
   const nextNum = (salesHistory.length + 1).toString().padStart(4, '0')
+
+  const googleMapsUrl = (gps?.latitude && gps?.longitude)
+    ? `https://www.google.com/maps/search/?api=1&query=${gps.latitude},${gps.longitude}`
+    : undefined
 
   const record: SaleRecord = {
     id:                   `sale-${Date.now()}`,
@@ -338,7 +387,16 @@ export function executeSale(
     discount_pct:         discountPct,
     total_amount:         totalAmount,
     payment_method:       paymentMethod,
+    latitude:             gps?.latitude,
+    longitude:            gps?.longitude,
+    gps_accuracy:         gps?.accuracy,
+    google_maps_url:      googleMapsUrl,
     created_at:           new Date().toISOString(),
+  }
+
+  // 3. Wenn GPS vorhanden ist, Kunden-Standort permanent abspeichern
+  if (customerNumber && customerNumber !== '—' && gps?.latitude && gps?.longitude) {
+    saveCustomerGps(customerNumber, gps.latitude, gps.longitude, gps.accuracy)
   }
 
   const updatedHistory = [record, ...salesHistory]

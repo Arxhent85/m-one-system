@@ -81,19 +81,19 @@ export default function SettingsResetClient() {
               <RefreshCw className="w-4 h-4 text-emerald-400" />
             </div>
             <div>
-              <h3 className="font-semibold text-surface-100">2026 Echtdaten importieren</h3>
+              <h3 className="font-semibold text-surface-100">Neue 2026 Echtdaten laden (2026 Sells)</h3>
               <p className="text-surface-400 text-sm mt-0.5">
-                Lädt alle 253 Verkaufs-Fakturen aus dem ersten Halbjahr 2026 in das System.<br />
-                <span className="text-emerald-400 text-xs font-semibold">253 Fakturen · 26.541,80 € Gesamtvolumen 2026</span>
+                Lädt alle 2.187 Verkaufs-Fakturen aus der 2026 Sells Datenbasis in das System.<br />
+                <span className="text-emerald-400 text-xs font-bold">2.187 Fakturen · 296.929,25 € Gesamtvolumen · 85.264 Stück</span>
               </p>
             </div>
           </div>
           <button
             onClick={loadDemo2026}
-            className="shrink-0 flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-900/40 border border-emerald-700/60 text-emerald-300 text-sm font-semibold hover:bg-emerald-900/70 transition-colors"
+            className="shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold shadow-glow transition-all active:scale-95"
           >
             {demoLoaded ? (
-              <><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Geladen!</>
+              <><CheckCircle2 className="w-4 h-4 text-white" /> Geladen!</>
             ) : (
               <><RefreshCw className="w-4 h-4" /> 2026 Daten laden</>
             )}
@@ -109,9 +109,9 @@ export default function SettingsResetClient() {
               <Trash2 className="w-4 h-4 text-amber-400" />
             </div>
             <div>
-              <h3 className="font-semibold text-surface-100">Verkaufshistorie löschen</h3>
+              <h3 className="font-semibold text-surface-100">Verkaufshistorie leeren</h3>
               <p className="text-surface-400 text-sm mt-0.5">
-                Löscht alle erfassten Verkäufe und Umlagerungen aus dem Speicher.<br />
+                Löscht alle erfassten Verkäufe und Rechnungen aus dem Speicher.<br />
                 <span className="text-surface-500 text-xs">Lagerbestände bleiben unverändert.</span>
               </p>
             </div>

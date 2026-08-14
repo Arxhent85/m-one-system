@@ -11,6 +11,8 @@ import InvoiceDetailModal from '@/components/orders/InvoiceDetailModal'
 import CustomerDetailModal from '@/components/analytics/CustomerDetailModal'
 import ProductDetailModal from '@/components/analytics/ProductDetailModal'
 
+import MOCK_2026_SALES from '@/lib/mock2026Sales.json'
+
 interface Order {
   id: string
   order_number: string
@@ -63,24 +65,55 @@ function mapSaleToOrder(s: any): Order {
 export default function DashboardView({ initialOrders, locations }: DashboardViewProps) {
   const [localSales, setLocalSales] = useState<Order[]>([])
   const [stockMap, setStockMap] = useState<Record<string, Record<string, number>>>({})
+  const [isReloading, setIsReloading] = useState(false)
 
   // Modal State
   const [selectedInvoice, setSelectedInvoice] = useState<Order | null>(null)
   const [selectedCustomer, setSelectedCustomer] = useState<any | null>(null)
   const [selectedProduct, setSelectedProduct] = useState<any | null>(null)
 
+  async function handleLoad2026() {
+    setIsReloading(true)
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('m_one_sales_cleared')
+      localStorage.setItem('m_one_sales_history_v1', JSON.stringify(MOCK_2026_SALES))
+    }
+    try {
+      await fetch('/api/sales/record', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'load_2026_demo' }),
+      })
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new Event('m_one_stock_changed'))
+        window.dispatchEvent(new Event('m_one_sale_recorded'))
+      }
+      setLocalSales((MOCK_2026_SALES as any[]).map(mapSaleToOrder))
+    } catch (e) {
+      console.warn('Reload 2026 error:', e)
+    } finally {
+      setTimeout(() => setIsReloading(false), 2000)
+    }
+  }
+
   useEffect(() => {
     function loadData() {
+      const isCleared = typeof window !== 'undefined' && localStorage.getItem('m_one_sales_cleared') === 'true'
+      if (isCleared) {
+        setLocalSales([])
+        setStockMap(getStockMap())
+        return
+      }
+
       const history = getSalesHistory()
-      const localMapped: Order[] = history.map(mapSaleToOrder)
+      const base = history && history.length > 0 ? history : (MOCK_2026_SALES as any[])
+      const localMapped: Order[] = base.map(mapSaleToOrder)
 
       fetch('/api/sales/record')
         .then((res) => res.json())
         .then((data) => {
-          if (data.success && Array.isArray(data.sales)) {
+          if (data.success && Array.isArray(data.sales) && data.sales.length > 0) {
             const serverMapped: Order[] = data.sales.map(mapSaleToOrder)
-
-            // Merge local and server sales (deduplicate)
             const combined = [...serverMapped]
             localMapped.forEach((l) => {
               if (!combined.some((c) => c.id === l.id || c.order_number === l.order_number)) {
@@ -212,7 +245,7 @@ export default function DashboardView({ initialOrders, locations }: DashboardVie
       {selectedCustomer && (
         <CustomerDetailModal
           customer={selectedCustomer}
-          sales={allSales.map((o) => ({
+          sales={allOrders.map((o) => ({
             ...o,
             customer_number: o.customer_number ?? o.customers?.customer_number,
             customer_name: o.customer_name ?? o.customers?.company_name,
@@ -224,7 +257,7 @@ export default function DashboardView({ initialOrders, locations }: DashboardVie
       {selectedProduct && (
         <ProductDetailModal
           product={selectedProduct}
-          sales={allSales.map((o) => ({
+          sales={allOrders.map((o) => ({
             ...o,
             customer_number: o.customer_number ?? o.customers?.customer_number,
             customer_name: o.customer_name ?? o.customers?.company_name,
@@ -233,6 +266,43 @@ export default function DashboardView({ initialOrders, locations }: DashboardVie
           onClose={() => setSelectedProduct(null)}
         />
       )}
+
+      {/* 2026 Data Load Banner */}
+      <div className="glass-card p-4 border border-emerald-500/30 bg-emerald-950/20 flex flex-wrap items-center justify-between gap-4 shadow-lg">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-emerald-900/50 border border-emerald-700/50 flex items-center justify-center text-emerald-400 shrink-0 shadow-inner">
+            <ShoppingCart className="w-5 h-5" />
+          </div>
+          <div>
+            <h3 className="font-bold text-surface-100 text-sm flex items-center gap-2">
+              Verkaufsdatenbasis 2026 (2026 Sells)
+              <span className="text-[11px] bg-emerald-900/80 text-emerald-300 px-2 py-0.5 rounded border border-emerald-700/60 font-mono font-bold">
+                2.187 Fakturen · 296.929 € · 85.264 Stk.
+              </span>
+            </h3>
+            <p className="text-xs text-surface-400">
+              Vollständige Jahreserfassung 2026 (2026 Sells.xlsx)
+            </p>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          onClick={handleLoad2026}
+          className="btn-primary py-2 px-4 text-xs font-bold flex items-center gap-2 shadow-glow active:scale-95 transition-all"
+        >
+          {isReloading ? (
+            <>
+              <span className="w-2 h-2 rounded-full bg-white animate-ping"></span>
+              2026 Daten geladen!
+            </>
+          ) : (
+            <>
+              📥 2026 Datenbasis laden
+            </>
+          )}
+        </button>
+      </div>
 
       {/* Hero Stats Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

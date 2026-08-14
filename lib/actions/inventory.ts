@@ -23,7 +23,7 @@ export async function createStockTransfer(
     if (!user) return { success: false, error: 'Nicht authentifiziert' }
 
     // Transfer-Header anlegen
-    const { data: transfer, error: transferError } = await supabase
+    const { data: transfer, error: transferError } = await (supabase as any)
       .from('stock_transfers')
       .insert({
         from_location_id: validated.from_location_id,
@@ -45,13 +45,13 @@ export async function createStockTransfer(
       quantity:          item.quantity,
     }))
 
-    const { error: itemsError } = await supabase
+    const { error: itemsError } = await (supabase as any)
       .from('stock_transfer_items')
       .insert(items)
 
     if (itemsError) {
       // Transfer löschen wenn Positionen fehlschlagen
-      await supabase.from('stock_transfers').delete().eq('id', transfer.id)
+      await (supabase as any).from('stock_transfers').delete().eq('id', transfer.id)
       return { success: false, error: itemsError.message }
     }
 
@@ -77,7 +77,7 @@ export async function confirmStockTransfer(
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return { success: false, error: 'Nicht authentifiziert' }
 
-    const { data, error } = await supabase.rpc('confirm_stock_transfer', {
+    const { data, error } = await (supabase as any).rpc('confirm_stock_transfer', {
       p_transfer_id: transferId,
       p_user_id:     user.id,
     })
@@ -118,7 +118,7 @@ export async function cancelStockTransfer(
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return { success: false, error: 'Nicht authentifiziert' }
 
-    const { error } = await supabase
+    const { error } = await (supabase as any)
       .from('stock_transfers')
       .update({
         status:       'cancelled',

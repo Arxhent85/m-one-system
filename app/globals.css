@@ -1,3 +1,5 @@
+@import "leaflet/dist/leaflet.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -205,4 +207,32 @@
   /* Safe area padding for mobile PWA */
   .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0); }
   .pt-safe { padding-top: env(safe-area-inset-top, 0); }
+}
+
+/* ============================================================
+   Leaflet Dark Theme & Custom Popup Overrides
+   ============================================================ */
+.leaflet-container {
+  background-color: #030712 !important;
+  font-family: inherit !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.leaflet-popup-tip {
+  background: #0f172a !important;
+  border: 1px solid #334155 !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: inherit !important;
 }

@@ -17,6 +17,7 @@ import {
   Layers,
   RotateCcw,
   Eye,
+  MapPin,
 } from 'lucide-react'
 import { formatCurrency } from '@/lib/utils/currency'
 import { INITIAL_DEPO_PRODUCTS, getActiveProductsList, executeSale, LOCATION_IDS } from '@/lib/stockStore'
@@ -126,6 +127,29 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
     const jobId = Math.random().toString(36).substring(2, 9)
     const timeStr = new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })
 
+    // Parallele GPS-Standortabfrage direkt beim Foto-Trigger
+    let capturedGps: { latitude: number; longitude: number; accuracy: number } | undefined = undefined
+    if (typeof navigator !== 'undefined' && navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          capturedGps = {
+            latitude: pos.coords.latitude,
+            longitude: pos.coords.longitude,
+            accuracy: pos.coords.accuracy,
+          }
+          setScanJobs((prev) =>
+            prev.map((job) =>
+              job.id === jobId && job.draft
+                ? { ...job, draft: { ...job.draft, gps: capturedGps } }
+                : job
+            )
+          )
+        },
+        (err) => console.warn('GPS notice:', err?.message),
+        { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 }
+      )
+    }
+
     try {
       // 1. Sofortige Bildkomprimierung direkt auf dem Smartphone (~100KB)
       const compressedBase64 = await compressImage(file, 1200, 0.75)
@@ -166,6 +190,7 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
                       draft: {
                         ...apiData.data,
                         imageThumb: compressedBase64,
+                        gps: capturedGps,
                       },
                     }
                   : job
@@ -208,6 +233,11 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
   async function confirmSale(jobId: string, draft: any, paymentMethod: 'bar' | 'rechnung' | 'karte') {
     const customer = customers.find((c) => c.customer_number === draft.customer_number)
     const now = new Date()
+    const gpsData = draft.gps
+    const googleMapsUrl = (gpsData?.latitude && gpsData?.longitude)
+      ? `https://www.google.com/maps/search/?api=1&query=${gpsData.latitude},${gpsData.longitude}`
+      : undefined
+
     const entry: SaleEntry = {
       id: Math.random().toString(36).slice(2),
       customerNumber: draft.customer_number || '—',
@@ -244,7 +274,8 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
           unit_price: i.unit_price,
         })),
         0,
-        paymentMap[paymentMethod]
+        paymentMap[paymentMethod],
+        gpsData
       )
     } catch (e) {
       console.error('Local stock deduction failed:', e)
@@ -268,6 +299,9 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
           })),
           paymentMethod,
           total: entry.total,
+          latitude: gpsData?.latitude,
+          longitude: gpsData?.longitude,
+          gps_accuracy: gpsData?.accuracy,
         }),
       }).catch((e) => console.warn('API sale record warning:', e))
     } catch (err) {
@@ -789,6 +823,37 @@ function ScanReview({
           <p className="text-xs text-emerald-400 font-bold px-1">
             ✓ {matchedCust.company_name} ({matchedCust.city})
           </p>
+        )}
+      </div>
+
+      {/* GPS-Standort Information */}
+      <div className="p-3 rounded-xl bg-surface-950 border border-surface-800 space-y-1">
+        <div className="flex items-center justify-between">
+          <span className="text-[10px] font-bold text-surface-400 uppercase tracking-wider">
+            Kundenstandort (GPS)
+          </span>
+          <MapPin className="w-4 h-4 text-emerald-400" />
+        </div>
+        {draft.gps ? (
+          <div className="flex items-center justify-between text-xs text-emerald-400 bg-emerald-950/50 border border-emerald-800/40 p-2.5 rounded-lg">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span className="font-mono font-bold">
+                {draft.gps.latitude.toFixed(5)}, {draft.gps.longitude.toFixed(5)}
+              </span>
+              <span className="text-[10px] text-emerald-500 font-mono">
+                (±{Math.round(draft.gps.accuracy || 5)}m)
+              </span>
+            </div>
+            <span className="text-[10px] bg-emerald-900/80 px-2 py-0.5 rounded text-emerald-300 font-bold">
+              GPS erfasst
+            </span>
+          </div>
+        ) : (
+          <div className="flex items-center gap-2 text-xs text-surface-400 bg-surface-900/60 p-2.5 rounded-lg border border-surface-800">
+            <MapPin className="w-3.5 h-3.5 text-surface-500 shrink-0" />
+            <span>Standort wird beim Speichern automatisch ermittelt</span>
+          </div>
         )}
       </div>
 

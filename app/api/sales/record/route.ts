@@ -5,6 +5,7 @@ import MOCK_2026_SALES from '@/lib/mock2026Sales.json'
 
 // Shared in-memory / fallback store for cross-device sync
 let globalServerSales: any[] = [...MOCK_2026_SALES]
+let globalCustomerGpsMap: Record<string, { lat: number; lng: number; accuracy?: number; updatedAt: string; google_maps_url: string }> = {}
 let globalServerStockMap: Record<string, Record<string, number>> = {
   [LOCATION_IDS.DEPOT]: INITIAL_DEPO_PRODUCTS.reduce((acc, p) => ({ ...acc, [p.sku]: p.stock }), {}),
   [LOCATION_IDS.MENSURI]: { ...INITIAL_MENSURI_STOCK },
@@ -24,6 +25,7 @@ export async function POST(req: Request) {
         salesCount: globalServerSales.length,
         sales: globalServerSales,
         stockMap: globalServerStockMap,
+        customerGpsMap: globalCustomerGpsMap,
       })
     }
 
@@ -35,6 +37,9 @@ export async function POST(req: Request) {
       items = [] as { sku: string; name: string; qty: number; unit_price: number }[],
       paymentMethod = 'bar',
       total = 0,
+      latitude,
+      longitude,
+      gps_accuracy,
     } = body
 
     const vehicleLocId = driverPrefix === '2' ? LOCATION_IDS.MENSURI : LOCATION_IDS.QERIMI
@@ -47,10 +52,14 @@ export async function POST(req: Request) {
       globalServerStockMap[vehicleLocId] = {}
     }
 
-    items.forEach((it) => {
+    items.forEach((it: any) => {
       const curr = globalServerStockMap[vehicleLocId][it.sku] ?? 0
       globalServerStockMap[vehicleLocId][it.sku] = Math.max(0, curr - it.qty)
     })
+
+    const googleMapsUrl = (latitude && longitude)
+      ? `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`
+      : undefined
 
     // 2. Record sale
     const saleEntry = {
@@ -61,29 +70,65 @@ export async function POST(req: Request) {
       vehicle_location_name: vehicleLocName,
       customer_number: customerNumber,
       customer_name: customerName,
-      items: items.map((i) => ({ ...i, total: i.qty * i.unit_price })),
+      items: items.map((i: any) => ({ ...i, total: i.qty * i.unit_price })),
       items_count: items.length,
-      total_amount: total || items.reduce((s, i) => s + i.qty * i.unit_price, 0),
+      total_amount: total || items.reduce((s: number, i: any) => s + i.qty * i.unit_price, 0),
       payment_method: paymentMethod,
+      latitude: latitude ? Number(latitude) : undefined,
+      longitude: longitude ? Number(longitude) : undefined,
+      gps_accuracy: gps_accuracy ? Number(gps_accuracy) : undefined,
+      google_maps_url: googleMapsUrl,
       created_at: new Date().toISOString(),
     }
 
     globalServerSales.unshift(saleEntry)
 
-    // 3. Persist to Supabase if connected (Fire-and-forget in background, non-blocking)
+    // 3. Update customer permanent GPS in central registry
+    if (customerNumber && customerNumber !== '—' && latitude && longitude) {
+      globalCustomerGpsMap[customerNumber] = {
+        lat: Number(latitude),
+        lng: Number(longitude),
+        accuracy: gps_accuracy ? Number(gps_accuracy) : undefined,
+        updatedAt: new Date().toISOString(),
+        google_maps_url: googleMapsUrl!,
+      }
+    }
+
+    // 4. Persist to Supabase if connected (Fire-and-forget in background, non-blocking)
     createClient()
-      .then((supabase) => {
+      .then(async (supabase) => {
         const paymentMap: Record<string, string> = { bar: 'cash', rechnung: 'invoice', karte: 'card' }
-        const itemsSummary = items.map((i) => `${i.qty}x ${i.sku} ${i.name}`).join(', ')
-        return (supabase.from('sales_orders') as any).insert({
+        const itemsSummary = items.map((i: any) => `${i.qty}x ${i.sku} ${i.name}`).join(', ')
+        const gpsSummary = (latitude && longitude)
+          ? ` | 📍 GPS: ${latitude}, ${longitude} (±${gps_accuracy ?? '?'}m) | Maps: ${googleMapsUrl}`
+          : ''
+
+        await (supabase.from('sales_orders') as any).insert({
           order_number: orderNumber,
           location_id: vehicleLocId,
           total_amount: saleEntry.total_amount,
           payment_method: paymentMap[paymentMethod] || 'cash',
           payment_status: paymentMethod === 'bar' ? 'paid' : 'pending',
           status: 'confirmed',
-          notes: `Fahrer-App Verkauf | Fahrer ${driverName} | Kd. ${customerNumber} (${customerName}) | ${itemsSummary}`,
+          notes: `Fahrer-App Verkauf | Fahrer ${driverName} | Kd. ${customerNumber} (${customerName}) | ${itemsSummary}${gpsSummary}`,
         })
+
+        // Update customer notes with GPS if customer exists in Supabase
+        if (customerNumber && customerNumber !== '—' && latitude && longitude) {
+          const { data: cust } = await (supabase.from('customers') as any)
+            .select('id, notes')
+            .eq('customer_number', customerNumber)
+            .limit(1)
+
+          if (cust && cust.length > 0) {
+            const existingNotes = cust[0].notes || ''
+            const cleanNotes = existingNotes.replace(/\|\s*GPS:[^|]+/g, '').trim()
+            const newNotes = `${cleanNotes} | GPS: ${latitude}, ${longitude} | Maps: ${googleMapsUrl}`.trim()
+            await (supabase.from('customers') as any)
+              .update({ notes: newNotes, updated_at: new Date().toISOString() })
+              .eq('id', cust[0].id)
+          }
+        }
       })
       .catch((dbErr) => console.warn('Supabase insert warning:', dbErr))
 
@@ -91,6 +136,7 @@ export async function POST(req: Request) {
       success: true,
       sale: saleEntry,
       stockMap: globalServerStockMap,
+      customerGpsMap: globalCustomerGpsMap,
     })
   } catch (err: any) {
     return NextResponse.json({ success: false, error: err?.message || 'Fehler beim Buchen' }, { status: 500 })
@@ -102,6 +148,7 @@ export async function GET() {
     success: true,
     sales: globalServerSales,
     stockMap: globalServerStockMap,
+    customerGpsMap: globalCustomerGpsMap,
   })
 }
 

@@ -56,7 +56,7 @@ export async function POST(req: Request) {
     const warnings: string[] = []
     const errors: string[] = []
 
-    const driverCusts = registeredCustomerNumbers.filter((c) => String(c).startsWith(driverPrefix))
+    const driverCusts = registeredCustomerNumbers.filter((c: string) => String(c).startsWith(driverPrefix))
     const searchCusts = driverCusts.length > 0 ? driverCusts : registeredCustomerNumbers
 
     let rawCustomerNumber: string | null = null

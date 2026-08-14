@@ -1424,3 +1424,2112 @@ Please retry in 5.967205205s. [{"@type":"type.googleapis.com/google.rpc.Help","l
  GET /dashboard 200 in 237ms (next.js: 7ms, proxy.ts: 5ms, application-code: 225ms)
  GET /api/sales/record 200 in 19ms (next.js: 5ms, proxy.ts: 7ms, application-code: 8ms)
  GET /api/sales/record 200 in 26ms (next.js: 7ms, proxy.ts: 7ms, application-code: 12ms)
+ GET /driver/sell 200 in 404ms (next.js: 6ms, proxy.ts: 4ms, application-code: 394ms)
+ GET /driver/sell 200 in 184ms (next.js: 7ms, proxy.ts: 6ms, application-code: 170ms)
+ GET /login 200 in 39ms (next.js: 10ms, proxy.ts: 4ms, application-code: 25ms)
+ GET /login 200 in 42ms (next.js: 6ms, proxy.ts: 4ms, application-code: 32ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /dashboard 200 in 509ms (next.js: 7ms, proxy.ts: 3ms, application-code: 499ms)
+ GET /dashboard 200 in 259ms (next.js: 7ms, proxy.ts: 4ms, application-code: 248ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/sales/record 200 in 21ms (next.js: 5ms, proxy.ts: 7ms, application-code: 8ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 27.957967174s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"27s"}]
+ POST /api/ocr/scan-invoice 200 in 11.9s (next.js: 4ms, proxy.ts: 432ms, application-code: 11.4s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 18.579416713s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"18s"}]
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 13.026737433s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"13s"}]
+ GET /inventory 200 in 644ms (next.js: 7ms, proxy.ts: 3ms, application-code: 634ms)
+ GET /api/sales/record 200 in 28ms (next.js: 7ms, proxy.ts: 12ms, application-code: 9ms)
+ GET /api/sales/record 200 in 28ms (next.js: 8ms, proxy.ts: 8ms, application-code: 12ms)
+ GET /analytics 200 in 27ms (next.js: 6ms, proxy.ts: 3ms, application-code: 18ms)
+ GET /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 5ms)
+ POST /api/ocr/scan-invoice 200 in 23.1s (next.js: 15ms, proxy.ts: 319ms, application-code: 22.8s)
+ GET /settings 200 in 30ms (next.js: 6ms, proxy.ts: 4ms, application-code: 20ms)
+ POST /api/sales/record 200 in 23ms (next.js: 4ms, proxy.ts: 4ms, application-code: 15ms)
+ DELETE /api/sales/record 200 in 671ms (next.js: 4ms, proxy.ts: 3ms, application-code: 664ms)
+ DELETE /api/sales/record 200 in 118ms (next.js: 4ms, proxy.ts: 4ms, application-code: 111ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 55.359577353s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"55s"}]
+ GET /analytics 200 in 45ms (next.js: 11ms, proxy.ts: 5ms, application-code: 28ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 52.830554598s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"52s"}]
+ POST /api/ocr/scan-invoice 200 in 28.4s (next.js: 8ms, proxy.ts: 277ms, application-code: 28.1s)
+ GET /inventory 200 in 214ms (next.js: 12ms, proxy.ts: 23ms, application-code: 180ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 37ms (next.js: 12ms, proxy.ts: 14ms, application-code: 12ms)
+ POST /api/ocr/scan-invoice 200 in 29.0s (next.js: 5ms, proxy.ts: 4.4s, application-code: 24.6s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 44.933436159s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"44s"}]
+ POST /api/sales/record 200 in 17ms (next.js: 4ms, proxy.ts: 4ms, application-code: 9ms)
+ POST /api/ocr/scan-invoice 200 in 25.0s (next.js: 3ms, proxy.ts: 648ms, application-code: 24.3s)
+ POST /api/ocr/scan-invoice 200 in 18.8s (next.js: 5ms, proxy.ts: 334ms, application-code: 18.5s)
+ GET /dashboard 200 in 210ms (next.js: 6ms, proxy.ts: 3ms, application-code: 201ms)
+ GET /api/sales/record 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/ocr/scan-invoice 200 in 12.2s (next.js: 15ms, proxy.ts: 305ms, application-code: 11.9s)
+ POST /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /inventory 200 in 154ms (next.js: 6ms, proxy.ts: 3ms, application-code: 145ms)
+ GET /api/sales/record 200 in 22ms (next.js: 4ms, proxy.ts: 12ms, application-code: 6ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /dashboard 200 in 201ms (next.js: 7ms, proxy.ts: 3ms, application-code: 191ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 17ms (next.js: 5ms, proxy.ts: 4ms, application-code: 8ms)
+ GET /inventory 200 in 253ms (next.js: 8ms, proxy.ts: 3ms, application-code: 241ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /dashboard 200 in 227ms (next.js: 6ms, proxy.ts: 3ms, application-code: 217ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ POST /api/sales/record 200 in 25ms (next.js: 4ms, proxy.ts: 14ms, application-code: 7ms)
+ POST /api/sales/record 200 in 33ms (next.js: 9ms, proxy.ts: 14ms, application-code: 10ms)
+ POST /api/sales/record 200 in 17ms (next.js: 4ms, proxy.ts: 3ms, application-code: 10ms)
+ GET /login 200 in 31ms (next.js: 6ms, proxy.ts: 3ms, application-code: 22ms)
+ GET /login 200 in 34ms (next.js: 6ms, proxy.ts: 3ms, application-code: 25ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /driver/sell?driver=qerimi 200 in 256ms (next.js: 17ms, proxy.ts: 13ms, application-code: 226ms)
+ GET /driver/sell?driver=qerimi 200 in 216ms (next.js: 11ms, proxy.ts: 28ms, application-code: 177ms)
+ GET /inventory 200 in 214ms (next.js: 6ms, proxy.ts: 3ms, application-code: 204ms)
+ GET /api/sales/record 200 in 18ms (next.js: 6ms, proxy.ts: 6ms, application-code: 7ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /dashboard 200 in 214ms (next.js: 8ms, proxy.ts: 4ms, application-code: 202ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 55.3214129s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"55s"}]
+ POST /api/ocr/scan-invoice 200 in 7.3s (next.js: 4ms, proxy.ts: 248ms, application-code: 7.1s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 48.225199136s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"48s"}]
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 41.15563658s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"41s"}]
+ POST /api/ocr/scan-invoice 200 in 10.4s (next.js: 15ms, proxy.ts: 231ms, application-code: 10.2s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 32.92761065s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"32s"}]
+ POST /api/ocr/scan-invoice 200 in 18.2s (next.js: 10ms, proxy.ts: 208ms, application-code: 18.0s)
+ POST /api/ocr/scan-invoice 200 in 14.5s (next.js: 4ms, proxy.ts: 254ms, application-code: 14.2s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 22.54983535s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"22s"}]
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash
+Please retry in 19.315911185s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerDayPerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-3.5-flash"},"quotaValue":"20"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"19s"}]
+ POST /api/ocr/scan-invoice 200 in 16.7s (next.js: 15ms, proxy.ts: 276ms, application-code: 16.5s)
+ POST /api/sales/record 200 in 41ms (next.js: 14ms, proxy.ts: 14ms, application-code: 14ms)
+ POST /api/ocr/scan-invoice 200 in 10.3s (next.js: 8ms, proxy.ts: 251ms, application-code: 10.1s)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 15ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ POST /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 7ms)
+ POST /api/sales/record 200 in 14ms (next.js: 4ms, proxy.ts: 4ms, application-code: 6ms)
+✓ Compiled in 151ms
+ GET /login 200 in 33ms (next.js: 6ms, proxy.ts: 3ms, application-code: 23ms)
+ GET /driver/sell 200 in 889ms (next.js: 25ms, proxy.ts: 13ms, application-code: 852ms)
+ GET /analytics/products 200 in 52ms (next.js: 16ms, proxy.ts: 4ms, application-code: 33ms)
+ GET /dashboard 200 in 552ms (next.js: 15ms, proxy.ts: 3ms, application-code: 533ms)
+ GET /dashboard 200 in 242ms (next.js: 7ms, proxy.ts: 4ms, application-code: 231ms)
+ GET /dashboard 200 in 481ms (next.js: 7ms, proxy.ts: 3ms, application-code: 471ms)
+ GET /dashboard 200 in 436ms (next.js: 6ms, proxy.ts: 3ms, application-code: 427ms)
+ GET /inventory 200 in 168ms (next.js: 30ms, proxy.ts: 15ms, application-code: 123ms)
+ GET /driver/sell?driver=mensuri 200 in 244ms (next.js: 97ms, proxy.ts: 8ms, application-code: 138ms)
+ GET /analytics/customers 200 in 60ms (next.js: 20ms, proxy.ts: 6ms, application-code: 34ms)
+ GET /dashboard 200 in 661ms (next.js: 54ms, proxy.ts: 14ms, application-code: 594ms)
+ GET /dashboard 200 in 152ms (next.js: 6ms, proxy.ts: 4ms, application-code: 143ms)
+ GET /dashboard 200 in 172ms (next.js: 16ms, proxy.ts: 14ms, application-code: 142ms)
+ GET /dashboard 200 in 168ms (next.js: 12ms, proxy.ts: 13ms, application-code: 143ms)
+ GET /analytics/products 200 in 38ms (next.js: 7ms, proxy.ts: 3ms, application-code: 28ms)
+ GET /api/sales/record 200 in 52ms (next.js: 22ms, proxy.ts: 7ms, application-code: 23ms)
+ GET /analytics/products 200 in 330ms (next.js: 37ms, proxy.ts: 8ms, application-code: 284ms)
+ GET /analytics/customers 200 in 329ms (next.js: 164ms, proxy.ts: 11ms, application-code: 154ms)
+ GET /inventory 200 in 153ms (next.js: 51ms, proxy.ts: 6ms, application-code: 96ms)
+ GET /analytics/products 200 in 43ms (next.js: 6ms, proxy.ts: 5ms, application-code: 32ms)
+ GET /dashboard 200 in 295ms (next.js: 14ms, proxy.ts: 6ms, application-code: 275ms)
+ GET /dashboard 200 in 162ms (next.js: 7ms, proxy.ts: 6ms, application-code: 149ms)
+ GET /driver/sell?driver=mensuri 200 in 735ms (next.js: 66ms, proxy.ts: 8ms, application-code: 661ms)
+ GET /dashboard 200 in 837ms (next.js: 118ms, proxy.ts: 8ms, application-code: 711ms)
+ GET /dashboard 200 in 164ms (next.js: 9ms, proxy.ts: 8ms, application-code: 147ms)
+ GET /dashboard 200 in 146ms (next.js: 9ms, proxy.ts: 11ms, application-code: 126ms)
+ GET /dashboard 200 in 165ms (next.js: 6ms, proxy.ts: 6ms, application-code: 153ms)
+ GET /dashboard 200 in 174ms (next.js: 10ms, proxy.ts: 9ms, application-code: 155ms)
+ GET /dashboard 200 in 154ms (next.js: 11ms, proxy.ts: 13ms, application-code: 131ms)
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+[browser] ./components/analytics/CustomerDetailModal.tsx:307:1
+Error: Expected ',', got '<eof>'
+  305 |   )
+  306 | }
+> 307 |
+      | ^
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Client Component Browser]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/analytics/CustomerDetailModal.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Client Component SSR]
+    ./components/dashboard/DashboardView.tsx [Server Component]
+    ./app/(admin)/dashboard/page.tsx [Server Component] 
+ GET /driver/sell 200 in 1073ms (next.js: 13ms, proxy.ts: 4ms, application-code: 1056ms)
+ GET /driver/stock 200 in 149ms (next.js: 100ms, proxy.ts: 4ms, application-code: 45ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /api/sales/record 200 in 286ms (next.js: 238ms, proxy.ts: 4ms, application-code: 45ms)
+ GET /api/sales/record 200 in 20ms (next.js: 3ms, proxy.ts: 3ms, application-code: 13ms)
+ GET /api/sales/record 200 in 22ms (next.js: 4ms, proxy.ts: 3ms, application-code: 15ms)
+ GET /api/sales/record 200 in 21ms (next.js: 4ms, proxy.ts: 3ms, application-code: 14ms)
+ GET /api/sales/record 200 in 21ms (next.js: 3ms, proxy.ts: 4ms, application-code: 14ms)
+ GET /api/sales/record 200 in 32ms (next.js: 6ms, proxy.ts: 6ms, application-code: 20ms)
+ GET /api/sales/record 200 in 23ms (next.js: 3ms, proxy.ts: 3ms, application-code: 17ms)
+ GET /api/sales/record 200 in 22ms (next.js: 5ms, proxy.ts: 4ms, application-code: 13ms)
+ GET /api/sales/record 200 in 27ms (next.js: 5ms, proxy.ts: 6ms, application-code: 16ms)
+ GET /api/sales/record 200 in 19ms (next.js: 3ms, proxy.ts: 3ms, application-code: 13ms)
+ GET /api/sales/record 200 in 20ms (next.js: 4ms, proxy.ts: 3ms, application-code: 13ms)
+ GET /api/sales/record 200 in 20ms (next.js: 3ms, proxy.ts: 3ms, application-code: 14ms)
+ GET /api/sales/record 200 in 23ms (next.js: 4ms, proxy.ts: 4ms, application-code: 15ms)
+ GET /api/sales/record 200 in 31ms (next.js: 6ms, proxy.ts: 8ms, application-code: 18ms)
+ GET /driver/sell 200 in 1043ms (next.js: 145ms, proxy.ts: 3ms, application-code: 894ms)
+ GET /analytics/products 200 in 320ms (next.js: 143ms, proxy.ts: 3ms, application-code: 173ms)
+ GET /api/sales/record 200 in 38ms (next.js: 6ms, proxy.ts: 12ms, application-code: 19ms)
+ GET /api/sales/record 200 in 42ms (next.js: 9ms, proxy.ts: 13ms, application-code: 19ms)
+ GET /inventory 200 in 698ms (next.js: 394ms, proxy.ts: 3ms, application-code: 301ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /api/sales/record 200 in 24ms (next.js: 4ms, proxy.ts: 5ms, application-code: 15ms)
+ GET /api/sales/record 200 in 20ms (next.js: 3ms, proxy.ts: 3ms, application-code: 13ms)
+ GET /dashboard 200 in 415ms (next.js: 93ms, proxy.ts: 3ms, application-code: 319ms)
+ GET /api/sales/record 200 in 34ms (next.js: 7ms, proxy.ts: 9ms, application-code: 18ms)
+ GET /api/sales/record 200 in 32ms (next.js: 7ms, proxy.ts: 7ms, application-code: 18ms)
+ GET /driver/sell 200 in 330ms (next.js: 6ms, proxy.ts: 3ms, application-code: 322ms)
+ GET /api/sales/record 200 in 26ms (next.js: 5ms, proxy.ts: 6ms, application-code: 16ms)
+ GET /dashboard 200 in 629ms (next.js: 15ms, proxy.ts: 15ms, application-code: 599ms)
+ GET /settings 200 in 493ms (next.js: 439ms, proxy.ts: 3ms, application-code: 51ms)
+ DELETE /api/sales/record 200 in 319ms (next.js: 4ms, proxy.ts: 3ms, application-code: 312ms)
+ DELETE /api/sales/record 200 in 113ms (next.js: 5ms, proxy.ts: 4ms, application-code: 104ms)
+ GET /dashboard 200 in 220ms (next.js: 6ms, proxy.ts: 5ms, application-code: 209ms)
+ GET /api/sales/record 200 in 12ms (next.js: 3ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 4ms, application-code: 5ms)
+ GET /driver/sell 200 in 356ms (next.js: 6ms, proxy.ts: 3ms, application-code: 347ms)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+ POST /api/ocr/scan-invoice 200 in 3.1s (next.js: 137ms, proxy.ts: 172ms, application-code: 2.8s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+ POST /api/ocr/scan-invoice 200 in 4.1s (next.js: 12ms, proxy.ts: 198ms, application-code: 3.9s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+ POST /api/ocr/scan-invoice 200 in 4.1s (next.js: 4ms, proxy.ts: 161ms, application-code: 3.9s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+ POST /api/ocr/scan-invoice 200 in 4.3s (next.js: 14ms, proxy.ts: 148ms, application-code: 4.1s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+ POST /api/ocr/scan-invoice 200 in 3.4s (next.js: 7ms, proxy.ts: 119ms, application-code: 3.3s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+ POST /api/ocr/scan-invoice 200 in 3.4s (next.js: 11ms, proxy.ts: 99ms, application-code: 3.3s)
+Gemini Model gemini-3.5-flash failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash
+Please retry in 43.577714303s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-3.5-flash","location":"global"},"quotaValue":"5"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"43s"}]
+ POST /api/ocr/scan-invoice 200 in 3.9s (next.js: 5ms, proxy.ts: 100ms, application-code: 3.8s)
+ POST /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 25ms (next.js: 4ms, proxy.ts: 14ms, application-code: 7ms)
+ POST /api/sales/record 200 in 17ms (next.js: 3ms, proxy.ts: 8ms, application-code: 6ms)
+ POST /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ POST /api/sales/record 200 in 36ms (next.js: 10ms, proxy.ts: 15ms, application-code: 11ms)
+ POST /api/sales/record 200 in 13ms (next.js: 3ms, proxy.ts: 3ms, application-code: 7ms)
+ POST /api/sales/record 200 in 37ms (next.js: 12ms, proxy.ts: 14ms, application-code: 12ms)
+ GET /inventory 200 in 238ms (next.js: 7ms, proxy.ts: 5ms, application-code: 226ms)
+ GET /api/sales/record 200 in 25ms (next.js: 7ms, proxy.ts: 11ms, application-code: 7ms)
+ GET /api/sales/record 200 in 19ms (next.js: 5ms, proxy.ts: 6ms, application-code: 8ms)
+ GET /dashboard 200 in 229ms (next.js: 8ms, proxy.ts: 3ms, application-code: 218ms)
+ GET /api/sales/record 200 in 21ms (next.js: 6ms, proxy.ts: 8ms, application-code: 8ms)
+ GET /api/sales/record 200 in 12ms (next.js: 4ms, proxy.ts: 3ms, application-code: 5ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 3ms, application-code: 6ms)
+ GET /api/sales/record 200 in 13ms (next.js: 5ms, proxy.ts: 3ms, application-code: 5ms)
+✓ Compiled in 20.1s
+ GET /dashboard 200 in 682ms (next.js: 46ms, proxy.ts: 3ms, application-code: 632ms)
+ GET /dashboard 200 in 489ms (next.js: 16ms, proxy.ts: 4ms, application-code: 469ms)
+ GET /api/sales/record 200 in 47ms (next.js: 22ms, proxy.ts: 14ms, application-code: 11ms)
+ GET /api/sales/record 200 in 15ms (next.js: 4ms, proxy.ts: 5ms, application-code: 6ms)
+ GET /api/sales/record 200 in 14ms (next.js: 3ms, proxy.ts: 3ms, application-code: 7ms)
+ GET /api/sales/record 200 in 13ms (next.js: 4ms, proxy.ts: 4ms, application-code: 5ms)
