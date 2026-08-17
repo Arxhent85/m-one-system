@@ -132,7 +132,7 @@ interface MappedCustomer {
   lat: number
   lng: number
   hasLiveGps: boolean
-  driverType: 'mensuri' | 'qerimi' | 'miloti' | 'other'
+  driverType: 'mensuri' | 'qerimi' | 'mone_zentrale'
   color: string
   borderColor: string
   glowColor: string
@@ -149,7 +149,7 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
   const mapInstanceRef = useRef<any>(null)
   const markersLayerRef = useRef<any>(null)
 
-  const [activeDriverFilter, setActiveDriverFilter] = useState<'all' | 'mensuri' | 'qerimi' | 'miloti' | 'other' | 'live_gps'>('all')
+  const [activeDriverFilter, setActiveDriverFilter] = useState<'all' | 'mensuri' | 'qerimi' | 'mone_zentrale' | 'live_gps'>('all')
   const [mapSearch, setMapSearch] = useState('')
   const [customerGpsMap, setCustomerGpsMap] = useState<Record<string, CustomerGpsInfo>>({})
 
@@ -184,16 +184,16 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
       const num = c.customer_number || ''
       const numInt = parseInt(num) || idx
 
-      // Determine Driver & Color Palette
-      let driverType: 'mensuri' | 'qerimi' | 'miloti' | 'other' = 'other'
-      let color = '#38bdf8' // Cyan / Sky blue (Mensuri)
-      let borderColor = '#0284c7'
-      let glowColor = 'rgba(56, 189, 248, 0.6)'
-      let agentName = c.agent || 'Mensuri'
+      // Determine Driver & Color Palette (3xxxx, 4xxxx -> M-ONE Zentrale)
+      let driverType: 'mensuri' | 'qerimi' | 'mone_zentrale' = 'mone_zentrale'
+      let color = '#a855f7' // Purple / Violet
+      let borderColor = '#9333ea'
+      let glowColor = 'rgba(168, 85, 247, 0.7)'
+      let agentName = c.agent || 'M-ONE Zentrale'
 
       if (num.startsWith('2') && num !== '20000') {
         driverType = 'mensuri'
-        color = '#38bdf8' // Cyan
+        color = '#38bdf8' // Cyan / Sky
         borderColor = '#0284c7'
         glowColor = 'rgba(56, 189, 248, 0.7)'
         agentName = 'Mensuri (Fahrzeug 1)'
@@ -201,20 +201,14 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
         driverType = 'qerimi'
         color = '#10b981' // Emerald
         borderColor = '#059669'
-        glowColor = 'rgba(16, 185, 129, 0.7)'
+        glowColor = 'rgba(168, 185, 129, 0.7)'
         agentName = 'Qerimi (Fahrzeug 2)'
-      } else if (num.startsWith('3') && num !== '30000') {
-        driverType = 'miloti'
-        color = '#f59e0b' // Amber
-        borderColor = '#d97706'
-        glowColor = 'rgba(245, 158, 11, 0.7)'
-        agentName = 'Miloti (Fahrzeug 3)'
       } else {
-        driverType = 'other'
-        color = '#a855f7' // Purple / Indigo
+        driverType = 'mone_zentrale'
+        color = '#a855f7' // Purple
         borderColor = '#9333ea'
         glowColor = 'rgba(168, 85, 247, 0.7)'
-        agentName = 'Zentrale / Partner'
+        agentName = num.startsWith('3') ? 'M-ONE Zentrale (Hauptlager)' : 'M-ONE Zentrale (B2B Partner)'
       }
 
       // Check Live-GPS first
@@ -280,8 +274,7 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
       // Driver filter
       if (activeDriverFilter === 'mensuri' && mc.driverType !== 'mensuri') return false
       if (activeDriverFilter === 'qerimi' && mc.driverType !== 'qerimi') return false
-      if (activeDriverFilter === 'miloti' && mc.driverType !== 'miloti') return false
-      if (activeDriverFilter === 'other' && mc.driverType !== 'other') return false
+      if (activeDriverFilter === 'mone_zentrale' && mc.driverType !== 'mone_zentrale') return false
       if (activeDriverFilter === 'live_gps' && !mc.hasLiveGps) return false
 
       // Search filter
@@ -303,8 +296,7 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
       total: mappedCustomers.length,
       mensuri: mappedCustomers.filter((c) => c.driverType === 'mensuri').length,
       qerimi: mappedCustomers.filter((c) => c.driverType === 'qerimi').length,
-      miloti: mappedCustomers.filter((c) => c.driverType === 'miloti').length,
-      other: mappedCustomers.filter((c) => c.driverType === 'other').length,
+      mone_zentrale: mappedCustomers.filter((c) => c.driverType === 'mone_zentrale').length,
       liveGps: mappedCustomers.filter((c) => c.hasLiveGps).length,
     }
   }, [mappedCustomers])
@@ -573,31 +565,16 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
 
             <button
               type="button"
-              onClick={() => setActiveDriverFilter('miloti')}
+              onClick={() => setActiveDriverFilter('mone_zentrale')}
               className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm active:scale-95 ${
-                activeDriverFilter === 'miloti'
-                  ? 'bg-amber-600 text-white shadow-amber-950/60'
-                  : 'bg-surface-900 hover:bg-surface-800 text-amber-400 border border-amber-900/40'
+                activeDriverFilter === 'mone_zentrale'
+                  ? 'bg-purple-600 text-white shadow-purple-950/60'
+                  : 'bg-surface-900 hover:bg-surface-800 text-purple-400 border border-purple-900/40'
               }`}
             >
-              <Truck className="w-3.5 h-3.5 text-amber-400" />
-              <span>🚚 Miloti ({counts.miloti})</span>
+              <Layers className="w-3.5 h-3.5 text-purple-400" />
+              <span>🏢 M-ONE Zentrale & Direktkunden ({counts.mone_zentrale})</span>
             </button>
-
-            {counts.other > 0 && (
-              <button
-                type="button"
-                onClick={() => setActiveDriverFilter('other')}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm active:scale-95 ${
-                  activeDriverFilter === 'other'
-                    ? 'bg-purple-600 text-white shadow-purple-950/60'
-                    : 'bg-surface-900 hover:bg-surface-800 text-purple-400 border border-purple-900/40'
-                }`}
-              >
-                <Layers className="w-3.5 h-3.5 text-purple-400" />
-                <span>🏢 Zentrale / B2B ({counts.other})</span>
-              </button>
-            )}
 
             <button
               type="button"
@@ -682,12 +659,8 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
             <span>Qerimi (Fahrzeug 2)</span>
           </div>
           <div className="flex items-center gap-2 text-surface-300">
-            <span className="w-3 h-3 rounded-full bg-amber-400 border border-black shrink-0"></span>
-            <span>Miloti (Fahrzeug 3)</span>
-          </div>
-          <div className="flex items-center gap-2 text-surface-300">
             <span className="w-3 h-3 rounded-full bg-purple-400 border border-black shrink-0"></span>
-            <span>Zentrale / B2B Partner</span>
+            <span>M-ONE Zentrale & Direktkunden</span>
           </div>
           <div className="flex items-center gap-2 text-emerald-400 font-bold pt-1 border-t border-surface-800">
             <span className="w-3 h-3 rounded-full bg-emerald-400 animate-ping shrink-0"></span>

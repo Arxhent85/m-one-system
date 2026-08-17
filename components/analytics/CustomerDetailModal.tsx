@@ -36,7 +36,7 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
 
   const resolvedAgent = customer.agent && customer.agent !== '—' && customer.agent !== ''
     ? customer.agent
-    : (matchedMock?.agent || (customer.customer_number?.startsWith('2') ? 'Mensuri (Fahrzeug 1)' : customer.customer_number?.startsWith('1') ? 'Qerimi (Fahrzeug 2)' : customer.customer_number?.startsWith('3') ? 'Miloti (Fahrzeug 3)' : 'Zentrale'))
+    : (matchedMock?.agent || (customer.customer_number?.startsWith('2') ? 'Mensuri (Fahrzeug 1)' : customer.customer_number?.startsWith('1') ? 'Qerimi (Fahrzeug 2)' : 'M-ONE Zentrale'))
 
   // 1. Get Live-Scan GPS Info from central registry or sales
   const gpsMap = getCustomerGpsMap()

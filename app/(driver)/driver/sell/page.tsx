@@ -46,8 +46,8 @@ export default async function DriverSellPage({ searchParams }: PageProps) {
     }))
   }
 
-  const driverPrefix = driverParam === 'qerimi' ? '1' : driverParam === 'miloti' ? '3' : '2'
-  const driverName = driverParam === 'qerimi' ? 'Qerimi' : driverParam === 'miloti' ? 'Miloti' : 'Mensuri'
+  const driverPrefix = driverParam === 'qerimi' ? '1' : '2'
+  const driverName = driverParam === 'qerimi' ? 'Qerimi' : 'Mensuri'
 
   return (
     <DriverApp

@@ -77,7 +77,7 @@ export default function CustomerListView({ customers }: CustomerListViewProps) {
     const num = c.customer_number || ''
     if (num.startsWith('1') && num !== '10000') return 'Qerimi (Fahrzeug 2)'
     if (num.startsWith('2') && num !== '20000') return 'Mensuri (Fahrzeug 1)'
-    if (num.startsWith('3') && num !== '30000') return 'Miloti (Fahrzeug 3)'
+    if (num.startsWith('3') && num !== '30000') return 'M-ONE Zentrale (Hauptlager)'
     if (num.startsWith('4')) return 'M-ONE Zentrale (B2B Partner)'
     return 'M-ONE Zentrale'
   }

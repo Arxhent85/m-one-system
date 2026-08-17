@@ -90,8 +90,6 @@ export default function PayrollPrintModal({
       ? '1 (Depo Mensuri)'
       : driverName === 'Qerimi'
       ? '2 (Depo Qerimi)'
-      : driverName === 'Miloti'
-      ? '3 (Depo Miloti)'
       : 'Hauptlager (M-ONE)'
 
   const driverSeries =
@@ -99,8 +97,6 @@ export default function PayrollPrintModal({
       ? 'Kd.-Nr. 2xxxx'
       : driverName === 'Qerimi'
       ? 'Kd.-Nr. 1xxxx'
-      : driverName === 'Miloti'
-      ? 'Kd.-Nr. 3xxxx'
       : 'B2B / Zentrale'
 
   const renderTableHeader = () => (
