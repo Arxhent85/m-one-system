@@ -3,7 +3,7 @@
 import { X, Calendar, MapPin, Truck, ShoppingCart, AlertTriangle, CheckCircle2, Clock, Package, Phone, Navigation, ExternalLink, Globe } from 'lucide-react'
 import { formatCurrency, formatNumber } from '@/lib/utils/currency'
 import { getCustomerGpsMap, type CustomerGpsInfo } from '@/lib/stockStore'
-import { KOSOVO_CITIES_GEO } from '@/components/customers/KosovoCustomerMap'
+import { KOSOVO_CITIES_GEO, CITY_ALIASES } from '@/components/customers/KosovoCustomerMap'
 import MOCK_CUSTOMERS from '@/lib/mockCustomers.json'
 
 interface CustomerDetailModalProps {
@@ -36,7 +36,7 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
 
   const resolvedAgent = customer.agent && customer.agent !== '—' && customer.agent !== ''
     ? customer.agent
-    : (matchedMock?.agent || (customer.customer_number?.startsWith('2') ? 'Mensuri (Fahrzeug 1)' : customer.customer_number?.startsWith('1') ? 'Qerimi (Fahrzeug 2)' : 'Zentrale'))
+    : (matchedMock?.agent || (customer.customer_number?.startsWith('2') ? 'Mensuri (Fahrzeug 1)' : customer.customer_number?.startsWith('1') ? 'Qerimi (Fahrzeug 2)' : customer.customer_number?.startsWith('3') ? 'Miloti (Fahrzeug 3)' : 'Zentrale'))
 
   // 1. Get Live-Scan GPS Info from central registry or sales
   const gpsMap = getCustomerGpsMap()
@@ -60,7 +60,8 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
 
   // 2. Base Kosovo Coordinates (Fallback)
   const numInt = parseInt(customer.customer_number || '0') || 10103
-  const cityKey = (resolvedCity || 'PRISHTINE').toUpperCase().trim()
+  const rawCityKey = (resolvedCity || 'PRISHTINE').toUpperCase().trim()
+  const cityKey = (CITY_ALIASES && CITY_ALIASES[rawCityKey]) || rawCityKey
   const baseCityCoords = KOSOVO_CITIES_GEO[cityKey] || KOSOVO_CITIES_GEO['PRISHTINE']
   const angle = (numInt * 137.5 * Math.PI) / 180
   const radius = 0.0018 + ((numInt % 19) * 0.0006)

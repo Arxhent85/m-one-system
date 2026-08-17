@@ -25,6 +25,7 @@ import KOSOVO_BORDER_DATA from '@/lib/kosovoBoundary.json'
 export const KOSOVO_BORDER_COORDS: [number, number][] = KOSOVO_BORDER_DATA as [number, number][]
 
 // ─────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────
 // KOSOVO STÄDTE- & ORTSKOORDINATEN (Exakte Verortung)
 // ─────────────────────────────────────────────────────────────
 export const KOSOVO_CITIES_GEO: Record<string, [number, number]> = {
@@ -43,6 +44,7 @@ export const KOSOVO_CITIES_GEO: Record<string, [number, number]> = {
   VUSHTRRI: [42.8236, 20.9675],
   THARAND: [42.3586, 20.8250],
   SUHAREKE: [42.3586, 20.8250],
+  SUHAREK: [42.3586, 20.8250],
   RAHOVEC: [42.3994, 20.6547],
   KLINE: [42.6217, 20.5778],
   SKENDERAJ: [42.7481, 20.7917],
@@ -77,6 +79,42 @@ export const KOSOVO_CITIES_GEO: Record<string, [number, number]> = {
   GRACANICE: [42.5986, 21.1931],
   KLLOKOT: [42.3708, 21.3764],
   DUHEL: [42.4167, 20.8667],
+  'BAJA PEJES': [42.7161, 20.3808],
+  GERMNIK: [42.6100, 20.6120],
+  GJURAKOC: [42.7483, 20.4722],
+  HAJVALI: [42.6247, 21.1831],
+  'HOME KIM TEC': [42.6367, 21.0964],
+  KOMORAN: [42.5789, 20.9028],
+  'KRUSHEVE E MADHE': [42.6467, 20.5317],
+  'M ONE': [42.6367, 21.0964],
+  MILLOSHEVE: [42.7214, 21.1097],
+  OSTRAZUP: [42.4419, 20.7483],
+  PERLEPNIC: [42.5186, 21.5208],
+  RATKOC: [42.3789, 20.5739],
+  RUGOVE: [42.6958, 20.1583],
+  'RRUGA B': [42.6542, 21.1764],
+  'SHTIME - FERIZAJ': [42.4000, 21.0900],
+  STANOVIC: [42.7753, 21.0261],
+  'TEREN KIM TEC': [42.6367, 21.0964],
+  TERZAJ: [42.4100, 21.1200],
+  VRAGOLI: [42.6108, 21.0667],
+  VRELLE: [42.7736, 20.4042],
+  XERX: [42.3475, 20.5847],
+  ZLLAKUQAN: [42.6289, 20.5056],
+}
+
+export const CITY_ALIASES: Record<string, string> = {
+  SUHAREK: 'SUHAREKE',
+  THARAND: 'SUHAREKE',
+  'F. KOSOVA': 'FUSHE KOSOVE',
+  'FUSHE KOSOVE': 'FUSHE KOSOVE',
+  PRISTINA: 'PRISHTINE',
+  'RRUGA B': 'PRISHTINE',
+  'HOME KIM TEC': 'FUSHE KOSOVE',
+  'TEREN KIM TEC': 'FUSHE KOSOVE',
+  'M ONE': 'FUSHE KOSOVE',
+  DECANI: 'DEQAN',
+  KACANIK: 'KAQANIK',
 }
 
 const MAJOR_REGIONS = [
@@ -111,7 +149,7 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
   const mapInstanceRef = useRef<any>(null)
   const markersLayerRef = useRef<any>(null)
 
-  const [activeDriverFilter, setActiveDriverFilter] = useState<'all' | 'mensuri' | 'qerimi' | 'miloti' | 'live_gps'>('all')
+  const [activeDriverFilter, setActiveDriverFilter] = useState<'all' | 'mensuri' | 'qerimi' | 'miloti' | 'other' | 'live_gps'>('all')
   const [mapSearch, setMapSearch] = useState('')
   const [customerGpsMap, setCustomerGpsMap] = useState<Record<string, CustomerGpsInfo>>({})
 
@@ -153,24 +191,30 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
       let glowColor = 'rgba(56, 189, 248, 0.6)'
       let agentName = c.agent || 'Mensuri'
 
-      if (num.startsWith('2')) {
+      if (num.startsWith('2') && num !== '20000') {
         driverType = 'mensuri'
         color = '#38bdf8' // Cyan
         borderColor = '#0284c7'
         glowColor = 'rgba(56, 189, 248, 0.7)'
         agentName = 'Mensuri (Fahrzeug 1)'
-      } else if (num.startsWith('1')) {
+      } else if (num.startsWith('1') && num !== '10000') {
         driverType = 'qerimi'
         color = '#10b981' // Emerald
         borderColor = '#059669'
         glowColor = 'rgba(16, 185, 129, 0.7)'
         agentName = 'Qerimi (Fahrzeug 2)'
-      } else if (num.startsWith('3')) {
+      } else if (num.startsWith('3') && num !== '30000') {
         driverType = 'miloti'
         color = '#f59e0b' // Amber
         borderColor = '#d97706'
         glowColor = 'rgba(245, 158, 11, 0.7)'
-        agentName = 'Miloti'
+        agentName = 'Miloti (Fahrzeug 3)'
+      } else {
+        driverType = 'other'
+        color = '#a855f7' // Purple / Indigo
+        borderColor = '#9333ea'
+        glowColor = 'rgba(168, 85, 247, 0.7)'
+        agentName = 'Zentrale / Partner'
       }
 
       // Check Live-GPS first
@@ -206,7 +250,8 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
       }
 
       // Fallback: Lookup City in Kosovo database
-      const cityKey = (c.city || 'PRISHTINE').toUpperCase().trim()
+      const rawCity = (c.city || 'PRISHTINE').toUpperCase().trim()
+      const cityKey = CITY_ALIASES[rawCity] || rawCity
       const baseCoords = KOSOVO_CITIES_GEO[cityKey] || KOSOVO_CITIES_GEO['PRISHTINE']
 
       // Deterministic slight spread around city center (spiral offset)
@@ -236,6 +281,7 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
       if (activeDriverFilter === 'mensuri' && mc.driverType !== 'mensuri') return false
       if (activeDriverFilter === 'qerimi' && mc.driverType !== 'qerimi') return false
       if (activeDriverFilter === 'miloti' && mc.driverType !== 'miloti') return false
+      if (activeDriverFilter === 'other' && mc.driverType !== 'other') return false
       if (activeDriverFilter === 'live_gps' && !mc.hasLiveGps) return false
 
       // Search filter
@@ -258,6 +304,7 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
       mensuri: mappedCustomers.filter((c) => c.driverType === 'mensuri').length,
       qerimi: mappedCustomers.filter((c) => c.driverType === 'qerimi').length,
       miloti: mappedCustomers.filter((c) => c.driverType === 'miloti').length,
+      other: mappedCustomers.filter((c) => c.driverType === 'other').length,
       liveGps: mappedCustomers.filter((c) => c.hasLiveGps).length,
     }
   }, [mappedCustomers])
@@ -537,6 +584,21 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
               <span>🚚 Miloti ({counts.miloti})</span>
             </button>
 
+            {counts.other > 0 && (
+              <button
+                type="button"
+                onClick={() => setActiveDriverFilter('other')}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm active:scale-95 ${
+                  activeDriverFilter === 'other'
+                    ? 'bg-purple-600 text-white shadow-purple-950/60'
+                    : 'bg-surface-900 hover:bg-surface-800 text-purple-400 border border-purple-900/40'
+                }`}
+              >
+                <Layers className="w-3.5 h-3.5 text-purple-400" />
+                <span>🏢 Zentrale / B2B ({counts.other})</span>
+              </button>
+            )}
+
             <button
               type="button"
               onClick={() => setActiveDriverFilter('live_gps')}
@@ -621,7 +683,11 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
           </div>
           <div className="flex items-center gap-2 text-surface-300">
             <span className="w-3 h-3 rounded-full bg-amber-400 border border-black shrink-0"></span>
-            <span>Miloti / Zentrale</span>
+            <span>Miloti (Fahrzeug 3)</span>
+          </div>
+          <div className="flex items-center gap-2 text-surface-300">
+            <span className="w-3 h-3 rounded-full bg-purple-400 border border-black shrink-0"></span>
+            <span>Zentrale / B2B Partner</span>
           </div>
           <div className="flex items-center gap-2 text-emerald-400 font-bold pt-1 border-t border-surface-800">
             <span className="w-3 h-3 rounded-full bg-emerald-400 animate-ping shrink-0"></span>

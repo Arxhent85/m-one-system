@@ -25,7 +25,7 @@ export default async function CustomersPage() {
     console.error('Error fetching customers from Supabase:', e)
   }
 
-  // Fallback to official 202 customers from Excel if Supabase is empty
+  // Official customers from 'KUNDENLISTE new.xlsx' (799 customers)
   const safeCustomers: CustomerItem[] = fetchedCustomers.length > 0 
     ? fetchedCustomers 
     : (MOCK_CUSTOMERS as CustomerItem[])
