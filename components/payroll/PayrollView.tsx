@@ -27,6 +27,7 @@ import {
   getDriverForSale,
   formatMonthKey,
   COMMISSION_RATES,
+  FIXED_DRIVER_SALARY,
 } from '@/lib/commission'
 import { getSalesHistory } from '@/lib/stockStore'
 import PayrollPrintModal from './PayrollPrintModal'
@@ -134,14 +135,20 @@ export default function PayrollView() {
       {
         monthKey: string
         mensuriComm: number
+        mensuriFix: number
+        mensuriTotal: number
         mensuriPieces: number
         mensuriOrders: number
         mensuriVolume: number
         qerimiComm: number
+        qerimiFix: number
+        qerimiTotal: number
         qerimiPieces: number
         qerimiOrders: number
         qerimiVolume: number
         totalComm: number
+        totalFix: number
+        totalSalary: number
         totalPieces: number
         totalOrders: number
         totalVolume: number
@@ -155,14 +162,20 @@ export default function PayrollView() {
         map[monthKey] = {
           monthKey,
           mensuriComm: 0,
+          mensuriFix: FIXED_DRIVER_SALARY,
+          mensuriTotal: 0,
           mensuriPieces: 0,
           mensuriOrders: 0,
           mensuriVolume: 0,
           qerimiComm: 0,
+          qerimiFix: FIXED_DRIVER_SALARY,
+          qerimiTotal: 0,
           qerimiPieces: 0,
           qerimiOrders: 0,
           qerimiVolume: 0,
           totalComm: 0,
+          totalFix: FIXED_DRIVER_SALARY * 2,
+          totalSalary: 0,
           totalPieces: 0,
           totalOrders: 0,
           totalVolume: 0,
@@ -173,8 +186,6 @@ export default function PayrollView() {
       const orderComm = calculateOrderCommission(s)
       const vol = Number(s.total_amount || 0)
 
-      map[monthKey].totalComm += orderComm.totalCommission
-      map[monthKey].totalPieces += orderComm.totalPieces
       map[monthKey].totalOrders += 1
       map[monthKey].totalVolume += vol
 
@@ -183,19 +194,24 @@ export default function PayrollView() {
         map[monthKey].mensuriPieces += orderComm.totalPieces
         map[monthKey].mensuriOrders += 1
         map[monthKey].mensuriVolume += vol
-        map[monthKey].totalComm += orderComm.totalCommission
-        map[monthKey].totalPieces += orderComm.totalPieces
       } else if (driver === 'Qerimi') {
         map[monthKey].qerimiComm += orderComm.totalCommission
         map[monthKey].qerimiPieces += orderComm.totalPieces
         map[monthKey].qerimiOrders += 1
         map[monthKey].qerimiVolume += vol
-        map[monthKey].totalComm += orderComm.totalCommission
-        map[monthKey].totalPieces += orderComm.totalPieces
       }
+    })
 
-      map[monthKey].totalOrders += 1
-      map[monthKey].totalVolume += vol
+    // Calculate totals with Fixlohn (137,50 € je Fahrer)
+    Object.values(map).forEach((m) => {
+      m.mensuriComm = Math.round(m.mensuriComm * 100) / 100
+      m.qerimiComm = Math.round(m.qerimiComm * 100) / 100
+      m.mensuriTotal = Math.round((m.mensuriComm + m.mensuriFix) * 100) / 100
+      m.qerimiTotal = Math.round((m.qerimiComm + m.qerimiFix) * 100) / 100
+      m.totalComm = Math.round((m.mensuriComm + m.qerimiComm) * 100) / 100
+      m.totalSalary = Math.round((m.mensuriTotal + m.qerimiTotal) * 100) / 100
+      m.totalPieces = m.mensuriPieces + m.qerimiPieces
+      m.totalVolume = Math.round(m.totalVolume * 100) / 100
     })
 
     return Object.values(map).sort((a, b) => b.monthKey.localeCompare(a.monthKey))
@@ -250,10 +266,17 @@ export default function PayrollView() {
       }
     })
 
+    const numMonths = selectedMonth === 'all' ? (availableMonths.length || 1) : 1
+    const mensuriFixedSalary = FIXED_DRIVER_SALARY * numMonths
+    const qerimiFixedSalary = FIXED_DRIVER_SALARY * numMonths
+    const mensuriTotalSalary = Math.round((mensuriComm + mensuriFixedSalary) * 100) / 100
+    const qerimiTotalSalary = Math.round((qerimiComm + qerimiFixedSalary) * 100) / 100
 
     return {
       mensuri: {
         comm: Math.round(mensuriComm * 100) / 100,
+        fixedSalary: mensuriFixedSalary,
+        totalSalary: mensuriTotalSalary,
         pieces: mensuriPieces,
         orders: mensuriOrders,
         volume: Math.round(mensuriVolume * 100) / 100,
@@ -261,17 +284,21 @@ export default function PayrollView() {
       },
       qerimi: {
         comm: Math.round(qerimiComm * 100) / 100,
+        fixedSalary: qerimiFixedSalary,
+        totalSalary: qerimiTotalSalary,
         pieces: qerimiPieces,
         orders: qerimiOrders,
         volume: Math.round(qerimiVolume * 100) / 100,
         itemBreakdown: Object.values(qerimiItemsMap).sort((a, b) => b.commission - a.commission),
       },
       combinedComm: Math.round((mensuriComm + qerimiComm) * 100) / 100,
+      combinedFixSalary: mensuriFixedSalary + qerimiFixedSalary,
+      combinedTotalSalary: Math.round((mensuriTotalSalary + qerimiTotalSalary) * 100) / 100,
       combinedPieces: mensuriPieces + qerimiPieces,
       combinedOrders: mensuriOrders + qerimiOrders,
       combinedVolume: Math.round((mensuriVolume + qerimiVolume) * 100) / 100,
     }
-  }, [filteredSales])
+  }, [filteredSales, selectedMonth, availableMonths])
 
   // Product Commission Matrix / Top Products
   const productCommissionTable = useMemo(() => {
@@ -499,19 +526,20 @@ export default function PayrollView() {
 
       {/* Top 4 KPI Metrics */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {/* Total Commission */}
+        {/* Total Salary Payable */}
         <div className="glass-card p-4 border border-brand-500/30 bg-gradient-to-br from-brand-950/40 via-surface-900 to-surface-900">
           <div className="flex items-center justify-between">
-            <p className="text-xs font-semibold text-brand-300 uppercase tracking-wider">Gesamt-Provision</p>
+            <p className="text-xs font-semibold text-brand-300 uppercase tracking-wider">Gesamter Auszahlungslohn</p>
             <div className="w-8 h-8 rounded-lg bg-brand-900/60 text-brand-400 flex items-center justify-center">
               <Banknote className="w-4 h-4" />
             </div>
           </div>
           <p className="text-2xl font-black text-surface-50 mt-2">
-            {formatCurrency(driverTotals.combinedComm)}
+            {formatCurrency(driverTotals.combinedTotalSalary)}
           </p>
-          <p className="text-[11px] text-surface-400 mt-1 flex items-center gap-1">
-            <span className="text-emerald-400 font-medium">{formatNumber(driverTotals.combinedPieces)}</span> verkaufte Einheiten
+          <p className="text-[11px] text-surface-400 mt-1 flex items-center justify-between">
+            <span>Prov: <strong className="text-emerald-400">{formatCurrency(driverTotals.combinedComm)}</strong></span>
+            <span>+ Fix: <strong className="text-slate-300">{formatCurrency(driverTotals.combinedFixSalary)}</strong></span>
           </p>
         </div>
 
@@ -519,7 +547,7 @@ export default function PayrollView() {
         <div className="glass-card p-4 border border-emerald-500/30 bg-gradient-to-br from-emerald-950/40 via-surface-900 to-surface-900">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs font-semibold text-emerald-300 uppercase tracking-wider">Lohn Mensuri</p>
+              <p className="text-xs font-semibold text-emerald-300 uppercase tracking-wider">Lohn Mensuri (Auszahlung)</p>
               <p className="text-[10px] text-surface-400">Fahrzeug 1 (Kd 2xxxx)</p>
             </div>
             <div className="w-8 h-8 rounded-lg bg-emerald-900/60 text-emerald-400 flex items-center justify-center font-bold text-xs">
@@ -527,13 +555,13 @@ export default function PayrollView() {
             </div>
           </div>
           <p className="text-2xl font-black text-emerald-300 mt-2">
-            {formatCurrency(driverTotals.mensuri.comm)}
+            {formatCurrency(driverTotals.mensuri.totalSalary)}
           </p>
           <div className="flex items-center justify-between text-[11px] text-surface-400 mt-1">
-            <span>{formatNumber(driverTotals.mensuri.pieces)} Stk · {formatNumber(driverTotals.mensuri.orders)} Fakt.</span>
+            <span>Prov. {formatCurrency(driverTotals.mensuri.comm)} + {formatCurrency(driverTotals.mensuri.fixedSalary)} € Fix</span>
             <button
               onClick={() => openDriverPrint('Mensuri')}
-              className="text-emerald-400 hover:underline flex items-center gap-0.5"
+              className="text-emerald-400 hover:underline flex items-center gap-0.5 font-bold"
             >
               Lohnzettel <ChevronRight className="w-3 h-3" />
             </button>
@@ -544,7 +572,7 @@ export default function PayrollView() {
         <div className="glass-card p-4 border border-cyan-500/30 bg-gradient-to-br from-cyan-950/40 via-surface-900 to-surface-900">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs font-semibold text-cyan-300 uppercase tracking-wider">Lohn Qerimi</p>
+              <p className="text-xs font-semibold text-cyan-300 uppercase tracking-wider">Lohn Qerimi (Auszahlung)</p>
               <p className="text-[10px] text-surface-400">Fahrzeug 2 (Kd 1xxxx)</p>
             </div>
             <div className="w-8 h-8 rounded-lg bg-cyan-900/60 text-cyan-400 flex items-center justify-center font-bold text-xs">
@@ -552,13 +580,13 @@ export default function PayrollView() {
             </div>
           </div>
           <p className="text-2xl font-black text-cyan-300 mt-2">
-            {formatCurrency(driverTotals.qerimi.comm)}
+            {formatCurrency(driverTotals.qerimi.totalSalary)}
           </p>
           <div className="flex items-center justify-between text-[11px] text-surface-400 mt-1">
-            <span>{formatNumber(driverTotals.qerimi.pieces)} Stk · {formatNumber(driverTotals.qerimi.orders)} Fakt.</span>
+            <span>Prov. {formatCurrency(driverTotals.qerimi.comm)} + {formatCurrency(driverTotals.qerimi.fixedSalary)} € Fix</span>
             <button
               onClick={() => openDriverPrint('Qerimi')}
-              className="text-cyan-400 hover:underline flex items-center gap-0.5"
+              className="text-cyan-400 hover:underline flex items-center gap-0.5 font-bold"
             >
               Lohnzettel <ChevronRight className="w-3 h-3" />
             </button>
@@ -577,7 +605,7 @@ export default function PayrollView() {
             {formatCurrency(driverTotals.combinedVolume)}
           </p>
           <p className="text-[11px] text-surface-400 mt-1">
-            Ø {formatCurrency(driverTotals.combinedOrders > 0 ? driverTotals.combinedComm / driverTotals.combinedOrders : 0)} Provision / Faktur
+            {formatNumber(driverTotals.combinedPieces)} Stk in {formatNumber(driverTotals.combinedOrders)} Fakturen
           </p>
         </div>
       </div>
@@ -645,12 +673,12 @@ export default function PayrollView() {
                       {formatMonthKey(row.monthKey)}
                     </td>
                     <td className="py-3.5 px-4 text-right">
-                      <span className="font-mono font-bold text-emerald-400">{formatCurrency(row.mensuriComm)}</span>
-                      <p className="text-[10px] text-surface-400">{formatNumber(row.mensuriPieces)} Stk ({row.mensuriOrders} Fakt.)</p>
+                      <span className="font-mono font-bold text-emerald-400">{formatCurrency(row.mensuriTotal)}</span>
+                      <p className="text-[10px] text-surface-400">Prov: {formatCurrency(row.mensuriComm)} + {formatCurrency(row.mensuriFix)} € Fix ({formatNumber(row.mensuriPieces)} Stk)</p>
                     </td>
                     <td className="py-3.5 px-4 text-right">
-                      <span className="font-mono font-bold text-cyan-400">{formatCurrency(row.qerimiComm)}</span>
-                      <p className="text-[10px] text-surface-400">{formatNumber(row.qerimiPieces)} Stk ({row.qerimiOrders} Fakt.)</p>
+                      <span className="font-mono font-bold text-cyan-400">{formatCurrency(row.qerimiTotal)}</span>
+                      <p className="text-[10px] text-surface-400">Prov: {formatCurrency(row.qerimiComm)} + {formatCurrency(row.qerimiFix)} € Fix ({formatNumber(row.qerimiPieces)} Stk)</p>
                     </td>
                     <td className="py-3.5 px-4 text-right font-medium text-surface-200">
                       {formatNumber(row.totalPieces)} Stk
@@ -658,21 +686,22 @@ export default function PayrollView() {
                     <td className="py-3.5 px-4 text-right font-medium text-surface-300">
                       {formatCurrency(row.totalVolume)}
                     </td>
-                    <td className="py-3.5 px-4 text-right font-mono font-bold text-sm text-brand-300">
-                      {formatCurrency(row.totalComm)}
+                    <td className="py-3.5 px-4 text-right">
+                      <span className="font-mono font-bold text-sm text-brand-300">{formatCurrency(row.totalSalary)}</span>
+                      <p className="text-[10px] text-surface-400">inkl. 2x 137,50 € Fixlohn</p>
                     </td>
                     <td className="py-3.5 px-4 text-center">
                       <div className="flex items-center justify-center gap-1.5">
                         <button
                           onClick={() => openDriverPrint('Mensuri', row.monthKey)}
-                          className="px-2 py-1 bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 hover:border-emerald-400 rounded text-[11px] font-semibold"
+                          className="px-2.5 py-1 bg-emerald-950/60 border border-emerald-500/30 text-emerald-300 hover:border-emerald-400 rounded text-[11px] font-semibold"
                           title="Lohnzettel Mensuri für diesen Monat"
                         >
                           Mensuri
                         </button>
                         <button
                           onClick={() => openDriverPrint('Qerimi', row.monthKey)}
-                          className="px-2 py-1 bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 hover:border-cyan-400 rounded text-[11px] font-semibold"
+                          className="px-2.5 py-1 bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 hover:border-cyan-400 rounded text-[11px] font-semibold"
                           title="Lohnzettel Qerimi für diesen Monat"
                         >
                           Qerimi
@@ -686,10 +715,12 @@ export default function PayrollView() {
                 <tr>
                   <td className="py-3.5 px-4 uppercase text-xs">Gesamtsumme 2026</td>
                   <td className="py-3.5 px-4 text-right text-emerald-400 font-mono text-sm">
-                    {formatCurrency(driverTotals.mensuri.comm)}
+                    {formatCurrency(driverTotals.mensuri.totalSalary)}
+                    <p className="text-[9px] font-normal text-surface-400">Prov: {formatCurrency(driverTotals.mensuri.comm)} + {formatCurrency(driverTotals.mensuri.fixedSalary)} € Fix</p>
                   </td>
                   <td className="py-3.5 px-4 text-right text-cyan-400 font-mono text-sm">
-                    {formatCurrency(driverTotals.qerimi.comm)}
+                    {formatCurrency(driverTotals.qerimi.totalSalary)}
+                    <p className="text-[9px] font-normal text-surface-400">Prov: {formatCurrency(driverTotals.qerimi.comm)} + {formatCurrency(driverTotals.qerimi.fixedSalary)} € Fix</p>
                   </td>
                   <td className="py-3.5 px-4 text-right">
                     {formatNumber(driverTotals.combinedPieces)} Stk
@@ -698,7 +729,8 @@ export default function PayrollView() {
                     {formatCurrency(driverTotals.combinedVolume)}
                   </td>
                   <td className="py-3.5 px-4 text-right text-base text-brand-400 font-mono">
-                    {formatCurrency(driverTotals.combinedComm)}
+                    {formatCurrency(driverTotals.combinedTotalSalary)}
+                    <p className="text-[9px] font-normal text-surface-400">inkl. Fixlöhne</p>
                   </td>
                   <td></td>
                 </tr>
@@ -834,6 +866,7 @@ export default function PayrollView() {
           driverName={printModalData.driverName}
           monthKey={printModalData.monthKey}
           totalCommission={printModalData.totalCommission}
+          fixedSalary={FIXED_DRIVER_SALARY}
           totalPieces={printModalData.totalPieces}
           totalSalesVolume={printModalData.totalSalesVolume}
           totalOrders={printModalData.totalOrders}
@@ -850,6 +883,43 @@ export default function PayrollView() {
           onClose={() => setSelectedInvoice(null)}
         />
       )}
+
+      {/* Global Fallback Print Stylesheet: Pure White Background, Black Text, No Toner Waste */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media print {
+          body, html {
+            background: #ffffff !important;
+            background-color: #ffffff !important;
+            color: #000000 !important;
+          }
+          .glass-card,
+          .bg-surface-900,
+          .bg-surface-950,
+          .bg-surface-800 {
+            background: #ffffff !important;
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            border-color: #cbd5e1 !important;
+            box-shadow: none !important;
+          }
+          .text-surface-50,
+          .text-surface-100,
+          .text-surface-200,
+          .text-surface-300,
+          .text-white {
+            color: #000000 !important;
+          }
+          .text-surface-400,
+          .text-surface-500 {
+            color: #475569 !important;
+          }
+          .border-surface-700,
+          .border-surface-600,
+          .border-surface-800 {
+            border-color: #cbd5e1 !important;
+          }
+        }
+      ` }} />
 
     </div>
   )

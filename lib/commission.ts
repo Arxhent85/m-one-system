@@ -3,6 +3,11 @@ import commissionRatesData from './commissionRates.json'
 export const COMMISSION_RATES: Record<string, number> = commissionRatesData
 
 /**
+ * Fixes Grundgehalt / Fixlohn je Fahrer pro Monat
+ */
+export const FIXED_DRIVER_SALARY = 137.50
+
+/**
  * Liefert den Provisionssatz in € pro Stück für einen bestimmten Artikel (SKU).
  */
 export function getCommissionRate(sku?: string | number): number {
