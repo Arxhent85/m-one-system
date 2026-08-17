@@ -74,21 +74,22 @@ export default function DashboardView({ initialOrders, locations }: DashboardVie
 
   async function handleLoad2026() {
     setIsReloading(true)
-    if (typeof window !== 'undefined') {
-      localStorage.removeItem('m_one_sales_cleared')
-      localStorage.setItem('m_one_sales_history_v1', JSON.stringify(MOCK_2026_SALES))
-    }
     try {
-      await fetch('/api/sales/record', {
+      const res = await fetch('/api/sales/record', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'load_2026_demo' }),
       })
+      const data = await res.json()
+      if (data.success && Array.isArray(data.sales)) {
+        setLocalSales(data.sales.map(mapSaleToOrder))
+      }
       if (typeof window !== 'undefined') {
+        localStorage.removeItem('m_one_sales_cleared')
+        localStorage.setItem('m_one_sales_history_v1', JSON.stringify(MOCK_2026_SALES))
         window.dispatchEvent(new Event('m_one_stock_changed'))
         window.dispatchEvent(new Event('m_one_sale_recorded'))
       }
-      setLocalSales((MOCK_2026_SALES as any[]).map(mapSaleToOrder))
     } catch (e) {
       console.warn('Reload 2026 error:', e)
     } finally {
@@ -98,36 +99,21 @@ export default function DashboardView({ initialOrders, locations }: DashboardVie
 
   useEffect(() => {
     function loadData() {
-      const isCleared = typeof window !== 'undefined' && localStorage.getItem('m_one_sales_cleared') === 'true'
-      if (isCleared) {
-        setLocalSales([])
-        setStockMap(getStockMap())
-        return
-      }
-
-      const history = getSalesHistory()
-      const base = history && history.length > 0 ? history : (MOCK_2026_SALES as any[])
-      const localMapped: Order[] = base.map(mapSaleToOrder)
-
       fetch('/api/sales/record')
         .then((res) => res.json())
         .then((data) => {
-          if (data.success && Array.isArray(data.sales) && data.sales.length > 0) {
-            const serverMapped: Order[] = data.sales.map(mapSaleToOrder)
-            const combined = [...serverMapped]
-            localMapped.forEach((l) => {
-              if (!combined.some((c) => c.id === l.id || c.order_number === l.order_number)) {
-                combined.push(l)
-              }
-            })
-            setLocalSales(combined)
-          } else {
-            setLocalSales(localMapped)
+          if (data.success) {
+            if (data.isCleared || (Array.isArray(data.sales) && data.sales.length === 0)) {
+              setLocalSales([])
+            } else if (Array.isArray(data.sales) && data.sales.length > 0) {
+              setLocalSales(data.sales.map(mapSaleToOrder))
+            }
           }
           setStockMap(getStockMap())
         })
         .catch(() => {
-          setLocalSales(localMapped)
+          const local = getSalesHistory()
+          setLocalSales(local.map(mapSaleToOrder))
           setStockMap(getStockMap())
         })
     }
@@ -143,24 +129,15 @@ export default function DashboardView({ initialOrders, locations }: DashboardVie
     }
   }, [])
 
-  // Combine server orders + local sales
+  // Authoritative sales from central store
   const allOrders = useMemo(() => {
-    if (typeof window !== 'undefined' && localStorage.getItem('m_one_sales_cleared') === 'true') {
-      return localSales
-    }
-    const combined = [...localSales]
-    for (const o of initialOrders) {
-      const mapped = mapSaleToOrder(o)
-      if (!combined.some((c) => c.id === mapped.id || c.order_number === mapped.order_number)) {
-        combined.push(mapped)
-      }
-    }
-    return combined
-  }, [initialOrders, localSales])
+    return localSales
+  }, [localSales])
 
   const totalRevenue = useMemo(() => allOrders.reduce((s, o) => s + (o.total_amount ?? 0), 0), [allOrders])
   const totalOrderCount = allOrders.length
   const recentOrders = useMemo(() => allOrders.slice(0, 10), [allOrders])
+
 
   // Top-Produkte calculation
   const topProducts = useMemo(() => {

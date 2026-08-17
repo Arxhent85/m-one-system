@@ -64,21 +64,22 @@ export default function OrdersListView({ orders: initialOrders }: OrdersListView
 
   async function handleLoad2026() {
     setIsReloading(true)
-    if (typeof window !== 'undefined') {
-      localStorage.removeItem('m_one_sales_cleared')
-      localStorage.setItem('m_one_sales_history_v1', JSON.stringify(MOCK_2026_SALES))
-    }
     try {
-      await fetch('/api/sales/record', {
+      const res = await fetch('/api/sales/record', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'load_2026_demo' }),
       })
+      const data = await res.json()
+      if (data.success && Array.isArray(data.sales)) {
+        setAllSales(data.sales.map(toRichOrder))
+      }
       if (typeof window !== 'undefined') {
+        localStorage.removeItem('m_one_sales_cleared')
+        localStorage.setItem('m_one_sales_history_v1', JSON.stringify(MOCK_2026_SALES))
         window.dispatchEvent(new Event('m_one_stock_changed'))
         window.dispatchEvent(new Event('m_one_sale_recorded'))
       }
-      setAllSales((MOCK_2026_SALES as any[]).map(toRichOrder))
     } catch (e) {
       console.warn('Reload 2026 error:', e)
     } finally {
@@ -88,40 +89,32 @@ export default function OrdersListView({ orders: initialOrders }: OrdersListView
 
   useEffect(() => {
     function loadSales() {
-      const isCleared = typeof window !== 'undefined' && localStorage.getItem('m_one_sales_cleared') === 'true'
-      if (isCleared) {
-        setAllSales([])
-        return
-      }
-      const base = (() => {
-        const local = getSalesHistory()
-        return local && local.length > 0 ? local : (MOCK_2026_SALES as any[])
-      })()
-      const baseMapped: Order[] = base.map(toRichOrder)
-
       fetch('/api/sales/record')
         .then((res) => res.json())
         .then((data) => {
-          if (data.success && Array.isArray(data.sales) && data.sales.length > 0) {
-            const serverMapped: Order[] = data.sales.map(toRichOrder)
-            const combined = [...serverMapped]
-            baseMapped.forEach((l) => {
-              if (!combined.some((c) => c.id === l.id || c.order_number === l.order_number)) {
-                combined.push(l)
-              }
-            })
-            setAllSales(combined)
-          } else {
-            setAllSales(baseMapped)
+          if (data.success) {
+            if (data.isCleared || (Array.isArray(data.sales) && data.sales.length === 0)) {
+              setAllSales([])
+            } else if (Array.isArray(data.sales) && data.sales.length > 0) {
+              setAllSales(data.sales.map(toRichOrder))
+            }
           }
         })
-        .catch(() => setAllSales(baseMapped))
+        .catch(() => {
+          const local = getSalesHistory()
+          setAllSales(local.map(toRichOrder))
+        })
     }
 
     loadSales()
+    window.addEventListener('focus', loadSales)
     window.addEventListener('m_one_sale_recorded', loadSales)
-    return () => window.removeEventListener('m_one_sale_recorded', loadSales)
+    return () => {
+      window.removeEventListener('focus', loadSales)
+      window.removeEventListener('m_one_sale_recorded', loadSales)
+    }
   }, [])
+
 
   const filteredOrders = useMemo(() => {
     return allSales.filter((o) => {

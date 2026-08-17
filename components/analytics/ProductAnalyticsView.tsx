@@ -9,7 +9,7 @@ import ProductDetailModal from './ProductDetailModal'
 import MOCK_2026_SALES from '@/lib/mock2026Sales.json'
 
 export default function ProductAnalyticsView() {
-  const [salesList, setSalesList] = useState<any[]>(MOCK_2026_SALES)
+  const [salesList, setSalesList] = useState<any[]>([])
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedProduct, setSelectedProduct] = useState<any | null>(null)
   const [isMounted, setIsMounted] = useState(false)
@@ -18,37 +18,23 @@ export default function ProductAnalyticsView() {
   useEffect(() => {
     setIsMounted(true)
     function loadData() {
-      const isCleared = typeof window !== 'undefined' && localStorage.getItem('m_one_sales_cleared') === 'true'
-      const local = getSalesHistory()
-
       fetch('/api/sales/record')
         .then((res) => res.json())
         .then((data) => {
-          const serverSales = data.success && Array.isArray(data.sales) ? data.sales : []
-          const combined = [...serverSales]
-          local.forEach((l: any) => {
-            if (!combined.some((c) => c.id === l.id || c.order_number === l.order_number)) {
-              combined.push(l)
+          if (data.success) {
+            if (data.isCleared || (Array.isArray(data.sales) && data.sales.length === 0)) {
+              setSalesList([])
+            } else if (Array.isArray(data.sales) && data.sales.length > 0) {
+              setSalesList(data.sales)
             }
-          })
-          if (combined.length > 0) {
-            setSalesList(combined)
-          } else if (isCleared) {
-            setSalesList([])
-          } else {
-            setSalesList(MOCK_2026_SALES)
           }
         })
         .catch(() => {
-          if (local.length > 0) {
-            setSalesList(local)
-          } else if (isCleared) {
-            setSalesList([])
-          } else {
-            setSalesList(MOCK_2026_SALES)
-          }
+          const local = getSalesHistory()
+          setSalesList(local)
         })
     }
+
 
     loadData()
     const handleProductsChange = () => setProductsVersion((v) => v + 1)

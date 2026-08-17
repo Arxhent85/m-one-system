@@ -4,6 +4,7 @@ import { LOCATION_IDS, INITIAL_DEPO_PRODUCTS, INITIAL_MENSURI_STOCK, INITIAL_QER
 import MOCK_2026_SALES from '@/lib/mock2026Sales.json'
 
 // Shared in-memory / fallback store for cross-device sync
+let globalSalesCleared = false
 let globalServerSales: any[] = [...MOCK_2026_SALES]
 let globalCustomerGpsMap: Record<string, { lat: number; lng: number; accuracy?: number; updatedAt: string; google_maps_url: string }> = {}
 let globalServerStockMap: Record<string, Record<string, number>> = {
@@ -18,16 +19,19 @@ export async function POST(req: Request) {
 
     // Special action: Load 2026 demo dataset
     if (body.action === 'load_2026_demo') {
+      globalSalesCleared = false
       globalServerSales = [...MOCK_2026_SALES]
       return NextResponse.json({
         success: true,
         message: '2026 Echtdaten erfolgreich geladen.',
         salesCount: globalServerSales.length,
         sales: globalServerSales,
+        isCleared: false,
         stockMap: globalServerStockMap,
         customerGpsMap: globalCustomerGpsMap,
       })
     }
+
 
     const {
       driverName = 'Mensuri',
@@ -81,6 +85,7 @@ export async function POST(req: Request) {
       created_at: new Date().toISOString(),
     }
 
+    globalSalesCleared = false
     globalServerSales.unshift(saleEntry)
 
     // 3. Update customer permanent GPS in central registry
@@ -146,13 +151,15 @@ export async function POST(req: Request) {
 export async function GET() {
   return NextResponse.json({
     success: true,
-    sales: globalServerSales,
+    sales: globalSalesCleared ? [] : globalServerSales,
+    isCleared: globalSalesCleared,
     stockMap: globalServerStockMap,
     customerGpsMap: globalCustomerGpsMap,
   })
 }
 
 export async function DELETE() {
+  globalSalesCleared = true
   globalServerSales = []
   globalServerStockMap = {
     [LOCATION_IDS.DEPOT]: INITIAL_DEPO_PRODUCTS.reduce((acc, p) => ({ ...acc, [p.sku]: p.stock }), {}),
@@ -170,7 +177,9 @@ export async function DELETE() {
   return NextResponse.json({
     success: true,
     message: 'System-Reset erfolgreich durchgeführt.',
-    sales: globalServerSales,
+    sales: [],
+    isCleared: true,
     stockMap: globalServerStockMap,
   })
 }
+

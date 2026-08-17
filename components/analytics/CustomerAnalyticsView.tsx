@@ -22,7 +22,7 @@ interface Customer {
 }
 
 export default function CustomerAnalyticsView() {
-  const [salesList, setSalesList] = useState<any[]>(MOCK_2026_SALES)
+  const [salesList, setSalesList] = useState<any[]>([])
   const [searchQuery, setSearchQuery] = useState('')
   const [activeTab, setActiveTab] = useState<'overview' | 'top_customers' | 'cities' | 'churn_risk'>('overview')
   const [selectedCustomer, setSelectedCustomer] = useState<any | null>(null)
@@ -30,35 +30,20 @@ export default function CustomerAnalyticsView() {
 
   useEffect(() => {
     function loadData() {
-      const isCleared = typeof window !== 'undefined' && localStorage.getItem('m_one_sales_cleared') === 'true'
-      const local = getSalesHistory()
-
       fetch('/api/sales/record')
         .then((res) => res.json())
         .then((data) => {
-          const serverSales = data.success && Array.isArray(data.sales) ? data.sales : []
-          const combined = [...serverSales]
-          local.forEach((l: any) => {
-            if (!combined.some((c) => c.id === l.id || c.order_number === l.order_number)) {
-              combined.push(l)
+          if (data.success) {
+            if (data.isCleared || (Array.isArray(data.sales) && data.sales.length === 0)) {
+              setSalesList([])
+            } else if (Array.isArray(data.sales) && data.sales.length > 0) {
+              setSalesList(data.sales)
             }
-          })
-          if (combined.length > 0) {
-            setSalesList(combined)
-          } else if (isCleared) {
-            setSalesList([])
-          } else {
-            setSalesList(MOCK_2026_SALES)
           }
         })
         .catch(() => {
-          if (local.length > 0) {
-            setSalesList(local)
-          } else if (isCleared) {
-            setSalesList([])
-          } else {
-            setSalesList(MOCK_2026_SALES)
-          }
+          const local = getSalesHistory()
+          setSalesList(local)
         })
     }
 
@@ -70,6 +55,7 @@ export default function CustomerAnalyticsView() {
       window.removeEventListener('m_one_sale_recorded', loadData)
     }
   }, [])
+
 
   // 1. Aggregierte Kunden-Statistiken berechnen
   const customerStats = useMemo(() => {

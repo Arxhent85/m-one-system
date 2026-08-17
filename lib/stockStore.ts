@@ -419,18 +419,16 @@ export function getSalesHistory(): SaleRecord[] {
     const raw = localStorage.getItem(SALES_KEY)
     if (raw) {
       const parsed = JSON.parse(raw)
-      if (Array.isArray(parsed) && parsed.length > 0) {
+      if (Array.isArray(parsed)) {
         return parsed
       }
-    }
-    if (localStorage.getItem('m_one_sales_cleared') === 'true') {
-      return []
     }
   } catch (e) {
     console.error('Error reading sales history', e)
   }
-  return MOCK_2026_SALES as any
+  return []
 }
+
 
 // ──────────────────────────────────────────────────────────────────────────────
 // LAGER-RESET (alle Bestände auf die Excel-Ausgangswerte zurücksetzen)
