@@ -31,6 +31,7 @@ import {
 } from '@/lib/commission'
 import { getSalesHistory } from '@/lib/stockStore'
 import PayrollPrintModal from './PayrollPrintModal'
+import PrintablePayrollSlip from './PrintablePayrollSlip'
 import InvoiceDetailModal from '@/components/orders/InvoiceDetailModal'
 
 export default function PayrollView() {
@@ -413,19 +414,21 @@ export default function PayrollView() {
 
 
   return (
-    <div className="space-y-6 animate-in">
-      
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold text-surface-50 flex items-center gap-2.5">
-            <Coins className="w-6 h-6 text-brand-400" />
-            Lohn & Fahrer-Provisionen
-          </h1>
-          <p className="text-surface-400 text-sm mt-1">
-            Automatische Stück-Provisionsabrechnung (1. bis Monatsende) für Fahrer Mensuri & Qerimi
-          </p>
-        </div>
+    <>
+      {/* On-Screen Interactive Dashboard (Completely Hidden on Print) */}
+      <div className="space-y-6 animate-in print:hidden">
+        
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h1 className="text-2xl font-bold text-surface-50 flex items-center gap-2.5">
+              <Coins className="w-6 h-6 text-brand-400" />
+              Lohn & Fahrer-Provisionen
+            </h1>
+            <p className="text-surface-400 text-sm mt-1">
+              Automatische Stück-Provisionsabrechnung (1. bis Monatsende) für Fahrer Mensuri & Qerimi
+            </p>
+          </div>
 
         {/* Global Action Buttons */}
         <div className="flex items-center gap-2">
@@ -859,8 +862,45 @@ export default function PayrollView() {
           )}
         </div>
       )}
+    </div>
 
-      {/* Lohnabrechnung Print Modal */}
+      {/* Dedicated Pure White Printable Payroll Document for Browser Print (Ctrl+P / Menu) */}
+      <div className="hidden print:block bg-white text-slate-900 w-full">
+        {driverFilter === 'Mensuri' && (
+          <PrintablePayrollSlip
+            driverName="Mensuri"
+            monthKey={selectedMonth}
+            salesList={salesList}
+          />
+        )}
+        {driverFilter === 'Qerimi' && (
+          <PrintablePayrollSlip
+            driverName="Qerimi"
+            monthKey={selectedMonth}
+            salesList={salesList}
+          />
+        )}
+        {driverFilter === 'all' && (
+          <div className="space-y-6">
+            <div className="break-after-page mb-6">
+              <PrintablePayrollSlip
+                driverName="Mensuri"
+                monthKey={selectedMonth}
+                salesList={salesList}
+              />
+            </div>
+            <div className="break-before-page pt-4">
+              <PrintablePayrollSlip
+                driverName="Qerimi"
+                monthKey={selectedMonth}
+                salesList={salesList}
+              />
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Lohnabrechnung Modal for On-Screen Preview and Direct Printing */}
       {printModalData && (
         <PayrollPrintModal
           driverName={printModalData.driverName}
@@ -883,44 +923,6 @@ export default function PayrollView() {
           onClose={() => setSelectedInvoice(null)}
         />
       )}
-
-      {/* Global Fallback Print Stylesheet: Pure White Background, Black Text, No Toner Waste */}
-      <style dangerouslySetInnerHTML={{ __html: `
-        @media print {
-          body, html {
-            background: #ffffff !important;
-            background-color: #ffffff !important;
-            color: #000000 !important;
-          }
-          .glass-card,
-          .bg-surface-900,
-          .bg-surface-950,
-          .bg-surface-800 {
-            background: #ffffff !important;
-            background-color: #ffffff !important;
-            color: #000000 !important;
-            border-color: #cbd5e1 !important;
-            box-shadow: none !important;
-          }
-          .text-surface-50,
-          .text-surface-100,
-          .text-surface-200,
-          .text-surface-300,
-          .text-white {
-            color: #000000 !important;
-          }
-          .text-surface-400,
-          .text-surface-500 {
-            color: #475569 !important;
-          }
-          .border-surface-700,
-          .border-surface-600,
-          .border-surface-800 {
-            border-color: #cbd5e1 !important;
-          }
-        }
-      ` }} />
-
-    </div>
+    </>
   )
 }
