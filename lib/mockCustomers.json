@@ -1,1504 +1,2532 @@
 [
   {
+    "id": "cust-10103",
     "customer_number": "10103",
     "company_name": "BESI COM",
     "city": "PRISHTINE",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 15,
+    "total_volume": 990.7
   },
   {
+    "id": "cust-10104",
     "customer_number": "10104",
     "company_name": "JETARI",
     "city": "PRISHTINE",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 18,
+    "total_volume": 1170.8
   },
   {
+    "id": "cust-10105",
     "customer_number": "10105",
     "company_name": "ARSIM",
     "city": "PRISHTINE",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 7,
+    "total_volume": 421.2
   },
   {
+    "id": "cust-10110",
     "customer_number": "10110",
     "company_name": "AFRIMI",
     "city": "PRISHTINE",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 92.4
   },
   {
+    "id": "cust-10111",
     "customer_number": "10111",
     "company_name": "KADIJOLLET",
     "city": "PRISHTINE",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 31,
+    "total_volume": 4323.8
   },
   {
+    "id": "cust-10113",
     "customer_number": "10113",
     "company_name": "MUQIQI",
     "city": "BARDHOSH",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 31.6
   },
   {
+    "id": "cust-10114",
     "customer_number": "10114",
     "company_name": "QELA",
     "city": "BARDHOSH",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 28,
+    "total_volume": 2307.7
   },
   {
+    "id": "cust-10116",
     "customer_number": "10116",
     "company_name": "OPEL",
     "city": "BARDHOSH",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 12.0
   },
   {
+    "id": "cust-10117",
     "customer_number": "10117",
     "company_name": "BEGU",
     "city": "PRISHTINE",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 50.0
   },
   {
+    "id": "cust-10126",
     "customer_number": "10126",
     "company_name": "BOSCH",
     "city": "F. KOSOVA",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 131.7
   },
   {
+    "id": "cust-10133",
     "customer_number": "10133",
     "company_name": "HIDROELDI",
     "city": "PRISHTINE",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 21,
+    "total_volume": 1471.8
   },
   {
+    "id": "cust-10134",
     "customer_number": "10134",
     "company_name": "EURO COLORS",
     "city": "PRISHTINE",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 139.2
   },
   {
+    "id": "cust-10135",
     "customer_number": "10135",
     "company_name": "TONI COLORS",
     "city": "PRISHTINE",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 46.2
   },
   {
+    "id": "cust-10141",
     "customer_number": "10141",
     "company_name": "CHE BAR LOUNGE BAR",
     "city": "PRISHTINE",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 5,
+    "total_volume": 200.0
   },
   {
+    "id": "cust-10145",
     "customer_number": "10145",
     "company_name": "KRRABAJ",
     "city": "PRISHTINE",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 6,
+    "total_volume": 888.6
   },
   {
+    "id": "cust-10146",
     "customer_number": "10146",
-    "company_name": "KRRABAJ",
+    "company_name": "#N/A",
     "city": "PRISHTINE",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 259.2
   },
   {
+    "id": "cust-10147",
     "customer_number": "10147",
-    "company_name": "KRRABAJ",
+    "company_name": "#N/A",
     "city": "PRISHTINE",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 5,
+    "total_volume": 584.0
   },
   {
+    "id": "cust-10148",
+    "customer_number": "10148",
+    "company_name": "#N/A",
+    "city": "KOSOVO",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 24.0
+  },
+  {
+    "id": "cust-10201",
     "customer_number": "10201",
     "company_name": "TE BESNIKU",
     "city": "THARAND",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 20,
+    "total_volume": 2607.6
   },
   {
+    "id": "cust-10202",
     "customer_number": "10202",
     "company_name": "METAL FATI",
     "city": "THARAND",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 5,
+    "total_volume": 280.8
   },
   {
+    "id": "cust-10203",
     "customer_number": "10203",
     "company_name": "EMSA",
     "city": "THARAND",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 273.6
   },
   {
+    "id": "cust-10204",
     "customer_number": "10204",
     "company_name": "GIMI",
     "city": "SHIROK",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 522.6
   },
   {
+    "id": "cust-10205",
     "customer_number": "10205",
     "company_name": "XHAFA",
     "city": "SHIROK",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 29,
+    "total_volume": 4692.6
   },
   {
+    "id": "cust-10210",
     "customer_number": "10210",
     "company_name": "MONI 2",
     "city": "PRIZREN",
-    "agent": "Qerimi (Fahrzeug 2)"
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 14,
+    "total_volume": 1924.2
   },
   {
+    "id": "cust-10213",
     "customer_number": "10213",
     "company_name": "DURIMI",
     "city": "PRIZREN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10223",
-    "company_name": "MURIQI 1",
-    "city": "PRIZREN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10230",
-    "company_name": "JETA DUHEL",
-    "city": "DUHEL",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10240",
-    "company_name": "ARPO",
-    "city": "PRIZREN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10241",
-    "company_name": "AB SHPK",
-    "city": "PRIZREN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10244",
-    "company_name": "BARDHI",
-    "city": "SHIROK",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10245",
-    "company_name": "BEK TRADE",
-    "city": "ZYM",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10250",
-    "company_name": "TAULANTI",
-    "city": "SHTIME",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10251",
-    "company_name": "TAULANTI",
-    "city": "SHTIME",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10255",
-    "company_name": "QEMA",
-    "city": "PRIZREN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10256",
-    "company_name": "QEMA",
-    "city": "PRIZREN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10257",
-    "company_name": "BERISHA",
-    "city": "PRIZREN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10258",
-    "company_name": "ARSIMI",
-    "city": "PRIZREN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10261",
-    "company_name": "ARSIMI",
-    "city": "PRIZREN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10262",
-    "company_name": "BESO KERAMIK",
-    "city": "PRIZREN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10301",
-    "company_name": "FUNDAMETI",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10303",
-    "company_name": "BEKA-1",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10304",
-    "company_name": "EUROSAN",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10306",
-    "company_name": "ELIONI-1",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10308",
-    "company_name": "ERALP",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10313",
-    "company_name": "FATMIRI",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10315",
-    "company_name": "BASHKIMI",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10317",
-    "company_name": "BEKA-2",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10320",
-    "company_name": "DANI-COM",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10323",
-    "company_name": "BEKA-3",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10325",
-    "company_name": "PARKETI",
-    "city": "VITI",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10327",
-    "company_name": "ER POWER",
-    "city": "VITI",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10330",
-    "company_name": "BURIMI",
-    "city": "POZHARAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10332",
-    "company_name": "DARDANIA",
-    "city": "VITI",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10333",
-    "company_name": "FUGA MONT",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10340",
-    "company_name": "IBAK",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10343",
-    "company_name": "INTERCOM NTP",
-    "city": "VITI",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10344",
-    "company_name": "TINA",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10346",
-    "company_name": "AME",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10347",
-    "company_name": "BARDHI",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10350",
-    "company_name": "BALLKANI",
-    "city": "VITI",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10352",
-    "company_name": "SMIRA",
-    "city": "VITI",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10353",
-    "company_name": "TREND CERAMIKA",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10357",
-    "company_name": "GLOBAL NT",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10359",
-    "company_name": "GLOBAL NT",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10360",
-    "company_name": "GLOBAL NT",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10364",
-    "company_name": "KOS CERAMIK",
-    "city": "VITI",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10365",
-    "company_name": "KETI VEE SHPK",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10366",
-    "company_name": "MIRSADI",
-    "city": "GJILAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10367",
-    "company_name": "SMIRA COLOR",
-    "city": "VITI",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10401",
-    "company_name": "DRCOR",
-    "city": "VUSHTRRI",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10406",
-    "company_name": "AGRONI",
-    "city": "MITROVICE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10410",
-    "company_name": "GRANITI",
-    "city": "MITROVICE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10412",
-    "company_name": "VISARI HH",
-    "city": "MITROVICE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10413",
-    "company_name": "UNIVERZAL",
-    "city": "MITROVICE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10418",
-    "company_name": "NDRIQIMI",
-    "city": "VUSHTRRI",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10428",
-    "company_name": "ENISI - H",
-    "city": "VUSHTRRI",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10429",
-    "company_name": "SAN KOS",
-    "city": "VUSHTRRI",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10430",
-    "company_name": "EURO COM",
-    "city": "MITROVICE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10502",
-    "company_name": "PROCOM",
-    "city": "FERIZAJ",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10503",
-    "company_name": "REAL COLOR 1",
-    "city": "FERIZAJ",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10504",
-    "company_name": "CARRALEVA 1",
-    "city": "FERIZAJ",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10506",
-    "company_name": "ARBERI",
-    "city": "FERIZAJ",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10507",
-    "company_name": "REAL COLOR 2",
-    "city": "FERIZAJ",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10508",
-    "company_name": "CARRALEVA 2",
-    "city": "FERIZAJ",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10509",
-    "company_name": "LONI",
-    "city": "FERIZAJ",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10511",
-    "company_name": "MULI",
-    "city": "FERIZAJ",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10528",
-    "company_name": "TE RAMIZI",
-    "city": "LIPJAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10529",
-    "company_name": "ARDI LIPJAN",
-    "city": "LIPJAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10539",
-    "company_name": "BEKA",
-    "city": "FERIZAJ",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10541",
-    "company_name": "ALTINI",
-    "city": "FERIZAJ",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10542",
-    "company_name": "LITA",
-    "city": "FERIZAJ",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10547",
-    "company_name": "ZAIMI",
-    "city": "LIPJAN",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10604",
-    "company_name": "KUSHA",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10605",
-    "company_name": "SABITI",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10613",
-    "company_name": "TE KELA",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10614",
-    "company_name": "MERIS",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10616",
-    "company_name": "TE ZENA",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10617",
-    "company_name": "TE LUTA",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10618",
-    "company_name": "TE KASTRIOTI",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10619",
-    "company_name": "BECOLOR",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10622",
-    "company_name": "HOXHA",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10625",
-    "company_name": "KUJTA",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10626",
-    "company_name": "DRITONI",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10627",
-    "company_name": "AP PETRITI",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10635",
-    "company_name": "ALBANI",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10636",
-    "company_name": "ALBANI",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10637",
-    "company_name": "ALBANI",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "10638",
-    "company_name": "ALBANI",
-    "city": "PODUJEVE",
-    "agent": "Qerimi (Fahrzeug 2)"
-  },
-  {
-    "customer_number": "20101",
-    "company_name": "TE GZIMI",
-    "city": "PEJE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20102",
-    "company_name": "KUQI-LKW",
-    "city": "PEJE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20104",
-    "company_name": "KTHIMI",
-    "city": "PEJE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20108",
-    "company_name": "ING PROJEKT",
-    "city": "PEJE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20109",
-    "company_name": "KENA COMERC",
-    "city": "PEJE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20111",
-    "company_name": "TECOL 2",
-    "city": "PEJE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20118",
-    "company_name": "AP WOLF",
-    "city": "KLINE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20121",
-    "company_name": "CAMA BAU",
-    "city": "PEJE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20122",
-    "company_name": "GLOBI TERM",
-    "city": "PEJE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20126",
-    "company_name": "LULI-C",
-    "city": "PEJE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20127",
-    "company_name": "TERMO PROJEKT",
-    "city": "PEJE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20129",
-    "company_name": "LNI SHPK",
-    "city": "PEJE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20130",
-    "company_name": "ENESI",
-    "city": "PEJE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20201",
-    "company_name": "TE BESIMI",
-    "city": "DEQAN",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20203",
-    "company_name": "AFRIMI-AG",
-    "city": "DEQAN",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20205",
-    "company_name": "GACAFERI-RG",
-    "city": "JUNIK",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20206",
-    "company_name": "ERENIKU",
-    "city": "JUNIK",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20208",
-    "company_name": "V. GJONAJ",
-    "city": "GJAKOVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20209",
-    "company_name": "LETAJ",
-    "city": "GJAKOVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20210",
-    "company_name": "PROSAN",
-    "city": "GJAKOVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20211",
-    "company_name": "INOX 1",
-    "city": "GJAKOVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20212",
-    "company_name": "INOX 2",
-    "city": "GJAKOVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20220",
-    "company_name": "GERMAN FABRE",
-    "city": "GJAKOVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20222",
-    "company_name": "ERINA",
-    "city": "GJAKOVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20223",
-    "company_name": "GER COLORS",
-    "city": "GJAKOVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20224",
-    "company_name": "TANI",
-    "city": "GJAKOVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20227",
-    "company_name": "DIKI BAU SHPK",
-    "city": "GJAKOVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20228",
-    "company_name": "HB-DECOR",
-    "city": "GJAKOVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20229",
-    "company_name": "LIRA",
-    "city": "GJAKOVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20301",
-    "company_name": "HAZROLLI",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20302",
-    "company_name": "NIVELIZIMI-D SH.P.K.",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20303",
-    "company_name": "NITA 3",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20304",
-    "company_name": "AGRO-FARM",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20305",
-    "company_name": "ABA QERAMIK",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20306",
-    "company_name": "FITIMI",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20307",
-    "company_name": "CONDOR",
-    "city": "RAHOVEC",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20311",
-    "company_name": "SOPAJ",
-    "city": "RAHOVEC",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20312",
-    "company_name": "A.P. SHPENDI",
-    "city": "RAHOVEC",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20313",
-    "company_name": "DURGUTI 3",
-    "city": "RAHOVEC",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20314",
-    "company_name": "URA",
-    "city": "RAHOVEC",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20317",
-    "company_name": "SHEHU-A",
-    "city": "RAHOVEC",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20321",
-    "company_name": "BEREQETI",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20322",
-    "company_name": "HYSENAJ",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20324",
-    "company_name": "BAU HOME",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20326",
-    "company_name": "BERATI",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20328",
-    "company_name": "ARTURI",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20329",
-    "company_name": "TERMOT",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20330",
-    "company_name": "GASHI",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20331",
-    "company_name": "BARDHI-M",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20332",
-    "company_name": "AGRO TEC",
-    "city": "MALISHEVE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20403",
-    "company_name": "TERMIKA",
-    "city": "DRENAS",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20404",
-    "company_name": "TE MENTORI",
-    "city": "DRENAS",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20405",
-    "company_name": "BESI",
-    "city": "DRENAS",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20406",
-    "company_name": "MEGI",
-    "city": "SKENDERAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20407",
-    "company_name": "TE BENI",
-    "city": "SKENDERAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20408",
-    "company_name": "A.P. HOTI",
-    "city": "SKENDERAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20409",
-    "company_name": "BENI",
-    "city": "SKENDERAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20427",
-    "company_name": "NSM TRADE",
-    "city": "DRENAS",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20501",
-    "company_name": "RACI",
-    "city": "KLINE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20502",
-    "company_name": "HOXHA",
-    "city": "KLINE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20508",
-    "company_name": "LIRIDONA HOME",
-    "city": "ISTOG",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20510",
-    "company_name": "BYTYQI-V",
-    "city": "ISTOG",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20511",
-    "company_name": "LIRIDONA KLINE",
-    "city": "ISTOG",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20513",
-    "company_name": "BERATI A.P. (1)",
-    "city": "ISTOG",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20515",
-    "company_name": "LIRIDONA-A",
-    "city": "ISTOG",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20516",
-    "company_name": "GASHI-COM",
-    "city": "ISTOG",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20519",
-    "company_name": "JONI",
-    "city": "KLINE",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20520",
-    "company_name": "TE BRAHA",
-    "city": "RUNIK",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20601",
-    "company_name": "ELEKTROMONT",
-    "city": "LIPJAN",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20602",
-    "company_name": "AGROLONDI",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20603",
-    "company_name": "PROMOIN",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20604",
-    "company_name": "ALFA-QERAMIKA",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20605",
-    "company_name": "HIDROTERMI",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20606",
-    "company_name": "TE-SYLA",
-    "city": "GERLIC",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20607",
-    "company_name": "F.V. SH.P.K.",
-    "city": "DOGANAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20608",
-    "company_name": "LONI",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20609",
-    "company_name": "BUJARI Q - BESII",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20610",
-    "company_name": "AGRO-XHETI",
-    "city": "GREME",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20611",
-    "company_name": "TE-LUTA",
-    "city": "KAQANIK",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20614",
-    "company_name": "AS QERAMIKA",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20615",
-    "company_name": "MIX-B",
-    "city": "GADIME",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20622",
-    "company_name": "ILIRI QERAMIKA",
-    "city": "GADIME",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20623",
-    "company_name": "LTI",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20624",
-    "company_name": "BULONI - SH",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20627",
-    "company_name": "UNIKA",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20628",
-    "company_name": "DIVA QERAMIKA",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20629",
-    "company_name": "LUTA QERAMIKA",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20630",
-    "company_name": "HIDRO DANI",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20631",
-    "company_name": "ALMIRI QERAMIKA",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20632",
-    "company_name": "GLOBAL TOOLS",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20633",
-    "company_name": "ORCA",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "customer_number": "20634",
-    "company_name": "SALIHU CORPORATION",
-    "city": "FERIZAJ",
-    "agent": "Mensuri (Fahrzeug 1)"
-  },
-  {
-    "id": "cust-2026-40002",
-    "customer_number": "40002",
-    "company_name": "FORD BASHKIMI",
-    "city": "Prishtinë",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Zentrale)",
-    "agent": "Zentrale",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
     "is_active": true,
-    "latitude": 42.6629,
-    "longitude": 21.1655,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.6629,21.1655"
+    "total_orders": 1,
+    "total_volume": 288.0
   },
   {
-    "id": "cust-2026-40003",
-    "customer_number": "40003",
-    "company_name": "ARBENI BIOBLIC",
-    "city": "Prishtinë",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Zentrale)",
-    "agent": "Zentrale",
-    "is_active": true,
-    "latitude": 42.6629,
-    "longitude": 21.1655,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.6629,21.1655"
-  },
-  {
-    "id": "cust-2026-40019",
-    "customer_number": "40019",
-    "company_name": "TEMAJ",
-    "city": "Prishtinë",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Zentrale)",
-    "agent": "Zentrale",
-    "is_active": true,
-    "latitude": 42.6629,
-    "longitude": 21.1655,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.6629,21.1655"
-  },
-  {
-    "id": "cust-2026-40033",
-    "customer_number": "40033",
-    "company_name": "G FETAHU QERAMIK SH.P.K.",
-    "city": "Prishtinë",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Zentrale)",
-    "agent": "Zentrale",
-    "is_active": true,
-    "latitude": 42.6629,
-    "longitude": 21.1655,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.6629,21.1655"
-  },
-  {
-    "id": "cust-2026-40017",
-    "customer_number": "40017",
-    "company_name": "YLLI CONSTRUCION",
-    "city": "Prishtinë",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Zentrale)",
-    "agent": "Zentrale",
-    "is_active": true,
-    "latitude": 42.6629,
-    "longitude": 21.1655,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.6629,21.1655"
-  },
-  {
-    "id": "cust-2026-40028",
-    "customer_number": "40028",
-    "company_name": "MARIGONA HILL SH.P.K.",
-    "city": "Prishtinë",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Zentrale)",
-    "agent": "Zentrale",
-    "is_active": true,
-    "latitude": 42.6629,
-    "longitude": 21.1655,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.6629,21.1655"
-  },
-  {
-    "id": "cust-2026-40032",
-    "customer_number": "40032",
-    "company_name": "ECM ENGINEERING SH.P.K",
-    "city": "Prishtinë",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Zentrale)",
-    "agent": "Zentrale",
-    "is_active": true,
-    "latitude": 42.6629,
-    "longitude": 21.1655,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.6629,21.1655"
-  },
-  {
-    "id": "cust-2026-blq",
-    "customer_number": "blq",
-    "company_name": "M ONE",
-    "city": "Prishtinë",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: KIM TEC)",
-    "agent": "KIM TEC",
-    "is_active": true,
-    "latitude": 42.6629,
-    "longitude": 21.1655,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.6629,21.1655"
-  },
-  {
-    "id": "cust-2026-20803",
-    "customer_number": "20803",
-    "company_name": "ROYAL QERAMIKA",
-    "city": "Prizren",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Mensuri)",
-    "agent": "Mensuri",
-    "is_active": true,
-    "latitude": 42.2153,
-    "longitude": 20.7415,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.2153,20.7415"
-  },
-  {
-    "id": "cust-2026-40024",
-    "customer_number": "40024",
-    "company_name": "BAU MIX FATONI",
-    "city": "Prishtinë",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Zentrale)",
-    "agent": "Zentrale",
-    "is_active": true,
-    "latitude": 42.6629,
-    "longitude": 21.1655,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.6629,21.1655"
-  },
-  {
-    "id": "cust-2026-40021",
-    "customer_number": "40021",
-    "company_name": "ARENA ENGINEERING N.T.P",
-    "city": "Prishtinë",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Zentrale)",
-    "agent": "Zentrale",
-    "is_active": true,
-    "latitude": 42.6629,
-    "longitude": 21.1655,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.6629,21.1655"
-  },
-  {
-    "id": "cust-2026-10510",
-    "customer_number": "10510",
-    "company_name": "ZEMI",
-    "city": "Gjilan",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Qerimi)",
-    "agent": "Qerimi",
-    "is_active": true,
-    "latitude": 42.4635,
-    "longitude": 21.4694,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.4635,21.4694"
-  },
-  {
-    "id": "cust-2026-20128",
-    "customer_number": "20128",
-    "company_name": "FABRIKA E GURIT",
-    "city": "Prizren",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Mensuri)",
-    "agent": "Mensuri",
-    "is_active": true,
-    "latitude": 42.2153,
-    "longitude": 20.7415,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.2153,20.7415"
-  },
-  {
-    "id": "cust-2026-10322",
-    "customer_number": "10322",
-    "company_name": "TE XHELA",
-    "city": "Gjilan",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Qerimi)",
-    "agent": "Qerimi",
-    "is_active": true,
-    "latitude": 42.4635,
-    "longitude": 21.4694,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.4635,21.4694"
-  },
-  {
-    "id": "cust-2026-20637",
-    "customer_number": "20637",
-    "company_name": "BAVARIA SHPK",
-    "city": "Prizren",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Mensuri)",
-    "agent": "Mensuri",
-    "is_active": true,
-    "latitude": 42.2153,
-    "longitude": 20.7415,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.2153,20.7415"
-  },
-  {
-    "id": "cust-2026-20325",
-    "customer_number": "20325",
-    "company_name": "BASHKIM KASTRATI B.I",
-    "city": "Prizren",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Mensuri)",
-    "agent": "Mensuri",
-    "is_active": true,
-    "latitude": 42.2153,
-    "longitude": 20.7415,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.2153,20.7415"
-  },
-  {
-    "id": "cust-2026-10402",
-    "customer_number": "10402",
-    "company_name": "SHERA",
-    "city": "Gjilan",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Qerimi)",
-    "agent": "Qerimi",
-    "is_active": true,
-    "latitude": 42.4635,
-    "longitude": 21.4694,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.4635,21.4694"
-  },
-  {
-    "id": "cust-2026-20512",
-    "customer_number": "20512",
-    "company_name": "BANANA CENTER",
-    "city": "Prizren",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Mensuri)",
-    "agent": "Mensuri",
-    "is_active": true,
-    "latitude": 42.2153,
-    "longitude": 20.7415,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.2153,20.7415"
-  },
-  {
-    "id": "cust-2026-20625",
-    "customer_number": "20625",
-    "company_name": "BEGA",
-    "city": "Prizren",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Mensuri)",
-    "agent": "Mensuri",
-    "is_active": true,
-    "latitude": 42.2153,
-    "longitude": 20.7415,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.2153,20.7415"
-  },
-  {
-    "id": "cust-2026-20638",
-    "customer_number": "20638",
-    "company_name": "ROYAL QERAMIKA",
-    "city": "Prizren",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Mensuri)",
-    "agent": "Mensuri",
-    "is_active": true,
-    "latitude": 42.2153,
-    "longitude": 20.7415,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.2153,20.7415"
-  },
-  {
-    "id": "cust-2026-10220",
+    "id": "cust-10220",
     "customer_number": "10220",
     "company_name": "COLOR CENTER",
     "city": "Gjilan",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
     "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Qerimi)",
-    "agent": "Qerimi",
     "is_active": true,
-    "latitude": 42.4635,
-    "longitude": 21.4694,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.4635,21.4694"
+    "total_orders": 1,
+    "total_volume": 86.4
   },
   {
-    "id": "cust-2026-10253",
-    "customer_number": "10253",
-    "company_name": "TERR HOME",
-    "city": "Gjilan",
-    "phone": "+383 44 000 000",
-    "customer_type": "Handel / Handwerk",
-    "notes": "Erfasst aus Verkaufsbuch 2026 (Tour: Qerimi)",
-    "agent": "Qerimi",
+    "id": "cust-10223",
+    "customer_number": "10223",
+    "company_name": "MURIQI 1",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
     "is_active": true,
-    "latitude": 42.4635,
-    "longitude": 21.4694,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.4635,21.4694"
+    "total_orders": 1,
+    "total_volume": 43.5
+  },
+  {
+    "id": "cust-10230",
+    "customer_number": "10230",
+    "company_name": "JETA DUHEL",
+    "city": "DUHEL",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 10,
+    "total_volume": 1357.8
+  },
+  {
+    "id": "cust-10240",
+    "customer_number": "10240",
+    "company_name": "ARPO",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 31,
+    "total_volume": 7086.2
+  },
+  {
+    "id": "cust-10241",
+    "customer_number": "10241",
+    "company_name": "AB SHPK",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 12,
+    "total_volume": 934.8
+  },
+  {
+    "id": "cust-10244",
+    "customer_number": "10244",
+    "company_name": "BARDHI",
+    "city": "SHIROK",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 142.2
+  },
+  {
+    "id": "cust-10245",
+    "customer_number": "10245",
+    "company_name": "BEK TRADE",
+    "city": "ZYM",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 16,
+    "total_volume": 2548.8
+  },
+  {
+    "id": "cust-10250",
+    "customer_number": "10250",
+    "company_name": "#N/A",
+    "city": "SHTIME",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 5,
+    "total_volume": 700.2
+  },
+  {
+    "id": "cust-10251",
+    "customer_number": "10251",
+    "company_name": "#N/A",
+    "city": "SHTIME",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 7,
+    "total_volume": 661.2
+  },
+  {
+    "id": "cust-10253",
+    "customer_number": "10253",
+    "company_name": "#N/A",
+    "city": "Gjilan",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 144.0
+  },
+  {
+    "id": "cust-10255",
+    "customer_number": "10255",
+    "company_name": "QEMA",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 7,
+    "total_volume": 1879.2
+  },
+  {
+    "id": "cust-10256",
+    "customer_number": "10256",
+    "company_name": "#N/A",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 8,
+    "total_volume": 471.0
+  },
+  {
+    "id": "cust-10257",
+    "customer_number": "10257",
+    "company_name": "BERISHA",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 492.6
+  },
+  {
+    "id": "cust-10258",
+    "customer_number": "10258",
+    "company_name": "ARSIMI",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 9,
+    "total_volume": 2737.2
+  },
+  {
+    "id": "cust-10261",
+    "customer_number": "10261",
+    "company_name": "#N/A",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 924.0
+  },
+  {
+    "id": "cust-10262",
+    "customer_number": "10262",
+    "company_name": "BESO KERAMIK",
+    "city": "PRIZREN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 234.6
+  },
+  {
+    "id": "cust-10263",
+    "customer_number": "10263",
+    "company_name": "#N/A",
+    "city": "KOSOVO",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 144.0
+  },
+  {
+    "id": "cust-10264",
+    "customer_number": "10264",
+    "company_name": "MASARI CONSTRUCTION",
+    "city": "KOSOVO",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 960.0
+  },
+  {
+    "id": "cust-10301",
+    "customer_number": "10301",
+    "company_name": "FUNDAMETI",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 14,
+    "total_volume": 2527.2
+  },
+  {
+    "id": "cust-10303",
+    "customer_number": "10303",
+    "company_name": "BEKA-1",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 7,
+    "total_volume": 245.8
+  },
+  {
+    "id": "cust-10304",
+    "customer_number": "10304",
+    "company_name": "EUROSAN",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 16,
+    "total_volume": 1912.8
+  },
+  {
+    "id": "cust-10306",
+    "customer_number": "10306",
+    "company_name": "ELIONI-1",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 10,
+    "total_volume": 1024.4
+  },
+  {
+    "id": "cust-10308",
+    "customer_number": "10308",
+    "company_name": "ERALP",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 16,
+    "total_volume": 1828.8
+  },
+  {
+    "id": "cust-10313",
+    "customer_number": "10313",
+    "company_name": "FATMIRI",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 13,
+    "total_volume": 1793.2
+  },
+  {
+    "id": "cust-10315",
+    "customer_number": "10315",
+    "company_name": "BASHKIMI",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 234.8
+  },
+  {
+    "id": "cust-10317",
+    "customer_number": "10317",
+    "company_name": "BEKA-2",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 9,
+    "total_volume": 636.5
+  },
+  {
+    "id": "cust-10320",
+    "customer_number": "10320",
+    "company_name": "DANI-COM",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 188.4
+  },
+  {
+    "id": "cust-10322",
+    "customer_number": "10322",
+    "company_name": "TE XHELA",
+    "city": "Gjilan",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 192.0
+  },
+  {
+    "id": "cust-10323",
+    "customer_number": "10323",
+    "company_name": "BEKA-3",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 18,
+    "total_volume": 1467.6
+  },
+  {
+    "id": "cust-10325",
+    "customer_number": "10325",
+    "company_name": "PARKETI",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 9,
+    "total_volume": 876.6
+  },
+  {
+    "id": "cust-10327",
+    "customer_number": "10327",
+    "company_name": "ER POWER",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 182.4
+  },
+  {
+    "id": "cust-10330",
+    "customer_number": "10330",
+    "company_name": "BURIMI",
+    "city": "POZHARAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 18,
+    "total_volume": 1610.4
+  },
+  {
+    "id": "cust-10332",
+    "customer_number": "10332",
+    "company_name": "DARDANIA",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 24,
+    "total_volume": 2841.0
+  },
+  {
+    "id": "cust-10333",
+    "customer_number": "10333",
+    "company_name": "FUGA MONT",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 242.4
+  },
+  {
+    "id": "cust-10340",
+    "customer_number": "10340",
+    "company_name": "IBAK",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 8,
+    "total_volume": 703.8
+  },
+  {
+    "id": "cust-10343",
+    "customer_number": "10343",
+    "company_name": "INTERCOM NTP",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 7,
+    "total_volume": 1222.2
+  },
+  {
+    "id": "cust-10344",
+    "customer_number": "10344",
+    "company_name": "TINA",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 14,
+    "total_volume": 1860.6
+  },
+  {
+    "id": "cust-10346",
+    "customer_number": "10346",
+    "company_name": "AME",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 232.8
+  },
+  {
+    "id": "cust-10347",
+    "customer_number": "10347",
+    "company_name": "BARDHI",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 21.6
+  },
+  {
+    "id": "cust-10350",
+    "customer_number": "10350",
+    "company_name": "BALLKANI",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 34,
+    "total_volume": 7587.6
+  },
+  {
+    "id": "cust-10352",
+    "customer_number": "10352",
+    "company_name": "SMIRA",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 17,
+    "total_volume": 2452.8
+  },
+  {
+    "id": "cust-10353",
+    "customer_number": "10353",
+    "company_name": "TREND CERAMIKA",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 7,
+    "total_volume": 610.2
+  },
+  {
+    "id": "cust-10357",
+    "customer_number": "10357",
+    "company_name": "GLOBAL NT",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 190.2
+  },
+  {
+    "id": "cust-10359",
+    "customer_number": "10359",
+    "company_name": "#N/A",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 135.0
+  },
+  {
+    "id": "cust-10360",
+    "customer_number": "10360",
+    "company_name": "#N/A",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 9,
+    "total_volume": 1297.2
+  },
+  {
+    "id": "cust-10364",
+    "customer_number": "10364",
+    "company_name": "KOS CERAMIK",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 5,
+    "total_volume": 720.2
+  },
+  {
+    "id": "cust-10365",
+    "customer_number": "10365",
+    "company_name": "KETI VEE SHPK",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 92.4
+  },
+  {
+    "id": "cust-10366",
+    "customer_number": "10366",
+    "company_name": "MIRSADI",
+    "city": "GJILAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 4,
+    "total_volume": 965.6
+  },
+  {
+    "id": "cust-10367",
+    "customer_number": "10367",
+    "company_name": "SMIRA COLOR",
+    "city": "VITI",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 4,
+    "total_volume": 380.4
+  },
+  {
+    "id": "cust-10401",
+    "customer_number": "10401",
+    "company_name": "DRCOR",
+    "city": "VUSHTRRI",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 8,
+    "total_volume": 1425.6
+  },
+  {
+    "id": "cust-10402",
+    "customer_number": "10402",
+    "company_name": "SHERA",
+    "city": "Gjilan",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 63.0
+  },
+  {
+    "id": "cust-10406",
+    "customer_number": "10406",
+    "company_name": "AGRONI",
+    "city": "MITROVICE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 16,
+    "total_volume": 991.2
+  },
+  {
+    "id": "cust-10410",
+    "customer_number": "10410",
+    "company_name": "GRANITI",
+    "city": "MITROVICE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 27,
+    "total_volume": 3167.4
+  },
+  {
+    "id": "cust-10412",
+    "customer_number": "10412",
+    "company_name": "VISARI HH",
+    "city": "MITROVICE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 16,
+    "total_volume": 1358.3
+  },
+  {
+    "id": "cust-10413",
+    "customer_number": "10413",
+    "company_name": "UNIVERZAL",
+    "city": "MITROVICE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 27,
+    "total_volume": 2966.3
+  },
+  {
+    "id": "cust-10418",
+    "customer_number": "10418",
+    "company_name": "NDRIQIMI",
+    "city": "VUSHTRRI",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 17,
+    "total_volume": 4486.7
+  },
+  {
+    "id": "cust-10428",
+    "customer_number": "10428",
+    "company_name": "ENISI - H",
+    "city": "VUSHTRRI",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 12,
+    "total_volume": 903.6
+  },
+  {
+    "id": "cust-10429",
+    "customer_number": "10429",
+    "company_name": "SAN KOS",
+    "city": "VUSHTRRI",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 13,
+    "total_volume": 811.0
+  },
+  {
+    "id": "cust-10430",
+    "customer_number": "10430",
+    "company_name": "EURO COM",
+    "city": "MITROVICE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 11,
+    "total_volume": 856.7
+  },
+  {
+    "id": "cust-10502",
+    "customer_number": "10502",
+    "company_name": "PROCOM",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 15,
+    "total_volume": 1348.4
+  },
+  {
+    "id": "cust-10503",
+    "customer_number": "10503",
+    "company_name": "REAL COLOR 1",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 282.6
+  },
+  {
+    "id": "cust-10504",
+    "customer_number": "10504",
+    "company_name": "CARRALEVA 1",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 28,
+    "total_volume": 3223.2
+  },
+  {
+    "id": "cust-10506",
+    "customer_number": "10506",
+    "company_name": "ARBERI",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 17,
+    "total_volume": 1348.4
+  },
+  {
+    "id": "cust-10507",
+    "customer_number": "10507",
+    "company_name": "REAL COLOR 2",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 31,
+    "total_volume": 4693.8
+  },
+  {
+    "id": "cust-10508",
+    "customer_number": "10508",
+    "company_name": "CARRALEVA 2",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 19,
+    "total_volume": 1531.2
+  },
+  {
+    "id": "cust-10509",
+    "customer_number": "10509",
+    "company_name": "LONI",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 21,
+    "total_volume": 1549.5
+  },
+  {
+    "id": "cust-10510",
+    "customer_number": "10510",
+    "company_name": "ZEMI",
+    "city": "Gjilan",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 96.0
+  },
+  {
+    "id": "cust-10511",
+    "customer_number": "10511",
+    "company_name": "MULI",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 7,
+    "total_volume": 584.6
+  },
+  {
+    "id": "cust-10528",
+    "customer_number": "10528",
+    "company_name": "TE RAMIZI",
+    "city": "LIPJAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 4,
+    "total_volume": 195.2
+  },
+  {
+    "id": "cust-10529",
+    "customer_number": "10529",
+    "company_name": "ARDI LIPJAN",
+    "city": "LIPJAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 17,
+    "total_volume": 1296.3
+  },
+  {
+    "id": "cust-10539",
+    "customer_number": "10539",
+    "company_name": "BEKA",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 13,
+    "total_volume": 844.2
+  },
+  {
+    "id": "cust-10541",
+    "customer_number": "10541",
+    "company_name": "ALTINI",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 236.4
+  },
+  {
+    "id": "cust-10542",
+    "customer_number": "10542",
+    "company_name": "LITA",
+    "city": "FERIZAJ",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 11,
+    "total_volume": 808.8
+  },
+  {
+    "id": "cust-10547",
+    "customer_number": "10547",
+    "company_name": "#N/A",
+    "city": "LIPJAN",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 4,
+    "total_volume": 232.8
+  },
+  {
+    "id": "cust-10548",
+    "customer_number": "10548",
+    "company_name": "EKO FARM",
+    "city": "KOSOVO",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 72.0
+  },
+  {
+    "id": "cust-10604",
+    "customer_number": "10604",
+    "company_name": "KUSHA",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 8,
+    "total_volume": 169.0
+  },
+  {
+    "id": "cust-10605",
+    "customer_number": "10605",
+    "company_name": "SABITI",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 7,
+    "total_volume": 228.5
+  },
+  {
+    "id": "cust-10613",
+    "customer_number": "10613",
+    "company_name": "TE KELA",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 11,
+    "total_volume": 389.7
+  },
+  {
+    "id": "cust-10614",
+    "customer_number": "10614",
+    "company_name": "MERIS",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 20.0
+  },
+  {
+    "id": "cust-10616",
+    "customer_number": "10616",
+    "company_name": "TE ZENA",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 23,
+    "total_volume": 1978.2
+  },
+  {
+    "id": "cust-10617",
+    "customer_number": "10617",
+    "company_name": "TE LUTA",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 46.2
+  },
+  {
+    "id": "cust-10618",
+    "customer_number": "10618",
+    "company_name": "TE KASTRIOTI",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 113.8
+  },
+  {
+    "id": "cust-10619",
+    "customer_number": "10619",
+    "company_name": "BECOLOR",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 10,
+    "total_volume": 263.0
+  },
+  {
+    "id": "cust-10622",
+    "customer_number": "10622",
+    "company_name": "HOXHA",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 8,
+    "total_volume": 377.8
+  },
+  {
+    "id": "cust-10625",
+    "customer_number": "10625",
+    "company_name": "KUJTA",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 30,
+    "total_volume": 3908.0
+  },
+  {
+    "id": "cust-10626",
+    "customer_number": "10626",
+    "company_name": "DRITONI",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 60.4
+  },
+  {
+    "id": "cust-10627",
+    "customer_number": "10627",
+    "company_name": "AP PETRITI",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 10.0
+  },
+  {
+    "id": "cust-10635",
+    "customer_number": "10635",
+    "company_name": "#N/A",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 17,
+    "total_volume": 1132.2
+  },
+  {
+    "id": "cust-10636",
+    "customer_number": "10636",
+    "company_name": "#N/A",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 18,
+    "total_volume": 1813.8
+  },
+  {
+    "id": "cust-10637",
+    "customer_number": "10637",
+    "company_name": "#N/A",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 6,
+    "total_volume": 502.8
+  },
+  {
+    "id": "cust-10638",
+    "customer_number": "10638",
+    "company_name": "#N/A",
+    "city": "PODUJEVE",
+    "agent": "Qerimi (Fahrzeug 2 (Depo Qerimi))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 810.0
+  },
+  {
+    "id": "cust-20101",
+    "customer_number": "20101",
+    "company_name": "TE GZIMI",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 13,
+    "total_volume": 512.9
+  },
+  {
+    "id": "cust-20102",
+    "customer_number": "20102",
+    "company_name": "KUQI-LKW",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 15,
+    "total_volume": 901.9
+  },
+  {
+    "id": "cust-20104",
+    "customer_number": "20104",
+    "company_name": "KTHIMI",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 19,
+    "total_volume": 2530.3
+  },
+  {
+    "id": "cust-20108",
+    "customer_number": "20108",
+    "company_name": "ING PROJEKT",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 5,
+    "total_volume": 549.2
+  },
+  {
+    "id": "cust-20109",
+    "customer_number": "20109",
+    "company_name": "KENA COMERC",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 24,
+    "total_volume": 3838.2
+  },
+  {
+    "id": "cust-20111",
+    "customer_number": "20111",
+    "company_name": "TECOL 2",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 7,
+    "total_volume": 403.2
+  },
+  {
+    "id": "cust-20118",
+    "customer_number": "20118",
+    "company_name": "AP WOLF",
+    "city": "KLINE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 322.4
+  },
+  {
+    "id": "cust-20121",
+    "customer_number": "20121",
+    "company_name": "CAMA BAU",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 26,
+    "total_volume": 5789.1
+  },
+  {
+    "id": "cust-20122",
+    "customer_number": "20122",
+    "company_name": "GLOBI TERM",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 5,
+    "total_volume": 386.0
+  },
+  {
+    "id": "cust-20126",
+    "customer_number": "20126",
+    "company_name": "LULI-C",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 27,
+    "total_volume": 4630.4
+  },
+  {
+    "id": "cust-20127",
+    "customer_number": "20127",
+    "company_name": "TERMO PROJEKT",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 23,
+    "total_volume": 2732.4
+  },
+  {
+    "id": "cust-20128",
+    "customer_number": "20128",
+    "company_name": "FABRIKA E GURIT",
+    "city": "Prizren",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 144.0
+  },
+  {
+    "id": "cust-20129",
+    "customer_number": "20129",
+    "company_name": "LNI SHPK",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 13,
+    "total_volume": 1585.8
+  },
+  {
+    "id": "cust-20130",
+    "customer_number": "20130",
+    "company_name": "ENESI",
+    "city": "PEJE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 14,
+    "total_volume": 1332.3
+  },
+  {
+    "id": "cust-20201",
+    "customer_number": "20201",
+    "company_name": "TE BESIMI",
+    "city": "DEQAN",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 23,
+    "total_volume": 3135.2
+  },
+  {
+    "id": "cust-20203",
+    "customer_number": "20203",
+    "company_name": "AFRIMI-AG",
+    "city": "DEQAN",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 25,
+    "total_volume": 4687.4
+  },
+  {
+    "id": "cust-20205",
+    "customer_number": "20205",
+    "company_name": "GACAFERI-RG",
+    "city": "JUNIK",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 14,
+    "total_volume": 2191.8
+  },
+  {
+    "id": "cust-20206",
+    "customer_number": "20206",
+    "company_name": "ERENIKU",
+    "city": "JUNIK",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 17,
+    "total_volume": 2052.9
+  },
+  {
+    "id": "cust-20208",
+    "customer_number": "20208",
+    "company_name": "V. GJONAJ",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 14,
+    "total_volume": 1623.6
+  },
+  {
+    "id": "cust-20209",
+    "customer_number": "20209",
+    "company_name": "LETAJ",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 23,
+    "total_volume": 5901.3
+  },
+  {
+    "id": "cust-20210",
+    "customer_number": "20210",
+    "company_name": "PROSAN",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 12,
+    "total_volume": 2370.6
+  },
+  {
+    "id": "cust-20211",
+    "customer_number": "20211",
+    "company_name": "INOX 1",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 8,
+    "total_volume": 755.0
+  },
+  {
+    "id": "cust-20212",
+    "customer_number": "20212",
+    "company_name": "INOX 2",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 25,
+    "total_volume": 2855.9
+  },
+  {
+    "id": "cust-20220",
+    "customer_number": "20220",
+    "company_name": "GERMAN FABRE",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 5,
+    "total_volume": 404.4
+  },
+  {
+    "id": "cust-20222",
+    "customer_number": "20222",
+    "company_name": "ERINA",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 96.0
+  },
+  {
+    "id": "cust-20223",
+    "customer_number": "20223",
+    "company_name": "GER COLORS",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 18,
+    "total_volume": 2989.0
+  },
+  {
+    "id": "cust-20224",
+    "customer_number": "20224",
+    "company_name": "TANI",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 6,
+    "total_volume": 866.4
+  },
+  {
+    "id": "cust-20226",
+    "customer_number": "20226",
+    "company_name": "DEDA-2022",
+    "city": "KOSOVO",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 105.6
+  },
+  {
+    "id": "cust-20227",
+    "customer_number": "20227",
+    "company_name": "DIKI BAU SHPK",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 4,
+    "total_volume": 404.4
+  },
+  {
+    "id": "cust-20228",
+    "customer_number": "20228",
+    "company_name": "HB-DECOR",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 11,
+    "total_volume": 1161.6
+  },
+  {
+    "id": "cust-20229",
+    "customer_number": "20229",
+    "company_name": "LIRA",
+    "city": "GJAKOVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 277.2
+  },
+  {
+    "id": "cust-20301",
+    "customer_number": "20301",
+    "company_name": "HAZROLLI",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 19,
+    "total_volume": 2328.6
+  },
+  {
+    "id": "cust-20302",
+    "customer_number": "20302",
+    "company_name": "NIVELIZIMI-D SH.P.K.",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 6,
+    "total_volume": 548.4
+  },
+  {
+    "id": "cust-20303",
+    "customer_number": "20303",
+    "company_name": "NITA 3",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 7,
+    "total_volume": 739.8
+  },
+  {
+    "id": "cust-20304",
+    "customer_number": "20304",
+    "company_name": "AGRO-FARM",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 14,
+    "total_volume": 1296.0
+  },
+  {
+    "id": "cust-20305",
+    "customer_number": "20305",
+    "company_name": "ABA QERAMIK",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 8,
+    "total_volume": 949.2
+  },
+  {
+    "id": "cust-20306",
+    "customer_number": "20306",
+    "company_name": "FITIMI",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 16,
+    "total_volume": 1894.3
+  },
+  {
+    "id": "cust-20307",
+    "customer_number": "20307",
+    "company_name": "CONDOR",
+    "city": "RAHOVEC",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 29,
+    "total_volume": 8246.7
+  },
+  {
+    "id": "cust-20311",
+    "customer_number": "20311",
+    "company_name": "SOPAJ",
+    "city": "RAHOVEC",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 18,
+    "total_volume": 1859.0
+  },
+  {
+    "id": "cust-20312",
+    "customer_number": "20312",
+    "company_name": "A.P. SHPENDI",
+    "city": "RAHOVEC",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 55.5
+  },
+  {
+    "id": "cust-20313",
+    "customer_number": "20313",
+    "company_name": "DURGUTI 3",
+    "city": "RAHOVEC",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 19,
+    "total_volume": 2218.1
+  },
+  {
+    "id": "cust-20314",
+    "customer_number": "20314",
+    "company_name": "URA",
+    "city": "RAHOVEC",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 9,
+    "total_volume": 859.2
+  },
+  {
+    "id": "cust-20317",
+    "customer_number": "20317",
+    "company_name": "SHEHU-A",
+    "city": "RAHOVEC",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 18,
+    "total_volume": 1259.2
+  },
+  {
+    "id": "cust-20321",
+    "customer_number": "20321",
+    "company_name": "BEREQETI",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 15,
+    "total_volume": 2527.8
+  },
+  {
+    "id": "cust-20322",
+    "customer_number": "20322",
+    "company_name": "HYSENAJ",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 297.7
+  },
+  {
+    "id": "cust-20324",
+    "customer_number": "20324",
+    "company_name": "BAU HOME",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 11,
+    "total_volume": 884.4
+  },
+  {
+    "id": "cust-20325",
+    "customer_number": "20325",
+    "company_name": "BASHKIM KASTRATI B.I",
+    "city": "Prizren",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 96.0
+  },
+  {
+    "id": "cust-20326",
+    "customer_number": "20326",
+    "company_name": "BERATI",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 46.2
+  },
+  {
+    "id": "cust-20328",
+    "customer_number": "20328",
+    "company_name": "ARTURI",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 8,
+    "total_volume": 1299.6
+  },
+  {
+    "id": "cust-20329",
+    "customer_number": "20329",
+    "company_name": "TERMOT",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 323.4
+  },
+  {
+    "id": "cust-20330",
+    "customer_number": "20330",
+    "company_name": "GASHI",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 277.8
+  },
+  {
+    "id": "cust-20331",
+    "customer_number": "20331",
+    "company_name": "BARDHI-M",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 23,
+    "total_volume": 3982.6
+  },
+  {
+    "id": "cust-20332",
+    "customer_number": "20332",
+    "company_name": "AGRO TEC",
+    "city": "MALISHEVE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 227.4
+  },
+  {
+    "id": "cust-20333",
+    "customer_number": "20333",
+    "company_name": "#N/A",
+    "city": "KOSOVO",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 240.0
+  },
+  {
+    "id": "cust-20403",
+    "customer_number": "20403",
+    "company_name": "TERMIKA",
+    "city": "DRENAS",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 7,
+    "total_volume": 730.7
+  },
+  {
+    "id": "cust-20404",
+    "customer_number": "20404",
+    "company_name": "TE MENTORI",
+    "city": "DRENAS",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 8,
+    "total_volume": 959.2
+  },
+  {
+    "id": "cust-20405",
+    "customer_number": "20405",
+    "company_name": "BESI",
+    "city": "DRENAS",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 5,
+    "total_volume": 666.6
+  },
+  {
+    "id": "cust-20406",
+    "customer_number": "20406",
+    "company_name": "MEGI",
+    "city": "SKENDERAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 18,
+    "total_volume": 1646.5
+  },
+  {
+    "id": "cust-20407",
+    "customer_number": "20407",
+    "company_name": "TE BENI",
+    "city": "SKENDERAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 26,
+    "total_volume": 6693.8
+  },
+  {
+    "id": "cust-20408",
+    "customer_number": "20408",
+    "company_name": "A.P. HOTI",
+    "city": "SKENDERAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 11,
+    "total_volume": 542.1
+  },
+  {
+    "id": "cust-20409",
+    "customer_number": "20409",
+    "company_name": "BENI",
+    "city": "SKENDERAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 13,
+    "total_volume": 933.9
+  },
+  {
+    "id": "cust-20427",
+    "customer_number": "20427",
+    "company_name": "#N/A",
+    "city": "DRENAS",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 145.6
+  },
+  {
+    "id": "cust-20501",
+    "customer_number": "20501",
+    "company_name": "RACI",
+    "city": "KLINE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 24,
+    "total_volume": 4353.9
+  },
+  {
+    "id": "cust-20502",
+    "customer_number": "20502",
+    "company_name": "HOXHA",
+    "city": "KLINE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 14,
+    "total_volume": 1220.4
+  },
+  {
+    "id": "cust-20508",
+    "customer_number": "20508",
+    "company_name": "LIRIDONA HOME",
+    "city": "ISTOG",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 24,
+    "total_volume": 5238.0
+  },
+  {
+    "id": "cust-20510",
+    "customer_number": "20510",
+    "company_name": "BYTYQI-V",
+    "city": "ISTOG",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 5,
+    "total_volume": 477.6
+  },
+  {
+    "id": "cust-20511",
+    "customer_number": "20511",
+    "company_name": "LIRIDONA KLINE",
+    "city": "ISTOG",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 23,
+    "total_volume": 4978.0
+  },
+  {
+    "id": "cust-20512",
+    "customer_number": "20512",
+    "company_name": "BANANA CENTER",
+    "city": "Prizren",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 118.4
+  },
+  {
+    "id": "cust-20513",
+    "customer_number": "20513",
+    "company_name": "BERATI A.P. (1)",
+    "city": "ISTOG",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 16,
+    "total_volume": 1235.9
+  },
+  {
+    "id": "cust-20515",
+    "customer_number": "20515",
+    "company_name": "LIRIDONA-A",
+    "city": "ISTOG",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 22,
+    "total_volume": 4463.4
+  },
+  {
+    "id": "cust-20516",
+    "customer_number": "20516",
+    "company_name": "GASHI-COM",
+    "city": "ISTOG",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 126.0
+  },
+  {
+    "id": "cust-20519",
+    "customer_number": "20519",
+    "company_name": "JONI",
+    "city": "KLINE",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 45.0
+  },
+  {
+    "id": "cust-20520",
+    "customer_number": "20520",
+    "company_name": "TE BRAHA",
+    "city": "RUNIK",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 186.6
+  },
+  {
+    "id": "cust-20601",
+    "customer_number": "20601",
+    "company_name": "ELEKTROMONT",
+    "city": "LIPJAN",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 277.8
+  },
+  {
+    "id": "cust-20602",
+    "customer_number": "20602",
+    "company_name": "AGROLONDI",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 23,
+    "total_volume": 4158.1
+  },
+  {
+    "id": "cust-20603",
+    "customer_number": "20603",
+    "company_name": "PROMOIN",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 10,
+    "total_volume": 1224.9
+  },
+  {
+    "id": "cust-20604",
+    "customer_number": "20604",
+    "company_name": "ALFA-QERAMIKA",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 15,
+    "total_volume": 3169.8
+  },
+  {
+    "id": "cust-20605",
+    "customer_number": "20605",
+    "company_name": "HIDROTERMI",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 96.0
+  },
+  {
+    "id": "cust-20606",
+    "customer_number": "20606",
+    "company_name": "TE-SYLA",
+    "city": "GERLIC",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 24,
+    "total_volume": 3603.1
+  },
+  {
+    "id": "cust-20607",
+    "customer_number": "20607",
+    "company_name": "F.V. SH.P.K.",
+    "city": "DOGANAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 13,
+    "total_volume": 1822.6
+  },
+  {
+    "id": "cust-20608",
+    "customer_number": "20608",
+    "company_name": "LONI",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 16,
+    "total_volume": 2408.4
+  },
+  {
+    "id": "cust-20609",
+    "customer_number": "20609",
+    "company_name": "BUJARI Q - BESII",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 14,
+    "total_volume": 1928.4
+  },
+  {
+    "id": "cust-20610",
+    "customer_number": "20610",
+    "company_name": "AGRO-XHETI",
+    "city": "GREME",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 16,
+    "total_volume": 6118.5
+  },
+  {
+    "id": "cust-20611",
+    "customer_number": "20611",
+    "company_name": "TE-LUTA",
+    "city": "KAQANIK",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 16,
+    "total_volume": 4509.3
+  },
+  {
+    "id": "cust-20614",
+    "customer_number": "20614",
+    "company_name": "AS QERAMIKA",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 9,
+    "total_volume": 3811.8
+  },
+  {
+    "id": "cust-20615",
+    "customer_number": "20615",
+    "company_name": "MIX-B",
+    "city": "GADIME",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 11,
+    "total_volume": 1837.2
+  },
+  {
+    "id": "cust-20622",
+    "customer_number": "20622",
+    "company_name": "ILIRI QERAMIKA",
+    "city": "GADIME",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 13,
+    "total_volume": 1584.0
+  },
+  {
+    "id": "cust-20623",
+    "customer_number": "20623",
+    "company_name": "LTI",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 10,
+    "total_volume": 1975.0
+  },
+  {
+    "id": "cust-20624",
+    "customer_number": "20624",
+    "company_name": "BULONI - SH",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 9,
+    "total_volume": 1429.2
+  },
+  {
+    "id": "cust-20625",
+    "customer_number": "20625",
+    "company_name": "BEGA",
+    "city": "Prizren",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 192.0
+  },
+  {
+    "id": "cust-20627",
+    "customer_number": "20627",
+    "company_name": "UNIKA",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 26,
+    "total_volume": 4437.4
+  },
+  {
+    "id": "cust-20628",
+    "customer_number": "20628",
+    "company_name": "DIVA QERAMIKA",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 8,
+    "total_volume": 1071.6
+  },
+  {
+    "id": "cust-20629",
+    "customer_number": "20629",
+    "company_name": "LUTA QERAMIKA",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 4,
+    "total_volume": 1192.8
+  },
+  {
+    "id": "cust-20630",
+    "customer_number": "20630",
+    "company_name": "HIDRO DANI",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 14,
+    "total_volume": 2436.1
+  },
+  {
+    "id": "cust-20631",
+    "customer_number": "20631",
+    "company_name": "ALMIRI QERAMIKA",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 7,
+    "total_volume": 712.8
+  },
+  {
+    "id": "cust-20632",
+    "customer_number": "20632",
+    "company_name": "GLOBAL TOOLS",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 10,
+    "total_volume": 3567.6
+  },
+  {
+    "id": "cust-20633",
+    "customer_number": "20633",
+    "company_name": "ORCA",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 277.2
+  },
+  {
+    "id": "cust-20634",
+    "customer_number": "20634",
+    "company_name": "SALIHU CORPORATION",
+    "city": "FERIZAJ",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 977.4
+  },
+  {
+    "id": "cust-20635",
+    "customer_number": "20635",
+    "company_name": "#N/A",
+    "city": "KOSOVO",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 13,
+    "total_volume": 2340.0
+  },
+  {
+    "id": "cust-20636",
+    "customer_number": "20636",
+    "company_name": "#N/A",
+    "city": "KOSOVO",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 5,
+    "total_volume": 1014.0
+  },
+  {
+    "id": "cust-20637",
+    "customer_number": "20637",
+    "company_name": "BAVARIA SHPK",
+    "city": "Prizren",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 175.0
+  },
+  {
+    "id": "cust-20638",
+    "customer_number": "20638",
+    "company_name": "ROYAL QERAMIKA",
+    "city": "Prizren",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 192.0
+  },
+  {
+    "id": "cust-20803",
+    "customer_number": "20803",
+    "company_name": "#N/A",
+    "city": "Prizren",
+    "agent": "Mensuri (Fahrzeug 1 (Depo Mensuri))",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 73.8
+  },
+  {
+    "id": "cust-40001",
+    "customer_number": "40001",
+    "company_name": "MEMFIS",
+    "city": "KOSOVO",
+    "agent": "Zentrale Hauptlager",
+    "phone": "+383 44 123 456",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 24.0
+  },
+  {
+    "id": "cust-40002",
+    "customer_number": "40002",
+    "company_name": "FORD BASHKIMI",
+    "city": "Prishtinë",
+    "agent": "Zentrale Hauptlager",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 6,
+    "total_volume": 131.0
+  },
+  {
+    "id": "cust-40003",
+    "customer_number": "40003",
+    "company_name": "ARBENI BIOBLIC",
+    "city": "Prishtinë",
+    "agent": "Zentrale Hauptlager",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 39,
+    "total_volume": 9139.25
+  },
+  {
+    "id": "cust-40017",
+    "customer_number": "40017",
+    "company_name": "YLLI CONSTRUCION",
+    "city": "Prishtinë",
+    "agent": "Zentrale Hauptlager",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 15,
+    "total_volume": 756.0
+  },
+  {
+    "id": "cust-40019",
+    "customer_number": "40019",
+    "company_name": "TEMAJ",
+    "city": "Prishtinë",
+    "agent": "Zentrale Hauptlager",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 28,
+    "total_volume": 3717.0
+  },
+  {
+    "id": "cust-40021",
+    "customer_number": "40021",
+    "company_name": "ARENA ENGINEERING N.T.P",
+    "city": "Prishtinë",
+    "agent": "Zentrale Hauptlager",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 1008.0
+  },
+  {
+    "id": "cust-40024",
+    "customer_number": "40024",
+    "company_name": "BAU MIX FATONI",
+    "city": "Prishtinë",
+    "agent": "Zentrale Hauptlager",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 4,
+    "total_volume": 205.2
+  },
+  {
+    "id": "cust-40028",
+    "customer_number": "40028",
+    "company_name": "MARIGONA HILL SH.P.K.",
+    "city": "Prishtinë",
+    "agent": "Zentrale Hauptlager",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 1134.0
+  },
+  {
+    "id": "cust-40032",
+    "customer_number": "40032",
+    "company_name": "ECM ENGINEERING SH.P.K",
+    "city": "Prishtinë",
+    "agent": "Zentrale Hauptlager",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 1,
+    "total_volume": 46.0
+  },
+  {
+    "id": "cust-40033",
+    "customer_number": "40033",
+    "company_name": "G FETAHU QERAMIK SH.P.K.",
+    "city": "Prishtinë",
+    "agent": "Zentrale Hauptlager",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 2,
+    "total_volume": 76.5
+  },
+  {
+    "id": "cust-blq",
+    "customer_number": "blq",
+    "company_name": "M ONE",
+    "city": "Prishtinë",
+    "agent": "Zentrale Hauptlager",
+    "phone": "+383 44 000 000",
+    "is_active": true,
+    "total_orders": 3,
+    "total_volume": 68.0
   }
 ]
