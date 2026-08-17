@@ -1,12 +1,14 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { X, Truck, User, CreditCard, Package, ShoppingCart, CheckCircle2, Eye, ChevronRight, MapPin, Navigation, ExternalLink } from 'lucide-react'
+import { useState, useEffect, useMemo } from 'react'
+import { X, Truck, User, CreditCard, Package, ShoppingCart, CheckCircle2, Eye, ChevronRight, MapPin, Navigation, ExternalLink, Coins } from 'lucide-react'
 import { formatCurrency } from '@/lib/utils/currency'
 import { getSalesHistory } from '@/lib/stockStore'
+import { calculateOrderCommission, getCommissionRate, getDriverForSale } from '@/lib/commission'
 import CustomerDetailModal from '@/components/analytics/CustomerDetailModal'
 import ProductDetailModal from '@/components/analytics/ProductDetailModal'
 import MOCK_2026_SALES from '@/lib/mock2026Sales.json'
+
 
 interface InvoiceItem {
   sku: string
@@ -193,7 +195,24 @@ export default function InvoiceDetailModal({ invoice, sales: propSales, onClose 
             </div>
           </div>
 
+          {/* FAHRER-PROVISION */}
+          {(() => {
+            const orderComm = calculateOrderCommission(invoice)
+            const driver = getDriverForSale(invoice)
+            return (
+              <div className="bg-brand-950/40 border border-brand-500/40 rounded-xl p-3.5 flex items-start gap-3">
+                <Coins className="w-4 h-4 text-brand-400 mt-0.5 shrink-0" />
+                <div>
+                  <p className="text-[11px] text-brand-300 uppercase tracking-wider font-semibold">Provision ({driver})</p>
+                  <p className="text-brand-300 font-black text-lg tabular-nums mt-0.5">{formatCurrency(orderComm.totalCommission)}</p>
+                  <p className="text-[10px] text-surface-400">{orderComm.totalPieces} Stk. abgerechnet</p>
+                </div>
+              </div>
+            )
+          })()}
+
         </div>
+
 
         {/* GPS SCAN-STANDORT (FALLS VORHANDEN) */}
         {invoice.latitude && invoice.longitude && (
