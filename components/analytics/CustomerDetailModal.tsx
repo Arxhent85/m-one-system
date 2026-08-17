@@ -1,10 +1,28 @@
 'use client'
 
-import { X, Calendar, MapPin, Truck, ShoppingCart, AlertTriangle, CheckCircle2, Clock, Package, Phone, Navigation, ExternalLink, Globe } from 'lucide-react'
+import { useMemo } from 'react'
+import {
+  X,
+  Calendar,
+  MapPin,
+  Truck,
+  ShoppingCart,
+  AlertTriangle,
+  CheckCircle2,
+  Clock,
+  Package,
+  Navigation,
+  FileText,
+  CreditCard,
+  Receipt,
+  TrendingUp,
+  Hash,
+} from 'lucide-react'
 import { formatCurrency, formatNumber } from '@/lib/utils/currency'
-import { getCustomerGpsMap, type CustomerGpsInfo } from '@/lib/stockStore'
+import { getCustomerGpsMap, type CustomerGpsInfo, getSalesHistory } from '@/lib/stockStore'
 import { KOSOVO_CITIES_GEO, CITY_ALIASES } from '@/components/customers/KosovoCustomerMap'
 import MOCK_CUSTOMERS from '@/lib/mockCustomers.json'
+import MOCK_2026_SALES from '@/lib/mock2026Sales.json'
 
 interface CustomerDetailModalProps {
   customer: {
@@ -12,53 +30,105 @@ interface CustomerDetailModalProps {
     company_name: string
     city?: string
     agent?: string
-    total_revenue: number
-    orders_count: number
-    last_order_date: string
-    items_bought: number
+    total_revenue?: number
+    orders_count?: number
+    last_order_date?: string
+    items_bought?: number
     notes?: string
   } | null
-  sales: any[]
+  sales?: any[]
   onClose: () => void
+}
+
+function formatDateDE(dateStr?: string): string {
+  if (!dateStr) return '—'
+  const clean = dateStr.slice(0, 10)
+  const parts = clean.split('-')
+  if (parts.length === 3) {
+    const day = parts[2]
+    const month = parts[1]
+    const year = parts[0]
+    return `${day}.${month}.${year}`
+  }
+  return dateStr
 }
 
 export default function CustomerDetailModal({ customer, sales, onClose }: CustomerDetailModalProps) {
   if (!customer) return null
 
-  // Lookup in mock customer registry if city or agent is missing
+  // 1. Lookup in mock customer registry if city or agent is missing
   const matchedMock = (MOCK_CUSTOMERS as any[]).find(
-    (mc) => mc.customer_number === customer.customer_number || mc.company_name?.toLowerCase() === customer.company_name?.toLowerCase()
+    (mc) =>
+      mc.customer_number === customer.customer_number ||
+      mc.company_name?.toLowerCase() === customer.company_name?.toLowerCase()
   )
 
-  const resolvedCity = customer.city && customer.city !== '—' && customer.city !== ''
-    ? customer.city
-    : (matchedMock?.city || 'PRISHTINE')
+  const resolvedCity =
+    customer.city && customer.city !== '—' && customer.city !== ''
+      ? customer.city
+      : matchedMock?.city || 'PRISHTINE'
 
-  const resolvedAgent = customer.agent && customer.agent !== '—' && customer.agent !== ''
-    ? customer.agent
-    : (matchedMock?.agent || (customer.customer_number?.startsWith('2') ? 'Mensuri (Fahrzeug 1)' : customer.customer_number?.startsWith('1') ? 'Qerimi (Fahrzeug 2)' : 'M-ONE Zentrale'))
+  const resolvedAgent =
+    customer.agent && customer.agent !== '—' && customer.agent !== ''
+      ? customer.agent
+      : matchedMock?.agent ||
+        (customer.customer_number?.startsWith('2')
+          ? 'Mensuri (Fahrzeug 1)'
+          : customer.customer_number?.startsWith('1')
+          ? 'Qerimi (Fahrzeug 2)'
+          : 'M-ONE Zentrale (Hauptlager)')
 
-  // 1. Get Live-Scan GPS Info from central registry or sales
+  // 2. Gather All Sales (Fallback to MOCK_2026_SALES from NEW DATA 2026)
+  const allSales = useMemo(() => {
+    if (sales && sales.length > 0) return sales
+    const storeSales = getSalesHistory()
+    if (storeSales && storeSales.length > 0) return storeSales
+    return MOCK_2026_SALES as any[]
+  }, [sales])
+
+  // 3. Filter Sales specifically for this Customer & Sort Chronologically (NEWEST FIRST)
+  const customerSales = useMemo(() => {
+    const num = String(customer.customer_number || '').trim().toLowerCase()
+    const name = String(customer.company_name || '').trim().toLowerCase()
+
+    const list = allSales.filter((s) => {
+      const sNum = String(s.customer_number || s.customerNumber || '').trim().toLowerCase()
+      const sName = String(s.customer_name || s.customerName || '').trim().toLowerCase()
+      return (
+        (num && (sNum === num || sNum.replace(/^0+/, '') === num.replace(/^0+/, ''))) ||
+        (name && (sName === name || sName.includes(name) || name.includes(sName)))
+      )
+    })
+
+    // Sort LATEST FIRST (Absteigend nach Datum)
+    list.sort((a, b) => {
+      const dtA = a.date || a.created_at || '2026-01-01'
+      const dtB = b.date || b.created_at || '2026-01-01'
+      return dtB.localeCompare(dtA)
+    })
+
+    return list
+  }, [allSales, customer.customer_number, customer.company_name])
+
+  // 4. GPS Standort & Live-Scan
   const gpsMap = getCustomerGpsMap()
   let liveGps: CustomerGpsInfo | null = gpsMap[customer.customer_number] || null
 
   if (!liveGps) {
-    // Check in customer sales
-    const saleWithGps = sales.find(
-      (s) => (s.customer_number === customer.customer_number || s.customer_name === customer.company_name) && s.latitude && s.longitude
-    )
+    const saleWithGps = customerSales.find((s) => s.latitude && s.longitude)
     if (saleWithGps) {
       liveGps = {
         lat: saleWithGps.latitude,
         lng: saleWithGps.longitude,
         accuracy: saleWithGps.gps_accuracy,
-        updatedAt: saleWithGps.created_at || '',
-        google_maps_url: saleWithGps.google_maps_url || `https://www.google.com/maps/search/?api=1&query=${saleWithGps.latitude},${saleWithGps.longitude}`,
+        updatedAt: saleWithGps.created_at || saleWithGps.date || '',
+        google_maps_url:
+          saleWithGps.google_maps_url ||
+          `https://www.google.com/maps/search/?api=1&query=${saleWithGps.latitude},${saleWithGps.longitude}`,
       }
     }
   }
 
-  // 2. Base Kosovo Coordinates (Fallback)
   const numInt = parseInt(customer.customer_number || '0') || 10103
   const rawCityKey = (resolvedCity || 'PRISHTINE').toUpperCase().trim()
   const cityKey = (CITY_ALIASES && CITY_ALIASES[rawCityKey]) || rawCityKey
@@ -71,23 +141,20 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
   const finalLat = liveGps ? liveGps.lat : fallbackLat
   const finalLng = liveGps ? liveGps.lng : fallbackLng
   const isLiveGps = !!liveGps
-  const googleMapsUrl = liveGps?.google_maps_url || `https://www.google.com/maps/search/?api=1&query=${finalLat.toFixed(6)},${finalLng.toFixed(6)}`
+  const googleMapsUrl =
+    liveGps?.google_maps_url ||
+    `https://www.google.com/maps/search/?api=1&query=${finalLat.toFixed(6)},${finalLng.toFixed(6)}`
 
-  // Filter sales for this specific customer
-  const customerSales = sales.filter(
-    (s) => s.customer_number === customer.customer_number || s.customer_name === customer.company_name
-  )
-
-  // Calculate days since last order
+  // 5. Calculate Days since last order & Status
   let daysSinceLastOrder = 999
-  if (customerSales.length > 0 && customerSales[0].created_at) {
-    const lastDate = new Date(customerSales[0].created_at)
+  const latestSaleDate = customerSales[0]?.date || customerSales[0]?.created_at
+  if (latestSaleDate) {
+    const lastDate = new Date(latestSaleDate)
     const now = new Date()
     const diffTime = Math.abs(now.getTime() - lastDate.getTime())
     daysSinceLastOrder = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
   }
 
-  // Determine Visit / Order Status (1x per week expected tour)
   let statusBadge = {
     color: 'bg-rose-950/80 text-rose-400 border-rose-700/60',
     icon: <AlertTriangle className="w-3.5 h-3.5" />,
@@ -114,32 +181,49 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
     }
   }
 
-  // Top products bought by this customer
+  // 6. Top Products Bought by this Customer
   const itemMap: Record<string, { sku: string; name: string; qty: number; total: number }> = {}
+  let totalRevenueCalculated = 0
+  let totalPiecesCalculated = 0
+
   customerSales.forEach((s) => {
-    (s.items || []).forEach((i: any) => {
-      const key = i.sku || i.name
-      if (!itemMap[key]) {
-        itemMap[key] = { sku: i.sku || '—', name: i.name || 'Artikel', qty: 0, total: 0 }
+    totalRevenueCalculated += Number(s.total_amount || 0)
+    ;(s.items || []).forEach((i: any) => {
+      const sku = String(i.sku || '').trim() || '—'
+      const name = i.name || 'Artikel ' + sku
+      const qty = Number(i.qty || 1)
+      const unitPrice = Number(i.unit_price || 0)
+      const lineTotal = Number(i.total || qty * unitPrice)
+
+      totalPiecesCalculated += qty
+
+      if (!itemMap[sku]) {
+        itemMap[sku] = { sku, name, qty: 0, total: 0 }
       }
-      itemMap[key].qty += i.qty || 1
-      itemMap[key].total += i.total || (i.qty || 1) * (i.unit_price || 0)
+      itemMap[sku].qty += qty
+      itemMap[sku].total += lineTotal
     })
   })
+
   const topItems = Object.values(itemMap).sort((a, b) => b.total - a.total)
 
-  // Trend analysis by month for customer (2026-01 to 2026-08)
+  // 7. Monthly Revenue Volume (Jan..Aug 2026)
   const monthlyVolume: Record<string, number> = {
-    '01': 0, '02': 0, '03': 0, '04': 0, '05': 0, '06': 0, '07': 0, '08': 0
+    '01': 0,
+    '02': 0,
+    '03': 0,
+    '04': 0,
+    '05': 0,
+    '06': 0,
+    '07': 0,
+    '08': 0,
   }
   customerSales.forEach((s) => {
-    const createdStr = s.created_at || ''
+    const createdStr = s.date || s.created_at || ''
     const monthMatch = createdStr.match(/-(\d{2})-/)
-    const rev = s.total_amount || 0
+    const rev = Number(s.total_amount || 0)
     if (monthMatch && monthlyVolume[monthMatch[1]] !== undefined) {
       monthlyVolume[monthMatch[1]] += rev
-    } else {
-      monthlyVolume['08'] += rev
     }
   })
   const monthLabels = [
@@ -155,22 +239,24 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
   const maxMonthVal = Math.max(...Object.values(monthlyVolume), 1)
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-3xl max-h-[90vh] flex flex-col bg-surface-900 border border-surface-700 rounded-2xl shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
+      <div className="relative w-full max-w-4xl max-h-[92vh] flex flex-col bg-surface-900 border border-surface-700/80 rounded-2xl shadow-2xl overflow-hidden">
         
         {/* Header */}
-        <div className="px-6 py-4 border-b border-surface-800 flex items-start justify-between bg-surface-950/60 shrink-0">
+        <div className="px-6 py-4 border-b border-surface-800 flex items-start justify-between bg-surface-950/70 shrink-0">
           <div>
             <div className="flex items-center gap-2 flex-wrap">
               <span className="font-mono text-xs font-bold text-brand-400 bg-brand-950/80 border border-brand-800/60 px-2.5 py-0.5 rounded-lg">
                 Kd.-Nr. {customer.customer_number}
               </span>
-              <span className={`inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-0.5 rounded-lg border ${statusBadge.color}`}>
+              <span
+                className={`inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-0.5 rounded-lg border ${statusBadge.color}`}
+              >
                 {statusBadge.icon}
                 {statusBadge.text}
               </span>
             </div>
-            <h2 className="text-xl font-black text-surface-50 mt-1.5">{customer.company_name}</h2>
+            <h2 className="text-2xl font-black text-surface-50 mt-1.5">{customer.company_name}</h2>
             <div className="flex items-center gap-4 text-xs text-surface-400 mt-1">
               <span className="flex items-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-emerald-400" /> {resolvedCity}
@@ -189,9 +275,9 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
         </div>
 
         {/* Scrollable Content */}
-        <div className="flex-1 overflow-y-auto p-6 space-y-6">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
 
-          {/* GPS STANDORT & 1-KLICK GOOGLE MAPS NAVIGATION (IMMER SICHTBAR) */}
+          {/* GPS STANDORT & 1-KLICK GOOGLE MAPS NAVIGATION */}
           <div className="glass-card p-4 border border-emerald-800/50 bg-emerald-950/20 space-y-3">
             <div className="flex items-center justify-between">
               <h3 className="text-xs font-bold text-emerald-300 uppercase tracking-wider flex items-center gap-2">
@@ -209,7 +295,7 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
                 </span>
               )}
             </div>
-            
+
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-surface-950/80 p-3.5 rounded-xl border border-surface-800">
               <div className="space-y-1">
                 <div className="flex items-center gap-3 text-xs font-mono font-bold text-surface-100 flex-wrap">
@@ -246,22 +332,22 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
 
           {/* Stats Bar */}
           <div className="grid grid-cols-3 gap-3">
-            <div className="glass-card p-3 border border-surface-800 text-center">
+            <div className="glass-card p-3.5 border border-surface-800 text-center">
               <p className="text-xs text-surface-400">Gesamtumsatz 2026</p>
-              <p className="text-lg font-black text-emerald-400 tabular-nums mt-0.5">
-                {formatCurrency(customer.total_revenue || customerSales.reduce((s, x) => s + x.total_amount, 0))}
+              <p className="text-xl font-black text-emerald-400 tabular-nums mt-0.5">
+                {formatCurrency(totalRevenueCalculated)}
               </p>
             </div>
-            <div className="glass-card p-3 border border-surface-800 text-center">
+            <div className="glass-card p-3.5 border border-surface-800 text-center">
               <p className="text-xs text-surface-400">Erfasste Verkäufe</p>
-              <p className="text-lg font-black text-surface-100 tabular-nums mt-0.5">
+              <p className="text-xl font-black text-surface-100 tabular-nums mt-0.5">
                 {customerSales.length} Fakturen
               </p>
             </div>
-            <div className="glass-card p-3 border border-surface-800 text-center">
+            <div className="glass-card p-3.5 border border-surface-800 text-center">
               <p className="text-xs text-surface-400">Gekaufte Einheiten</p>
-              <p className="text-lg font-black text-brand-400 tabular-nums mt-0.5">
-                {formatNumber(topItems.reduce((s, i) => s + i.qty, 0))} Stk.
+              <p className="text-xl font-black text-brand-400 tabular-nums mt-0.5">
+                {formatNumber(totalPiecesCalculated)} Stk.
               </p>
             </div>
           </div>
@@ -308,16 +394,21 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
             <div className="glass-card p-4 border border-surface-800 space-y-3">
               <h3 className="text-xs font-bold text-surface-300 uppercase tracking-wider flex items-center gap-2">
                 <Package className="w-4 h-4 text-brand-400" />
-                Meistgekaufte Produkte dieses Kunden
+                Meistgekaufte Produkte dieses Kunden ({topItems.length} Artikel)
               </h3>
               <div className="grid sm:grid-cols-2 gap-2">
                 {topItems.slice(0, 6).map((item) => (
-                  <div key={item.sku} className="p-2.5 rounded-lg bg-surface-950/60 border border-surface-800 flex items-center justify-between">
-                    <div>
+                  <div
+                    key={item.sku}
+                    className="p-2.5 rounded-lg bg-surface-950/60 border border-surface-800 flex items-center justify-between"
+                  >
+                    <div className="min-w-0 pr-2">
                       <p className="text-xs font-bold text-surface-100 truncate">{item.name}</p>
-                      <p className="text-[10px] text-surface-500 font-mono">Art.-Nr. {item.sku} · {item.qty} Stk.</p>
+                      <p className="text-[10px] text-surface-500 font-mono">
+                        Art.-Nr. {item.sku} · {formatNumber(item.qty)} Stk.
+                      </p>
                     </div>
-                    <span className="text-xs font-bold text-emerald-400 tabular-nums ml-2 shrink-0">
+                    <span className="text-xs font-bold text-emerald-400 tabular-nums shrink-0">
                       {formatCurrency(item.total)}
                     </span>
                   </div>
@@ -326,65 +417,130 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
             </div>
           )}
 
-          {/* Einkaufshistorie & Fakturen */}
-          <div className="space-y-3">
-            <h3 className="text-xs font-bold text-surface-300 uppercase tracking-wider flex items-center gap-2">
-              <ShoppingCart className="w-4 h-4 text-emerald-400" />
-              Einkaufs-Historie & Verkaufsbelege ({customerSales.length})
-            </h3>
+          {/* EINKAUFSHISTORIE & DETAIL-BELEGE (Chronologisch: Neueste Einkäufe zuerst mit deutlichem Abstand) */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xs font-bold text-surface-200 uppercase tracking-wider flex items-center gap-2">
+                <Receipt className="w-4 h-4 text-emerald-400" />
+                Einkaufs-Historie & Verkaufsbelege ({customerSales.length} Rechnungen)
+              </h3>
+              <span className="text-[11px] text-surface-400 font-medium">
+                Neueste Einkäufe zuerst sortiert
+              </span>
+            </div>
 
             {customerSales.length === 0 ? (
-              <div className="p-8 text-center glass-card border border-surface-800">
+              <div className="p-8 text-center glass-card border border-surface-800 rounded-2xl">
                 <Clock className="w-8 h-8 text-surface-600 mx-auto mb-2 opacity-40" />
                 <p className="text-sm text-surface-300 font-medium">Noch keine Verkäufe 2026 erfasst.</p>
                 <p className="text-xs text-surface-500 mt-1">
-                  Sobald Mensuri oder Qerimi bei der wöchentlichen Tour für diesen Kunden buchen, erscheint der Beleg hier.
+                  Sobald ein Fahrer für diesen Kunden eine Rechnung erfasst, erscheint der Beleg hier.
                 </p>
               </div>
             ) : (
-              <div className="space-y-3">
-                {customerSales.map((sale) => {
-                  const dateStr = sale.created_at ? sale.created_at.substring(0, 10) : '2026-05-28'
-                  const timeStr = sale.created_at ? sale.created_at.substring(11, 16) : ''
+              <div className="space-y-4">
+                {customerSales.map((sale, idx) => {
+                  const rawDate = sale.date || sale.created_at || '2026-01-01'
+                  const formattedDate = formatDateDE(rawDate)
+                  const totalItemsInOrder = (sale.items || []).reduce(
+                    (sum: number, it: any) => sum + Number(it.qty || 1),
+                    0
+                  )
+                  const driver =
+                    sale.driver_name ||
+                    (customer.customer_number?.startsWith('1')
+                      ? 'Qerimi (Fahrzeug 2)'
+                      : customer.customer_number?.startsWith('2')
+                      ? 'Mensuri (Fahrzeug 1)'
+                      : 'M-ONE Zentrale')
 
                   return (
-                    <div key={sale.id} className="glass-card p-4 border border-surface-800 space-y-3">
-                      <div className="flex items-center justify-between border-b border-surface-800/60 pb-2">
-                        <div className="flex items-center gap-2">
-                          <span className="font-mono text-xs font-bold text-brand-400">
-                            {sale.order_number || sale.id}
+                    <div
+                      key={sale.id || sale.order_number || idx}
+                      className="glass-card p-4 sm:p-5 border border-surface-700/80 bg-surface-950/70 rounded-2xl shadow-xl hover:border-surface-600 transition-all space-y-3.5"
+                    >
+                      {/* Beleg-Kopf */}
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-surface-800/80 pb-3">
+                        <div className="flex items-center gap-2.5 flex-wrap">
+                          <span className="font-mono text-xs font-bold text-brand-400 bg-brand-950/90 border border-brand-800/60 px-2.5 py-1 rounded-lg flex items-center gap-1.5 shadow-sm">
+                            <FileText className="w-3.5 h-3.5 text-brand-400" />
+                            {sale.order_number || `Faktura #${idx + 1}`}
                           </span>
-                          <span className="text-xs text-surface-400 flex items-center gap-1">
-                            <Calendar className="w-3 h-3 text-surface-500" /> {dateStr} {timeStr}
+                          
+                          <span className="text-xs font-bold text-surface-200 flex items-center gap-1.5 bg-surface-900 px-2.5 py-1 rounded-lg border border-surface-800">
+                            <Calendar className="w-3.5 h-3.5 text-brand-400" />
+                            {formattedDate}
+                          </span>
+
+                          <span
+                            className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-lg border ${
+                              driver.includes('Qerimi')
+                                ? 'bg-cyan-950/60 text-cyan-300 border-cyan-800/50'
+                                : 'bg-emerald-950/60 text-emerald-300 border-emerald-800/50'
+                            }`}
+                          >
+                            🚚 {driver}
                           </span>
                         </div>
-                        <div className="text-right">
-                          <span className="text-sm font-black text-emerald-400 tabular-nums">
+
+                        <div className="flex items-center gap-2.5 sm:self-auto self-end">
+                          <span className="text-base font-black text-emerald-400 font-mono tabular-nums">
                             {formatCurrency(sale.total_amount || 0)}
                           </span>
-                          <span className="ml-2 text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800 px-2 py-0.5 rounded font-mono uppercase">
-                            {sale.payment_method || 'Bar'}
+                          <span className="text-[10px] font-bold uppercase tracking-wider bg-emerald-950/80 text-emerald-300 border border-emerald-800/60 px-2.5 py-0.5 rounded-md font-mono">
+                            {sale.payment_method || 'BAR'}
                           </span>
                         </div>
                       </div>
 
-                      {/* Gekaufte Artikel in diesem Beleg */}
+                      {/* Liste aller gekauften Produkte in dieser Rechnung */}
                       <div className="space-y-1.5">
-                        {(sale.items || []).map((item: any, idx: number) => (
-                          <div key={idx} className="flex items-center justify-between text-xs py-1 px-2 rounded bg-surface-950/40">
-                            <div className="flex items-center gap-2 min-w-0">
-                              <span className="font-mono text-[10px] font-bold text-brand-400 bg-brand-950 px-1.5 py-0.5 rounded border border-brand-800/40 shrink-0">
-                                {item.sku}
-                              </span>
-                              <span className="text-surface-200 font-medium truncate">{item.name}</span>
+                        {(sale.items || []).map((item: any, itemIdx: number) => {
+                          const itemQty = Number(item.qty || 1)
+                          const unitPrice = Number(item.unit_price || 0)
+                          const lineTotal = Number(item.total || itemQty * unitPrice)
+
+                          return (
+                            <div
+                              key={itemIdx}
+                              className="flex items-center justify-between text-xs py-2 px-3 rounded-xl bg-surface-900/80 border border-surface-800/60 hover:bg-surface-800/60 transition-colors"
+                            >
+                              <div className="flex items-center gap-2.5 min-w-0 pr-2">
+                                <span className="font-mono text-[10px] font-bold text-brand-300 bg-brand-950 px-2 py-0.5 rounded border border-brand-800/40 shrink-0">
+                                  {item.sku}
+                                </span>
+                                <span className="text-surface-100 font-medium truncate" title={item.name}>
+                                  {item.name}
+                                </span>
+                              </div>
+
+                              <div className="text-right ml-2 shrink-0 font-mono flex items-center gap-3">
+                                <span className="text-surface-200 font-bold bg-surface-800/90 px-2 py-0.5 rounded text-[11px]">
+                                  {itemQty} Stk.
+                                </span>
+                                <span className="text-surface-400 text-[11px] hidden sm:inline">
+                                  × {formatCurrency(unitPrice)}
+                                </span>
+                                <span className="text-emerald-400 font-bold text-[12px] min-w-[70px] text-right">
+                                  = {formatCurrency(lineTotal)}
+                                </span>
+                              </div>
                             </div>
-                            <div className="text-right ml-2 shrink-0 font-mono">
-                              <span className="text-surface-300 font-bold mr-2">{item.qty}x</span>
-                              <span className="text-surface-400">{formatCurrency(item.unit_price || 0)} = </span>
-                              <span className="text-emerald-400 font-bold">{formatCurrency((item.qty || 1) * (item.unit_price || 0))}</span>
-                            </div>
-                          </div>
-                        ))}
+                          )
+                        })}
+                      </div>
+
+                      {/* Beleg-Zusammenfassungsleiste */}
+                      <div className="flex items-center justify-between text-[11px] text-surface-400 pt-2 border-t border-surface-800/50 px-1 font-medium">
+                        <span>
+                          {(sale.items || []).length} Positionen · {totalItemsInOrder} Stück gesamt
+                        </span>
+                        <span className="text-surface-300 font-mono">
+                          Rechnungsbetrag:{' '}
+                          <strong className="text-emerald-400 font-bold">
+                            {formatCurrency(sale.total_amount || 0)}
+                          </strong>
+                        </span>
                       </div>
                     </div>
                   )
@@ -396,11 +552,13 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-3 border-t border-surface-800 bg-surface-950/80 flex items-center justify-between shrink-0 text-xs">
-          <span className="text-surface-400 font-mono">Standort / Tour: {customer.agent}</span>
+        <div className="px-6 py-3.5 border-t border-surface-800 bg-surface-950/90 flex items-center justify-between shrink-0 text-xs">
+          <span className="text-surface-400 font-mono">
+            Standort / Tour: <strong className="text-surface-200">{resolvedAgent}</strong> ({resolvedCity})
+          </span>
           <button
             onClick={onClose}
-            className="btn-secondary py-1.5 px-4 text-xs"
+            className="btn-secondary py-1.5 px-4 text-xs font-bold"
           >
             Schließen
           </button>
