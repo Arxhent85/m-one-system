@@ -183,12 +183,19 @@ export default function PayrollView() {
         map[monthKey].mensuriPieces += orderComm.totalPieces
         map[monthKey].mensuriOrders += 1
         map[monthKey].mensuriVolume += vol
-      } else {
+        map[monthKey].totalComm += orderComm.totalCommission
+        map[monthKey].totalPieces += orderComm.totalPieces
+      } else if (driver === 'Qerimi') {
         map[monthKey].qerimiComm += orderComm.totalCommission
         map[monthKey].qerimiPieces += orderComm.totalPieces
         map[monthKey].qerimiOrders += 1
         map[monthKey].qerimiVolume += vol
+        map[monthKey].totalComm += orderComm.totalCommission
+        map[monthKey].totalPieces += orderComm.totalPieces
       }
+
+      map[monthKey].totalOrders += 1
+      map[monthKey].totalVolume += vol
     })
 
     return Object.values(map).sort((a, b) => b.monthKey.localeCompare(a.monthKey))
@@ -227,7 +234,7 @@ export default function PayrollView() {
           mensuriItemsMap[it.sku].qty += it.qty
           mensuriItemsMap[it.sku].commission += it.commission
         })
-      } else {
+      } else if (driver === 'Qerimi') {
         qerimiComm += totalCommission
         qerimiPieces += totalPieces
         qerimiOrders += 1
@@ -242,6 +249,7 @@ export default function PayrollView() {
         })
       }
     })
+
 
     return {
       mensuri: {
@@ -319,18 +327,20 @@ export default function PayrollView() {
           map[it.sku].name = it.name
         }
 
-        map[it.sku].totalQty += it.qty
-        map[it.sku].totalComm += it.commission
-
         if (driver === 'Mensuri') {
           map[it.sku].mensuriQty += it.qty
           map[it.sku].mensuriComm += it.commission
-        } else {
+          map[it.sku].totalQty += it.qty
+          map[it.sku].totalComm += it.commission
+        } else if (driver === 'Qerimi') {
           map[it.sku].qerimiQty += it.qty
           map[it.sku].qerimiComm += it.commission
+          map[it.sku].totalQty += it.qty
+          map[it.sku].totalComm += it.commission
         }
       })
     })
+
 
     return Object.values(map).sort((a, b) => b.totalComm - a.totalComm)
   }, [filteredSales])

@@ -64,22 +64,33 @@ export function calculateOrderCommission(order: { items?: any[] }): {
 }
 
 /**
- * Bestimmt den Fahrer (Mensuri oder Qerimi) anhand der Rechnungsdaten
- * (Kundennummer 2xxxx = Mensuri, 1xxxx = Qerimi).
+ * Bestimmt den Fahrer (Mensuri oder Qerimi) STRIKT anhand der Kundennummer:
+ * - Alle Kunden, deren Nummer mit '1' beginnt (z.B. 10101, 1-02-03, 010203) -> 100% Fahrer Qerimi
+ * - Alle Kunden, deren Nummer mit '2' beginnt (z.B. 20101, 2-01-01, 020101) -> 100% Fahrer Mensuri
+ * - Alle anderen (z.B. 40xxx Baufirmen / Zentrale) -> Zentrale (erzeugt keine Fahrer-Stückprovision)
  */
-export function getDriverForSale(sale: any): 'Mensuri' | 'Qerimi' | 'Büro / Andere' {
+export function getDriverForSale(sale: any): 'Mensuri' | 'Qerimi' | 'Zentrale' {
+  const custNumRaw = String(sale.customer_number || sale.customerNumber || sale.customers?.customer_number || '').trim()
+  
+  if (custNumRaw) {
+    let clean = custNumRaw.replace(/[-.\s]/g, '')
+    if (clean.startsWith('0')) clean = clean.substring(1)
+    
+    if (clean.startsWith('1')) return 'Qerimi'
+    if (clean.startsWith('2')) return 'Mensuri'
+    if (clean.startsWith('4') || clean.toLowerCase().startsWith('blq')) return 'Zentrale'
+  }
+
+  // Sekundärer Fallback falls keine Kundennummer vorliegt
   const driverName = String(sale.driver_name || sale.driver || '').toLowerCase()
-  const custNum = String(sale.customer_number || sale.customerNumber || sale.customers?.customer_number || '')
   const locName = String(sale.vehicle_location_name || sale.locations?.name || '').toLowerCase()
 
-  if (driverName.includes('mensuri') || locName.includes('mensuri') || custNum.startsWith('2')) {
-    return 'Mensuri'
-  }
-  if (driverName.includes('qerimi') || locName.includes('qerimi') || custNum.startsWith('1')) {
-    return 'Qerimi'
-  }
-  return 'Mensuri' // Standard-Fahrer wenn 2xxxx
+  if (driverName.includes('qerimi') || locName.includes('qerimi')) return 'Qerimi'
+  if (driverName.includes('mensuri') || locName.includes('mensuri')) return 'Mensuri'
+  
+  return 'Zentrale'
 }
+
 
 /**
  * Formatiert YYYY-MM in lesbares Deutsch (z.B. 2026-07 -> Juli 2026).
