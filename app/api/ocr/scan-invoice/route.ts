@@ -69,6 +69,8 @@ export async function POST(req: Request) {
     // ──────────────────────────────────────────────────────────────
     const apiKey = process.env.GEMINI_API_KEY
     if (apiKey) {
+
+
       const match = imageBase64.match(/^data:(image\/\w+);base64,(.+)$/)
       const mimeType = match ? match[1] : 'image/jpeg'
       const base64Data = match ? match[2] : imageBase64.replace(/^data:image\/\w+;base64,/, '')
