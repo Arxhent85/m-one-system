@@ -100,11 +100,16 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
       )
     })
 
-    // Sort LATEST FIRST (Absteigend nach Datum)
+    // Sort STRICTLY LATEST / NEWEST FIRST (Absteigend: Neueste oben, Älteste unten)
     list.sort((a, b) => {
-      const dtA = a.date || a.created_at || '2026-01-01'
-      const dtB = b.date || b.created_at || '2026-01-01'
-      return dtB.localeCompare(dtA)
+      const dtA = String(a.date || a.created_at || '2026-01-01').substring(0, 10)
+      const dtB = String(b.date || b.created_at || '2026-01-01').substring(0, 10)
+      if (dtB !== dtA) {
+        return dtB.localeCompare(dtA)
+      }
+      const nrA = String(a.order_number || a.id || '')
+      const nrB = String(b.order_number || b.id || '')
+      return nrB.localeCompare(nrA, undefined, { numeric: true })
     })
 
     return list
