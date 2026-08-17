@@ -98,10 +98,10 @@ export default function PayrollPrintModal({
       <tr>
         <th
           onClick={() => handleSort('sku')}
-          className="py-1 px-1.5 cursor-pointer hover:bg-slate-200 transition-colors w-[18%]"
+          className="py-1 px-1.5 cursor-pointer hover:bg-slate-200 transition-colors w-[16%]"
         >
           <div className="flex items-center gap-0.5">
-            <span>ART. NR. (SKU)</span>
+            <span>SKU</span>
             {sortKey === 'sku' && (
               sortAsc ? <ArrowUp className="w-2.5 h-2.5 text-blue-600" /> : <ArrowDown className="w-2.5 h-2.5 text-blue-600" />
             )}
@@ -112,7 +112,7 @@ export default function PayrollPrintModal({
           className="py-1 px-1.5 cursor-pointer hover:bg-slate-200 transition-colors w-[42%]"
         >
           <div className="flex items-center gap-0.5">
-            <span>ARTIKELBEZEICHNUNG</span>
+            <span>ARTIKEL</span>
             {sortKey === 'name' && (
               sortAsc ? <ArrowUp className="w-2.5 h-2.5 text-blue-600" /> : <ArrowDown className="w-2.5 h-2.5 text-blue-600" />
             )}
@@ -123,7 +123,7 @@ export default function PayrollPrintModal({
           className="py-1 px-1 text-right cursor-pointer hover:bg-slate-200 transition-colors w-[14%]"
         >
           <div className="flex items-center justify-end gap-0.5">
-            <span>MENGE (STK)</span>
+            <span>MENGE</span>
             {sortKey === 'qty' && (
               sortAsc ? <ArrowUp className="w-2.5 h-2.5 text-blue-600" /> : <ArrowDown className="w-2.5 h-2.5 text-blue-600" />
             )}
@@ -134,7 +134,7 @@ export default function PayrollPrintModal({
           className="py-1 px-1 text-right cursor-pointer hover:bg-slate-200 transition-colors w-[12%]"
         >
           <div className="flex items-center justify-end gap-0.5">
-            <span>PROV./STK</span>
+            <span>SATZ</span>
             {sortKey === 'rate' && (
               sortAsc ? <ArrowUp className="w-2.5 h-2.5 text-blue-600" /> : <ArrowDown className="w-2.5 h-2.5 text-blue-600" />
             )}
@@ -142,10 +142,10 @@ export default function PayrollPrintModal({
         </th>
         <th
           onClick={() => handleSort('commission')}
-          className="py-1 px-1.5 text-right font-bold cursor-pointer hover:bg-slate-200 transition-colors w-[14%]"
+          className="py-1 px-1.5 text-right font-bold cursor-pointer hover:bg-slate-200 transition-colors w-[16%]"
         >
           <div className="flex items-center justify-end gap-0.5">
-            <span>VERDIENST</span>
+            <span>PROVISION</span>
             {sortKey === 'commission' && (
               sortAsc ? <ArrowUp className="w-2.5 h-2.5 text-blue-600" /> : <ArrowDown className="w-2.5 h-2.5 text-blue-600" />
             )}
@@ -177,7 +177,7 @@ export default function PayrollPrintModal({
       <td className="py-0.5 px-1 text-right font-mono text-slate-600 text-[7.5pt] whitespace-nowrap">
         {it.rate.toFixed(2)} €
       </td>
-      <td className="py-0.5 px-1.5 text-right font-mono font-bold text-slate-900 text-[8pt] whitespace-nowrap">
+      <td className="py-0.5 px-1.5 text-right font-mono font-bold text-emerald-700 print:text-black text-[8pt] whitespace-nowrap">
         {formatCurrency(it.commission)}
       </td>
     </tr>
@@ -222,7 +222,7 @@ export default function PayrollPrintModal({
                 title="Kompakte 2-Spalten-Ansicht (Passt auf 1 Seite)"
               >
                 <Columns className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">2 Spalten</span>
+                <span className="hidden sm:inline">2 Spalten (1 Seite)</span>
               </button>
               <button
                 type="button"
@@ -255,49 +255,51 @@ export default function PayrollPrintModal({
           </div>
         </div>
 
-        {/* Printable Document Body (Pure White Background, Crisp Black Ink) */}
+        {/* Printable Document Body (Exact structure from screenshot) */}
         <div className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-2.5 print:p-0 print:overflow-visible print:space-y-2 bg-white text-slate-900">
           
           {/* Header */}
-          <div className="flex justify-between items-start border-b border-slate-300 pb-2">
+          <div className="flex justify-between items-start border-b-2 border-slate-900 pb-2">
             <div>
-              <h1 className="text-xl font-black text-slate-900 tracking-tight">
-                M ONE SH.P.K.
-              </h1>
-              <p className="text-[10px] text-slate-600 font-medium mt-0.5">
-                Warenwirtschaft & Großhandel · Lohnabrechnung Fahrer
-              </p>
-              <p className="text-[10px] text-slate-500 font-medium">
-                Fahrzeugdepot {depotLabel}
+              <div className="flex items-center gap-2">
+                <h1 className="text-xl font-black text-slate-900 tracking-tight">
+                  M ONE SH.P.K.
+                </h1>
+                <span className="text-[9.5px] px-2 py-0.5 rounded bg-slate-100 text-slate-800 border border-slate-300 font-bold uppercase">
+                  WARENWIRTSCHAFT & GROSSHANDEL
+                </span>
+              </div>
+              <p className="text-[10.5px] text-slate-600 font-medium mt-0.5">
+                Fahrzeugdepot {depotLabel} · Provisions- & Gehaltsabrechnung
               </p>
             </div>
             
             <div className="text-right">
-              <span className="inline-block px-3 py-0.5 bg-slate-50 text-slate-800 border border-slate-300 rounded-lg text-[9.5px] font-black uppercase tracking-wider">
+              <span className="inline-block px-3 py-0.5 bg-slate-900 text-white rounded text-[9.5px] font-black uppercase tracking-wider print:bg-slate-100 print:text-black print:border print:border-slate-800">
                 LOHNABRECHNUNG
               </span>
-              <p className="text-[11px] text-slate-700 font-medium mt-1">
-                Abrechnungszeitraum: <strong className="text-slate-900">{periodLabel}</strong>
+              <p className="text-[11px] text-slate-800 font-medium mt-1">
+                Abrechnungsmonat: <strong className="text-slate-900">{periodLabel}</strong>
               </p>
               <p className="text-[10px] text-slate-500">
-                Erstellt am: {new Date().toLocaleDateString('de-DE')}
+                Druckdatum: {new Date().toLocaleDateString('de-DE')}
               </p>
             </div>
           </div>
 
-          {/* 4 Compact Overview Metric Cards */}
+          {/* 4 Metric Overview Boxes */}
           <div className="grid grid-cols-4 gap-2.5">
             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
-              <p className="text-[9px] text-slate-500 font-bold">Mitarbeiter / Fahrer</p>
+              <p className="text-[9px] text-slate-500 font-bold uppercase">MITARBEITER / FAHRER</p>
               <p className="text-sm font-black text-slate-900 mt-0.5 flex items-center gap-1">
-                <User className="w-3 h-3 text-blue-600 print-hide" />
+                <User className="w-3.5 h-3.5 text-blue-600 print-hide" />
                 {driverName}
               </p>
               <p className="text-[9px] text-slate-500 font-mono">{driverSeries}</p>
             </div>
 
             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
-              <p className="text-[9px] text-slate-500 font-bold">Verkaufte Stückzahl</p>
+              <p className="text-[9px] text-slate-500 font-bold uppercase">VERKAUFTE STÜCKZAHL</p>
               <p className="text-sm font-black text-slate-900 mt-0.5">
                 {formatNumber(totalPieces)} Stk.
               </p>
@@ -305,29 +307,33 @@ export default function PayrollPrintModal({
             </div>
 
             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
-              <p className="text-[9px] text-slate-500 font-bold">Verkaufsvolumen Brutto</p>
+              <p className="text-[9px] text-slate-500 font-bold uppercase">VERKAUFSVOLUMEN (BRUTTO)</p>
               <p className="text-sm font-black text-slate-900 mt-0.5">
                 {formatCurrency(totalSalesVolume)}
               </p>
-              <p className="text-[9px] text-slate-500">Gesamteinnahmen</p>
+              <p className="text-[9px] text-slate-500">Fakturiert</p>
             </div>
 
-            <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-300">
-              <p className="text-[9px] text-slate-900 font-bold uppercase">AUSZAHLUNGSBETRAG</p>
-              <p className="text-base font-black text-slate-900 mt-0.5">
+            <div className="p-2.5 rounded-xl bg-emerald-50 border-2 border-emerald-600 print:bg-slate-100 print:border-slate-800">
+              <p className="text-[9px] text-emerald-900 print:text-black font-black uppercase">TOTALER AUSZAHLUNGSLOHN</p>
+              <p className="text-base font-black text-emerald-700 print:text-black mt-0.5">
                 {formatCurrency(totalPayable)}
               </p>
-              <p className="text-[8.5px] text-slate-600 font-medium">
-                Prov: {formatCurrency(totalCommission)} + Fix: {formatCurrency(effectiveFixedSalary)}
+              <p className="text-[8.5px] text-emerald-800 print:text-slate-700 font-bold">
+                Prov. {formatCurrency(totalCommission)} + Fix {formatCurrency(effectiveFixedSalary)}
               </p>
             </div>
           </div>
 
           {/* Section Title */}
-          <div>
-            <h2 className="text-[10px] font-bold text-slate-800 uppercase tracking-wide">
-              PROVISIONSAUFSCHLÜSSELUNG NACH ARTIKELN (NACH ARTIKELNUMMER SORTIERT · {sortedItems.length} POSITIONEN)
+          <div className="flex items-center justify-between pt-0.5">
+            <h2 className="text-[10px] font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
+              <Package className="w-3.5 h-3.5 text-blue-600 print-hide" />
+              PROVISIONSAUFSCHLÜSSELUNG NACH ARTIKELN ({sortedItems.length} POSITIONEN)
             </h2>
+            <span className="text-[9px] text-slate-500 print-hide">
+              Kompakte 2-Spalten-Tabelle für vollständige Übersicht
+            </span>
           </div>
 
           {/* Article Table Section */}
@@ -390,10 +396,10 @@ export default function PayrollPrintModal({
             )}
 
             {/* Financial Breakdown & Total Calculation Box (Glasklare Buchhaltungsaufstellung) */}
-            <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-300 text-xs flex items-center justify-between mt-2">
+            <div className="p-2.5 rounded-xl bg-slate-50 border-2 border-slate-300 text-xs flex items-center justify-between mt-2">
               <div className="space-y-0.5">
                 <p className="font-bold text-slate-900 uppercase text-[9.5px]">
-                  Zusammenfassung Verkaufsleistung ({sortedItems.length} Positionen)
+                  VERKAUFSLEISTUNG ({sortedItems.length} ARTIKELPOSITIONEN)
                 </p>
                 <div className="flex items-center gap-3 text-slate-700 text-[10.5px]">
                   <span>Gesamtstückzahl: <strong className="text-slate-900">{formatNumber(totalPieces)} Stk.</strong></span>
@@ -405,18 +411,18 @@ export default function PayrollPrintModal({
               {/* Exact Formula Box: Provision + Fixlohn = Totaler Lohn */}
               <div className="flex items-center gap-3 bg-white p-1.5 px-3 rounded-lg border border-slate-300">
                 <div className="text-right">
-                  <span className="text-[9.5px] text-slate-500 block">1. Netto Stück-Provision:</span>
+                  <span className="text-[9.5px] text-slate-500 block">1. Stück-Provision:</span>
                   <span className="font-mono font-bold text-slate-900">{formatCurrency(totalCommission)}</span>
                 </div>
                 <span className="text-slate-400 font-bold text-sm">+</span>
                 <div className="text-right">
-                  <span className="text-[9.5px] text-slate-500 block">2. Fixlohn Basis (Monat):</span>
+                  <span className="text-[9.5px] text-slate-500 block">2. Fixlohn Basis:</span>
                   <span className="font-mono font-bold text-slate-900">{formatCurrency(effectiveFixedSalary)}</span>
                 </div>
                 <span className="text-slate-400 font-bold text-sm">=</span>
                 <div className="text-right pl-2.5 border-l border-slate-300">
-                  <span className="text-[9.5px] font-black text-slate-900 uppercase block">TOTALER LOHN:</span>
-                  <span className="font-mono font-black text-base text-slate-900">
+                  <span className="text-[9.5px] font-black text-emerald-800 print:text-black uppercase block">TOTALER LOHN:</span>
+                  <span className="font-mono font-black text-base text-emerald-700 print:text-black">
                     {formatCurrency(totalPayable)}
                   </span>
                 </div>

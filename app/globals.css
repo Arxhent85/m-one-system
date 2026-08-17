@@ -238,12 +238,12 @@
 }
 
 /* ============================================================
-   Global Print Overrides: Pure White Paper, Black Ink, No Dark Waste
+   Global Print Overrides: Pure White Paper, Black Ink, Landscape (Querformat)
    ============================================================ */
 @media print {
   @page {
-    size: A4 portrait;
-    margin: 8mm 8mm 6mm 8mm;
+    size: A4 landscape;
+    margin: 6mm 8mm 6mm 8mm;
   }
   
   *, *::before, *::after {
