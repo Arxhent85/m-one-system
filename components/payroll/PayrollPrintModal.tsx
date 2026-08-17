@@ -1,6 +1,7 @@
 'use client'
 
-import { X, Printer, CheckCircle2, User, Calendar, Package, DollarSign } from 'lucide-react'
+import { useState, useMemo } from 'react'
+import { X, Printer, CheckCircle2, User, Calendar, Package, DollarSign, ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react'
 import { formatCurrency, formatNumber } from '@/lib/utils/currency'
 import { formatMonthKey } from '@/lib/commission'
 
@@ -31,9 +32,46 @@ export default function PayrollPrintModal({
   itemBreakdown,
   onClose,
 }: PayrollPrintModalProps) {
+  const [sortKey, setSortKey] = useState<'sku' | 'name' | 'qty' | 'rate' | 'commission'>('sku')
+  const [sortAsc, setSortAsc] = useState<boolean>(true)
+
   function handlePrint() {
     window.print()
   }
+
+  function handleSort(key: 'sku' | 'name' | 'qty' | 'rate' | 'commission') {
+    if (sortKey === key) {
+      setSortAsc((prev) => !prev)
+    } else {
+      setSortKey(key)
+      setSortAsc(key === 'sku' || key === 'name')
+    }
+  }
+
+  const sortedItems = useMemo(() => {
+    const list = [...itemBreakdown]
+    list.sort((a, b) => {
+      if (sortKey === 'sku') {
+        return sortAsc
+          ? a.sku.localeCompare(b.sku, undefined, { numeric: true })
+          : b.sku.localeCompare(a.sku, undefined, { numeric: true })
+      }
+      if (sortKey === 'name') {
+        return sortAsc ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
+      }
+      if (sortKey === 'qty') {
+        return sortAsc ? a.qty - b.qty : b.qty - a.qty
+      }
+      if (sortKey === 'rate') {
+        return sortAsc ? a.rate - b.rate : b.rate - a.rate
+      }
+      if (sortKey === 'commission') {
+        return sortAsc ? a.commission - b.commission : b.commission - a.commission
+      }
+      return 0
+    })
+    return list
+  }, [itemBreakdown, sortKey, sortAsc])
 
   const periodLabel = monthKey === 'all' ? 'Gesamtes Geschäftsjahr 2026' : formatMonthKey(monthKey)
 
@@ -138,26 +176,91 @@ export default function PayrollPrintModal({
 
           {/* Article Commission Breakdown Table */}
           <div className="space-y-3">
-            <h3 className="text-sm font-bold text-surface-200 print:text-black uppercase tracking-wider flex items-center gap-2">
-              <Package className="w-4 h-4 text-brand-400 print:hidden" />
-              Provisionsaufschlüsselung nach Artikeln (gemäß Provisionsmatrix)
-            </h3>
+            <div className="flex items-center justify-between">
+              <h3 className="text-sm font-bold text-surface-200 print:text-black uppercase tracking-wider flex items-center gap-2">
+                <Package className="w-4 h-4 text-brand-400 print:hidden" />
+                Provisionsaufschlüsselung nach Artikeln (nach Artikelnummer sortiert)
+              </h3>
+              <span className="text-[11px] text-surface-400 print:hidden">
+                Klicke auf eine Spalte zum Sortieren
+              </span>
+            </div>
             
             <div className="overflow-x-auto rounded-xl border border-surface-700/50 print:border-gray-300">
               <table className="w-full text-left text-xs">
-                <thead className="bg-surface-800/80 print:bg-gray-200 text-surface-300 print:text-gray-800 uppercase text-[10px] font-semibold tracking-wider">
+                <thead className="bg-surface-800/80 print:bg-gray-200 text-surface-300 print:text-gray-800 uppercase text-[10px] font-semibold tracking-wider select-none">
                   <tr>
-                    <th className="py-2.5 px-3">Art. Nr. (SKU)</th>
-                    <th className="py-2.5 px-3">Artikelbezeichnung</th>
-                    <th className="py-2.5 px-3 text-right">Menge (Stk)</th>
-                    <th className="py-2.5 px-3 text-right">Provision / Stk</th>
-                    <th className="py-2.5 px-3 text-right font-bold">Verdienst</th>
+                    <th
+                      onClick={() => handleSort('sku')}
+                      className="py-2.5 px-3 cursor-pointer hover:bg-surface-700/60 transition-colors"
+                    >
+                      <div className="flex items-center gap-1">
+                        <span>Art. Nr. (SKU)</span>
+                        {sortKey === 'sku' ? (
+                          sortAsc ? <ArrowUp className="w-3 h-3 text-brand-400" /> : <ArrowDown className="w-3 h-3 text-brand-400" />
+                        ) : (
+                          <ArrowUpDown className="w-3 h-3 opacity-40" />
+                        )}
+                      </div>
+                    </th>
+                    <th
+                      onClick={() => handleSort('name')}
+                      className="py-2.5 px-3 cursor-pointer hover:bg-surface-700/60 transition-colors"
+                    >
+                      <div className="flex items-center gap-1">
+                        <span>Artikelbezeichnung</span>
+                        {sortKey === 'name' ? (
+                          sortAsc ? <ArrowUp className="w-3 h-3 text-brand-400" /> : <ArrowDown className="w-3 h-3 text-brand-400" />
+                        ) : (
+                          <ArrowUpDown className="w-3 h-3 opacity-40" />
+                        )}
+                      </div>
+                    </th>
+                    <th
+                      onClick={() => handleSort('qty')}
+                      className="py-2.5 px-3 text-right cursor-pointer hover:bg-surface-700/60 transition-colors"
+                    >
+                      <div className="flex items-center justify-end gap-1">
+                        <span>Menge (Stk)</span>
+                        {sortKey === 'qty' ? (
+                          sortAsc ? <ArrowUp className="w-3 h-3 text-brand-400" /> : <ArrowDown className="w-3 h-3 text-brand-400" />
+                        ) : (
+                          <ArrowUpDown className="w-3 h-3 opacity-40" />
+                        )}
+                      </div>
+                    </th>
+                    <th
+                      onClick={() => handleSort('rate')}
+                      className="py-2.5 px-3 text-right cursor-pointer hover:bg-surface-700/60 transition-colors"
+                    >
+                      <div className="flex items-center justify-end gap-1">
+                        <span>Provision / Stk</span>
+                        {sortKey === 'rate' ? (
+                          sortAsc ? <ArrowUp className="w-3 h-3 text-brand-400" /> : <ArrowDown className="w-3 h-3 text-brand-400" />
+                        ) : (
+                          <ArrowUpDown className="w-3 h-3 opacity-40" />
+                        )}
+                      </div>
+                    </th>
+                    <th
+                      onClick={() => handleSort('commission')}
+                      className="py-2.5 px-3 text-right font-bold cursor-pointer hover:bg-surface-700/60 transition-colors"
+                    >
+                      <div className="flex items-center justify-end gap-1">
+                        <span>Verdienst</span>
+                        {sortKey === 'commission' ? (
+                          sortAsc ? <ArrowUp className="w-3 h-3 text-brand-400" /> : <ArrowDown className="w-3 h-3 text-brand-400" />
+                        ) : (
+                          <ArrowUpDown className="w-3 h-3 opacity-40" />
+                        )}
+                      </div>
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-surface-700/40 print:divide-gray-200">
-                  {itemBreakdown.map((it) => (
+                  {sortedItems.map((it) => (
                     <tr key={it.sku} className="hover:bg-surface-800/30 print:hover:bg-transparent">
-                      <td className="py-2 px-3 font-mono font-medium text-brand-300 print:text-black">{it.sku}</td>
+                      <td className="py-2 px-3 font-mono font-bold text-brand-300 print:text-black">{it.sku}</td>
                       <td className="py-2 px-3 text-surface-200 print:text-black font-medium">{it.name}</td>
                       <td className="py-2 px-3 text-right font-medium text-surface-100 print:text-black">{formatNumber(it.qty)}</td>
                       <td className="py-2 px-3 text-right font-mono text-surface-400 print:text-gray-700">{it.rate.toFixed(2)} €</td>
@@ -166,7 +269,7 @@ export default function PayrollPrintModal({
                       </td>
                     </tr>
                   ))}
-                  {itemBreakdown.length === 0 && (
+                  {sortedItems.length === 0 && (
                     <tr>
                       <td colSpan={5} className="py-6 text-center text-surface-500 print:text-gray-500">
                         Keine Provisionsdaten für diesen Zeitraum vorhanden.
@@ -187,6 +290,7 @@ export default function PayrollPrintModal({
               </table>
             </div>
           </div>
+
 
           {/* Signatures Section */}
           <div className="grid grid-cols-2 gap-8 pt-8 border-t border-surface-700/50 print:border-gray-300 print:pt-12">

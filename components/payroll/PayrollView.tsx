@@ -342,7 +342,7 @@ export default function PayrollView() {
     })
 
 
-    return Object.values(map).sort((a, b) => b.totalComm - a.totalComm)
+    return Object.values(map).sort((a, b) => a.sku.localeCompare(b.sku, undefined, { numeric: true }))
   }, [filteredSales])
 
   // Open Print Modal for Driver
@@ -380,9 +380,10 @@ export default function PayrollView() {
       totalPieces,
       totalSalesVolume: Math.round(totalVol * 100) / 100,
       totalOrders: targetSales.length,
-      itemBreakdown: Object.values(itemMap).sort((a, b) => b.commission - a.commission),
+      itemBreakdown: Object.values(itemMap).sort((a, b) => a.sku.localeCompare(b.sku, undefined, { numeric: true })),
     })
   }
+
 
   return (
     <div className="space-y-6 animate-in">
