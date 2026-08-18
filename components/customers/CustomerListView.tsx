@@ -16,10 +16,12 @@ import {
   Camera,
   Image,
   Plus,
+  BarChart3,
 } from 'lucide-react'
 import { getCustomerGpsMap, type CustomerGpsInfo } from '@/lib/stockStore'
 import { getCustomerProfilesMap, type CustomerExtendedProfile } from '@/lib/customerStore'
 import CustomerDetailModal from '@/components/analytics/CustomerDetailModal'
+import CustomerAnalyticsView from '@/components/analytics/CustomerAnalyticsView'
 import CustomerPhotoModal from './CustomerPhotoModal'
 
 const KosovoCustomerMap = dynamic(() => import('./KosovoCustomerMap'), {
@@ -52,7 +54,7 @@ interface CustomerListViewProps {
 }
 
 export default function CustomerListView({ customers }: CustomerListViewProps) {
-  const [viewMode, setViewMode] = useState<'list' | 'map'>('map')
+  const [viewMode, setViewMode] = useState<'map' | 'list' | 'analytics'>('map')
   const [searchQuery, setSearchQuery] = useState('')
   const [agentFilter, setAgentFilter] = useState('all')
   const [gpsFilter, setGpsFilter] = useState<'all' | 'with_gps' | 'without_gps'>('all')
@@ -307,7 +309,18 @@ export default function CustomerListView({ customers }: CustomerListViewProps) {
             }`}
           >
             <List className="w-4 h-4" />
-            <span>Tabellenliste</span>
+            <span>Kundenkartei</span>
+          </button>
+          <button
+            onClick={() => setViewMode('analytics')}
+            className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
+              viewMode === 'analytics'
+                ? 'bg-brand-600 text-white shadow-glow'
+                : 'text-surface-400 hover:text-surface-200 hover:bg-surface-800'
+            }`}
+          >
+            <BarChart3 className="w-4 h-4" />
+            <span>Umsatz & Analyse</span>
           </button>
         </div>
       </div>
@@ -319,6 +332,13 @@ export default function CustomerListView({ customers }: CustomerListViewProps) {
             customers={processedCustomers}
             onSelectCustomer={(c) => setSelectedCustomer(c)}
           />
+        </div>
+      )}
+
+      {/* VIEW 2: ANALYTICS VIEW */}
+      {viewMode === 'analytics' && (
+        <div className="animate-in fade-in duration-300">
+          <CustomerAnalyticsView />
         </div>
       )}
 

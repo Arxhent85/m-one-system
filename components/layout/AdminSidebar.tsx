@@ -20,29 +20,19 @@ const navGroups = [
     ],
   },
   {
-    label: 'Lager',
+    label: 'Operativ & Vertrieb',
     items: [
-      { href: '/inventory',           label: 'Bestände',     icon: Warehouse },
-      { href: '/inventory/transfers', label: 'Umlagerungen', icon: ArrowLeftRight },
-      { href: '/products',            label: 'Produkte',     icon: Package },
+      { href: '/customers', label: 'Kunden',            icon: Users },
+      { href: '/products',  label: 'Produkte',          icon: Package },
+      { href: '/inventory', label: 'Lager & Fahrzeuge', icon: Warehouse },
+      { href: '/orders',    label: 'Aufträge',          icon: ShoppingCart },
     ],
   },
   {
-    label: 'Finanzen & Vertrieb',
+    label: 'Finanzen & Buchhaltung',
     items: [
-      { href: '/orders',    label: 'Aufträge', icon: ShoppingCart },
-      { href: '/customers', label: 'Kunden',   icon: Users },
-      { href: '/expenses',  label: 'Ausgaben & GuV', icon: Receipt },
-      { href: '/payroll',   label: 'Lohn',     icon: Coins },
-    ],
-  },
-  {
-    label: 'Auswertungen',
-    items: [
-      { href: '/analytics',           label: 'Übersicht',   icon: BarChart3 },
-      { href: '/analytics/products',  label: 'Produkte',    icon: Package },
-      { href: '/analytics/customers', label: 'Kunden',      icon: Users },
-      { href: '/analytics/vehicles',  label: 'Fahrzeuge',   icon: Truck },
+      { href: '/expenses', label: 'Ausgaben & GuV', icon: Receipt },
+      { href: '/payroll',  label: 'Lohnabrechnung', icon: Coins },
     ],
   },
 ]

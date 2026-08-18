@@ -1,9 +1,10 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
-import { Package, Search, Save, RotateCcw, CheckCircle2, AlertCircle, Edit3, DollarSign, Sparkles } from 'lucide-react'
+import { Package, Search, Save, RotateCcw, CheckCircle2, AlertCircle, Edit3, DollarSign, Sparkles, BarChart3 } from 'lucide-react'
 import { formatCurrency } from '@/lib/utils/currency'
 import { INITIAL_DEPO_PRODUCTS, getCustomPricesMap, saveCustomPricesMap, ProductStockInfo } from '@/lib/stockStore'
+import ProductAnalyticsView from '@/components/analytics/ProductAnalyticsView'
 import Link from 'next/link'
 
 interface ProductsClientViewProps {
@@ -11,6 +12,7 @@ interface ProductsClientViewProps {
 }
 
 export default function ProductsClientView({ initialProducts }: ProductsClientViewProps) {
+  const [activeTab, setActiveTab] = useState<'catalog' | 'analytics'>('catalog')
   const [searchQuery, setSearchQuery] = useState('')
   const [pricesMap, setPricesMap] = useState<Record<string, number>>({})
   const [originalPricesMap, setOriginalPricesMap] = useState<Record<string, number>>({})
@@ -123,52 +125,90 @@ export default function ProductsClientView({ initialProducts }: ProductsClientVi
         <div>
           <h1 className="text-2xl font-bold text-surface-50 flex items-center gap-2.5">
             <Package className="w-7 h-7 text-brand-400" />
-            Produktkatalog & Preisverwaltung
+            Produkte & Sortiment
           </h1>
           <p className="text-surface-400 text-sm mt-1">
-            {INITIAL_DEPO_PRODUCTS.length} Artikel im Sortiment · <span className="text-emerald-400 font-semibold">Preise im Büro anpassen & live für Fahrer-App speichern</span>
+            {INITIAL_DEPO_PRODUCTS.length} Artikel im Sortiment · <span className="text-emerald-400 font-semibold">Preise im Büro anpassen & Verkaufsanalyse einsehen</span>
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
-          {dirtyCount > 0 && (
-            <button
-              onClick={() => setPricesMap({ ...originalPricesMap })}
-              className="btn-ghost py-2 px-3 text-xs text-surface-400 hover:text-surface-200"
-            >
-              Änderungen verwerfen
-            </button>
-          )}
-
+        {/* Tab Switcher */}
+        <div className="flex items-center gap-1 bg-surface-900 p-1 rounded-xl border border-surface-700/80">
           <button
-            onClick={handleResetToDefaults}
-            className="btn-secondary py-2 px-3 text-xs flex items-center gap-1.5 text-surface-300"
-            title="Auf Standard-Preise zurücksetzen"
-          >
-            <RotateCcw className="w-3.5 h-3.5" />
-            Standard-Preise
-          </button>
-
-          <button
-            onClick={handleSaveAll}
-            disabled={dirtyCount === 0 || isSaving}
-            className={`btn-primary py-2.5 px-5 font-bold text-sm flex items-center gap-2 transition-all ${
-              dirtyCount > 0
-                ? 'bg-emerald-600 hover:bg-emerald-500 shadow-glow text-white'
-                : 'opacity-50 cursor-not-allowed bg-surface-800 text-surface-500 border-surface-700'
+            onClick={() => setActiveTab('catalog')}
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-bold transition-all ${
+              activeTab === 'catalog'
+                ? 'bg-brand-600 text-white shadow-glow'
+                : 'text-surface-400 hover:text-surface-200 hover:bg-surface-800'
             }`}
           >
-            <Save className="w-4 h-4" />
-            <span>Preise speichern</span>
-            {dirtyCount > 0 && (
-              <span className="ml-1 bg-white text-emerald-950 px-2 py-0.5 rounded-full text-xs font-black">
-                {dirtyCount}
-              </span>
-            )}
+            <Package className="w-4 h-4" />
+            <span>Katalog & Preise</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('analytics')}
+            className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-bold transition-all ${
+              activeTab === 'analytics'
+                ? 'bg-brand-600 text-white shadow-glow'
+                : 'text-surface-400 hover:text-surface-200 hover:bg-surface-800'
+            }`}
+          >
+            <BarChart3 className="w-4 h-4" />
+            <span>Verkaufs- & Absatzanalyse</span>
           </button>
         </div>
+
+        {activeTab === 'catalog' && (
+          <div className="flex items-center gap-3">
+            {dirtyCount > 0 && (
+              <button
+                onClick={() => setPricesMap({ ...originalPricesMap })}
+                className="btn-ghost py-2 px-3 text-xs text-surface-400 hover:text-surface-200"
+              >
+                Änderungen verwerfen
+              </button>
+            )}
+
+            <button
+              onClick={handleResetToDefaults}
+              className="btn-secondary py-2 px-3 text-xs flex items-center gap-1.5 text-surface-300"
+              title="Auf Standard-Preise zurücksetzen"
+            >
+              <RotateCcw className="w-3.5 h-3.5" />
+              Standard-Preise
+            </button>
+
+            <button
+              onClick={handleSaveAll}
+              disabled={dirtyCount === 0 || isSaving}
+              className={`btn-primary py-2.5 px-5 font-bold text-sm flex items-center gap-2 transition-all ${
+                dirtyCount > 0
+                  ? 'bg-emerald-600 hover:bg-emerald-500 shadow-glow text-white'
+                  : 'opacity-50 cursor-not-allowed bg-surface-800 text-surface-500 border-surface-700'
+              }`}
+            >
+              <Save className="w-4 h-4" />
+              <span>Preise speichern</span>
+              {dirtyCount > 0 && (
+                <span className="ml-1 bg-white text-emerald-950 px-2 py-0.5 rounded-full text-xs font-black">
+                  {dirtyCount}
+                </span>
+              )}
+            </button>
+          </div>
+        )}
       </div>
 
+      {/* VIEW 2: PRODUCT ANALYTICS */}
+      {activeTab === 'analytics' && (
+        <div className="animate-in fade-in duration-300">
+          <ProductAnalyticsView />
+        </div>
+      )}
+
+      {/* VIEW 1: CATALOG & PRICE MANAGEMENT */}
+      {activeTab === 'catalog' && (
+        <>
       {/* Erfolgs-Meldung */}
       {saveSuccess && (
         <div className="p-4 rounded-2xl bg-emerald-950/80 border border-emerald-500/60 text-emerald-300 text-sm flex items-center gap-3 shadow-lg animate-in fade-in duration-200">
@@ -338,6 +378,8 @@ export default function ProductsClientView({ initialProducts }: ProductsClientVi
           )}
         </div>
       </div>
+      </>
+      )}
 
     </div>
   )
