@@ -137,7 +137,7 @@ export default function ProductDetailModal({ product, sales, onClose }: ProductD
   const maxMonthVal = Math.max(...Object.values(monthlyVolume), 1)
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-2 sm:p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
       <div className="relative w-full max-w-3xl max-h-[92vh] flex flex-col bg-surface-900 border border-surface-700 rounded-3xl shadow-2xl overflow-hidden">
         
         {/* Header */}
