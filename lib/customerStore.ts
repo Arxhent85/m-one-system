@@ -34,8 +34,8 @@ const CUSTOMER_PROFILES_KEY = 'm_one_customer_extended_profiles_v1'
 // ──────────────────────────────────────────────────────────────
 export function compressCustomerPhoto(
   file: File,
-  maxWidth = 1400,
-  quality = 0.82
+  maxWidth = 1100,
+  quality = 0.72
 ): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
@@ -61,7 +61,13 @@ export function compressCustomerPhoto(
         ctx.imageSmoothingQuality = 'high'
         ctx.drawImage(img, 0, 0, width, height)
 
-        resolve(canvas.toDataURL('image/jpeg', quality))
+        // WebP wenn unterstützt (~40-50 KB), ansonsten JPEG (~60 KB)
+        let output = canvas.toDataURL('image/webp', quality)
+        if (!output.startsWith('data:image/webp')) {
+          output = canvas.toDataURL('image/jpeg', quality)
+        }
+
+        resolve(output)
       }
       img.onerror = (err) => reject(err)
       img.src = event.target?.result as string

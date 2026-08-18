@@ -195,10 +195,39 @@ export default function CustomerPhotoModal({
 
     setIsProcessingPhoto(slot)
     try {
-      // Compress to ~100KB WebP/JPEG
-      const compressed = await compressCustomerPhoto(file, 1400, 0.82)
+      // 1. Ultraschnelle und speichereffiziente WebP/JPEG Komprimierung (~45-60 KB)
+      const compressed = await compressCustomerPhoto(file, 1100, 0.72)
       
       const slotDef = PHOTO_SLOTS.find((s) => s.key === slot)
+
+      // 2. Echtzeit-GPS direkt am Aufnahmeort abfragen
+      let capturedLat = currentGps?.latitude
+      let capturedLng = currentGps?.longitude
+      let capturedAcc = currentGps?.accuracy
+
+      if (typeof navigator !== 'undefined' && navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            const liveGps = {
+              latitude: pos.coords.latitude,
+              longitude: pos.coords.longitude,
+              accuracy: Math.round(pos.coords.accuracy),
+            }
+            setCurrentGps(liveGps)
+            setGpsStatus('success')
+            // Foto mit Live-GPS aktualisieren
+            setPhotos((prev) =>
+              prev.map((p) =>
+                p.slot === slot
+                  ? { ...p, latitude: liveGps.latitude, longitude: liveGps.longitude, accuracy: liveGps.accuracy }
+                  : p
+              )
+            )
+          },
+          undefined,
+          { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 }
+        )
+      }
 
       const newPhoto: CustomerPhoto = {
         id: `photo-${Date.now()}-${slot}`,
@@ -207,9 +236,9 @@ export default function CustomerPhotoModal({
         dataUrl: compressed,
         timestamp: new Date().toISOString(),
         driverName: driverName || 'Fahrer',
-        latitude: currentGps?.latitude,
-        longitude: currentGps?.longitude,
-        accuracy: currentGps?.accuracy,
+        latitude: capturedLat,
+        longitude: capturedLng,
+        accuracy: capturedAcc,
       }
 
       setPhotos((prev) => {
