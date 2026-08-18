@@ -284,18 +284,17 @@ export default function CustomerPhotoModal({
       setTimeout(() => {
         if (onSaved) onSaved(savedProfile)
         onClose()
-      }, 700)
+      }, 1600)
     } catch (err) {
       console.error('Error saving profile:', err)
       alert('Fehler beim Speichern.')
-    } finally {
       setIsSaving(false)
     }
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-2xl max-h-[92vh] flex flex-col bg-surface-900 border border-surface-700/80 rounded-2xl shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
+      <div className="relative w-full max-w-2xl max-h-[96vh] h-[92vh] sm:h-auto flex flex-col bg-surface-900 border border-surface-700/80 rounded-2xl shadow-2xl overflow-hidden">
         
         {/* Header */}
         <div className="px-5 py-3.5 border-b border-surface-800 flex items-center justify-between bg-surface-950/80 shrink-0">
@@ -610,12 +609,12 @@ export default function CustomerPhotoModal({
 
         </div>
 
-        {/* Footer */}
-        <div className="px-5 py-3.5 border-t border-surface-800 bg-surface-950/90 flex items-center justify-between shrink-0">
+        {/* Sticky Footer (Immer unten sichtbar auf dem Smartphone & Desktop) */}
+        <div className="p-3.5 sm:p-4 border-t border-surface-800 bg-surface-950/95 backdrop-blur-md flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 shrink-0 shadow-2xl z-20">
           <button
             type="button"
             onClick={onClose}
-            className="btn-secondary py-2 px-4 text-xs font-bold"
+            className="btn-secondary py-2.5 px-4 text-xs font-bold order-2 sm:order-1"
           >
             Abbrechen
           </button>
@@ -624,22 +623,54 @@ export default function CustomerPhotoModal({
             type="button"
             onClick={handleSave}
             disabled={isSaving || !customerNumber}
-            className={`btn-primary py-2 px-6 text-xs font-bold flex items-center gap-2 shadow-glow active:scale-95 ${
-              saveSuccess ? 'bg-emerald-600 hover:bg-emerald-500' : ''
+            className={`flex-1 py-3 px-6 rounded-xl font-black text-sm text-white flex items-center justify-center gap-2 shadow-2xl transition-all active:scale-95 order-1 sm:order-2 ${
+              saveSuccess
+                ? 'bg-emerald-600 hover:bg-emerald-500 shadow-glow'
+                : !customerNumber
+                ? 'bg-surface-800 text-surface-500 border border-surface-700 cursor-not-allowed'
+                : 'bg-gradient-to-r from-emerald-600 via-teal-600 to-brand-600 hover:from-emerald-500 hover:to-brand-500 shadow-glow'
             }`}
           >
             {isSaving ? (
-              <Loader2 className="w-4 h-4 animate-spin" />
+              <>
+                <Loader2 className="w-5 h-5 animate-spin" />
+                <span>Speichere Kundendaten & Fotos...</span>
+              </>
             ) : saveSuccess ? (
-              <CheckCircle2 className="w-4 h-4 text-white" />
+              <>
+                <CheckCircle2 className="w-5 h-5 text-white" />
+                <span>Erfolgreich gespeichert!</span>
+              </>
             ) : (
-              <Save className="w-4 h-4" />
+              <>
+                <Save className="w-5 h-5" />
+                <span>Kundendaten & Fotos speichern & beenden</span>
+              </>
             )}
-            <span>{saveSuccess ? 'Gespeichert!' : 'Fotos & Daten speichern'}</span>
           </button>
         </div>
 
       </div>
+
+      {/* Erfolgs-Nachricht Overlay nach dem Speichern */}
+      {saveSuccess && (
+        <div className="fixed inset-0 z-70 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in zoom-in-95 duration-200">
+          <div className="bg-surface-900 border-2 border-emerald-500 rounded-3xl p-6 max-w-sm w-full text-center shadow-2xl space-y-3.5 shadow-emerald-950/60">
+            <div className="w-16 h-16 rounded-2xl bg-emerald-950 text-emerald-400 border border-emerald-500 flex items-center justify-center mx-auto shadow-glow">
+              <CheckCircle2 className="w-10 h-10" />
+            </div>
+            <h3 className="text-lg font-black text-white">
+              Kunde erfolgreich gespeichert!
+            </h3>
+            <p className="text-sm text-emerald-300 font-bold">
+              {companyName} {customerNumber ? `(${customerNumber})` : ''}
+            </p>
+            <p className="text-xs text-surface-400 leading-relaxed">
+              {photos.length} Foto(s), GPS-Standort und Kontaktdaten wurden dauerhaft in der Kundendatei hinterlegt.
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Lightbox / Fullscreen Image Preview */}
       {lightboxPhoto && (
