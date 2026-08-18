@@ -347,7 +347,7 @@ export default function CustomerPhotoModal({
                 }}
                 onFocus={() => setShowDropdown(true)}
                 placeholder="Kunden suchen nach Name, Kd.-Nr. oder Stadt..."
-                className="input-field w-full text-xs font-medium py-2"
+                className="w-full px-3.5 py-2.5 bg-surface-900 border border-surface-700 rounded-xl text-xs font-semibold text-white placeholder:text-surface-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors shadow-inner"
               />
               {showDropdown && filteredCustomers.length > 0 && (
                 <div className="absolute top-full left-0 right-0 mt-1 bg-surface-950 border border-surface-700 rounded-xl shadow-2xl z-20 max-h-48 overflow-y-auto divide-y divide-surface-800">
@@ -448,94 +448,98 @@ export default function CustomerPhotoModal({
                     }`}
                   >
                     <div>
-                      {/* Slot Header */}
                       <div className="flex items-center justify-between mb-2">
-                        <span className={`text-[9.5px] font-bold px-2 py-0.5 rounded border ${slot.badgeColor} flex items-center gap-1`}>
-                          <SlotIcon className="w-3 h-3" />
-                          {slot.title.split('/')[0].trim()}
+                        <span className="text-[11px] font-bold text-surface-200 flex items-center gap-1">
+                          <SlotIcon className="w-3.5 h-3.5 text-brand-400" />
+                          {slot.title}
                         </span>
                         {photo && (
-                          <span className="text-[9px] text-emerald-400 font-bold flex items-center gap-0.5">
-                            <CheckCircle2 className="w-3 h-3" /> Gespeichert
+                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800/60">
+                            Gespeichert
                           </span>
                         )}
                       </div>
-
-                      <p className="text-[10px] text-surface-400 mb-2.5 leading-tight">
+                      <p className="text-[10px] text-surface-400 mb-2.5 leading-snug">
                         {slot.desc}
                       </p>
+                    </div>
 
-                      {/* Photo Thumbnail or Empty State */}
-                      {photo ? (
-                        <div className="relative rounded-lg overflow-hidden border border-surface-700 bg-surface-900 group aspect-[4/3] mb-2.5">
+                    {/* Photo Preview / Upload Area */}
+                    {photo ? (
+                      <div className="space-y-2">
+                        <div
+                          onClick={() => setLightboxPhoto(photo)}
+                          className="relative h-28 w-full rounded-lg overflow-hidden border border-surface-700 bg-surface-900 cursor-pointer group shadow-sm"
+                        >
                           <img
                             src={photo.dataUrl}
                             alt={slot.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
                           />
-                          <button
-                            type="button"
-                            onClick={() => setLightboxPhoto(photo)}
-                            className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white transition-opacity gap-1 text-xs font-bold"
-                          >
-                            <ZoomIn className="w-4 h-4" /> Vergrößern
-                          </button>
+                          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+                            <span className="text-xs text-white font-bold bg-black/60 px-2 py-1 rounded-md">
+                              🔍 Groß ansehen
+                            </span>
+                          </div>
                         </div>
-                      ) : (
-                        <div className="rounded-lg border border-surface-800 bg-surface-900/50 flex flex-col items-center justify-center p-4 aspect-[4/3] mb-2.5 text-center">
+
+                        <div className="flex items-center justify-between gap-1 pt-1 text-[10px] text-surface-400">
+                          <span className="truncate">
+                            {new Date(photo.timestamp).toLocaleDateString('de-DE')}
+                          </span>
+                          <div className="flex items-center gap-1 shrink-0">
+                            <label
+                              htmlFor={`file-input-${slot.key}`}
+                              className="px-2 py-1 rounded bg-surface-800 hover:bg-surface-700 text-surface-200 cursor-pointer text-[10px] font-semibold transition-colors"
+                            >
+                              Ersetzen
+                            </label>
+                            <button
+                              type="button"
+                              onClick={() => handleDeletePhoto(slot.key)}
+                              className="p-1 rounded bg-rose-950/80 hover:bg-rose-900 text-rose-400 border border-rose-800/50 transition-colors"
+                              title="Foto löschen"
+                            >
+                              <Trash2 className="w-3 h-3" />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <div>
+                        <label
+                          htmlFor={`file-input-${slot.key}`}
+                          className={`w-full py-4 rounded-xl border border-surface-700/80 bg-surface-900/60 hover:bg-surface-800 hover:border-brand-600 active:scale-95 flex flex-col items-center justify-center gap-1.5 cursor-pointer transition-all ${
+                            isProcessing ? 'opacity-50 pointer-events-none' : ''
+                          }`}
+                        >
                           {isProcessing ? (
-                            <Loader2 className="w-6 h-6 text-brand-400 animate-spin" />
+                            <>
+                              <Loader2 className="w-5 h-5 text-brand-400 animate-spin" />
+                              <span className="text-[10px] font-bold text-brand-300">Komprimiere Bild...</span>
+                            </>
                           ) : (
                             <>
-                              <SlotIcon className="w-6 h-6 text-surface-600 mb-1 opacity-60" />
-                              <span className="text-[10px] text-surface-500 font-medium">Noch kein Foto</span>
+                              <div className="w-8 h-8 rounded-full bg-brand-950/80 border border-brand-800/60 flex items-center justify-center text-brand-400">
+                                <Camera className="w-4 h-4" />
+                              </div>
+                              <span className="text-[11px] font-bold text-surface-200">Foto aufnehmen</span>
+                              <span className="text-[9px] text-surface-500">Kamera oder Galerie</span>
                             </>
                           )}
-                        </div>
-                      )}
-                    </div>
+                        </label>
+                      </div>
+                    )}
 
-                    {/* Actions for this Slot */}
-                    <div className="space-y-1.5 pt-1">
-                      {/* Hidden File Input for Camera/Gallery */}
-                      <input
-                        ref={fileInputRefs[slot.key]}
-                        type="file"
-                        accept="image/*"
-                        capture="environment"
-                        onChange={(e) => handleFileUpload(slot.key, e)}
-                        className="hidden"
-                      />
-
-                      <button
-                        type="button"
-                        onClick={() => fileInputRefs[slot.key].current?.click()}
-                        disabled={isProcessing}
-                        className={`w-full py-1.5 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-all ${
-                          photo
-                            ? 'bg-surface-800 hover:bg-surface-700 text-surface-200 border border-surface-700'
-                            : 'bg-brand-600 hover:bg-brand-500 text-white shadow-sm active:scale-95'
-                        }`}
-                      >
-                        {isProcessing ? (
-                          <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                        ) : (
-                          <Camera className="w-3.5 h-3.5" />
-                        )}
-                        <span>{photo ? 'Foto ersetzen' : 'Foto aufnehmen'}</span>
-                      </button>
-
-                      {photo && (
-                        <button
-                          type="button"
-                          onClick={() => handleDeletePhoto(slot.key)}
-                          className="w-full py-1 px-2 text-[10px] text-rose-400 hover:text-rose-300 hover:bg-rose-950/40 rounded flex items-center justify-center gap-1 transition-colors"
-                        >
-                          <Trash2 className="w-3 h-3" /> Löschen
-                        </button>
-                      )}
-                    </div>
-
+                    {/* Hidden Native File Input */}
+                    <input
+                      id={`file-input-${slot.key}`}
+                      type="file"
+                      accept="image/*"
+                      capture="environment"
+                      onChange={(e) => handleFileUpload(slot.key, e)}
+                      className="hidden"
+                    />
                   </div>
                 )
               })}
@@ -559,7 +563,7 @@ export default function CustomerPhotoModal({
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="+383 44 123 456"
-                  className="input-field w-full text-xs font-mono py-1.5"
+                  className="w-full px-3 py-2 bg-surface-900 border border-surface-700 rounded-xl text-xs font-mono font-semibold text-white placeholder:text-surface-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
                 />
               </div>
 
@@ -572,7 +576,7 @@ export default function CustomerPhotoModal({
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="kontakt@kunde.com"
-                  className="input-field w-full text-xs font-mono py-1.5"
+                  className="w-full px-3 py-2 bg-surface-900 border border-surface-700 rounded-xl text-xs font-mono font-semibold text-white placeholder:text-surface-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
                 />
               </div>
 
@@ -585,7 +589,7 @@ export default function CustomerPhotoModal({
                   value={contactPerson}
                   onChange={(e) => setContactPerson(e.target.value)}
                   placeholder="z. B. Agron Berisha"
-                  className="input-field w-full text-xs py-1.5"
+                  className="w-full px-3 py-2 bg-surface-900 border border-surface-700 rounded-xl text-xs font-semibold text-white placeholder:text-surface-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
                 />
               </div>
 
@@ -598,7 +602,7 @@ export default function CustomerPhotoModal({
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   placeholder="z. B. Mo-Sa 08:00 - 18:00"
-                  className="input-field w-full text-xs py-1.5"
+                  className="w-full px-3 py-2 bg-surface-900 border border-surface-700 rounded-xl text-xs font-semibold text-white placeholder:text-surface-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
                 />
               </div>
             </div>

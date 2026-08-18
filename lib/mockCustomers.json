@@ -12352,6 +12352,22 @@
     "total_volume": 0.0
   },
   {
+    "id": "cust-40000",
+    "customer_number": "40000",
+    "company_name": "M ONE CENTRALE",
+    "city": "FUSHE KOSOVE",
+    "agent": "M-ONE Zentrale (Hauptlager)",
+    "phone": "+383 44 123 456",
+    "customer_type": "Zentrale / Großkunde",
+    "notes": "Kundennr: 40000 | Ort: FUSHE KOSOVE | Tour: M-ONE Zentrale (Hauptlager)",
+    "is_active": true,
+    "latitude": 42.638898,
+    "longitude": 21.096494,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=42.638898,21.096494",
+    "total_orders": 0,
+    "total_volume": 0.0
+  },
+  {
     "id": "cust-40001",
     "customer_number": "40001",
     "company_name": "MEMFIS",

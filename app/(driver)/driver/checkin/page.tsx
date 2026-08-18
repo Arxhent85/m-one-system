@@ -72,7 +72,7 @@ export default function DriverCheckinPage() {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Kunden suchen nach Name, Kd.-Nr. oder Stadt..."
-          className="input-field w-full text-xs font-medium py-2.5"
+          className="w-full px-3.5 py-2.5 bg-surface-900 border border-surface-700 rounded-xl text-xs font-semibold text-white placeholder:text-surface-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors shadow-inner"
         />
       </div>
 
