@@ -72,7 +72,7 @@ export function compressCustomerPhoto(
 }
 
 // ──────────────────────────────────────────────────────────────
-// KUNDENPROFILE LESEN & SPEICHERN
+// KUNDENPROFILE LESEN & SPEICHERN (Mit Server-Sync)
 // ──────────────────────────────────────────────────────────────
 export function getCustomerProfilesMap(): Record<string, CustomerExtendedProfile> {
   if (typeof window === 'undefined') return {}
@@ -107,8 +107,33 @@ export function saveCustomerProfile(profile: CustomerExtendedProfile): CustomerE
         detail: { customerNumber: profile.customer_number, profile },
       })
     )
+
+    // Asynchroner Server- & Cloud-Sync
+    fetch('/api/customers/photos', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ profile }),
+    }).catch((e) => console.warn('Server photo sync notice:', e))
   }
   return profile
+}
+
+export async function syncCustomerProfilesFromServer(): Promise<Record<string, CustomerExtendedProfile>> {
+  if (typeof window === 'undefined') return {}
+  try {
+    const res = await fetch('/api/customers/photos')
+    const data = await res.json()
+    if (data.success && data.profiles) {
+      const localMap = getCustomerProfilesMap()
+      const merged = { ...data.profiles, ...localMap }
+      localStorage.setItem(CUSTOMER_PROFILES_KEY, JSON.stringify(merged))
+      window.dispatchEvent(new CustomEvent('m_one_customer_profiles_updated', { detail: {} }))
+      return merged
+    }
+  } catch (e) {
+    console.error('Error syncing customer profiles from server:', e)
+  }
+  return getCustomerProfilesMap()
 }
 
 export function updateCustomerPhotosAndContact(
