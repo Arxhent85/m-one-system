@@ -23,6 +23,7 @@ import { formatCurrency } from '@/lib/utils/currency'
 import { INITIAL_DEPO_PRODUCTS, getActiveProductsList, executeSale, LOCATION_IDS } from '@/lib/stockStore'
 import { findNearestMatch } from '@/lib/utils/fuzzyMatch'
 import { createClient } from '@/lib/supabase/client'
+import CustomerPhotoModal from '@/components/customers/CustomerPhotoModal'
 
 interface Customer {
   id: string
@@ -114,9 +115,9 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
   const [sales, setSales] = useState<SaleEntry[]>([])
   const [selectedSale, setSelectedSale] = useState<SaleEntry | null>(null)
 
-  // Asynchrone Scan-Warteschlange (Batch-Scanning)
   const [scanJobs, setScanJobs] = useState<ScanJob[]>([])
   const [activeJobId, setActiveJobId] = useState<string | null>(null)
+  const [photoModalCustomer, setPhotoModalCustomer] = useState<any | null>(null)
   
   const fileInputRef = useRef<HTMLInputElement>(null)
 
@@ -704,8 +705,17 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
 
 
 
-      {/* FLOATING ACTION BUTTON (FAB) UNTEN RECHTS - SCHNELLE DAUMEN-BEDIENUNG */}
-      <div className="fixed bottom-20 right-4 z-40">
+      {/* FLOATING ACTION BUTTONS UNTEN RECHTS - SCHNELLE DAUMEN-BEDIENUNG */}
+      <div className="fixed bottom-20 right-4 z-40 flex flex-col items-end gap-2.5">
+        <button
+          type="button"
+          onClick={() => setPhotoModalCustomer({ customer_number: '', company_name: '' })}
+          className="px-3.5 py-2.5 rounded-full bg-surface-900 text-brand-300 font-bold text-xs shadow-xl border border-brand-700/80 flex items-center gap-2 active:scale-90 hover:scale-105 transition-all"
+        >
+          <Camera className="w-4 h-4 text-brand-400" />
+          <span>Ladenfoto / Check-in</span>
+        </button>
+
         <label
           htmlFor="scan-camera-file-input"
           className="px-4 py-3.5 rounded-full bg-gradient-to-r from-brand-600 via-emerald-600 to-teal-600 text-white font-bold text-sm shadow-2xl border border-emerald-400/50 flex items-center gap-2.5 active:scale-90 hover:scale-105 transition-all shadow-glow cursor-pointer select-none"
@@ -714,6 +724,17 @@ export default function DriverApp({ driverName, driverPrefix, customers }: Drive
           <span>{scanJobs.length > 0 ? 'Weitere scannen' : 'Rechnung scannen'}</span>
         </label>
       </div>
+
+      {/* Customer Photo Modal */}
+      {photoModalCustomer && (
+        <CustomerPhotoModal
+          initialCustomerNumber={photoModalCustomer.customer_number || ''}
+          initialCompanyName={photoModalCustomer.company_name || ''}
+          driverName={driverName}
+          onClose={() => setPhotoModalCustomer(null)}
+          onSaved={() => setPhotoModalCustomer(null)}
+        />
+      )}
     </div>
   )
 }

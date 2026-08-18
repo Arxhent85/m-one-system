@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { CustomerItem } from './CustomerListView'
 import { getCustomerGpsMap, type CustomerGpsInfo } from '@/lib/stockStore'
+import { getCustomerProfilesMap } from '@/lib/customerStore'
 import KOSOVO_BORDER_DATA from '@/lib/kosovoBoundary.json'
 
 // ─────────────────────────────────────────────────────────────
@@ -439,9 +440,23 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
 
         // Popup Content
         const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${mc.lat},${mc.lng}`
+        const profilesMap = getCustomerProfilesMap()
+        const customerNum = mc.customer.customer_number || ''
+        const profile = customerNum ? profilesMap[customerNum] : null
+        const customerPhone = profile?.phone || mc.customer.phone || ''
+        const customerPhotos = profile?.photos || []
 
         const popupHtml = `
           <div style="padding: 14px; min-width: 250px; max-width: 300px; font-family: inherit; background: #0f172a; border-radius: 14px;">
+            ${customerPhotos.length > 0 ? `
+              <div style="position: relative; width: 100%; height: 100px; border-radius: 8px; overflow: hidden; margin-bottom: 10px; border: 1px solid #334155; background: #020617;">
+                <img src="${customerPhotos[0].dataUrl}" alt="${mc.customer.company_name}" style="width: 100%; height: 100%; object-fit: cover;" />
+                <span style="position: absolute; bottom: 5px; left: 5px; font-size: 9px; font-weight: 700; background: rgba(0,0,0,0.8); color: #ffffff; padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2);">
+                  📸 ${customerPhotos.length} Foto${customerPhotos.length > 1 ? 's' : ''} (${customerPhotos[0].slotLabel.split('/')[0].trim()})
+                </span>
+              </div>
+            ` : ''}
+
             <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px;">
               <span style="font-family: monospace; font-size: 11px; font-weight: 800; color: ${mc.color}; background: #020617; padding: 3px 8px; border-radius: 6px; border: 1px solid ${mc.color}40;">
                 Kd.-Nr. ${mc.customer.customer_number || '—'}
@@ -460,7 +475,7 @@ export default function KosovoCustomerMap({ customers, onSelectCustomer }: Kosov
             <div style="font-size: 11px; color: #94a3b8; display: flex; flex-direction: column; gap: 3px; margin-bottom: 12px; border-top: 1px solid #1e293b; padding-top: 6px;">
               <div>📍 <strong>Ort:</strong> <span style="color: #cbd5e1;">${mc.customer.city || 'Kosovo'}</span></div>
               <div>🚚 <strong>Zuständiger Fahrer:</strong> <span style="color: #cbd5e1;">${mc.agentName}</span></div>
-              ${mc.customer.phone ? `<div>📞 <strong>Telefon:</strong> <span style="color: #cbd5e1; font-family: monospace;">${mc.customer.phone}</span></div>` : ''}
+              ${customerPhone ? `<div>📞 <strong>Telefon:</strong> <span style="color: #cbd5e1; font-family: monospace;">${customerPhone}</span></div>` : ''}
             </div>
 
             <div style="display: flex; gap: 6px;">

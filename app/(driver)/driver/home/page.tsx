@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { createClient } from '@/lib/supabase/server'
-import { Package, ShoppingCart, TrendingUp, ChevronRight, Truck } from 'lucide-react'
+import { Package, ShoppingCart, TrendingUp, ChevronRight, Truck, Camera } from 'lucide-react'
 import { formatCurrency, formatNumber } from '@/lib/utils/currency'
 import Link from 'next/link'
 
@@ -100,14 +100,24 @@ export default async function DriverHomePage() {
         </div>
       </div>
 
-      {/* Quick Action Button */}
-      <Link
-        href="/driver/sell"
-        className="btn-primary w-full btn-lg justify-center shadow-glow"
-      >
-        <ShoppingCart className="w-5 h-5" />
-        Direktverkauf an Kunden erfassen
-      </Link>
+      {/* Quick Action Buttons */}
+      <div className="space-y-2.5">
+        <Link
+          href="/driver/sell"
+          className="btn-primary w-full btn-lg justify-center shadow-glow"
+        >
+          <ShoppingCart className="w-5 h-5" />
+          Direktverkauf an Kunden erfassen
+        </Link>
+
+        <Link
+          href="/driver/checkin"
+          className="btn-secondary w-full py-3 justify-center border-brand-800/60 text-brand-300 hover:bg-brand-950/80 font-bold"
+        >
+          <Camera className="w-5 h-5 text-brand-400" />
+          Kunden-Fotos & GPS erfassen (Check-in)
+        </Link>
+      </div>
     </div>
   )
 }
