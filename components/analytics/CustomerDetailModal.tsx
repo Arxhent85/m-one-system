@@ -405,6 +405,34 @@ export default function CustomerDetailModal({ customer, sales, onClose }: Custom
                       <User className="w-3 h-3 text-brand-400" /> Inhaber/Ansprechpartner: <strong className="text-surface-200">{contactPersonVal}</strong>
                     </p>
                   )}
+
+                  {extendedProfile?.business_card_image && (
+                    <div className="pt-2 border-t border-surface-800/80 flex items-center justify-between">
+                      <div
+                        onClick={() => setLightboxPhoto({
+                          id: 'card',
+                          slot: 'storefront',
+                          slotLabel: 'Visitenkarte des Kunden',
+                          dataUrl: extendedProfile.business_card_image!,
+                          timestamp: extendedProfile.updated_at,
+                          driverName: 'Archiv',
+                        })}
+                        className="flex items-center gap-2.5 cursor-pointer group"
+                      >
+                        <img
+                          src={extendedProfile.business_card_image}
+                          alt="Visitenkarte"
+                          className="w-12 h-8 object-cover rounded border border-surface-600 group-hover:scale-105 transition-transform bg-white shrink-0"
+                        />
+                        <div className="text-[11px]">
+                          <span className="font-bold text-white group-hover:text-brand-400 transition-colors flex items-center gap-1">
+                            📇 Visitenkarte ansehen <ZoomIn className="w-3 h-3 text-brand-400" />
+                          </span>
+                          <span className="text-[9.5px] text-surface-500 font-mono block">Schwarz/Weiß Archiv (~15KB)</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
 

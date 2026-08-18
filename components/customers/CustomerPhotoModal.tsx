@@ -21,6 +21,8 @@ import {
   Layers,
   Archive,
   Save,
+  ScanLine,
+  FileText,
 } from 'lucide-react'
 import {
   CustomerPhoto,
@@ -28,6 +30,7 @@ import {
   getCustomerProfile,
   updateCustomerPhotosAndContact,
   compressCustomerPhoto,
+  compressBusinessCardImage,
 } from '@/lib/customerStore'
 import MOCK_CUSTOMERS from '@/lib/mockCustomers.json'
 
@@ -81,6 +84,9 @@ export default function CustomerPhotoModal({
   const [notes, setNotes] = useState('')
 
   const [photos, setPhotos] = useState<CustomerPhoto[]>([])
+  const [businessCardImage, setBusinessCardImage] = useState<string | undefined>(undefined)
+  const [isScanningCard, setIsScanningCard] = useState(false)
+  const [cardOcrSuccess, setCardOcrSuccess] = useState<string | null>(null)
   const [isProcessingPhoto, setIsProcessingPhoto] = useState<string | null>(null)
   const [isSaving, setIsSaving] = useState(false)
   const [saveSuccess, setSaveSuccess] = useState(false)
@@ -106,6 +112,7 @@ export default function CustomerPhotoModal({
     storefront: useRef<HTMLInputElement>(null),
     shelf: useRef<HTMLInputElement>(null),
     storage: useRef<HTMLInputElement>(null),
+    businessCard: useRef<HTMLInputElement>(null),
   }
 
   // 1. Initial Profile Load
@@ -125,6 +132,7 @@ export default function CustomerPhotoModal({
       setContactPerson(profile.contact_person || '')
       setNotes(profile.notes || '')
       setPhotos(profile.photos || [])
+      setBusinessCardImage(profile.business_card_image)
       if (profile.gps) {
         setCurrentGps({
           latitude: profile.gps.lat,
@@ -259,6 +267,54 @@ export default function CustomerPhotoModal({
     setPhotos((prev) => prev.filter((p) => p.slot !== slot))
   }
 
+  // 4b. Business Card OCR & Ultra-B&W Compression
+  async function handleBusinessCardUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    setIsScanningCard(true)
+    setCardOcrSuccess(null)
+
+    try {
+      // 1. Ultra-kompakte Schwarz-Weiß / Graustufen WebP Komprimierung (~10-20KB)
+      const compressedBw = await compressBusinessCardImage(file, 850, 0.58)
+      setBusinessCardImage(compressedBw)
+
+      // 2. An KI-OCR API senden
+      const res = await fetch('/api/ocr/scan-business-card', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ imageBase64: compressedBw }),
+      })
+
+      const result = await res.json()
+      if (result.success && result.data) {
+        const card = result.data
+        if (card.company_name && (!companyName || companyName.startsWith('Kunde '))) {
+          setCompanyName(card.company_name)
+        }
+        if (card.contact_person) setContactPerson(card.contact_person)
+        if (card.phone) setPhone(card.phone)
+        if (card.email) setEmail(card.email)
+        if (card.city && !city) setCity(card.city)
+        if (card.address || card.notes) {
+          const extra = [card.address, card.notes].filter(Boolean).join(' · ')
+          setNotes((prev) => (prev ? `${prev} | ${extra}` : extra))
+        }
+
+        setCardOcrSuccess(`Visitenkarte erkannt: ${card.company_name || card.contact_person || 'Daten automatisch übernommen'}`)
+      } else {
+        setCardOcrSuccess('Visitenkarte gespeichert (bitte Daten prüfen)')
+      }
+    } catch (err) {
+      console.error('Error scanning business card:', err)
+      alert('Fehler beim Scannen der Visitenkarte.')
+    } finally {
+      setIsScanningCard(false)
+      if (e.target) e.target.value = ''
+    }
+  }
+
   // 5. Save all data
   function handleSave() {
     if (!customerNumber) {
@@ -277,7 +333,8 @@ export default function CustomerPhotoModal({
         contactPerson,
         notes,
         photos,
-        currentGps ? { latitude: currentGps.latitude, longitude: currentGps.longitude, accuracy: currentGps.accuracy } : undefined
+        currentGps ? { latitude: currentGps.latitude, longitude: currentGps.longitude, accuracy: currentGps.accuracy } : undefined,
+        businessCardImage
       )
 
       setSaveSuccess(true)
@@ -543,6 +600,122 @@ export default function CustomerPhotoModal({
                 )
               })}
             </div>
+          </div>
+
+          {/* VISITENKARTEN-SCANNER (KI-AUTOFIL & SCHWARZ/WEISS KOMPRIMIERUNG) */}
+          <div className="p-3.5 rounded-xl bg-gradient-to-r from-brand-950/60 to-surface-950/80 border border-brand-800/50 space-y-3">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xs font-bold text-brand-300 uppercase tracking-wider flex items-center gap-1.5">
+                <ScanLine className="w-4 h-4 text-brand-400" />
+                Visitenkarten-Scanner (KI-AutoFill)
+              </h3>
+              <span className="text-[10px] px-2 py-0.5 rounded-full bg-brand-900/60 text-brand-300 border border-brand-700/60 font-mono font-bold">
+                Schwarz/Weiß Ultra-HD (~15KB)
+              </span>
+            </div>
+
+            <p className="text-[11px] text-surface-300 leading-relaxed">
+              Fotografiere die Visitenkarte des Kunden – die KI liest <strong>Firma, Inhaber, Telefonnummer, E-Mail & Stadt</strong> automatisch ab und füllt die unteren Felder sofort für dich aus.
+            </p>
+
+            {businessCardImage ? (
+              <div className="p-3 rounded-xl bg-surface-900/90 border border-surface-700 flex items-center justify-between gap-3">
+                <div
+                  onClick={() => setLightboxPhoto({
+                    id: 'card',
+                    slot: 'storefront',
+                    slotLabel: 'Visitenkarte des Kunden (Schwarz/Weiß Archiv)',
+                    dataUrl: businessCardImage,
+                    timestamp: new Date().toISOString(),
+                    driverName: driverName,
+                  })}
+                  className="flex items-center gap-3 cursor-pointer group min-w-0"
+                >
+                  <img
+                    src={businessCardImage}
+                    alt="Visitenkarte"
+                    className="w-16 h-10 object-cover rounded-lg border border-surface-600 group-hover:scale-105 transition-transform bg-white shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <p className="text-xs font-bold text-white flex items-center gap-1">
+                      <span>Visitenkarte hinterlegt</span>
+                      <ZoomIn className="w-3.5 h-3.5 text-brand-400" />
+                    </p>
+                    <p className="text-[10px] text-emerald-400 font-semibold truncate">
+                      ✓ KI-Daten übernommen
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 shrink-0">
+                  <label
+                    htmlFor="business-card-input"
+                    className="px-2.5 py-1.5 rounded-lg bg-surface-800 hover:bg-surface-700 text-xs font-bold text-surface-200 cursor-pointer border border-surface-600 transition-colors"
+                  >
+                    Neu scannen
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setBusinessCardImage(undefined)
+                      setCardOcrSuccess(null)
+                    }}
+                    className="p-1.5 rounded-lg text-surface-400 hover:text-rose-400 hover:bg-rose-950/40 transition-colors"
+                    title="Visitenkarte entfernen"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <label
+                  htmlFor="business-card-input"
+                  className={`w-full py-3.5 px-4 rounded-xl border border-dashed border-brand-500/60 bg-brand-950/30 hover:bg-brand-900/40 hover:border-brand-400 active:scale-98 flex items-center justify-center gap-2.5 cursor-pointer transition-all ${
+                    isScanningCard ? 'opacity-50 pointer-events-none' : ''
+                  }`}
+                >
+                  {isScanningCard ? (
+                    <>
+                      <Loader2 className="w-5 h-5 text-brand-400 animate-spin" />
+                      <span className="text-xs font-bold text-brand-200">
+                        Lese Visitenkarte mit KI ab & fülle Felder aus...
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <div className="w-8 h-8 rounded-full bg-brand-900 border border-brand-700 flex items-center justify-center text-brand-300">
+                        <Camera className="w-4 h-4" />
+                      </div>
+                      <div className="text-left">
+                        <span className="text-xs font-black text-white block">
+                          Visitenkarte fotografieren & scannen
+                        </span>
+                        <span className="text-[10px] text-brand-300/80">
+                          Kamera öffnen oder Bild aus Galerie wählen
+                        </span>
+                      </div>
+                    </>
+                  )}
+                </label>
+              </div>
+            )}
+
+            <input
+              id="business-card-input"
+              type="file"
+              accept="image/*"
+              capture="environment"
+              onChange={handleBusinessCardUpload}
+              className="hidden"
+            />
+
+            {cardOcrSuccess && (
+              <div className="p-2.5 rounded-lg bg-emerald-950/80 border border-emerald-700/60 text-xs text-emerald-300 flex items-center gap-2 animate-in fade-in">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>{cardOcrSuccess}</span>
+              </div>
+            )}
           </div>
 
           {/* KONTAKTDATEN (Telefon, E-Mail, Ansprechpartner) */}
