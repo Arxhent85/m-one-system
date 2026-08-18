@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import {
   LayoutDashboard, Package, Warehouse, Users, ShoppingCart,
   BarChart3, Settings, Truck, ArrowLeftRight, LogOut, ChevronRight,
-  Coins,
+  Coins, Receipt,
 } from 'lucide-react'
 import { cn } from '@/lib/utils/helpers'
 import { createClient } from '@/lib/supabase/client'
@@ -28,10 +28,11 @@ const navGroups = [
     ],
   },
   {
-    label: 'Vertrieb & Lohn',
+    label: 'Finanzen & Vertrieb',
     items: [
       { href: '/orders',    label: 'Aufträge', icon: ShoppingCart },
       { href: '/customers', label: 'Kunden',   icon: Users },
+      { href: '/expenses',  label: 'Ausgaben & GuV', icon: Receipt },
       { href: '/payroll',   label: 'Lohn',     icon: Coins },
     ],
   },
